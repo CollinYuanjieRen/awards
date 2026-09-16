@@ -1,0 +1,23 @@
+Local exported-package verification; upstream dependency caches used (arm64 macOS).
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+✔ [2528/2530] Built JSP620.Target (1.6s)
+✔ [2529/2530] Built JSP620 (1.5s)
+Build completed successfully (2530 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos754Lower.half_le_f' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos754Lower.half_add_two_le_f_of_eight_dvd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos754Lower.erdos_754_two_sided' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos754Lower.abs_f_sub_half_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos754Lower.f_sub_half_isBigO' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos754.erdos_754' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0
+
+$ grep -rnE "sorry|admit|^\s*axiom|native_decide|maxHeartbeats|maxRecDepth|unsafe" JSP620 Audit.lean
+(no matches)
+exit=0
