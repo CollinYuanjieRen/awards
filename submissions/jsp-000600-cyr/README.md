@@ -39,6 +39,8 @@ The exact Lean toolchain is pinned in [lean-toolchain](lean-toolchain): `leanpro
 
 [Audit.lean](Audit.lean) re-checks the root statement with a typed `example`, prints the definitions, and prints the axioms of the root theorem and of the witness theorem. [verification.txt](verification.txt) records the local build and audit of this exported package.
 
+[Challenge.lean](Challenge.lean) is a comparator-style challenge module: it imports only Mathlib and restates the three definitions and the target theorem with a `sorry` proof, for mechanical comparison against `Proof/Main.lean`; it is not part of the proof build.
+
 ## Axiom audit
 
 `#print axioms Erdos732Upper.erdos_732_upper` reports exactly `[propext, Classical.choice, Quot.sound]`. These three are the standard foundational axioms of Lean 4's core library on which Mathlib is built (propositional extensionality, the axiom of choice, and quotient soundness); every Mathlib-based development, including the previously registered Lean proofs in this repository, depends on them. The proof introduces no project axiom, no `sorry`/`admit` (so `sorryAx` is absent), no `native_decide` or other trusted-code shortcut, no unsafe or opaque definitions, and no hypothesis beyond the problem's own definitions: the root theorem has an empty binder prefix, and the two record fields of `PairwiseBalancedDesign` are exactly the defining properties of a pairwise balanced design. The official rules (Section 6, offline verification with axiom audits; Section 7, revocation for placeholder or unreviewed axioms) do not enumerate accepted axioms; the three listed here are disclosed for that audit, and no operator ruling on their acceptability is claimed.
