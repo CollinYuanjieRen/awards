@@ -1,0 +1,36 @@
+Local exported-package verification (fresh package directory under a clean git worktree; dependencies fetched from the official Mathlib cache server); arm64 macOS; 2026-09-16T23:03:15Z.
+
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake exe cache get
+Decompressed 8537 already-cached file(s)
+Completed successfully in 10893 ms!
+exit=0
+
+$ lake build
+Build completed successfully (8747 jobs).
+exit=0 (no errors; no sorry warnings)
+
+$ lake env lean Audit.lean
+'Erdos931.tijdeman' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos931.tijdeman_primeFactors' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos931.alphaproof' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos931.alphaproof_primeFactors' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos931.erdos_guess_false' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0
+
+$ lake env lean Challenge.lean   # statement-only comparator module; the three expected sorry warnings are its targets
+Challenge.lean:15:8: warning: declaration uses `sorry`
+Challenge.lean:19:8: warning: declaration uses `sorry`
+Challenge.lean:22:8: warning: declaration uses `sorry`
+exit=0
+
+$ grep -rn "sorry\|admit\|native_decide\|implemented_by\|opaque\|unsafe\|^axiom\|partial \|ofReduceBool" Jsp773 Jsp773.lean Audit.lean
+(no matches)
+
+SHA-256 of the recorded source statement:
+ce387c7121a644aeba6574305386b7556dcbc05dd73fbb7b01bb31e1ec15632b  sources/erdos931-statement.txt
+
+Lean toolchain: leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d (lake-manifest.json).
