@@ -1,0 +1,62 @@
+Local exported-package verification; upstream dependency caches used (arm64 macOS).
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+info: JSP573/External/Erdos703.lean:373:0: 'Erdos703.erdos_703' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (8758 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'FranklFuredi.shadow_card_add_level_card_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FranklFuredi.exists_ffPoly_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FranklFuredi.frankl_singhi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FranklFuredi.shadow_card_mul_choose_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FranklFuredi.level_inequality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FranklFuredi.card_le_ffBound_add_middle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FranklFuredi.card_le_ffBound_add_middle_sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FranklFuredi.level_card_le_choose_sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FranklFuredi.card_franklFurediOdd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FranklFuredi.card_franklFurediEven' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FranklFuredi.eventually_mul_pow_lt_two_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FranklFuredi.exists_upper_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FranklFuredi.frankl_furedi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FranklFuredi.erdos_703_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos703.T_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos703.franklFurediOdd_card_le_T' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos703.franklFurediEven_card_le_T' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos703.erdos_703' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0
+
+$ lake build Challenge   # comparator challenge module; the only warnings are its intended sorry declarations
+sorry-warnings=2
+Build completed successfully (8746 jobs).
+exit=0
+
+$ challenge-vs-solution identity (whitespace-normalized text of each definition and theorem statement)
+theorem frankl_furedi identical
+theorem erdos_703_exact identical
+def ffBound identical
+def AvoidsRIntersection identical
+def T identical
+noncomputable section present in both
+attribute [local instance] Classical.propDecidable present in both
+open Nat Finset Real present in both
+exit=0
+
+$ grep -rnE "sorry|admit|^\s*axiom|native_decide|maxHeartbeats|maxRecDepth|unsafe" JSP573/FF Audit.lean JSP573.lean
+(no matches)
+exit=0
+
+$ grep -rnE "^\s*axiom|native_decide|sorry|admit" JSP573/External   # third-party tree, verbatim plby
+(no matches)
+exit=0
+
+$ shasum -a 256 -c plby-source-hashes.txt   # against the plby originals at commit 8822f7dd
+Erdos703.lean: OK
+Erdos703/Endpoints.lean: OK
+Erdos703/FranklRodl.lean: OK
+Erdos703/Iteration.lean: OK
+Erdos703/McDiarmid.lean: OK
+exit=0

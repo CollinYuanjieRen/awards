@@ -1,0 +1,33 @@
+Differences between JSP573/External/ and plby/lean-proofs commit 8822f7ddef30fadbd92e1c6ab4ed897af356af5e, src/latest/ErdosProblems/
+(unified diff; the only edits are the import-prefix rewrite ErdosProblems.Erdos703 -> JSP573.External.Erdos703)
+
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos703.lean	2026-09-16 09:20:16
++++ ./Erdos703.lean	2026-09-16 11:40:49
+@@ -21,7 +21,7 @@
+ -/
+ 
+ import Mathlib
+-import ErdosProblems.Erdos703.FranklRodl
++import JSP573.External.Erdos703.FranklRodl
+ 
+ /-!
+ # Erdős Problem 703: forbidden intersections
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos703/Endpoints.lean	2026-09-16 09:20:16
++++ ./Erdos703/Endpoints.lean	2026-09-16 11:40:49
+@@ -1,5 +1,5 @@
+ import Mathlib
+-import ErdosProblems.Erdos703.McDiarmid
++import JSP573.External.Erdos703.McDiarmid
+ 
+ namespace Erdos703Endpoints
+ 
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos703/FranklRodl.lean	2026-09-16 09:20:16
++++ ./Erdos703/FranklRodl.lean	2026-09-16 11:40:49
+@@ -1,5 +1,5 @@
+-import ErdosProblems.Erdos703.Iteration
+-import ErdosProblems.Erdos703.Endpoints
++import JSP573.External.Erdos703.Iteration
++import JSP573.External.Erdos703.Endpoints
+ 
+ /-!
+ # The Frankl--Rödl iteration for Erdős Problem 703

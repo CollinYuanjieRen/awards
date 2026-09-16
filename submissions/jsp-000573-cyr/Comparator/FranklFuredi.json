@@ -1,0 +1,14 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "JSP573.FF.Main",
+  "theorem_names": [
+    "FranklFuredi.frankl_furedi",
+    "FranklFuredi.erdos_703_exact"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}
