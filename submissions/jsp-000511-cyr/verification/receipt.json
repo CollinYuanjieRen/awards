@@ -1,0 +1,56 @@
+{
+  "date": "2026-09-16",
+  "scope": "Finite planar bipartite three-list-coloring from an ordinary continuous crossing-free drawing; arbitrary-palette extension checked separately.",
+  "lean": "4.34.0-rc1",
+  "mathlib_commit": "1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d",
+  "root": "PlanarListColoring.planar_bipartite_three_list_colorable",
+  "supplemental_root": "PlanarListColoring.planar_bipartite_three_list_colorable_palette",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "build_jobs": 2620,
+  "build_exit": 0,
+  "typed_and_axiom_audit_exit": 0,
+  "native_comparator_exit": 0,
+  "negative_tests_exit": 0,
+  "comparator_commit": "011e9d35a10a054ed4b66d8379115ad870f2b0ce",
+  "exporter_commit": "b18d673bd29b476466a51a3be1012df2ed322b10",
+  "reference_source_sha256": "a52d0905ca61f69b852f10267775654024c8006089c31a608bc74b7a58e0b238",
+  "reference_export_sha256": "856db649ec000d144273b202d75438741375a401fd97fa0ec28446d268c4d1ab",
+  "candidate_export_sha256": "784e71b24386e6de7fc3268cd0207f21317585d7f49a4780f7d940f3492db9db",
+  "candidate_export_bytes": 136756297,
+  "candidate_export_matches_independently_checked_campaign": true,
+  "target_signature_sha256": "0bd789e534e81f3f8d665d482892d53a12fda56ecfcc5acd0ca3638c93fd7fc5",
+  "driver_core_sha256": "807b64492110503f74b8c42d41b0539fc5e7cff3f80527a660c155cd545412bc",
+  "driver_main_sha256": "4ad84c3942132c49ff8f976b8ca377ea94bf9c5c43a6e613f6a7aceaef7a15a7",
+  "driver_binary_sha256": "e5ef430aeab695278c457a2755115daf6c3e8e6b9895349f45ecaf3d86db01e4",
+  "platform": {
+    "system": "Darwin",
+    "machine": "arm64"
+  },
+  "sandboxed": false,
+  "external_kernel_checked": false,
+  "official_erdos630_target_available": false,
+  "formal_conjectures_snapshot": "40e7c98697de6f66b8cbdbf641749ab39ed9c152",
+  "award_approval_claimed": false,
+  "prize_axiom_whitelist": "No explicit standard-axiom whitelist found in the audited public rules.",
+  "checksums": {
+    "build.log": "73185cb567e68396c5f5931f38a88cfac645783dbbdf38c8411ac32a5c6ed658",
+    "axioms.log": "7c1bb1a13b9a985d525266d680d7beae2f0dbb4b5d13b0dfffac4648597ca3da",
+    "comparator.log": "4ec655fe5073ddd284d537a2e6403e9573c0b30681a1c41e710a2d86bc3e1c14",
+    "negative-tests.log": "6dc8d6a72118e286806e4931a5538613fb55fd2dafcbd6ad74e20a2bfc1fce97",
+    "proof-sources.json": "5eb215515d5cc5e824b2e94df9c1f506ab3d446fdbc4220b9c77a96896ccad64"
+  },
+  "repository_checks": {
+    "validate": "pass",
+    "links": "pass",
+    "generated_data_check": "pass",
+    "unit_tests_passed": 22
+  },
+  "independent_automated_source_alignment": "pass",
+  "independent_automated_proof_audit": "pass",
+  "raw_build_log_sha256": "a2f10fa6103473c31b6eb7bbfebe40b9fcfc40ed5f2fb09ad076817f36497c0c",
+  "published_build_log_normalization": "Only trailing whitespace removed from lines."
+}

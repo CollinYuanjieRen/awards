@@ -1,0 +1,378 @@
+[
+  {
+    "path": "MerLeanExperiment.lean",
+    "sha256": "efe8b437f8be206d8596d1f281bc0c1640d242d75395836e14d773a8311f6cb4"
+  },
+  {
+    "path": "MerLeanExperiment/ArbitraryPalette.lean",
+    "sha256": "7432bb6495a2982bd5b0e1ad61742bf6bc35c2cc97fcb0694ec72425fda81914"
+  },
+  {
+    "path": "MerLeanExperiment/BipartiteWalks.lean",
+    "sha256": "7baad1ca3d34dce2c68494b7216a118649c958e7e413e2ad7b90e4ad538f0b38"
+  },
+  {
+    "path": "MerLeanExperiment/ColoringFromDensity.lean",
+    "sha256": "a075282a9d2f090857ad649cb19a1daa01539e6cafbeaf1373e770356c8148d4"
+  },
+  {
+    "path": "MerLeanExperiment/CrosscutComponents.lean",
+    "sha256": "4e4c25bfbebef3325f8efed74fa6a6278f3c282be6b7f8fbdaf5cc8e79e5b219"
+  },
+  {
+    "path": "MerLeanExperiment/CrosscutExact.lean",
+    "sha256": "b11adddd8958bfcccf1a59beb751dd4522a60d46f03e2c8d798b498b8f8d1434"
+  },
+  {
+    "path": "MerLeanExperiment/CrosscutRegions.lean",
+    "sha256": "3b8d95f83669b7771ca415c44e8aba41cbac4e49ba662d9d9a524e90266649e4"
+  },
+  {
+    "path": "MerLeanExperiment/CycleCounts.lean",
+    "sha256": "7496efe72e6ad08a1d8bfa4ed23ee9ba788494c0423c4b2d1334329a67342192"
+  },
+  {
+    "path": "MerLeanExperiment/CycleFaceSystem.lean",
+    "sha256": "72000d0eef830250cd80eea3eca430ec2e5437735b27ae4e8e32cbda4ccdb17c"
+  },
+  {
+    "path": "MerLeanExperiment/DrawingAdapter.lean",
+    "sha256": "2c4082a04bf4cb5f9b0aa20545d20192963dac1ec057ca375e2edc0b172fa9b9"
+  },
+  {
+    "path": "MerLeanExperiment/DrawingBasics.lean",
+    "sha256": "cc74e477d56f135b0c7da25cfe7d03237a5c531839924140b9821d3e36a82260"
+  },
+  {
+    "path": "MerLeanExperiment/EarCounts.lean",
+    "sha256": "847f3fddad8097a5402e7dc636a324fcb1c5764cbe6bed00e5663f392ae8ae57"
+  },
+  {
+    "path": "MerLeanExperiment/EarFaceSplit.lean",
+    "sha256": "a5e0c2cac6e8225a2858664f79be17d24b8678a7637a42ed6e4efdb546cbc7be"
+  },
+  {
+    "path": "MerLeanExperiment/EarFaceSystem.lean",
+    "sha256": "64785a3d282c62f2fe7fc3bafbe02ca7e6c35d4bfc322c811aa868930a9f2d1b"
+  },
+  {
+    "path": "MerLeanExperiment/EarGeometry.lean",
+    "sha256": "59d8afb75f53b453fa1ee9c9c183e99cc11a5e1380c723aa6259e4eb64218a9e"
+  },
+  {
+    "path": "MerLeanExperiment/EdgeIncidence.lean",
+    "sha256": "6f66a4d07cd1fc2c979b10100824bb62b1b3db347099665124253fee72925996"
+  },
+  {
+    "path": "MerLeanExperiment/EdgeParameters.lean",
+    "sha256": "479122604563b90a94283db652e2a88b4909a925b2ae8d5a0069180114cea3a5"
+  },
+  {
+    "path": "MerLeanExperiment/EdgeSupportedGraph.lean",
+    "sha256": "3c12f3605e3d73cbb6cd1f94d2b29428eb44d4ccab580e528a1ec9a9fef3f1cc"
+  },
+  {
+    "path": "MerLeanExperiment/EulerFaceSystem.lean",
+    "sha256": "b146e71e080d93f0da337cccee5069affacfc2ab978ee4fb7e0f1fead360395e"
+  },
+  {
+    "path": "MerLeanExperiment/FaceReplacement.lean",
+    "sha256": "f8fc414bac507a127e077fba7b63d9829bbcc6fba8e69262837a6905861b0381"
+  },
+  {
+    "path": "MerLeanExperiment/FaceSystem.lean",
+    "sha256": "9b21893b5f8b8b611710487ce80b5f6d3660b0a89a9692a1a651a58f0c3a2bea"
+  },
+  {
+    "path": "MerLeanExperiment/FaceSystemBasics.lean",
+    "sha256": "632059c56c0683df4a6a61aeb8bbba9e61ca643bc6c04a86b4c5c2f13bf35f28"
+  },
+  {
+    "path": "MerLeanExperiment/FinsetReplacement.lean",
+    "sha256": "48045d1d24ab665d159ec0753b360314e8d5debeb5cc26a2986a47365c4481e3"
+  },
+  {
+    "path": "MerLeanExperiment/Goal.lean",
+    "sha256": "92efc4b2e61c7e22d4bb9602985f52a0f7307f4f83c9498de959543b10cb6e86"
+  },
+  {
+    "path": "MerLeanExperiment/GraphRepresentation.lean",
+    "sha256": "4fd6cf056de344c86ca9f5315a1c56930dea4e8d8bb5c668ace171e6c4ddda13"
+  },
+  {
+    "path": "MerLeanExperiment/GraphSeparation.lean",
+    "sha256": "72effaea69142d031aa2d6979e739afd6f271eb1de32659e56dc2338e19257d8"
+  },
+  {
+    "path": "MerLeanExperiment/GraphSeparator.lean",
+    "sha256": "ceb6d11a039baf1f8e5b11893c130a9971f24c5c7434d0d332b9ab408c97cd37"
+  },
+  {
+    "path": "MerLeanExperiment/HallOrientation.lean",
+    "sha256": "b9fe462e51b56d1e2a76ec4c336b22a8c71c3520b9218a7e8abc087558ea5a77"
+  },
+  {
+    "path": "MerLeanExperiment/HereditaryDensity.lean",
+    "sha256": "0a50bab71cfc6e50044ddda7d7ae202b5e0e12c63069a174a52206e5b3957482"
+  },
+  {
+    "path": "MerLeanExperiment/KernelColoring.lean",
+    "sha256": "956add8ea1cb4fbeec6f3df4631f94bd6f98d13e0a6f188270f29c8729cde578"
+  },
+  {
+    "path": "MerLeanExperiment/Kernels.lean",
+    "sha256": "16f35ee68c3c37b40693fa89bf4699ab3e165bf5472925221268ce4dae7c5652"
+  },
+  {
+    "path": "MerLeanExperiment/PathCounts.lean",
+    "sha256": "0020433485f0793f9c6c0571a1e86ff9fff52b806dce74855e8066292e02140f"
+  },
+  {
+    "path": "MerLeanExperiment/PlanarDensity.lean",
+    "sha256": "f851a51b6ecebb13e383f0bc07add9779431468a4aad1b791705d9ef90543df6"
+  },
+  {
+    "path": "MerLeanExperiment/PlaneBicoloring.lean",
+    "sha256": "03ef087769048d0f0665d04838a55a54e295fb1d3cd33d1a24c79f8b9606e589"
+  },
+  {
+    "path": "MerLeanExperiment/PlaneDrawing.lean",
+    "sha256": "47efb1db1ba716657d1ea2ca558fb90cbfc310c27755d63d9d01f13a005d4afb"
+  },
+  {
+    "path": "MerLeanExperiment/SeparatorCounts.lean",
+    "sha256": "d600ced87cab3bcf0bf48ec2381f15394610c38b6cd92363371e0b9e6560eec5"
+  },
+  {
+    "path": "MerLeanExperiment/SimpleCycleLength.lean",
+    "sha256": "c733e9e6797fe63df4d83515de08d2e005325ff87de62902d7fe5ebaab534131"
+  },
+  {
+    "path": "MerLeanExperiment/SmallGraphDensity.lean",
+    "sha256": "b300414cad6e7ba880bf105b372ff8bbc24eeec98d33388d9c0fee905c1cf298"
+  },
+  {
+    "path": "MerLeanExperiment/SplicedBoundary.lean",
+    "sha256": "2b6156702c7e0ff910deecc7a2bd81e2596b09f499c2b1ac9667ee5255f6061e"
+  },
+  {
+    "path": "MerLeanExperiment/TwoConnectedDensity.lean",
+    "sha256": "85ca50c6e8bea230b8928076d68f6e4919814d9f2d513eb58309fcbe0e32b8af"
+  },
+  {
+    "path": "MerLeanExperiment/TwoOrientation.lean",
+    "sha256": "80280d766b50c680f453898920d05e14f27e331861e846e61117bb8d871d1f4c"
+  },
+  {
+    "path": "MerLeanExperiment/UnaffectedFaces.lean",
+    "sha256": "56ab0014ffb001e4341a28efdf634a8706dd77f94bcb5e0350d6e61e9f0a5f99"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Bounded.lean",
+    "sha256": "c82762bf25cf2b42f68ceb4c312615cf3f2efe3dea99a34956eec8ebe518c413"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Concatenate.lean",
+    "sha256": "d1fc4cb395df2c089fa7e207265ecb9d47c69d0cd7c63f36884fd831b5c22f6f"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/CrosscutCells.lean",
+    "sha256": "e3e6f4e9ba1b7ad6b2a0e931ac9758321f1a9b8cd4b824d03355141320376978"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Curve.lean",
+    "sha256": "48252b82804621e6c36ab7b01b35bcdd11850587d7f1f7a6a482b4a6254b1baf"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Direction.lean",
+    "sha256": "a500ab7cb4b93f7c48d11a464099620d6056d003a1b5ef33db68312867ba1323"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/FaceCycles.lean",
+    "sha256": "c3370e9a1a78fb80924d69abe95ffe80cd1e9f81c65e99d68e6d09334f3b0f6f"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/FaceCyclesLand.lean",
+    "sha256": "9e3513dd706923bd94e9e52d32a6278474eff17a741e6c43f7abc1d430216a60"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/FaceCyclesProof.lean",
+    "sha256": "ab44e4678942f5f6dde78c1c5e5748387aaf65e9e8283c4bbda5c0c15fa33f6b"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Graph/Component.lean",
+    "sha256": "b571cf4733defb4d1eeb50471042218155fe40985b765e6476536070b888fe6f"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Graph/Cycle.lean",
+    "sha256": "a8229f287f437623e5289e03f0c236b93b021ef5461ae46fa3cfef4b1408fd19"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Graph/CycleJordan.lean",
+    "sha256": "5ac6c32a9d37aa45ba2b70b6181cc2f4b9d58068bcdeb8dffab632a17f9766a5"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Graph/Degree.lean",
+    "sha256": "d6df00066ff52b15b4d140b80848416856ca289b687dbdb512f0529212048a52"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Graph/Drawing.lean",
+    "sha256": "e03dc1b91ee1b1681f253e3a286fa4272cf1062085b3c4809745181543fad4d6"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Graph/Ear.lean",
+    "sha256": "605d6e671c5652f9f3cddc1b63d290c5c3aaf574c636936273f384e948e772d0"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Graph/OuterFace.lean",
+    "sha256": "e3898e4840363dea3cb8382442b2825499c41921ec96c8677d08a1ed7c7613c8"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Graph/PathGraph.lean",
+    "sha256": "f28b03fad501cdd897f3c4c0a53f6cf1b9428a811d2aa2fdc9c3342a394f7412"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Graph/Redrawing.lean",
+    "sha256": "3eaf165c6be3913607c1eddd6f483af495f1d1ab08fe18eabcd2ea2510cb97ba"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Graph/RelativeEar.lean",
+    "sha256": "86ee2501de68895a6c29259e8570540cdaa2d11091e7ebe85beb838975236a98"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Graph/Tree.lean",
+    "sha256": "96e4eeaacccf111fa1a46176337553731b98dc50dfde86cea45ca56c6af5521a"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Graph/TwoConnected.lean",
+    "sha256": "01a00dbfdcf88ad8e5f2a0d7d2f0c70409233cab5fc8faf099c8c503910981e3"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Graph/VertexSquares.lean",
+    "sha256": "07cb99880e3a1a7debb45b97b0659fb74a78836b5a120a97392acda526826269"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Graph/Walk.lean",
+    "sha256": "dbd2b1d1b6de760cc78d5419bc37a9ea4f005d69fd919a0c717a6d39264a9c5e"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/LocallyPolygonal.lean",
+    "sha256": "fbfbdd500cc2f538e1441146938821e907b1618641175bc25b9ca6e30c6431dc"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Overlay.lean",
+    "sha256": "6d8790b846ca35859fe593999703b90ba5e281bf36da1472c7aed4de676505b1"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/OverlayGraph.lean",
+    "sha256": "ef9710bee9ffcf4e4d96423171d71c6b8fc2888388b0f0ffb544a1bebe1ca684"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Parity.lean",
+    "sha256": "0e30bf62b7090a54255d8b47ba18c0344ef1fe82bb1782f2d115e60145c162b1"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/ParitySplitting.lean",
+    "sha256": "3596994ee759149e53d827c0c768cd5b65794b58d1fee0e6c7a584ab1d3b6930"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Plane.lean",
+    "sha256": "c313e109f1ce99adcc4b1e7d551c0008f7887f448c496520c0a26a0315c8a0da"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/PolyLocal.lean",
+    "sha256": "db0a2eccdeac1d7780a3e0870720de4b5d47c1251f8f2eefa092e4c46c550a8d"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/PolyPath.lean",
+    "sha256": "28cb68c815a0e8610b441cc13ad00caf76c3f8975a3b4165033b5445db2b093e"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/PolygonBridge.lean",
+    "sha256": "5afa7f8a6929e018c247dd8707c959d14b2b64019773ab3376f0b43bf73c40ed"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Polygonal.lean",
+    "sha256": "bbac1995234973a1dfacaae733cf346dceb6f2e404fece597b132268fba0ed54"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/PolygonalCarrier.lean",
+    "sha256": "bb1e4c014f324962564bdf5df53343d340821bd7f3afc47e19f7a8f9ea30ece4"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/PolygonalCrosscut.lean",
+    "sha256": "2b5161048efede6abd94985f401a48f8c523e218ffd2f5c4f04c708be422db35"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/PolygonalJordan.lean",
+    "sha256": "4c8452f314031c059f85315972028df0dd2bbf6006234dd693f7573f5d9580a1"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/PrePolygonArc.lean",
+    "sha256": "7179bc257b60707f6ab356f59e61ce1d5123ca7483999de78751fcf5fc484835"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/PrePolygonSep.lean",
+    "sha256": "4b0badfc4f30e74a0f5af570e4ba0392b5359cc5e10b1a08f7c0f7f063d88da0"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Realization.lean",
+    "sha256": "a17b1465063bd05fd65c711c75be0fc58984dc18d37b4e79954b6f13b9633dcf"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/SegmentCut.lean",
+    "sha256": "23d6b723065df0b06acba9d098d161977fba050e6ff707140a63c73a1036b7a0"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/SegmentMeet.lean",
+    "sha256": "580f4f1ffc9aeaaa262ea4002cc43b35983a463dc1494ac9c0c672452da5670c"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/SegmentOrder.lean",
+    "sha256": "c7344aa83c4bb63a8edf39e4a05ec29fdf18ce562f615dd0d9eaa85bbf7d1595"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/SimpleArc.lean",
+    "sha256": "29b2c4cd2031600aa1c1472803da8b7810e1e23d25719bce637f80a9885d2da0"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Square.lean",
+    "sha256": "7d5cc2214ba47e40dbb54f0ee70a10c7df3e89df365c933394d0b62579ca90c8"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Strip.lean",
+    "sha256": "3421ce8f27dcae63adb8c7f0e67636d24a399b692197faef0abf42476563d39d"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/StripConnected.lean",
+    "sha256": "cbe942f98d513ad206cb77be433f9379c9d2866915ff82d1032eccf2a73c1589"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/StripConstants.lean",
+    "sha256": "d84195314f19e0398edd603269896222236646f04cbba0a12a111d51f5779535"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/StripLocal.lean",
+    "sha256": "53e57705fb8b9a29c0c584cc555e45d873b70a1d556bd8d1bfad83fafceb9509"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Subarc.lean",
+    "sha256": "d3473af6db3a8578c8a445b430611ec697000fcb0b71ae9f5dd76c63f8fd3112"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Subdivide.lean",
+    "sha256": "bc7ed143671caf9fbdcf8ca7b5056d3b1334e5b4a8dca149f9ea8805ee37dda7"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/Topology.lean",
+    "sha256": "c8dadedfcab0b994c7ac4fe1634fe0c6a25748caf06db1bc28e86c2c680c2977"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/TwoArcs.lean",
+    "sha256": "29a51c09e5bc1ac6cf780dc8b40d1d8cb6af15ba4120ea0a5073a41ef0b8bce1"
+  },
+  {
+    "path": "MerLeanExperiment/Vendor/Schoenflies/UniformBound.lean",
+    "sha256": "c62df7bb0a048d0de17d20a64a9c50575c72275c212c73c3f8c624e2d515a9f9"
+  }
+]

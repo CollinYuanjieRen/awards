@@ -1,0 +1,285 @@
+✔ [2526/2620] Built MerLeanExperiment.FinsetReplacement (1.9s)
+✔ [2527/2620] Built MerLeanExperiment.Vendor.Schoenflies.Graph.Walk (2.1s)
+⚠ [2528/2620] Built MerLeanExperiment.Vendor.Schoenflies.Graph.Degree (2.3s)
+warning: MerLeanExperiment/Vendor/Schoenflies/Graph/Degree.lean:234:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Graph/Degree.lean:238:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Graph/Degree.lean:245:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Graph/Degree.lean:250:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Graph/Degree.lean:267:32: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [2529/2620] Built MerLeanExperiment.TwoOrientation (2.3s)
+✔ [2530/2620] Built MerLeanExperiment.PlaneDrawing (2.9s)
+✔ [2531/2620] Built MerLeanExperiment.Vendor.Schoenflies.Plane (3.4s)
+⚠ [2532/2620] Built MerLeanExperiment.Vendor.Schoenflies.Graph.PathGraph (2.4s)
+warning: MerLeanExperiment/Vendor/Schoenflies/Graph/PathGraph.lean:248:58: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Graph/PathGraph.lean:261:6: `Graph.edgeSet_eq_setOf_exists_isLink` has been deprecated: Use `Graph.edgeSet_eq_setOfPred_exists_isLink` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Graph/PathGraph.lean:262:33: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [2533/2620] Built MerLeanExperiment.BipartiteWalks (2.4s)
+✔ [2534/2620] Built MerLeanExperiment.Vendor.Schoenflies.Graph.Cycle (2.8s)
+✔ [2535/2620] Built MerLeanExperiment.Vendor.Schoenflies.Graph.TwoConnected (2.8s)
+✔ [2536/2620] Built MerLeanExperiment.HallOrientation (3.1s)
+✔ [2537/2620] Built MerLeanExperiment.Kernels (3.0s)
+✔ [2538/2620] Built MerLeanExperiment.DrawingBasics (4.7s)
+✔ [2539/2620] Built MerLeanExperiment.PathCounts (3.7s)
+✔ [2540/2620] Built MerLeanExperiment.SimpleCycleLength (3.4s)
+✔ [2541/2620] Built MerLeanExperiment.GraphSeparation (3.6s)
+✔ [2542/2620] Built MerLeanExperiment.Vendor.Schoenflies.Graph.Ear (3.7s)
+✔ [2543/2620] Built MerLeanExperiment.Vendor.Schoenflies.PolyPath (5.3s)
+✔ [2544/2620] Built MerLeanExperiment.Vendor.Schoenflies.Topology (5.4s)
+⚠ [2545/2620] Built MerLeanExperiment.Vendor.Schoenflies.Graph.Tree (3.9s)
+warning: MerLeanExperiment/Vendor/Schoenflies/Graph/Tree.lean:244:36: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Graph/Tree.lean:252:34: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Graph/Tree.lean:285:4: Try this:
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: MerLeanExperiment/Vendor/Schoenflies/Graph/Tree.lean:291:4: Try this:
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: MerLeanExperiment/Vendor/Schoenflies/Graph/Tree.lean:294:6: Try this:
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [2546/2620] Built MerLeanExperiment.Vendor.Schoenflies.UniformBound (5.4s)
+✔ [2547/2620] Built MerLeanExperiment.Vendor.Schoenflies.Curve (5.6s)
+✔ [2548/2620] Built MerLeanExperiment.Vendor.Schoenflies.Graph.Component (4.1s)
+✔ [2549/2620] Built MerLeanExperiment.KernelColoring (3.7s)
+✔ [2550/2620] Built MerLeanExperiment.Vendor.Schoenflies.SegmentCut (5.8s)
+⚠ [2551/2620] Built MerLeanExperiment.Vendor.Schoenflies.Square (5.9s)
+warning: MerLeanExperiment/Vendor/Schoenflies/Square.lean:119:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Square.lean:126:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Square.lean:133:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Square.lean:143:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Square.lean:170:56: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Square.lean:181:54: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Square.lean:226:45: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [2552/2620] Built MerLeanExperiment.Vendor.Schoenflies.Direction (5.0s)
+warning: MerLeanExperiment/Vendor/Schoenflies/Direction.lean:180:21: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Direction.lean:435:25: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Direction.lean:445:25: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [2553/2620] Built MerLeanExperiment.GraphSeparator (2.2s)
+✔ [2554/2620] Built MerLeanExperiment.Vendor.Schoenflies.Graph.RelativeEar (3.2s)
+✔ [2555/2620] Built MerLeanExperiment.ColoringFromDensity (3.6s)
+✔ [2556/2620] Built MerLeanExperiment.Vendor.Schoenflies.PolygonalCarrier (4.1s)
+✔ [2557/2620] Built MerLeanExperiment.Vendor.Schoenflies.SegmentMeet (4.2s)
+✔ [2558/2620] Built MerLeanExperiment.SmallGraphDensity (2.6s)
+✔ [2559/2620] Built MerLeanExperiment.SeparatorCounts (2.7s)
+⚠ [2560/2620] Built MerLeanExperiment.Vendor.Schoenflies.Bounded (4.5s)
+warning: MerLeanExperiment/Vendor/Schoenflies/Bounded.lean:41:41: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [2561/2620] Built MerLeanExperiment.Vendor.Schoenflies.Polygonal (4.7s)
+⚠ [2562/2620] Built MerLeanExperiment.Vendor.Schoenflies.Concatenate (4.8s)
+warning: MerLeanExperiment/Vendor/Schoenflies/Concatenate.lean:87:2: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Concatenate.lean:91:2: `if_neg` has been deprecated: Use `ite_eq_right` instead
+✔ [2563/2620] Built MerLeanExperiment.Vendor.Schoenflies.Subarc (4.9s)
+⚠ [2564/2620] Built MerLeanExperiment.Vendor.Schoenflies.LocallyPolygonal (4.8s)
+warning: MerLeanExperiment/Vendor/Schoenflies/LocallyPolygonal.lean:188:25: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/LocallyPolygonal.lean:249:26: `cond_false` has been deprecated: Use `Bool.cond_false` instead
+
+Note: The updated constant has a different type:
+  ∀ {α : Sort u} {a b : α}, (bif false then a else b) = b
+instead of
+  ∀ {α : Sort u_1} (a b : α), (bif false then a else b) = b
+warning: MerLeanExperiment/Vendor/Schoenflies/LocallyPolygonal.lean:251:26: `cond_true` has been deprecated: Use `Bool.cond_true` instead
+
+Note: The updated constant has a different type:
+  ∀ {α : Sort u} {a b : α}, (bif true then a else b) = a
+instead of
+  ∀ {α : Sort u_1} (a b : α), (bif true then a else b) = a
+warning: MerLeanExperiment/Vendor/Schoenflies/LocallyPolygonal.lean:257:24: `cond_false` has been deprecated: Use `Bool.cond_false` instead
+
+Note: The updated constant has a different type:
+  ∀ {α : Sort u} {a b : α}, (bif false then a else b) = b
+instead of
+  ∀ {α : Sort u_1} (a b : α), (bif false then a else b) = b
+warning: MerLeanExperiment/Vendor/Schoenflies/LocallyPolygonal.lean:259:24: `cond_true` has been deprecated: Use `Bool.cond_true` instead
+
+Note: The updated constant has a different type:
+  ∀ {α : Sort u} {a b : α}, (bif true then a else b) = a
+instead of
+  ∀ {α : Sort u_1} (a b : α), (bif true then a else b) = a
+warning: MerLeanExperiment/Vendor/Schoenflies/LocallyPolygonal.lean:349:31: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/LocallyPolygonal.lean:391:31: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [2565/2620] Built MerLeanExperiment.Vendor.Schoenflies.SegmentOrder (5.0s)
+⚠ [2566/2620] Built MerLeanExperiment.Vendor.Schoenflies.Strip (6.3s)
+warning: MerLeanExperiment/Vendor/Schoenflies/Strip.lean:210:28: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Strip.lean:230:32: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Strip.lean:278:19: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Strip.lean:391:45: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Strip.lean:410:45: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [2567/2620] Built MerLeanExperiment.Vendor.Schoenflies.Graph.Drawing (2.9s)
+✔ [2568/2620] Built MerLeanExperiment.Vendor.Schoenflies.TwoArcs (2.8s)
+✔ [2569/2620] Built MerLeanExperiment.Vendor.Schoenflies.CrosscutCells (3.1s)
+✔ [2570/2620] Built MerLeanExperiment.Vendor.Schoenflies.Subdivide (2.8s)
+⚠ [2571/2620] Built MerLeanExperiment.Vendor.Schoenflies.PolyLocal (3.1s)
+warning: MerLeanExperiment/Vendor/Schoenflies/PolyLocal.lean:280:31: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/PolyLocal.lean:301:31: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [2572/2620] Built MerLeanExperiment.Vendor.Schoenflies.StripConstants (2.9s)
+✔ [2573/2620] Built MerLeanExperiment.Vendor.Schoenflies.StripConnected (3.1s)
+✔ [2574/2620] Built MerLeanExperiment.Vendor.Schoenflies.Graph.CycleJordan (3.6s)
+✔ [2575/2620] Built MerLeanExperiment.GraphRepresentation (3.6s)
+⚠ [2576/2620] Built MerLeanExperiment.Vendor.Schoenflies.Graph.OuterFace (3.7s)
+warning: MerLeanExperiment/Vendor/Schoenflies/Graph/OuterFace.lean:93:45: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [2577/2620] Built MerLeanExperiment.CrosscutRegions (3.6s)
+✔ [2578/2620] Built MerLeanExperiment.Vendor.Schoenflies.Overlay (3.7s)
+✔ [2579/2620] Built MerLeanExperiment.Vendor.Schoenflies.Graph.VertexSquares (4.1s)
+⚠ [2580/2620] Built MerLeanExperiment.Vendor.Schoenflies.Parity (5.3s)
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:380:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:380:33: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:381:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:384:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:384:54: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:385:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:386:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:386:54: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:387:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:389:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:389:50: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:390:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:391:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:391:50: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:392:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:693:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:693:42: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:694:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:694:50: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:696:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:697:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:698:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:698:50: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:704:14: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:704:36: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:705:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:705:52: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:707:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:708:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:709:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:710:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:712:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:712:52: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:713:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:713:50: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:720:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:720:54: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:721:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:721:34: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:723:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:724:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:725:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:726:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:730:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:730:54: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:731:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:731:34: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:733:14: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:733:54: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:734:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:735:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:737:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:737:50: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:738:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:738:48: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:885:9: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:1002:20: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Parity.lean:1002:32: `if_neg` has been deprecated: Use `ite_eq_right` instead
+⚠ [2581/2620] Built MerLeanExperiment.Vendor.Schoenflies.StripLocal (4.9s)
+warning: MerLeanExperiment/Vendor/Schoenflies/StripLocal.lean:291:8: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/StripLocal.lean:312:8: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [2582/2620] Built MerLeanExperiment.EdgeParameters (4.1s)
+✔ [2583/2620] Built MerLeanExperiment.CrosscutComponents (3.0s)
+✔ [2584/2620] Built MerLeanExperiment.PlaneBicoloring (4.2s)
+✔ [2585/2620] Built MerLeanExperiment.EdgeSupportedGraph (4.1s)
+✔ [2586/2620] Built MerLeanExperiment.Vendor.Schoenflies.FaceCycles (4.3s)
+⚠ [2587/2620] Built MerLeanExperiment.Vendor.Schoenflies.OverlayGraph (4.3s)
+warning: MerLeanExperiment/Vendor/Schoenflies/OverlayGraph.lean:91:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/OverlayGraph.lean:96:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/OverlayGraph.lean:250:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/OverlayGraph.lean:350:12: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [2588/2620] Built MerLeanExperiment.Vendor.Schoenflies.Graph.Redrawing (4.8s)
+✔ [2589/2620] Built MerLeanExperiment.Vendor.Schoenflies.PolygonBridge (3.6s)
+✔ [2590/2620] Built MerLeanExperiment.EdgeIncidence (2.4s)
+✔ [2591/2620] Built MerLeanExperiment.CycleCounts (2.6s)
+✔ [2592/2620] Built MerLeanExperiment.EarCounts (2.6s)
+⚠ [2593/2620] Built MerLeanExperiment.Vendor.Schoenflies.SimpleArc (2.7s)
+warning: MerLeanExperiment/Vendor/Schoenflies/SimpleArc.lean:149:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/SimpleArc.lean:156:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/SimpleArc.lean:287:35: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/SimpleArc.lean:318:29: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [2594/2620] Built MerLeanExperiment.DrawingAdapter (1.8s)
+✔ [2595/2620] Built MerLeanExperiment.Vendor.Schoenflies.PolygonalJordan (2.8s)
+⚠ [2596/2620] Built MerLeanExperiment.Vendor.Schoenflies.ParitySplitting (1.9s)
+warning: MerLeanExperiment/Vendor/Schoenflies/ParitySplitting.lean:125:20: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/ParitySplitting.lean:125:60: `if_neg` has been deprecated: Use `ite_eq_right` instead
+✔ [2597/2620] Built MerLeanExperiment.Vendor.Schoenflies.PolygonalCrosscut (2.2s)
+⚠ [2598/2620] Built MerLeanExperiment.Vendor.Schoenflies.Realization (3.6s)
+warning: MerLeanExperiment/Vendor/Schoenflies/Realization.lean:879:2: Try this:
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: MerLeanExperiment/Vendor/Schoenflies/Realization.lean:1087:58: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Realization.lean:1090:2: Try this:
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: MerLeanExperiment/Vendor/Schoenflies/Realization.lean:1097:80: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Realization.lean:1101:24: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Realization.lean:1103:72: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Realization.lean:1107:30: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/Realization.lean:1144:46: `if_neg` has been deprecated: Use `ite_eq_right` instead
+✔ [2599/2620] Built MerLeanExperiment.Vendor.Schoenflies.PrePolygonSep (2.1s)
+⚠ [2600/2620] Built MerLeanExperiment.Vendor.Schoenflies.FaceCyclesProof (2.3s)
+warning: MerLeanExperiment/Vendor/Schoenflies/FaceCyclesProof.lean:843:2: Try this:
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [2601/2620] Built MerLeanExperiment.Vendor.Schoenflies.PrePolygonArc (2.8s)
+warning: MerLeanExperiment/Vendor/Schoenflies/PrePolygonArc.lean:626:17: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/PrePolygonArc.lean:632:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/PrePolygonArc.lean:691:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/PrePolygonArc.lean:691:22: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/PrePolygonArc.lean:694:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/PrePolygonArc.lean:694:22: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/PrePolygonArc.lean:696:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/Vendor/Schoenflies/PrePolygonArc.lean:696:22: `if_pos` has been deprecated: Use `ite_eq_left` instead
+✔ [2602/2620] Built MerLeanExperiment.Vendor.Schoenflies.FaceCyclesLand (1.8s)
+✔ [2603/2620] Built MerLeanExperiment.FaceSystem (2.2s)
+✔ [2604/2620] Built MerLeanExperiment.EarGeometry (2.2s)
+✔ [2605/2620] Built MerLeanExperiment.CrosscutExact (2.2s)
+✔ [2606/2620] Built MerLeanExperiment.FaceSystemBasics (1.0s)
+✔ [2607/2620] Built MerLeanExperiment.SplicedBoundary (1.0s)
+✔ [2608/2620] Built MerLeanExperiment.CycleFaceSystem (2.3s)
+✔ [2609/2620] Built MerLeanExperiment.EarFaceSplit (2.3s)
+✔ [2610/2620] Built MerLeanExperiment.UnaffectedFaces (2.3s)
+✔ [2611/2620] Built MerLeanExperiment.FaceReplacement (2.4s)
+✔ [2612/2620] Built MerLeanExperiment.EarFaceSystem (1.5s)
+✔ [2613/2620] Built MerLeanExperiment.EulerFaceSystem (1.6s)
+✔ [2614/2620] Built MerLeanExperiment.TwoConnectedDensity (1.5s)
+✔ [2615/2620] Built MerLeanExperiment.PlanarDensity (1.6s)
+✔ [2616/2620] Built MerLeanExperiment.HereditaryDensity (1.5s)
+✔ [2617/2620] Built MerLeanExperiment.Goal (1.6s)
+✔ [2618/2620] Built MerLeanExperiment.ArbitraryPalette (1.8s)
+✔ [2619/2620] Built MerLeanExperiment (1.6s)
+Build completed successfully (2620 jobs).

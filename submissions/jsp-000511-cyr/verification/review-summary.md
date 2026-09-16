@@ -1,0 +1,11 @@
+# Supporting review summary
+
+Two automated review roles, separate from the proof implementation, reviewed source correspondence and proof completeness. Both reported a pass on the final sources. These reviews are supporting evidence; they do not impersonate the prize's public reviewers or supply award-verification signatures.
+
+The source review compared the finite-graph Alon–Tarsi statement, the raw catalog question, the frozen target, the ordinary drawing definition, and the arbitrary-palette extension. The original hypotheses remain explicit. No additional graph, palette, orientation, Euler, or coloring condition was found. The finite graph convention is stated explicitly rather than inserted into the catalog quotation.
+
+The proof review inspected the entire 92-file primary-root import cone, the supplemental palette theorem, and the final aggregator. It checked the actual drawing adapter, complementary-face construction, Euler and boundary counts, separator induction, exact endpoint counts, Hall orientation, kernel coloring, and palette transport. The local import graph is acyclic. The proof source contains no custom axiom declarations, proof holes, unchecked oracle calls, or assumed intermediate results.
+
+The independently executed typed checks were subsequently reproduced on the submission copy using [Audit.lean](../Audit.lean). Both final declarations and the principal intermediate results have exactly the three standard axiom dependencies recorded in [axioms.log](axioms.log). The submission's exported primary proof is byte-identical to the export that passed exact frozen-target comparison and kernel replay. The source inventory and receipts are in [proof-sources.json](proof-sources.json) and [receipt.json](receipt.json).
+
+The comparator driver was also independently reviewed and tested. Its reference is a proposition definition, not a theorem with a proof hole. Comparison uses the definition's value, traverses its complete dependencies without exception holes, audits the actual theorem proof, and replays both environments. Native replay and source alignment do not assert sandbox isolation, an external kernel's agreement, official target availability, or prize approval.
