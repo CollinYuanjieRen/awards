@@ -1,0 +1,32 @@
+Local exported-package verification; upstream dependency caches used.
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+✔ [8748/8750] Built Proof.Main (15s)
+✔ [8749/8750] Built Proof (29s)
+Build completed successfully (8750 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos902.two_pow_sub_one_le_of_hasProperty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos902.two_pow_sub_one_le_schutte' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos902.schutte_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos902.schutte_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Erdos902.IsTournament.{u_1} : {V : Type u_1} → (V → V → Prop) → Prop :=
+fun {V} r => (∀ (v : V), ¬r v v) ∧ ∀ (u v : V), u ≠ v → (r u v ↔ ¬r v u)
+def Erdos902.Dominates.{u_1} : {V : Type u_1} → (V → V → Prop) → V → Finset V → Prop :=
+fun {V} r w S => w ∉ S ∧ ∀ v ∈ S, r w v
+def Erdos902.HasProperty.{u_1} : {V : Type u_1} → (V → V → Prop) → ℕ → Prop :=
+fun {V} r n => (∃ S, S.card = n) ∧ ∀ (S : Finset V), S.card = n → ∃ w, Dominates r w S
+def Erdos902.schutte : ℕ → ℕ :=
+fun n => sInf {N | ∃ r, IsTournament r ∧ HasProperty r n}
+exit=0
+
+$ lake env lean Challenge.lean
+Challenge.lean:31:8: warning: declaration uses `sorry`
+Challenge.lean:35:8: warning: declaration uses `sorry`
+Challenge.lean:40:8: warning: declaration uses `sorry`
+Challenge.lean:43:8: warning: declaration uses `sorry`
+exit=0
