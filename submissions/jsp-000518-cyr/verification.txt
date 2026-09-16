@@ -1,0 +1,75 @@
+Local exported-package verification; upstream dependency caches used (arm64 macOS).
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+info: JSP518/External/Erdos202.lean:21811:0: 'Erdos202.erdos_202' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP518/External/Erdos202.lean:21813:0: 'Erdos202.ParkPham.park_pham_threshold_not_small_lt_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP518/External/Erdos202.lean:21816:0: 'Erdos202.ParkPham.spread_disjointness_theorem' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP518/External/Erdos202.lean:21819:0: 'Erdos202.bfv_pruning_theorem' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP518/External/Erdos202.lean:21822:0: 'Erdos202.bfv_omega_count_theorem' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP518/External/Erdos202.lean:21825:0: 'Erdos202.bfv_lower_bound_theorem' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP518/External/Erdos447.lean:3122:0: 'Erdos447.erdos_447' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP518/External/Erdos487.lean:3066:0: 'Erdos487.erdos_487' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP518/External/Erdos637.lean:1170:0: 'Erdos637.erdos_637' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (8765 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'JKLY.jkly_distinct_degrees_nat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JKLY.jkly_distinct_degrees' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JKLY.jkly_theorem2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JKLY.lemma7' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JKLY.lemma4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JKLY.antic_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JKLY.exists_diverse_subgraph_of_ramseyFree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JKLY.exists_indepSet_subset_card_ge_of_edges' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JKLY.PB.chebyshev_sq_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'JKLY.card_filter_shift_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos637.erdos_637' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos88.ksssLemma44' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0
+
+$ lake build Challenge   # comparator challenge module; the only warnings are its intended sorry declarations
+sorry-warnings=4
+Build completed successfully (8746 jobs).
+exit=0
+
+$ challenge-vs-solution identity (whitespace-normalized text of each definition and theorem statement)
+theorem jkly_distinct_degrees_nat identical
+theorem jkly_distinct_degrees identical
+theorem jkly_theorem2 identical
+theorem erdos_637 identical
+def Diverse identical
+def neighborsIn identical
+def RamseyFree identical
+def degreeInto identical
+def numDistinctDegrees identical
+def neighborhoodDiff identical
+variable {V : Type u} [Fintype V] [DecidableEq V] present in both
+attribute [local instance] Classical.propDecidable present in both
+open scoped BigOperators symmDiff present in both
+exit=0
+
+$ grep -rnE "sorry|admit|^\s*axiom|native_decide|maxHeartbeats|maxRecDepth|unsafe" JSP518/JKLY Audit.lean JSP518.lean
+JSP518/JKLY/RandomVector.lean:477:set_option maxHeartbeats 800000 in
+exit=0
+
+$ grep -rnE "^\s*axiom|native_decide|sorry|admit" JSP518/External   # third-party tree (see external-changes.txt)
+(no matches)
+exit=0
+
+$ shasum -a 256 -c plby-source-hashes.txt   # against the plby originals at commit 8822f7dd
+Erdos202.lean: OK
+Erdos447.lean: OK
+Erdos487.lean: OK
+Erdos637.lean: OK
+Erdos88/FiniteES.lean: OK
+Erdos88/Foundations.lean: OK
+Erdos88/Probability.lean: OK
+Erdos88/Richness.lean: OK
+Erdos920/Averaging.lean: OK
+Erdos920/Sampling.lean: OK
+../Util/Ramsey.lean: OK
+exit=0

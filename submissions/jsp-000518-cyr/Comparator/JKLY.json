@@ -1,0 +1,12 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "JSP518.JKLY.Main",
+  "theorem_names": [
+    "JKLY.jkly_distinct_degrees_nat",
+    "JKLY.jkly_distinct_degrees",
+    "JKLY.jkly_theorem2",
+    "Erdos637.erdos_637"
+  ],
+  "permitted_axioms": ["propext", "Classical.choice", "Quot.sound"],
+  "enable_nanoda": true
+}

@@ -1,0 +1,85 @@
+Differences between JSP518/External/ and plby/lean-proofs commit 8822f7ddef30fadbd92e1c6ab4ed897af356af5e, src/latest/
+(unified diff; ErdosProblems/X.lean and Util/Ramsey.lean are copied verbatim; the only edits are the import-prefix rewrites ErdosProblems.X -> JSP518.External.X and Util.Ramsey -> JSP518.External.Util.Ramsey)
+
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos487.lean	2026-09-16 09:20:15
++++ ./Erdos487.lean	2026-09-16 17:08:01
+@@ -41,7 +41,7 @@
+ 
+ import Mathlib
+ 
+-import ErdosProblems.Erdos447
++import JSP518.External.Erdos447
+ 
+ set_option linter.style.setOption false
+ set_option linter.flexible false
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos637.lean	2026-09-16 09:20:16
++++ ./Erdos637.lean	2026-09-16 17:08:01
+@@ -20,10 +20,10 @@
+ Released under Apache 2.0 license as described in the file LICENSE.
+ Authors: OpenAI Codex
+ -/
+-import ErdosProblems.Erdos88.Richness
+-import ErdosProblems.Erdos88.Probability
+-import ErdosProblems.Erdos920.Sampling
+-import ErdosProblems.Erdos487
++import JSP518.External.Erdos88.Richness
++import JSP518.External.Erdos88.Probability
++import JSP518.External.Erdos920.Sampling
++import JSP518.External.Erdos487
+ 
+ /-!
+ # Erdős Problem 637
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos88/FiniteES.lean	2026-09-16 09:20:17
++++ ./Erdos88/FiniteES.lean	2026-09-16 17:08:01
+@@ -16,8 +16,8 @@
+ -/
+ 
+ import Mathlib
+-import ErdosProblems.Erdos88.Foundations
+-import Util.Ramsey
++import JSP518.External.Erdos88.Foundations
++import JSP518.External.Util.Ramsey
+ 
+ /-!
+ # The finite Erdős--Szemerédi density argument
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos88/Probability.lean	2026-09-16 09:20:17
++++ ./Erdos88/Probability.lean	2026-09-16 17:08:01
+@@ -1,5 +1,5 @@
+ import Mathlib
+-import ErdosProblems.Erdos920.Averaging
++import JSP518.External.Erdos920.Averaging
+ 
+ /-!
+ # Finite probability tools for Erdős Problem 88
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos88/Richness.lean	2026-09-16 09:20:17
++++ ./Erdos88/Richness.lean	2026-09-16 17:08:01
+@@ -15,8 +15,8 @@
+ limitations under the License.
+ -/
+ 
+-import ErdosProblems.Erdos88.Foundations
+-import ErdosProblems.Erdos88.FiniteES
++import JSP518.External.Erdos88.Foundations
++import JSP518.External.Erdos88.FiniteES
+ import Mathlib.Analysis.SpecialFunctions.Pow.Real
+ import Mathlib.Combinatorics.Enumerative.DoubleCounting
+ import Mathlib.Combinatorics.SimpleGraph.DegreeSum
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos920/Averaging.lean	2026-09-16 09:20:17
++++ ./Erdos920/Averaging.lean	2026-09-16 17:08:01
+@@ -1,6 +1,6 @@
+ import Mathlib
+-import Util.Ramsey
+-import ErdosProblems.Erdos202
++import JSP518.External.Util.Ramsey
++import JSP518.External.Erdos202
+ 
+ /-!
+ # Finite averaging lemmas for Erdős Problem 920
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos920/Sampling.lean	2026-09-16 09:20:17
++++ ./Erdos920/Sampling.lean	2026-09-16 17:08:01
+@@ -1,4 +1,4 @@
+-import ErdosProblems.Erdos920.Averaging
++import JSP518.External.Erdos920.Averaging
+ 
+ /-!
+ # Bernoulli sampling and deletion for Erdős Problem 920
