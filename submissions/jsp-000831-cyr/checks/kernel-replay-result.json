@@ -1,0 +1,19 @@
+{
+  "command": [
+    "elan",
+    "run",
+    "leanprover/lean4:v4.34.0-rc1",
+    "lake",
+    "--no-cache",
+    "env",
+    "leanchecker",
+    "--fresh",
+    "--verbose",
+    "MerLeanExperiment.Kesten"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 310.973767709,
+  "scope": "all constants imported by MerLeanExperiment.Kesten replayed into fresh environment",
+  "checker": "Lean bundled leanchecker; same Lean kernel implementation, not external implementation",
+  "provider_profile_valid_before_and_after": true
+}

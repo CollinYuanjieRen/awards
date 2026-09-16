@@ -1,0 +1,15 @@
+Kesten interval formalization for JSP-000831 / Erdős 998.
+
+Adapted material in MerLeanExperiment/Basic.lean and IntervalIdentity.lean:
+plby/lean-proofs, src/latest/ErdosProblems/Erdos998.lean,
+commit 8822f7ddef30fadbd92e1c6ab4ed897af356af5e.
+Original notice: Copyright (c) 2026. All rights reserved.
+Released under the Apache License, Version 2.0.
+Formal authors listed upstream: Codex and GPT-5.6 Sol.
+The adapted definitions/helper have been modified for this development.
+See LICENSE-APACHE for the license text.
+
+Mathematical attribution: Hecke–Ostrowski sufficiency and Kesten necessity.
+The measurable-transfer/Fourier proof route follows Grepstad–Lev,
+Sets of bounded discrepancy for multi-dimensional irrational rotation,
+arXiv:1404.0165, section 2, with further historical attribution given there.

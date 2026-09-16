@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "checked_utc": "2026-09-16T15:10:57.448063+00:00",
+  "problem": "JSP-000831 / Erdos 998",
+  "root": "Kesten.bounded_remainder_iff",
+  "result": "Full classical interval-length iff proved with original hypotheses",
+  "lean": {
+    "version": "v4.34.0-rc1",
+    "commit": "3447a668783dbce1a8fdb97101dd067687b2b418"
+  },
+  "mathlib_commit": "1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "prize_axiom_acceptance": "UNCONFIRMED: rules require audits but give no explicit allowlist for these standard foundations",
+  "data_parameters": [
+    "alpha : Real",
+    "u : Real",
+    "v : Real"
+  ],
+  "original_hypotheses": [
+    "Irrational alpha",
+    "0 <= u",
+    "u < v",
+    "v <= 1"
+  ],
+  "added_hypotheses": [],
+  "checks": {
+    "full_build": {
+      "exit_code": 0,
+      "jobs": 3521,
+      "log": "checks/full-build.log"
+    },
+    "public_fixed_and_expanded_type_audit": {
+      "exit_code": 0,
+      "source": "Audit.lean",
+      "log": "checks/public-audit.log"
+    },
+    "binder_and_axiom_audit": {
+      "exit_code": 0,
+      "data_binders": 3,
+      "original_proposition_binders": 4,
+      "log": "checks/runtime-audit.log",
+      "note": "Tool-generated census support is not redistributed; Audit.lean exposes both checked public types."
+    },
+    "fresh_kernel_replay": {
+      "command": [
+        "elan",
+        "run",
+        "leanprover/lean4:v4.34.0-rc1",
+        "lake",
+        "--no-cache",
+        "env",
+        "leanchecker",
+        "--fresh",
+        "--verbose",
+        "MerLeanExperiment.Kesten"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 310.973767709,
+      "scope": "all constants imported by MerLeanExperiment.Kesten replayed into fresh environment",
+      "checker": "Lean bundled leanchecker; same Lean kernel implementation, not external implementation",
+      "provider_profile_valid_before_and_after": true
+    },
+    "source_lint": {
+      "status": "PASS",
+      "forbidden_constructs_found": []
+    },
+    "publication_copy": {
+      "full_build_exit_code": 0,
+      "jobs": 3521,
+      "public_audit_exit_code": 0
+    }
+  },
+  "independent_agent_reviews": {
+    "source_alignment": {
+      "verdict": "passed",
+      "model": "gpt-6-astra",
+      "report_sha256": "017d52b28bc4037e5c9ef4c303d157ab2b197403dd77e42cbea5f54309b3000f"
+    },
+    "proof_completeness_and_dependencies": {
+      "verdict": "passed",
+      "model": "gpt-6-astra",
+      "report_sha256": "7606d78df965a4ec8502f946d6987be530631e91534624fd9a642d77e45ec541"
+    },
+    "limitation": "Separate AI reviewers, not prize-appointed verification or independent kernel implementations; private workflow reports are not redistributed."
+  },
+  "official_comparator": {
+    "status": "NOT-AVAILABLE",
+    "searched_repository": "google-deepmind/formal-conjectures",
+    "commit": "40e7c98697de6f66b8cbdbf641749ab39ed9c152",
+    "complete_tree_searched": true,
+    "matching_problem_998_paths": [],
+    "cached_problem_page_indicator": "Formalised statement? No",
+    "actual_comparator_run": false,
+    "fallback": "Independent source alignment, fixed and expanded typed audits, full fresh kernel replay and axiom closure"
+  },
+  "merlean_grade": {
+    "status": "NOT_AWARDED",
+    "executable_audit": "FAIL",
+    "log": "checks/merlean-grade-audit.log",
+    "independently_diagnosed_causes": [
+      "Stock Mathlib Real is absent from recorder trusted structure allowlist.",
+      "Unconditional scope rejects original proposition premises; conditional scope rejects settled question status."
+    ],
+    "runtime_policy_modified": false,
+    "theorem_weakened": false
+  },
+  "official_verification": "NOT_CLAIMED",
+  "award_or_priority": "NOT_CLAIMED",
+  "source_files": {
+    ".gitignore": {
+      "sha256": "04b2694481b3f33aabf5623d93107189bead8e93b5d766a803cca2d4bf161e02",
+      "bytes": 31
+    },
+    "Audit.lean": {
+      "sha256": "0f7a02419f6de7be9cc3f74fd94ec53d71d8d0651c3fae2643f86b17ef822b1f",
+      "bytes": 930
+    },
+    "LICENSE-APACHE": {
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+      "bytes": 11357
+    },
+    "MerLeanExperiment.lean": {
+      "sha256": "95f7628aad696219acbcfc195eee8c7416f52b08c23d1f81c2b87038b967f8e8",
+      "bytes": 32
+    },
+    "MerLeanExperiment/Basic.lean": {
+      "sha256": "c1b39d13a543bae0894b8c44e0c62397468cbbf41d91a8c5d74904aa01156377",
+      "bytes": 1274
+    },
+    "MerLeanExperiment/BirkhoffBridge.lean": {
+      "sha256": "c673bb5309b166ca36f6e4cc55c226be27c56885ef6410883f1755c4d0686aa9",
+      "bytes": 1395
+    },
+    "MerLeanExperiment/BoundedTransfer.lean": {
+      "sha256": "91e54f47fa85b849f31ee36bbd1e9bc6580cba5e53716b612f22e4af4aa60351",
+      "bytes": 6064
+    },
+    "MerLeanExperiment/CountBridge.lean": {
+      "sha256": "b16f81ea6460be1a56c00794337bc18725ad04730a06afe2a3036e7c4dc9e416",
+      "bytes": 2122
+    },
+    "MerLeanExperiment/DenseBound.lean": {
+      "sha256": "705171fc33a50bbea13f9471ac5ff16c921592643f37aa17ea71b42f70ba9567",
+      "bytes": 2748
+    },
+    "MerLeanExperiment/FourierNonzero.lean": {
+      "sha256": "cf69ffbf9be2fd618504c02e98678979e09683a6b4d3d6a60f4347a76d670e00",
+      "bytes": 1704
+    },
+    "MerLeanExperiment/FourierTranslate.lean": {
+      "sha256": "148bb328d505c6a560e5b67a97fc9f4a9a1f7394625de2024d5f9524b28374df",
+      "bytes": 1364
+    },
+    "MerLeanExperiment/IntervalIdentity.lean": {
+      "sha256": "75e6b3b697170cbfdbe155b47d1ca9f9f42d371fef00f9c93fdb6d436292cca1",
+      "bytes": 2365
+    },
+    "MerLeanExperiment/IntervalRegularity.lean": {
+      "sha256": "de9def774864e7b0e2f16c71be1254f050c530037ac67e87224e5e2e2a43c102",
+      "bytes": 3713
+    },
+    "MerLeanExperiment/Kesten.lean": {
+      "sha256": "e1aa9478aae605e7c01590188fffeed59c6f0f6021c6673ba90201b07469726d",
+      "bytes": 673
+    },
+    "MerLeanExperiment/Necessity.lean": {
+      "sha256": "5798f972dec98dd7771d24f681405275c8e07108ad618f0b44aadf835b60df23",
+      "bytes": 3612
+    },
+    "MerLeanExperiment/RotationOrbit.lean": {
+      "sha256": "37435c6615a670c2c863fac004ae33ead63f46d8a90cb45aea8555a5cfaf4f43",
+      "bytes": 1840
+    },
+    "MerLeanExperiment/ShiftSum.lean": {
+      "sha256": "7cb8ed098d3cee4f87f924fa479e817ea2a7be3ea76533ed3e8fb2d0126dbd6b",
+      "bytes": 4956
+    },
+    "MerLeanExperiment/Spectrum.lean": {
+      "sha256": "3ef80a87801abc87f9927a12b198e1509084f972b2eb922d82042b3a7b806ee1",
+      "bytes": 2158
+    },
+    "MerLeanExperiment/Sufficiency.lean": {
+      "sha256": "e245a202d29a918ef6a823cb91a3f02a9e06695d8a9f5133d8d2ce7897f5620b",
+      "bytes": 1634
+    },
+    "NOTICE": {
+      "sha256": "8a8bb90b17eaa88f4244e597b5437621ac556ba0fd7b9396cba95eec1510e3f2",
+      "bytes": 812
+    },
+    "README.md": {
+      "sha256": "3bc55ea6bde1e8e6658268eb0f8edcc33c6260a33542a4ac75f8c3bd8733bb41",
+      "bytes": 4318
+    },
+    "checks/full-build.log": {
+      "sha256": "c1aaf1adbbfda1c736644b3b116634d3005e9648fcb5c84d35a1d1193e3d6ca2",
+      "bytes": 89
+    },
+    "checks/kernel-replay-result.json": {
+      "sha256": "c7def7e426bfe43928be95fca3ece5589631aa9a476028e89c19c9444ee374bf",
+      "bytes": 510
+    },
+    "checks/kernel-replay.log": {
+      "sha256": "63b048418b9a03c00982752d901556d3506fff3680e2ba9ff47d79def42cab7f",
+      "bytes": 48
+    },
+    "checks/merlean-grade-audit.log": {
+      "sha256": "abf1eb9bbc7adce21b1d6948eb06afb2bac828518cc83a1f1e213226c4816a3b",
+      "bytes": 571
+    },
+    "checks/public-audit.log": {
+      "sha256": "89b42c7bc0aa09ae3dfd02cea54306f562c789e22621699448a6ae9c2ccffb56",
+      "bytes": 90
+    },
+    "checks/runtime-audit.log": {
+      "sha256": "17f5a3fb85af740c375ae91e857f101b192f46401e1345109183162ad611e296",
+      "bytes": 2307
+    },
+    "lake-manifest.json": {
+      "sha256": "7612a85e246c198b3d5cbe253f90c8af636d18a4e99cd9300d8bf87558cac720",
+      "bytes": 3572
+    },
+    "lakefile.toml": {
+      "sha256": "e2fcbbef3c6d47faccb3f3a651358793be972729e089c090534ead3693f606af",
+      "bytes": 262
+    },
+    "lean-toolchain": {
+      "sha256": "cdbc6c372a2b37ad94430a6cec69cedfa4d36f255bfd968773fd91bf7a1746bf",
+      "bytes": 29
+    }
+  }
+}

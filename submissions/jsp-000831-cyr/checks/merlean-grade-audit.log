@@ -1,0 +1,6 @@
+FAIL
+- KERNEL_RUNTIME_STRUCTURE_UNAUDITED: Kesten.bounded_remainder_iff binder α uses custom structure Real without an intended-model interface
+- KERNEL_RUNTIME_STRUCTURE_UNAUDITED: Kesten.bounded_remainder_iff binder u uses custom structure Real without an intended-model interface
+- KERNEL_RUNTIME_STRUCTURE_UNAUDITED: Kesten.bounded_remainder_iff binder v uses custom structure Real without an intended-model interface
+- KERNEL_RUNTIME_UNVERIFIED: run the heavy audit CLI, not metadata-only audit
+- SCOPE_MISMATCH: unconditional Gold cannot have proposition premises

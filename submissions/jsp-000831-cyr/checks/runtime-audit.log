@@ -1,0 +1,11 @@
+Kesten.bounded_remainder_iff (α u v : ℝ) (hα : Irrational α) (hu : 0 ≤ u) (huv : u < v) (hv : v ≤ 1) :
+  Kesten.HasBoundedRemainder α u v ↔ ∃ k l, v - u = ↑k * α + ↑l
+'Kesten.bounded_remainder_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+{"binderInfo":"explicit","declaration":"Kesten.bounded_remainder_iff","index":0,"isProp":false,"name":"α","piDomainProps":[],"structure":"Real","tag":"MERLEAN_BINDER","terminalHead":"Real","terminalIsProp":false,"terminalPropArgs":[],"type":"ℝ"}
+{"binderInfo":"explicit","declaration":"Kesten.bounded_remainder_iff","index":1,"isProp":false,"name":"u","piDomainProps":[],"structure":"Real","tag":"MERLEAN_BINDER","terminalHead":"Real","terminalIsProp":false,"terminalPropArgs":[],"type":"ℝ"}
+{"binderInfo":"explicit","declaration":"Kesten.bounded_remainder_iff","index":2,"isProp":false,"name":"v","piDomainProps":[],"structure":"Real","tag":"MERLEAN_BINDER","terminalHead":"Real","terminalIsProp":false,"terminalPropArgs":[],"type":"ℝ"}
+{"binderInfo":"explicit","declaration":"Kesten.bounded_remainder_iff","index":3,"isProp":true,"name":"hα","piDomainProps":[],"structure":"","tag":"MERLEAN_BINDER","terminalHead":"Irrational","terminalIsProp":true,"terminalPropArgs":[false],"type":"Irrational α"}
+{"binderInfo":"explicit","declaration":"Kesten.bounded_remainder_iff","index":4,"isProp":true,"name":"hu","piDomainProps":[],"structure":"","tag":"MERLEAN_BINDER","terminalHead":"LE.le","terminalIsProp":true,"terminalPropArgs":[false,false,false,false],"type":"0 ≤ u"}
+{"binderInfo":"explicit","declaration":"Kesten.bounded_remainder_iff","index":5,"isProp":true,"name":"huv","piDomainProps":[],"structure":"","tag":"MERLEAN_BINDER","terminalHead":"LT.lt","terminalIsProp":true,"terminalPropArgs":[false,false,false,false],"type":"u < v"}
+{"binderInfo":"explicit","declaration":"Kesten.bounded_remainder_iff","index":6,"isProp":true,"name":"hv","piDomainProps":[],"structure":"","tag":"MERLEAN_BINDER","terminalHead":"LE.le","terminalIsProp":true,"terminalPropArgs":[false,false,false,false],"type":"v ≤ 1"}
+{"declaration":"Kesten.bounded_remainder_iff","hasLeadingForall":false,"isNegation":false,"isProp":true,"tag":"MERLEAN_RESULT","type":"Kesten.HasBoundedRemainder α u v ↔ ∃ k l, v - u = ↑k * α + ↑l"}
