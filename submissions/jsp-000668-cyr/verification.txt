@@ -1,0 +1,38 @@
+Local exported-package verification (fresh package directory under a clean git worktree; dependencies fetched from the official Mathlib cache server); arm64 macOS; 2026-09-16T20:24:00Z.
+
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake exe cache get
+Decompressed 8537 already-cached file(s)
+Completed successfully in 13582 ms!
+exit=0
+
+$ lake build
+Build completed successfully (8750 jobs).
+exit=0 (no errors; no sorry warnings; the base-colouring checks run by kernel reduction, Jsp668.Base ≈ 22 s)
+
+$ lake env lean Audit.lean
+'Erdos811.exists_balanced_no_rainbowK4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos811.K4_not_forced' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos811.tower_balancedWith' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos811.tower_noRainbow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos811.base_balanced' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos811.base_noRainbow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos811.lift_balancedWith' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos811.lift_noRainbow' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0
+
+$ lake env lean Challenge.lean   # statement-only comparator module; the two expected sorry warnings are its targets
+Challenge.lean:30:8: warning: declaration uses `sorry`
+Challenge.lean:35:8: warning: declaration uses `sorry`
+exit=0
+
+$ grep -rn "sorry\|admit\|native_decide\|implemented_by\|opaque\|unsafe\|^axiom\|partial \|ofReduceBool" Jsp668 Jsp668.lean Audit.lean
+(no matches)
+
+SHA-256 of the recorded source statement:
+72afa3ab29c94fc432966124a41581a9127c3af6c503ef16c9cb636ca2625b50  sources/erdos811-statement.txt
+
+Lean toolchain: leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d (lake-manifest.json).
