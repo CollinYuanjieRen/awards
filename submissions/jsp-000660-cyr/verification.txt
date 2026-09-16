@@ -1,0 +1,45 @@
+Local exported-package verification; upstream dependency caches used.
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+Build completed successfully (8754 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos803.alon_construction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos803.not_erdosSimonovitsUniform' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos803.not_erdosSimonovitsLiteral' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Erdos803.sdeg.{u_1} : {V : Type u_1} → {G : SimpleGraph V} → G.Subgraph → V → ℕ :=
+fun {V} {G} H v => (H.neighborSet v).ncard
+def Erdos803.Balanced.{u_1} : {V : Type u_1} → {G : SimpleGraph V} → ℝ → G.Subgraph → Prop :=
+fun {V} {G} D H => ∀ v ∈ H.verts, ∀ w ∈ H.verts, ↑(sdeg H v) ≤ D * ↑(sdeg H w)
+def Erdos803.ErdosSimonovitsUniform : ℝ → ℝ → Prop :=
+fun ε D =>
+  ∀ (m₀ : ℕ),
+    ∃ n₀,
+      ∀ (n : ℕ),
+        n₀ ≤ n →
+          ∀ (G : SimpleGraph (Fin n)),
+            ↑n * Real.logb 2 ↑n ≤ ↑G.edgeSet.ncard →
+              ∃ H,
+                m₀ ≤ H.verts.ncard ∧
+                  Erdos803.Balanced D H ∧ ε * ↑H.verts.ncard * Real.logb 2 ↑H.verts.ncard ≤ ↑H.edgeSet.ncard
+def Erdos803.ErdosSimonovitsLiteral : ℝ → ℝ → Prop :=
+fun ε D =>
+  ∀ (m : ℕ),
+    1 ≤ m →
+      ∃ n₀,
+        ∀ (n : ℕ),
+          n₀ ≤ n →
+            ∀ (G : SimpleGraph (Fin n)),
+              ↑n * Real.logb 2 ↑n ≤ ↑G.edgeSet.ncard →
+                ∃ H, H.verts.ncard = m ∧ Erdos803.Balanced D H ∧ ε * ↑m * Real.logb 2 ↑m ≤ ↑H.edgeSet.ncard
+exit=0
+
+$ lake env lean Challenge.lean
+Challenge.lean:39:8: warning: declaration uses `sorry`
+Challenge.lean:47:8: warning: declaration uses `sorry`
+Challenge.lean:51:8: warning: declaration uses `sorry`
+exit=0
