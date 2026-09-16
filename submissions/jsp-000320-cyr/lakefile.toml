@@ -1,0 +1,31 @@
+name = "jsp_000320_erdos387"
+version = "0.1.0"
+defaultTargets = ["Erdos387Proof"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "db584cd6d46c92f209a44c0f1c829460d327499d"
+
+# Fetched and patched by `python3 fetch_pinned.py` (frenzymath/FormalPantheon, Apache-2.0).
+[[require]]
+name = "BoundedGaps"
+path = "vendor/formalpantheon/BoundedGaps"
+
+[[require]]
+name = "Waring"
+path = "vendor/formalpantheon/Warning"
+
+# First-party: the proof of Erdős problem 387.
+[[lean_lib]]
+name = "Erdos387Proof"
+
+# Apache-2.0, shipped in this package; see LICENSES/PrimeNumberTheoremAnd-LICENSE.
+[[lean_lib]]
+name = "PrimeNumberTheoremAnd"
+globs = ["PrimeNumberTheoremAnd.*"]
+
+# Fetched by `python3 fetch_pinned.py` (plby/lean-proofs, no license grant, not redistributed).
+[[lean_lib]]
+name = "ErdosProblems"
+globs = ["ErdosProblems.*"]

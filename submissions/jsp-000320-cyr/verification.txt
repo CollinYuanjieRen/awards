@@ -1,0 +1,73 @@
+Local exported-package verification, 2026-09-16, arm64 macOS (Darwin 25.6.0).
+Upstream dependency cache used for Mathlib only (shared read-only install, .lake/packages
+symlinked, not committed). The 101 plby files and the 886 FormalPantheon files are fetched
+and hash-verified by fetch_pinned.py and are not part of the committed package; they, the
+9 shipped PrimeNumberTheoremAnd files and all 146 first-party modules were compiled from
+source in this directory in a single from-scratch build (no pre-existing .lake/build).
+
+$ python3 fetch_pinned.py
+ok  ErdosProblems: 101 files fetched from plby/lean-proofs @ 8822f7ddef30fadbd92e1c6ab4ed897af356af5e and hash-verified
+ok  FormalPantheon tarball sha256 f1eac12fa3b7b5a6dec5f722b82a33345b1c4cec4f15343b0ded70ee2ab2608c
+ok  applied patches/formalpantheon-mathlib-v4.33.0.patch (91 files, Mathlib v4.32 -> v4.33 adaptation)
+ok  FormalPantheon (ffbb65c21afc): all 892 files verified
+
+all pinned sources fetched and verified
+exit=0
+(elapsed 21 s)
+
+$ lake env lean --version
+Lean (version 4.33.0, arm64-apple-darwin24.6.0, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)
+exit=0
+
+$ elan run leanprover/lean4:v4.33.0 lake build
+... 696 modules compiled (442 FormalPantheon, 101 ErdosProblems, 9 PrimeNumberTheoremAnd,
+    146 Erdos387Proof incl. the library root; the remaining jobs are cached Mathlib) ...
+✔ [9402/9407] Built Erdos387Proof.ConvenientOuterPartial (97s)
+✔ [9403/9407] Built Erdos387Proof.ConvenientError (3.7s)
+✔ [9404/9407] Built Erdos387Proof.Main (3.1s)
+✔ [9405/9407] Built Erdos387Proof.Canonical (2.0s)
+✔ [9406/9407] Built Erdos387Proof (2.9s)
+Build completed successfully (9407 jobs).
+exit=0
+(wall clock 18 min 40 s, 18:55:27 -> 19:14:07 EDT)
+
+Six linter warnings, no errors:
+  Erdos387Proof/FamilyMixedAbel.lean:27:45: Variable name `hV` is not explicitly referenced.
+  ErdosProblems/Erdos387/SquarefreeCandidates.lean:193:2: try 'simp' instead of 'simpa'
+  Erdos387Proof/ConvenientDyadicReduction.lean:{26:14,34:25,60:11,136:12}: Variable name `c` is not explicitly referenced.
+
+$ lake env lean Audit.lean
+'Erdos387Proof.not_exists_uniform_close_divisor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos387.erdos_387' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos387Proof.MainAssembly.main_of_limits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos387Proof.SquarefreeErrorExhaustion.exists_counterexample_of_bad_squarefree_card_lt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Erdos387Proof.MediumError.tendsto_medium_card_div_sieveScale_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Erdos387Proof.ConvenientError.tendsto_convenient_card_div_sieveScale_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Erdos387Proof.SeparatedError.tendsto_separated_card_div_sieveScale_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Erdos387Proof.ExistingCountingBounds.tendsto_squarefree_large_div_sieveScale_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Erdos387Proof.ExistingCountingBounds.exists_cover_with_comparable_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Erdos387Proof.ExistingCountingBounds.eventually_squarefree_card_ge' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Erdos387.shiftedSiegelWalfiszLower' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0
+
+(The two typed `example`s in Audit.lean restating both roots elaborate without output; an
+error would have been printed and the exit code would be nonzero.)
+
+$ grep -rn "sorry\|native_decide" Erdos387Proof PrimeNumberTheoremAnd Erdos387Proof.lean Audit.lean | grep -v "#print axioms"
+(no output)
+$ grep -rln "sorry" ErdosProblems
+(no output)

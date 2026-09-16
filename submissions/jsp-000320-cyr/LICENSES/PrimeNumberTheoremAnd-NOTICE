@@ -1,0 +1,56 @@
+NOTICE for PrimeNumberTheoremAnd/ (Apache License 2.0, §4(b) and §4(c))
+=======================================================================
+
+The nine files under `PrimeNumberTheoremAnd/` redistributed in this package are
+derivative works of
+
+    PrimeNumberTheoremAnd
+    https://github.com/AlexKontorovich/PrimeNumberTheoremAnd
+    licensed under the Apache License, Version 2.0
+    (full text in LICENSES/PrimeNumberTheoremAnd-LICENSE)
+
+They are used to supply the prime-number-theorem-in-arithmetic-progressions input of
+`ErdosProblems/Erdos387/AnalyticInputs.lean` (`import PrimeNumberTheoremAnd.Consequences`).
+
+Files:
+
+    PrimeNumberTheoremAnd/Consequences.lean
+    PrimeNumberTheoremAnd/Defs.lean
+    PrimeNumberTheoremAnd/Fourier.lean
+    PrimeNumberTheoremAnd/SmoothExistence.lean
+    PrimeNumberTheoremAnd/Sobolev.lean
+    PrimeNumberTheoremAnd/Wiener.lean
+    PrimeNumberTheoremAnd/Mathlib/Algebra/Notation/Support.lean
+    PrimeNumberTheoremAnd/Mathlib/Analysis/Asymptotics/Asymptotics.lean
+    PrimeNumberTheoremAnd/Mathlib/Analysis/SpecialFunctions/Log/Basic.lean
+
+Statement of changes
+--------------------
+
+The copies here are NOT taken directly from the PrimeNumberTheoremAnd repository. They are
+byte-identical to `src/latest/PrimeNumberTheoremAnd/` in
+
+    https://github.com/plby/lean-proofs
+    commit 8822f7ddef30fadbd92e1c6ab4ed897af356af5e
+
+which had already modified them relative to upstream PrimeNumberTheoremAnd. Neither the
+upstream files nor plby's copies carry per-file copyright or license headers; the Apache-2.0
+grant comes from the PrimeNumberTheoremAnd repository LICENSE.
+
+Nature of the modifications, established by line-level comparison against
+PrimeNumberTheoremAnd `main` and against the three most recent upstream commits touching
+these files (94.6%, 97.1%, 91.7%, 95.7%, 81.4%, 100.0% and 100% of non-blank lines present
+upstream, for Wiener, Consequences, Sobolev, Defs, Fourier, SmoothExistence and the three
+Mathlib shims respectively):
+
+  * content pruned to the fragment needed downstream;
+  * `set_option linter.style.*` / `linter.flexible` suppressions added;
+  * proofs repaired for a newer Mathlib, one of them annotated
+    `-- The dominated-convergence proof below needs more heartbeats in Lean 4.32.`
+
+No exact upstream base commit reproduces these files by hash, so the derivation cannot be
+pinned more precisely than "PrimeNumberTheoremAnd, as adapted by plby/lean-proofs at
+8822f7ddef30fadbd92e1c6ab4ed897af356af5e". This package makes no further change to them:
+their SHA-256 sums are recorded in `pinned-sources.json`'s sibling analysis
+(`formalizations/jsp-000320-cyr/evidence/packaging-provenance.md`, §6.2) and they are
+shipped verbatim.
