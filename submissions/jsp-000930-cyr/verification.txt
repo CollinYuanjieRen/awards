@@ -1,0 +1,19 @@
+Local exported-package verification; upstream dependency caches used (shared read-only Mathlib install, symlinked .lake/packages, not committed).
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+✔ [8753/8755] Built Erdos1119Wetzel.Cardinality (5.2s)
+✔ [8754/8755] Built Erdos1119Wetzel (3.1s)
+Build completed successfully (8755 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'exists_uncountable_wetzelFamily_iff_continuum_eq_aleph_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'exists_uncountable_wetzelFamily_of_continuum_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'exists_wetzelFamily_card_continuum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1119.erdos_1119' depends on axioms: [propext, Classical.choice, Quot.sound]
+'exists_entire_interpolant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'nodeSeries_differentiable' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0
