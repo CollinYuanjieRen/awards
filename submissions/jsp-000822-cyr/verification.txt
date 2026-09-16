@@ -1,0 +1,50 @@
+Disk discrepancy proof: local verification record
+Date: 2026-09-16T18:52:43.902903+00:00
+Platform: Darwin arm64
+Lean: v4.34.0-rc1
+Mathlib: 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d
+
+Exact root: disk_discrepancy : DiskDiscrepancy.CompleteTarget
+Root hypotheses/instance binders: none.
+Exact mathematical scope: absolute discrepancy on closed disks; running-radius
+lower and upper bounds, plus unrestricted finite-count unboundedness.
+
+Artifact: 62 mathematical modules in the root's local import closure,
+plus the library entry point and Audit.lean. All 62 modules are byte-identical
+to the independently reviewed proof. The only external imports are Mathlib.
+SHA-256 of source-hashes.json: e05ee563dcc9587975eaeeb95ce16e98efbd302cf0fd3c24e370ce9896d8b3e0
+
+Fresh submission build:
+- No local project .olean files existed before the build.
+- The pinned dependency cache was reused.
+- Lake build: exit 0; Build completed successfully (3342 jobs).
+- Audit.lean check: exit 0.
+- All 64 Lean files and the three pinned configuration files had identical
+  hashes before and after the build/check.
+
+Actual Audit.lean output:
+theorem disk_discrepancy : DiskDiscrepancy.CompleteTarget :=
+⟨DiskDiscrepancy.runningLower, ⟨DiskDiscrepancy.runningUpper, DiskDiscrepancy.noUniformDiskBound⟩⟩
+'disk_discrepancy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DiskDiscrepancy.runningLower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DiskDiscrepancy.runningUpper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DiskDiscrepancy.noUniformDiskBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+Trust review:
+- Standard foundational dependencies are propext, Classical.choice, Quot.sound.
+- No sorry/admit/custom axiom/native-evaluation proof in the submitted cone.
+- The three theorem faces and their intended point sets, disks, counts,
+  product probabilities and finite-grid approximations were independently
+  reviewed against the actual definitions and proof closure.
+- The mathematical result is Beck's; this contribution is its Lean formalization.
+
+Limits of this local record:
+This is not an organizer-issued statement, authorized signatory record,
+independent alternative-kernel certificate, network-disabled rebuild of all
+Mathlib dependencies, permanent external archive, or prize acceptance.
+The official JSP-000822 comparator was not available in the inspected awards
+f4e7173d89dfe91022a185427d63452c8ffbf6ae and Formal Conjectures
+40e7c98697de6f66b8cbdbf641749ab39ed9c152 trees; comparator NOT-RUN.
+Explicit prize authorization of the standard foundational axiom set was not
+found. The official eligibility flag is unchanged. See README.md for sources,
+quantifier distinctions and portable reproduction commands.
