@@ -1,0 +1,24 @@
+Local exported-package verification; upstream dependency caches used (shared read-only Mathlib install, symlinked .lake/packages, not committed).
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+✔ [8785/8788] Built EmptyPentagon.Harborth (3.8s)
+✔ [8786/8788] Built EmptyPentagon.SmallHoles (3.7s)
+✔ [8787/8788] Built EmptyPentagon (5.5s)
+Build completed successfully (8788 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Horton.forces_empty_triangle_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Horton.forces_empty_quadrilateral_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Horton.forces_empty_pentagon_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Horton.forcesEmptyKGon_five_ten' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Horton.not_forcesEmptyKGon_five_nine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Horton.forcesEmptyKGon_four_five' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Horton.not_forcesEmptyKGon_four_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Horton.exists_convex_pentagon' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Horton.exists_convex_pentagon_few_interior' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Horton.exists_empty_pentagon_of_few_interior' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0
