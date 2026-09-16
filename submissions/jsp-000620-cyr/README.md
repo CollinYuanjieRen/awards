@@ -34,6 +34,8 @@ The exact Lean toolchain is pinned in [lean-toolchain](lean-toolchain): `leanpro
 
 [Audit.lean](Audit.lean) restates the main theorem as an explicit `example`, and prints the axioms of the lower bounds, the assembled theorem, its corollaries and the imported upper bound.
 
+**Comparator challenge.** For statement comparison with [leanprover/comparator](https://github.com/leanprover/comparator), [Challenge.lean](Challenge.lean) is a self-contained challenge module (imports only Mathlib, statements proved by `sorry`) whose definitions of `Erdos754.f` are copied verbatim from the plby comparator challenge for Erdős 754, and which states the five theorems above plus `Erdos754.erdos_754`; [Comparator/Erdos754Lower.json](Comparator/Erdos754Lower.json) is the matching configuration with `JSP620.Target` as the solution module and the three standard axioms as the only permitted axioms. `lake build Challenge` elaborates it on the pinned toolchain (its only warnings are the intended `sorry` declarations); a textual check that each challenge signature is identical to the solution signature is recorded in [verification.txt](verification.txt). Running Comparator itself requires its Linux sandbox tooling and was not performed locally.
+
 **Axioms.** Every audited theorem depends on exactly the three standard axioms of Lean's core logic used throughout Mathlib, and on nothing else:
 
 | Theorem | Axioms |

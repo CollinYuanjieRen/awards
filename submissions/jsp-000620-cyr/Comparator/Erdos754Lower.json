@@ -1,0 +1,18 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "JSP620.Target",
+  "theorem_names": [
+    "Erdos754Lower.half_le_f",
+    "Erdos754Lower.half_add_two_le_f_of_eight_dvd",
+    "Erdos754Lower.erdos_754_two_sided",
+    "Erdos754Lower.abs_f_sub_half_le",
+    "Erdos754Lower.f_sub_half_isBigO",
+    "Erdos754.erdos_754"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

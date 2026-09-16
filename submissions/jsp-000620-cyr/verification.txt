@@ -4,8 +4,8 @@ Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb
 exit=0
 
 $ lake build
-✔ [2528/2530] Built JSP620.Target (1.6s)
-✔ [2529/2530] Built JSP620 (1.5s)
+info: JSP620/External/Erdos755.lean:1358:0: 'Erdos755.erdos_755' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2521/2530] Replayed JSP620.External.Erdos754
 Build completed successfully (2530 jobs).
 exit=0
 
@@ -16,6 +16,20 @@ $ lake env lean Audit.lean
 'Erdos754Lower.abs_f_sub_half_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Erdos754Lower.f_sub_half_isBigO' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Erdos754.erdos_754' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0
+
+$ lake build Challenge   # comparator challenge module; the only warnings are its intended sorry declarations
+sorry-warnings=6
+Build completed successfully (8746 jobs).
+exit=0
+
+$ challenge-vs-solution signature identity (whitespace-normalized text of each theorem statement)
+half_le_f identical
+half_add_two_le_f_of_eight_dvd identical
+erdos_754_two_sided identical
+abs_f_sub_half_le identical
+f_sub_half_isBigO identical
+erdos_754 identical
 exit=0
 
 $ grep -rnE "sorry|admit|^\s*axiom|native_decide|maxHeartbeats|maxRecDepth|unsafe" JSP620 Audit.lean

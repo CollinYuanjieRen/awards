@@ -9,3 +9,6 @@ rev = "1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d"
 
 [[lean_lib]]
 name = "JSP620"
+
+[[lean_lib]]
+name = "Challenge"
