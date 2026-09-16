@@ -1,0 +1,10 @@
+Imported constants: 377354; replay eligible: 373228; skipped unsafe: 691; skipped partial: 3435
+Starting checked Kernel.Environment replay from fresh trust0; quotient primitives checked once after Eq
+All eligible constants present after replay: 373228
+Root present after replay: Jsp937.maximizer_iff_equioscillating_and_large_tails
+Root present after replay: Jsp937.exists_upsilon_maximizer
+Root present after replay: Jsp937.singleton_upsilon_and_maximal
+Root present after replay: Jsp937.pair_upsilon_and_maximal
+Root present after replay: Jsp937.orderedNodesEquivCoordinates
+Root present after replay: Jsp937.upsilon_eq_raw
+PASS: checked replay completed, including all postponed constructor/recursor and quotient comparisons

@@ -1,0 +1,4 @@
+'Jsp937.maximizer_iff_equioscillating_and_large_tails' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Jsp937.exists_upsilon_maximizer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Jsp937.singleton_upsilon_and_maximal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Jsp937.pair_upsilon_and_maximal' depends on axioms: [propext, Classical.choice, Quot.sound]

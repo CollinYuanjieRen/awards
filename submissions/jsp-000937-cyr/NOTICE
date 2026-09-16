@@ -1,0 +1,28 @@
+JSP-000937 complete free-node maximin characterization.
+
+Historical mathematics: Paul Erdos (1947); Carl de Boor and Allan Pinkus (1978).
+No claim of new mathematical discovery is made.
+
+The 23 Randy1153 modules are reproduced without modification from
+https://github.com/randyxian08/jsp000958-lean
+commit e1df51e950876056d8951f4a93fa7fef6863b422.
+Copyright (c) 2026 randyxian08. MIT license: UPSTREAM-LICENSE.
+Their original author receives credit for the full canonical comparison core.
+
+New Jsp937 definitions, bridges and audits were developed in the authorized
+CollinYuanjieRen formalization campaign with GPT/Codex and MerLean Heavy Codex.
+The new Jsp937 contribution is distributed under LICENSE-MIT.
+Jsp937/Bounds.lean, TailBounds.lean, NormalizedNodes.lean and
+AffineNormalization.lean adapt the concurrent JSP-000936 campaign's corresponding
+helpers by namespace/import-prefix substitution only. No mathematical change
+or independent-authorship claim is made for those four helpers.
+The singleton Lebesgue-function calculation in Jsp937/SmallCases.lean also
+credits the audited JSP-000936 singleton calculation at its use site.
+
+checks/ReplayCheck.lean adapts Lean's Environment replay implementation.
+Copyright (c) 2023 Kim Morrison. Authors: Kim Morrison.
+Apache License 2.0: LICENSE-APACHE.
+Changes: use a fresh Kernel.Environment and checked addDeclCore0 at trust0;
+initialize and compare quotient primitives once after Eq; add final presence
+census and module/root CLI parameters. No proof-check bypass is added.
+The standalone verification harness is not part of the proof import cone.

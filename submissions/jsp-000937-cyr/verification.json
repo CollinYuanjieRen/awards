@@ -1,0 +1,374 @@
+{
+  "schema_version": 1,
+  "checked_utc": "2026-09-16T16:06:51.886220+00:00",
+  "problem": "JSP-000937: complete free-node maximin characterization",
+  "roots": [
+    "Jsp937.maximizer_iff_equioscillating_and_large_tails",
+    "Jsp937.exists_upsilon_maximizer",
+    "Jsp937.singleton_upsilon_and_maximal",
+    "Jsp937.pair_upsilon_and_maximal"
+  ],
+  "scope": "All positive node counts, actual augmented closed gaps, characterization iff, attainment, singleton and pair cases. Does not claim the separate Erdos1130 logarithmic upper bound.",
+  "lean": {
+    "version": "v4.27.0",
+    "commit": "db93fe1608548721853390a10cd40580fe7d22ae"
+  },
+  "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "prize_axiom_acceptance": "UNCONFIRMED: published rules require audits but give no explicit allowlist for these standard foundations",
+  "data_binder_counts": [
+    2,
+    1,
+    1,
+    1
+  ],
+  "original_object_laws": [
+    "Strictly increasing distinct real coordinates",
+    "Every coordinate lies in [-1,1]"
+  ],
+  "added_hypotheses": [],
+  "checks": {
+    "full_build": {
+      "exit_code": 0,
+      "jobs": 2531,
+      "log": "checks/full-build.log"
+    },
+    "public_fixed_and_raw_type_audit": {
+      "exit_code": 0,
+      "source": "Audit.lean",
+      "log": "checks/public-audit.log"
+    },
+    "binder_and_axiom_audit": {
+      "exit_code": 0,
+      "log": "checks/runtime-audit.log",
+      "note": "Private tool-generated census support is not redistributed. Audit.lean exposes reproducible checked public and raw types."
+    },
+    "intended_coordinate_model": {
+      "exit_code": 0,
+      "source": "Jsp937/IntendedModel.lean",
+      "log": "checks/model-audit.log"
+    },
+    "fresh_kernel_replay": {
+      "exit_code": 0,
+      "elapsed_seconds": 928.099990959,
+      "source": "checks/ReplayCheck.lean",
+      "log": "checks/kernel-replay.log",
+      "imported_constants": 377354,
+      "replayed_and_present": 373228,
+      "skipped_unsafe": 691,
+      "skipped_partial": 3435,
+      "root_presence": "All four public roots and both intended-model adapters checked present",
+      "checker": "Stock Lean4.27 Replay scheduler adapted to checked fresh Kernel.Environment at trust0, quotient group initialized once and compared. Same kernel implementation, not independent kernel implementation.",
+      "negative_control": "Direct trust0 kernel rejected a deliberately ill-typed theorem; checks/negative-control.log",
+      "no_bypass": "No addDeclWithoutChecking or debug.skipKernelTC; no installed runtime policy modified."
+    },
+    "source_lint": {
+      "status": "PASS",
+      "proof_files": 35,
+      "forbidden_constructs_found": [],
+      "standalone_checker": "Unsafe import-loader lifetime and partial scheduling are confined to the separate verifier, never imported by the mathematical proof."
+    },
+    "publication_copy": {
+      "full_build_exit_code": 0,
+      "jobs": 2531,
+      "public_audit_exit_code": 0,
+      "standalone_checker_compile_exit_code": 0,
+      "proof_sources_identical": true
+    }
+  },
+  "independent_agent_reviews": {
+    "source_alignment": {
+      "verdict": "passed",
+      "model": "gpt-6-astra",
+      "report_sha256": "17b6600d19547a2242e4d8f8e84412ce3bab082b63b349993024be2b927be596"
+    },
+    "proof_and_dependencies": {
+      "verdict": "passed",
+      "model": "gpt-6-astra",
+      "report_sha256": "e827f21dcc95444f165e4f7322e86b34af5c34ad649503744d165d3bb2adc439"
+    },
+    "limitation": "Separate AI reviewers, not organizer-appointed verification or independent kernel implementations. Private workflow reports are not redistributed."
+  },
+  "official_comparator": {
+    "status": "NOT-AVAILABLE",
+    "checked_utc": "2026-09-16T15:25:55.538622+00:00",
+    "scope": "Authoritative Lean challenge for full JSP937 free-node maximin characterization",
+    "prize_repository": {
+      "commit": "f4e7173d89dfe91022a185427d63452c8ffbf6ae",
+      "tree_truncated": false,
+      "lean_paths": []
+    },
+    "formal_conjectures": {
+      "commit": "40e7c98697de6f66b8cbdbf641749ab39ed9c152",
+      "tree_truncated": false,
+      "substring_matches": [
+        "FormalConjectures/OEIS/113010.lean",
+        "FormalConjectures/OEIS/113019.lean"
+      ],
+      "actual_erdos_1130_paths": []
+    },
+    "problem_page": {
+      "url": "https://www.erdosproblems.com/1130",
+      "cached_html_sha256": "7b8e31babd462919d8b1cf56cca1e8364f0a34078186364c6750640f8c101632",
+      "indicator": "Formalised statement? No",
+      "live_web_fetch": "403; cached bytes and actual remote repository tree checked"
+    },
+    "third_party_sources": {
+      "plby": "Counterexample to all augmented peaks equal; different theorem and not authoritative full classification target.",
+      "randyxian08": "Explicitly restricted endpoint-fixed internal-gap adapter, not original free-node target."
+    },
+    "actual_comparator_run": false,
+    "fallback_required": [
+      "Exact original source alignment",
+      "Raw coordinate and expanded objective adapters",
+      "Actual root type/binder/axiom audits",
+      "Complete dependency proof and kernel replay",
+      "Independent proof/source review"
+    ],
+    "official_verification": "NOT_CLAIMED"
+  },
+  "merlean_grade": {
+    "status": "NOT_AWARDED",
+    "executable_audit": "FAIL",
+    "exit_code": 1,
+    "elapsed_seconds": 23.022803541,
+    "log": "checks/merlean-grade-audit.log",
+    "generated_live_lean_audit": "PASS; sole final diagnostic is ROOT_FACE_MISMATCH",
+    "cause": "Recorder requires the frozen main iff root itself to cover all four theorem faces; actual characterization, attainment, singleton and pair faces have four separately checked proof roots. Honest per-root coverage is retained.",
+    "independent_diagnosis_sha256": "384d4ec5e052c8c2a0363968fa4701e2981248a0582671019c17858ab4819a90",
+    "runtime_policy_modified": false,
+    "theorem_weakened": false,
+    "coverage_labels_falsified": false
+  },
+  "official_verification": "NOT_CLAIMED",
+  "award_or_priority": "NOT_CLAIMED",
+  "publication_overlap": {
+    "issue": "https://github.com/TheJustinSunPrize/awards/issues/129",
+    "external_commit": "0016bb877b3fca8ef7a36a02a6f088e6f807e58a",
+    "external_root": "JSPFreeNodes.jsp_000937_classification",
+    "assessment": "Overlapping complete characterization; source and published check logs inspected, no independent full replay of external cone.",
+    "action": "Preserve completed proof on fork branch; no duplicate official nomination or priority claim."
+  },
+  "source_files": {
+    ".gitignore": {
+      "sha256": "0a5ef3ff4c6f21686df054a7dc9513d7ca1daf88745c1032fa14deda4257d64f",
+      "bytes": 27
+    },
+    "Audit.lean": {
+      "sha256": "951356b9bcd04352eaf4f04876f382c1af2e1e987689b02145b517ca643da55e",
+      "bytes": 2068
+    },
+    "Jsp937.lean": {
+      "sha256": "6c161a2093b37cd7f39b5680890882043529b9266025156b7e1d462096d084f3",
+      "bytes": 47
+    },
+    "Jsp937/AffineNormalization.lean": {
+      "sha256": "0da59f7cb3bfef0055901b96f7ea569560ccc7596301cdea868ae26dc5b505c4",
+      "bytes": 2888
+    },
+    "Jsp937/Attainment.lean": {
+      "sha256": "845117ea4f55d207fa2c7576f0d343d2fe0c580f13fbded734299c4337d0cbfb",
+      "bytes": 4730
+    },
+    "Jsp937/Bounds.lean": {
+      "sha256": "b8c2c7dbb9aff6adb632187fa169a8ee45da1f35e3696c0a824a76ca0b2d91c4",
+      "bytes": 1562
+    },
+    "Jsp937/Canonical.lean": {
+      "sha256": "475b35aa0fbacc8fde90e6bd912c26398a18e8ad5624fb4cc4ebf0c55dab57b2",
+      "bytes": 3852
+    },
+    "Jsp937/Definitions.lean": {
+      "sha256": "2fb0eb832e6bc51e8d50948c35479a44a91118ee6cb7f7487120a31aba74f959",
+      "bytes": 1490
+    },
+    "Jsp937/GapObjective.lean": {
+      "sha256": "13466ac779f7e154d69896e23f4b45045550e9b7e3631c1a655f28cdbfedab35",
+      "bytes": 5961
+    },
+    "Jsp937/IntendedModel.lean": {
+      "sha256": "7e05162b1e726ade4748d4560a3d1dd21a6b285e0590eeed611535a5bef6cae7",
+      "bytes": 3545
+    },
+    "Jsp937/Main.lean": {
+      "sha256": "76de989023f4e644041f22d46a6a9f1cd2c87b0d77231a89bb64e0d6ce776f2d",
+      "bytes": 3256
+    },
+    "Jsp937/NormalizedNodes.lean": {
+      "sha256": "1b1bf651551a8e0bced701a888abe8fc9d3eca7d2dcd7c62562e6056a810b456",
+      "bytes": 3014
+    },
+    "Jsp937/SmallCases.lean": {
+      "sha256": "e139e83379d7cce2f6b834e0907a4eab15d8339de7f6885c94bed9540e0b024c",
+      "bytes": 3142
+    },
+    "Jsp937/TailBounds.lean": {
+      "sha256": "b4586b1c191ee25ee1958c3dff1032cdedfefaff4c4976b1d1459a3c40a522dc",
+      "bytes": 1613
+    },
+    "LICENSE-APACHE": {
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+      "bytes": 11357
+    },
+    "LICENSE-MIT": {
+      "sha256": "c25fc6af85938f787d4a19bc91d2f6b669069f4ba68474dc9d1e69f4e86c976f",
+      "bytes": 1094
+    },
+    "NOTICE": {
+      "sha256": "04797db88e36db371d697644ac2e633503b75175e0e65e9f2a3d61a070cffbe1",
+      "bytes": 1602
+    },
+    "README.md": {
+      "sha256": "eab82f259067c25b171bf0909119a31a9d0ee779468253322c0aa63826b79eb9",
+      "bytes": 6681
+    },
+    "Randy1153/Basic.lean": {
+      "sha256": "28c826e2afe383f61eacc1b3d949d8d2e3c0626666ee7337209d362e1aba7afe",
+      "bytes": 2971
+    },
+    "Randy1153/DeBoorPinkus/Boundary.lean": {
+      "sha256": "a8c2158994c39bc97d17d59d109812c99ddc6fe39d61a904a5acc481827f1ff7",
+      "bytes": 56792
+    },
+    "Randy1153/DeBoorPinkus/Comparison.lean": {
+      "sha256": "951e33572a58becb5241df189b72b5b40f6315a2ca9db78cd2ac2118c136933f",
+      "bytes": 10422
+    },
+    "Randy1153/DeBoorPinkus/CrossInterlacing.lean": {
+      "sha256": "7543155ab63fb2aa6daf3b7ea7c55044e0bc987a7f0b2428147c450ff46b0bbf",
+      "bytes": 86304
+    },
+    "Randy1153/DeBoorPinkus/DerivativeInterlacing.lean": {
+      "sha256": "e865e32f5553af72456e5ed87b9385f3b431975a4ec4437e79159a0ce45b00d4",
+      "bytes": 48202
+    },
+    "Randy1153/DeBoorPinkus/GapCritical.lean": {
+      "sha256": "b69c5e7ee234fb53ecf806b1322317de197cf74fb29b1da0e43bf7accecdd232",
+      "bytes": 35449
+    },
+    "Randy1153/DeBoorPinkus/GlobalHomeomorph.lean": {
+      "sha256": "db01b5ec5d3333f631e305756dbc8e678fe92c3bcea2cad9c2ea24024dbb4acc",
+      "bytes": 9421
+    },
+    "Randy1153/DeBoorPinkus/Interlacing.lean": {
+      "sha256": "6d2965662d7dc3d17690e0455536256fe3975864258eefb46fc7cbc3139362cc",
+      "bytes": 29444
+    },
+    "Randy1153/DeBoorPinkus/Jacobian.lean": {
+      "sha256": "2ff7ffada39f98bbb5034ffdcb994b92ac71a2879e8c30fcb91600f9221d5ec6",
+      "bytes": 78498
+    },
+    "Randy1153/DeBoorPinkus/LocalHomeomorph.lean": {
+      "sha256": "e220a933c2295d3792461663e6b20c4eb516aca51a9177c8ae0433d34b8b7d70",
+      "bytes": 19480
+    },
+    "Randy1153/DeBoorPinkus/Minors.lean": {
+      "sha256": "6442fa33f1ce1f8ef2d2ab586987c379ad0a7f496ba9324caedc90a760a6b2e0",
+      "bytes": 55530
+    },
+    "Randy1153/DeBoorPinkus/NodeSpace.lean": {
+      "sha256": "891452de54f436a6257c9ad470e9f7f911a7e4099fa45f83976d84b592c4824a",
+      "bytes": 7250
+    },
+    "Randy1153/DeBoorPinkus/Orientation.lean": {
+      "sha256": "99e267b5a20f2287a236b8705d39ca45681f027510f2a5ba650f0589f80c1cb3",
+      "bytes": 56658
+    },
+    "Randy1153/DeBoorPinkus/OrientedCharts.lean": {
+      "sha256": "47c99c808364a874e75183123f14b2d13ac20f3cd32e054acd7f1c783de303a0",
+      "bytes": 35463
+    },
+    "Randy1153/DeBoorPinkus/Package.lean": {
+      "sha256": "9eff3f4dcc6629e403434c9a308fedf2bc60feafb1b405892566a0c43a48918d",
+      "bytes": 1927
+    },
+    "Randy1153/DeBoorPinkus/Properness.lean": {
+      "sha256": "51586fddd068218e8fa84835d6cff0937f05b7938852dd2c15c3948e9b9c717c",
+      "bytes": 5140
+    },
+    "Randy1153/DeBoorPinkus/SignBridge.lean": {
+      "sha256": "b0c209a3d81b29a5432a0ad8512fd3447a701107db8e39090ee15487f3ba6682",
+      "bytes": 2276
+    },
+    "Randy1153/DeBoorPinkus/Simplex.lean": {
+      "sha256": "ea696b23aacd4c77279115975b49199b9807e6ae93846afc8880283637f35c48",
+      "bytes": 31453
+    },
+    "Randy1153/DeBoorPinkus/Statement.lean": {
+      "sha256": "4d2ff2a996fe1817898fd3d0246e9bd9f6358d6aec18d2b0647595268ce4d470",
+      "bytes": 3035
+    },
+    "Randy1153/DeBoorPinkus/TopologyPackage.lean": {
+      "sha256": "79a614b0903e2017539bb3e904d17358f45c085e25f1888a8fe354c571abe402",
+      "bytes": 1654
+    },
+    "Randy1153/GapPolynomial.lean": {
+      "sha256": "7424cff23dd74551934d1dc14cbc06797e9776efcef016d94593d42e8397388c",
+      "bytes": 25608
+    },
+    "Randy1153/NodeOrder.lean": {
+      "sha256": "605a86fd9580bf43cbee2b6a720fa16b5dec9d85378e1c1f2cf92b7bce5a883e",
+      "bytes": 7781
+    },
+    "Randy1153/Statement.lean": {
+      "sha256": "0b3eae966099b7ce7fd6f6bd6fd4d7835aa6a212fa579d73e72f6d5de74386b4",
+      "bytes": 6166
+    },
+    "UPSTREAM-LICENSE": {
+      "sha256": "2c5cc2b27aeb38aefc8964032c3da469d900a5ad734fb2ff840eb3b732639f18",
+      "bytes": 1068
+    },
+    "checks/ReplayCheck.lean": {
+      "sha256": "37a723995cbdf1594c1da3be09a2e88f45cec4b0cf9c7f66071ed5b3ebc215fe",
+      "bytes": 9539
+    },
+    "checks/full-build.log": {
+      "sha256": "74e06c19d54a5b2b2cad4d972580580ab5133c5c0465e2f8e69859ce0141b5fe",
+      "bytes": 78
+    },
+    "checks/kernel-replay.log": {
+      "sha256": "ef0a23598b994743b68193cbad238ba32181293503eeda13260c17987d98b93b",
+      "bytes": 728
+    },
+    "checks/merlean-grade-audit.log": {
+      "sha256": "c9e15ee308908dc87e5421704a55fbf6cef43fdaeba36ffbb71adecb1e329859",
+      "bytes": 99
+    },
+    "checks/model-audit.log": {
+      "sha256": "8e61ccf5c2d3a62b03098b7c2556fa8f47bf155b34e9d7c1ed503cfe04a94eeb",
+      "bytes": 180
+    },
+    "checks/negative-control.log": {
+      "sha256": "1899e2b0f54ede65309c43245a6efca23277566c5be505cf237bcc9b27a00283",
+      "bytes": 145
+    },
+    "checks/public-audit.log": {
+      "sha256": "5a0eb72f69224202971375a94cf7c581a9b542187700e9cc147858de465e79c5",
+      "bytes": 398
+    },
+    "checks/runtime-audit.log": {
+      "sha256": "3bc374694fdd35129f84f2101004b87d6d80cf93e37cce23351e4d7a7bdbf244",
+      "bytes": 3267
+    },
+    "lake-manifest.json": {
+      "sha256": "e2daf47a8ffb75d992991c481c5dc9d26b57b9b6a634917ef322b428b807c707",
+      "bytes": 3535
+    },
+    "lakefile.toml": {
+      "sha256": "b87b997d684589db5025e77dc3756bcbcbe4f26bb9ea204cc457c1c549d59863",
+      "bytes": 328
+    },
+    "lean-toolchain": {
+      "sha256": "d55ca0039a5479db5b38919d005b2c427b89b3be4f0184a20f2f4eae931f5bdb",
+      "bytes": 25
+    },
+    "vendor-manifest.json": {
+      "sha256": "35e9b08e0235c5eea1055695d134fd24471d53ade432ba98c851d36e95148eff",
+      "bytes": 5102
+    }
+  }
+}

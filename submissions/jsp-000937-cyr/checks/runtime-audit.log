@@ -1,0 +1,20 @@
+Jsp937.maximizer_iff_equioscillating_and_large_tails (d : ℕ) (nodes : Randy1153.OrderedNodes (d + 2)) :
+  Jsp937.IsUpsilonMaximizer nodes ↔ Jsp937.EquioscillatingWithLargeTails nodes
+'Jsp937.maximizer_iff_equioscillating_and_large_tails' depends on axioms: [propext, Classical.choice, Quot.sound]
+{"binderInfo":"explicit","declaration":"Jsp937.maximizer_iff_equioscillating_and_large_tails","index":0,"isProp":false,"name":"d","piDomainProps":[],"structure":"","tag":"MERLEAN_BINDER","terminalHead":"Nat","terminalIsProp":false,"terminalPropArgs":[],"type":"ℕ"}
+{"binderInfo":"explicit","declaration":"Jsp937.maximizer_iff_equioscillating_and_large_tails","index":1,"isProp":false,"name":"nodes","piDomainProps":[],"structure":"Randy1153.OrderedNodes","tag":"MERLEAN_BINDER","terminalHead":"Randy1153.OrderedNodes","terminalIsProp":false,"terminalPropArgs":[false],"type":"Randy1153.OrderedNodes (d + 2)"}
+{"declaration":"Jsp937.maximizer_iff_equioscillating_and_large_tails","hasLeadingForall":false,"isNegation":false,"isProp":true,"tag":"MERLEAN_RESULT","type":"Jsp937.IsUpsilonMaximizer nodes ↔ Jsp937.EquioscillatingWithLargeTails nodes"}
+Jsp937.exists_upsilon_maximizer (d : ℕ) : ∃ nodes, Jsp937.IsUpsilonMaximizer nodes
+'Jsp937.exists_upsilon_maximizer' depends on axioms: [propext, Classical.choice, Quot.sound]
+{"binderInfo":"explicit","declaration":"Jsp937.exists_upsilon_maximizer","index":0,"isProp":false,"name":"d","piDomainProps":[],"structure":"","tag":"MERLEAN_BINDER","terminalHead":"Nat","terminalIsProp":false,"terminalPropArgs":[],"type":"ℕ"}
+{"declaration":"Jsp937.exists_upsilon_maximizer","hasLeadingForall":false,"isNegation":false,"isProp":true,"tag":"MERLEAN_RESULT","type":"∃ nodes, Jsp937.IsUpsilonMaximizer nodes"}
+Jsp937.singleton_upsilon_and_maximal (nodes : Randy1153.OrderedNodes 1) :
+  Jsp937.upsilon nodes = 1 ∧ Jsp937.IsUpsilonMaximizer nodes
+'Jsp937.singleton_upsilon_and_maximal' depends on axioms: [propext, Classical.choice, Quot.sound]
+{"binderInfo":"explicit","declaration":"Jsp937.singleton_upsilon_and_maximal","index":0,"isProp":false,"name":"nodes","piDomainProps":[],"structure":"Randy1153.OrderedNodes","tag":"MERLEAN_BINDER","terminalHead":"Randy1153.OrderedNodes","terminalIsProp":false,"terminalPropArgs":[false],"type":"Randy1153.OrderedNodes 1"}
+{"declaration":"Jsp937.singleton_upsilon_and_maximal","hasLeadingForall":false,"isNegation":false,"isProp":true,"tag":"MERLEAN_RESULT","type":"Jsp937.upsilon nodes = 1 ∧ Jsp937.IsUpsilonMaximizer nodes"}
+Jsp937.pair_upsilon_and_maximal (nodes : Randy1153.OrderedNodes 2) :
+  Jsp937.upsilon nodes = 1 ∧ Jsp937.IsUpsilonMaximizer nodes
+'Jsp937.pair_upsilon_and_maximal' depends on axioms: [propext, Classical.choice, Quot.sound]
+{"binderInfo":"explicit","declaration":"Jsp937.pair_upsilon_and_maximal","index":0,"isProp":false,"name":"nodes","piDomainProps":[],"structure":"Randy1153.OrderedNodes","tag":"MERLEAN_BINDER","terminalHead":"Randy1153.OrderedNodes","terminalIsProp":false,"terminalPropArgs":[false],"type":"Randy1153.OrderedNodes 2"}
+{"declaration":"Jsp937.pair_upsilon_and_maximal","hasLeadingForall":false,"isNegation":false,"isProp":true,"tag":"MERLEAN_RESULT","type":"Jsp937.upsilon nodes = 1 ∧ Jsp937.IsUpsilonMaximizer nodes"}
