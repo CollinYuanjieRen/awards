@@ -1,0 +1,178 @@
+Exported JSP-000360 verification
+Date: 2026-09-16T18:25:40.657803+00:00
+Platform: arm64 macOS, pinned installed Lean/Mathlib; cached upstream dependencies.
+Official comparator: NOT RUN; designated offline independent verification pending.
+
+The 95 local source modules were built in the clean export workspace (3122 jobs).
+The following final entry build and direct Audit.lean check use the same pinned environment.
+Local managed-wrapper scheduling messages are retained when present.
+
+Command equivalent: lake build MerLeanExperiment
+Exit code: 0
+ℹ [3028/3123] Replayed MerLeanExperiment.FiniteOrderTransfer
+info: MerLeanExperiment/FiniteOrderTransfer.lean:67:0: 'Erdos441.sum_prefix_order_iso' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/FiniteOrderTransfer.lean:68:0: 'Erdos441.weighted_finite_order_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3029/3123] Replayed MerLeanExperiment.GridPoints
+info: MerLeanExperiment/GridPoints.lean:52:0: 'Erdos441.grid_points_separation' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3034/3123] Replayed MerLeanExperiment.GridFibers
+warning: MerLeanExperiment/GridFibers.lean:59:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: MerLeanExperiment/GridFibers.lean:63:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+ℹ [3035/3123] Replayed MerLeanExperiment.CyclicAverage
+info: MerLeanExperiment/CyclicAverage.lean:41:0: 'Erdos441.exists_cyclic_average' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3036/3123] Replayed MerLeanExperiment.FiberAverage
+info: MerLeanExperiment/FiberAverage.lean:22:0: 'Erdos441.exists_injective_average' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3039/3123] Replayed MerLeanExperiment.FactorialLinear
+info: MerLeanExperiment/FactorialLinear.lean:36:0: 'Erdos441.factorial_linear_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3048/3123] Replayed MerLeanExperiment.SelectedMeshCells
+info: MerLeanExperiment/SelectedMeshCells.lean:83:0: 'Erdos441.selected_mesh_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/SelectedMeshCells.lean:84:0: 'Erdos441.selected_mesh_cells_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3049/3123] Replayed MerLeanExperiment.ParityGroups
+info: MerLeanExperiment/ParityGroups.lean:60:0: 'Erdos441.even_sub_parity_rep' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/ParityGroups.lean:61:0: 'Erdos441.parity_region_rep' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/ParityGroups.lean:62:0: 'Erdos441.parity_regions_opposite' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/ParityGroups.lean:63:0: 'Erdos441.density_parity_partition' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/ParityGroups.lean:64:0: 'Erdos441.sum_owner_parity_fibers' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3050/3123] Replayed MerLeanExperiment.AveragedMesh
+warning: MerLeanExperiment/AveragedMesh.lean:90:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: MerLeanExperiment/AveragedMesh.lean:93:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [3051/3123] Replayed MerLeanExperiment.CellCover
+info: MerLeanExperiment/CellCover.lean:41:0: 'Erdos441.mem_realIntIoc' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/CellCover.lean:42:0: 'Erdos441.card_realIntIoc_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/CellCover.lean:43:0: 'Erdos441.cell_point_cover' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3053/3123] Replayed MerLeanExperiment.ParityDensityMesh
+info: MerLeanExperiment/ParityDensityMesh.lean:47:0: 'Erdos441.parity_density_mesh_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3054/3123] Replayed MerLeanExperiment.FiberMultiplicity
+info: MerLeanExperiment/FiberMultiplicity.lean:20:0: 'Erdos441.sum_owner_parity_multiplicity' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3055/3123] Replayed MerLeanExperiment.FiniteParityDensity
+info: MerLeanExperiment/FiniteParityDensity.lean:60:0: 'Erdos441.exists_finite_parity_density_mesh' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3056/3123] Replayed MerLeanExperiment.PackingParameters
+info: MerLeanExperiment/PackingParameters.lean:83:0: 'Erdos441.exists_finite_positive_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/PackingParameters.lean:84:0: 'Erdos441.exists_packing_mesh' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/PackingParameters.lean:85:0: 'Erdos441.exists_packing_residue_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3057/3123] Replayed MerLeanExperiment.GcdCancellation
+info: MerLeanExperiment/GcdCancellation.lean:29:0: 'Erdos441.gcd_dvd_difference_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/GcdCancellation.lean:30:0: 'Erdos441.two_mul_le_of_odd_dvd_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3058/3123] Replayed MerLeanExperiment.ShiftAlgebra
+info: MerLeanExperiment/ShiftAlgebra.lean:49:0: 'Erdos441.shift_factor_mul_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/ShiftAlgebra.lean:50:0: 'Erdos441.shift_points_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/ShiftAlgebra.lean:51:0: 'Erdos441.shift_factor_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3059/3123] Replayed MerLeanExperiment.TranslatedGcd
+info: MerLeanExperiment/TranslatedGcd.lean:50:0: 'Erdos441.translated_shift_gcd_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3060/3123] Replayed MerLeanExperiment.LcmCollision
+info: MerLeanExperiment/LcmCollision.lean:36:0: 'Erdos441.lcm_gt_of_separated_lower_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3061/3123] Replayed MerLeanExperiment.External.Erdos441
+info: MerLeanExperiment/External/Erdos441.lean:466:0: 'Erdos441.not_erdos_441' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3062/3123] Replayed MerLeanExperiment.TranslationCollision
+info: MerLeanExperiment/TranslationCollision.lean:55:0: 'Erdos441.at_most_one_translated_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3063/3123] Replayed MerLeanExperiment.TranslationUnion
+info: MerLeanExperiment/TranslationUnion.lean:25:0: 'Erdos441.translated_good_union_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3064/3123] Replayed MerLeanExperiment.PackingCellUnion
+info: MerLeanExperiment/PackingCellUnion.lean:99:0: 'Erdos441.packing_cell_union_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3065/3123] Replayed MerLeanExperiment.PackingBadBridge
+info: MerLeanExperiment/PackingBadBridge.lean:28:0: 'Erdos441.packing_bad_points_le_exceptions' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3066/3123] Replayed MerLeanExperiment.CRTResidues
+info: MerLeanExperiment/CRTResidues.lean:45:0: 'Erdos441.joint_residue_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3068/3123] Replayed MerLeanExperiment.ResidueCount
+info: MerLeanExperiment/ResidueCount.lean:36:0: 'Erdos441.residue_count_discrepancy' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3070/3123] Replayed MerLeanExperiment.JointResidueCount
+info: MerLeanExperiment/JointResidueCount.lean:26:0: 'Erdos441.joint_residue_discrepancy' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3072/3123] Replayed MerLeanExperiment.SieveError
+info: MerLeanExperiment/SieveError.lean:43:0: 'Erdos441.sieve_discrepancy_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3073/3123] Replayed MerLeanExperiment.IntervalSieve
+info: MerLeanExperiment/IntervalSieve.lean:76:0: 'Erdos441.interval_sieve_discrepancy' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3075/3123] Replayed MerLeanExperiment.LinearResidues
+info: MerLeanExperiment/LinearResidues.lean:61:0: 'Erdos441.linear_bad_residue_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/LinearResidues.lean:62:0: 'Erdos441.linear_bad_residues_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3079/3123] Replayed MerLeanExperiment.ShiftProduct
+info: MerLeanExperiment/ShiftProduct.lean:71:0: 'Erdos441.shift_product_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/ShiftProduct.lean:72:0: 'Erdos441.shift_product_rough' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/ShiftProduct.lean:73:0: 'Erdos441.shift_product_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3081/3123] Replayed MerLeanExperiment.PrimeFactorLog
+info: MerLeanExperiment/PrimeFactorLog.lean:29:0: 'Erdos441.prime_factor_log_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3084/3123] Replayed MerLeanExperiment.ShortError
+info: MerLeanExperiment/ShortError.lean:31:0: 'Erdos441.eventually_short_interval_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3085/3123] Replayed MerLeanExperiment.UniformCellUnion
+info: MerLeanExperiment/UniformCellUnion.lean:115:0: 'Erdos441.eventually_packing_cell_union' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3086/3123] Replayed MerLeanExperiment.ParityPacking
+info: MerLeanExperiment/ParityPacking.lean:69:0: 'Erdos441.eventually_parity_packing' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3087/3123] Replayed MerLeanExperiment.IntervalPacking
+info: MerLeanExperiment/IntervalPacking.lean:57:0: 'Erdos441.eventually_interval_packing' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3088/3123] Replayed MerLeanExperiment.FiniteIntervalPacking
+info: MerLeanExperiment/FiniteIntervalPacking.lean:40:0: 'Erdos441.eventually_finite_interval_packing' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3089/3123] Replayed MerLeanExperiment.GridForwardPacking
+info: MerLeanExperiment/GridForwardPacking.lean:90:0: 'Erdos441.grid_intervals_disjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/GridForwardPacking.lean:91:0: 'Erdos441.eventually_grid_forward_packing' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/GridForwardPacking.lean:92:0: 'Erdos441.eventually_uniform_grid_forward_packing' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3090/3123] Replayed MerLeanExperiment.IntTelescoping
+info: MerLeanExperiment/IntTelescoping.lean:55:0: 'Erdos441.sum_Icc_backward_sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/IntTelescoping.lean:56:0: 'Erdos441.sum_card_sdiff_Icc' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/IntTelescoping.lean:57:0: 'Erdos441.sum_Icc_zpow_mul_sub_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3093/3123] Replayed MerLeanExperiment.GridSums
+info: MerLeanExperiment/GridSums.lean:63:0: 'Erdos441.sum_Icc_zpow_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/GridSums.lean:64:0: 'Erdos441.grid_beta_prefix_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3096/3123] Replayed MerLeanExperiment.GridRatio
+info: MerLeanExperiment/GridRatio.lean:40:0: 'Erdos441.grid_ratio_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/GridRatio.lean:41:0: 'Erdos441.gridQ_tendsto_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3097/3123] Replayed MerLeanExperiment.QuadraticChord
+info: MerLeanExperiment/QuadraticChord.lean:28:0: 'Erdos441.quadratic_nonneg_between' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3099/3123] Replayed MerLeanExperiment.GridPrefixCase3
+info: MerLeanExperiment/GridPrefixCase3.lean:29:0: 'Erdos441.grid_prefix_case3' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3102/3123] Replayed MerLeanExperiment.WeightedIncidence
+info: MerLeanExperiment/WeightedIncidence.lean:29:0: 'Erdos441.weighted_incidence_le_cards' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3103/3123] Replayed MerLeanExperiment.TwoFamilyIncidence
+info: MerLeanExperiment/TwoFamilyIncidence.lean:55:0: 'Erdos441.weighted_two_family_incidence' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3107/3123] Replayed MerLeanExperiment.GridCapacity4
+info: MerLeanExperiment/GridCapacity4.lean:63:0: 'Erdos441.grid_case4_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3109/3123] Replayed MerLeanExperiment.GridPrefixCase4
+info: MerLeanExperiment/GridPrefixCase4.lean:22:0: 'Erdos441.grid_prefix_case4' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3110/3123] Replayed MerLeanExperiment.GridPrefixAll
+info: MerLeanExperiment/GridPrefixAll.lean:27:0: 'Erdos441.grid_prefix_all' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3111/3123] Replayed MerLeanExperiment.GridWeightSums
+info: MerLeanExperiment/GridWeightSums.lean:93:0: 'Erdos441.grid_weights_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/GridWeightSums.lean:94:0: 'Erdos441.grid_delta_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3112/3123] Replayed MerLeanExperiment.WeightedGridPacking
+warning: MerLeanExperiment/WeightedGridPacking.lean:16:45: Variable name `hat` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hat
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: MerLeanExperiment/WeightedGridPacking.lean:21:2: Unused tactic linter: `change
+  (∑ i : { i : ℤ // i ∈ Finset.Icc a b }, if i.val ≤ t then f i.val else 0) = _` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [3115/3123] Replayed MerLeanExperiment.GridNormalization
+warning: MerLeanExperiment/GridNormalization.lean:39:20: `if_pos` has been deprecated: Use `ite_eq_left` instead
+warning: MerLeanExperiment/GridNormalization.lean:40:20: `if_neg` has been deprecated: Use `ite_eq_right` instead
+info: MerLeanExperiment/GridNormalization.lean:82:0: 'Erdos441.grid_middle_le_weighted_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/GridNormalization.lean:83:0: 'Erdos441.grid_scale_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/GridNormalization.lean:84:0: 'Erdos441.sqrt_nine_eighth' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3116/3123] Replayed MerLeanExperiment.TailBound
+info: MerLeanExperiment/TailBound.lean:81:0: 'Erdos441.lcm_tail_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3117/3123] Replayed MerLeanExperiment.ConcreteUpper
+info: MerLeanExperiment/ConcreteUpper.lean:85:0: 'Erdos441.eventually_concrete_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3118/3123] Replayed MerLeanExperiment.UpperBound
+info: MerLeanExperiment/UpperBound.lean:47:0: 'Erdos441.chen_uniform_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3120/3123] Replayed MerLeanExperiment.Asymptotic
+info: MerLeanExperiment/Asymptotic.lean:87:0: 'Erdos441.chen_asymptotic' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [3122/3123] Built MerLeanExperiment (2.0s)
+Build completed successfully (3123 jobs).
+
+Command equivalent: lake env lean Audit.lean
+Exit code: 0
+'Erdos441.sum_int_interval_subtype' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos441.sum_int_interval_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos441.eventually_weighted_grid_packing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos441.grid_middle_le_weighted_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos441.grid_scale_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos441.sqrt_nine_eighth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos441.eventually_concrete_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos441.chen_uniform_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos441.chen_asymptotic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos441.erdos_441_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos441.erdosConstruction_not_eventually_extremal' depends on axioms: [propext, Classical.choice, Quot.sound]
+
