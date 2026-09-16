@@ -1,0 +1,17 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "JSP527.PZ.Main",
+  "theorem_names": [
+    "PohoataZakharov.erdos_651_subexponential_inv",
+    "PohoataZakharov.theorem_one_one",
+    "PohoataZakharov.hasErdosSzekeresNumber_three",
+    "PohoataZakharov.erdos_651_subexponential",
+    "PohoataZakharov.erdos_651_disproved"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

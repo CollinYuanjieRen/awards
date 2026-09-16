@@ -1,0 +1,1027 @@
+Differences between JSP527/External/ and plby/lean-proofs commit 8822f7ddef30fadbd92e1c6ab4ed897af356af5e, src/latest/ErdosProblems/
+(unified diff: the import-prefix rewrite ErdosProblems.Erdos651 -> JSP527.External.Erdos651; minimal Lean 4.34 / Mathlib drift ports in CapRamsey.lean, TrihedralGadget.lean, Existence.lean; the strengthening of the two GenericProjectionFamily fields of TrihedralClusterGadget to all subsets of the middle cluster; and the omission of the never-built draft Erdos651/PohoataZakharovProof.lean, replaced by the derived JSP527/PZ/Assembly.lean)
+
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651.lean	2026-09-16 09:20:16
++++ ./Erdos651.lean	2026-09-16 13:44:21
+@@ -20,7 +20,7 @@
+ Released under Apache 2.0 license as described in the file LICENSE.
+ Authors: OpenAI Codex
+ -/
+-import ErdosProblems.Erdos651.Asymptotic
++import JSP527.External.Erdos651.Asymptotic
+ 
+ /-!
+ # Erdős Problem 651
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/AboveBelow.lean	2026-09-16 09:20:16
++++ ./Erdos651/AboveBelow.lean	2026-09-16 13:44:21
+@@ -3,9 +3,9 @@
+ Released under Apache 2.0 license as described in the file LICENSE.
+ Authors: OpenAI Codex
+ -/
+-import ErdosProblems.Erdos651.Definitions
+-import ErdosProblems.Erdos651.FiniteRamsey
+-import ErdosProblems.Erdos651.Kirchberger
++import JSP527.External.Erdos651.Definitions
++import JSP527.External.Erdos651.FiniteRamsey
++import JSP527.External.Erdos651.Kirchberger
+ 
+ /-!
+ # The above--below relation
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/Asymptotic.lean	2026-09-16 09:20:16
++++ ./Erdos651/Asymptotic.lean	2026-09-16 13:44:21
+@@ -3,7 +3,7 @@
+ Released under Apache 2.0 license as described in the file LICENSE.
+ Authors: OpenAI Codex
+ -/
+-import ErdosProblems.Erdos651.Definitions
++import JSP527.External.Erdos651.Definitions
+ 
+ /-! The asymptotic incompatibility at the end of the resolution of Problem 651. -/
+ 
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/BinomialEnvelope.lean	2026-09-16 09:20:16
++++ ./Erdos651/BinomialEnvelope.lean	2026-09-16 13:44:21
+@@ -3,7 +3,7 @@
+ Released under Apache 2.0 license as described in the file LICENSE.
+ Authors: OpenAI Codex
+ -/
+-import ErdosProblems.Erdos651.Definitions
++import JSP527.External.Erdos651.Definitions
+ import Mathlib.Analysis.Complex.ExponentialBounds
+ import Mathlib.Analysis.SpecialFunctions.Stirling
+ 
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/CapAssembly.lean	2026-09-16 09:20:16
++++ ./Erdos651/CapAssembly.lean	2026-09-16 13:44:21
+@@ -3,7 +3,7 @@
+ Released under Apache 2.0 license as described in the file LICENSE.
+ Authors: OpenAI Codex
+ -/
+-import ErdosProblems.Erdos651.PolytopeCap
++import JSP527.External.Erdos651.PolytopeCap
+ 
+ /-!
+ # Assembling polytope caps
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/CapRamsey.lean	2026-09-16 09:20:16
++++ ./Erdos651/CapRamsey.lean	2026-09-16 13:44:21
+@@ -3,8 +3,8 @@
+ Released under Apache 2.0 license as described in the file LICENSE.
+ Authors: OpenAI Codex
+ -/
+-import ErdosProblems.Erdos651.CapAssembly
+-import ErdosProblems.Erdos651.FiniteRamsey
++import JSP527.External.Erdos651.CapAssembly
++import JSP527.External.Erdos651.FiniteRamsey
+ 
+ /-!
+ # The second Dilworth--Ramsey--cap step of Pohoata--Zakharov
+@@ -71,13 +71,13 @@
+   classical
+   let s := Nat.sqrt X.card
+   by_cases hs : s = 0
+-  · refine ⟨∅, Finset.empty_subset _, by simp [hs], Or.inl ?_⟩
++  · refine ⟨∅, Finset.empty_subset _, by simpa using hs, Or.inl ?_⟩
+     simp
+   let αX := ↑X
+   let rX : αX → αX → Prop := fun x y => r x.1 y.1
+   have hrX : IsPreorder αX rX :=
+     { refl := fun x => hr.refl x.1
+-      trans := fun _ _ _ hxy hyz => hr.trans hxy hyz }
++      trans := fun _ _ _ hxy hyz => hr.trans _ _ _ hxy hyz }
+   by_cases hwide : ∃ A : Finset αX,
+       IsAntichain rX (↑A : Set αX) ∧ s ≤ A.card
+   · obtain ⟨A, hAanti, hAs⟩ := hwide
+@@ -144,13 +144,13 @@
+       simpa [s] using Nat.sqrt_le X.card
+     have hss : s * s < X.card := lt_of_le_of_ne hsle hsquare
+     have hspos : 0 < s := by
+-      rw [s, Nat.sqrt_pos]
++      simp only [s, Nat.sqrt_pos]
+       omega
+     let αX := ↑X
+     let rX : αX → αX → Prop := fun x y => r x.1 y.1
+     have hrX : IsPreorder αX rX :=
+       { refl := fun x => hr.refl x.1
+-        trans := fun _ _ _ hxy hyz => hr.trans hxy hyz }
++        trans := fun _ _ _ hxy hyz => hr.trans _ _ _ hxy hyz }
+     by_cases hwide : ∃ A : Finset αX,
+         IsAntichain rX (↑A : Set αX) ∧ s < A.card
+     · obtain ⟨A, hAanti, hAs⟩ := hwide
+@@ -308,7 +308,7 @@
+   classical
+   by_cases h : ∃ Z : Finset (Point 3), Z ⊆ G.middle ∧
+       G.middle.card ≤ Z.card * Z.card ∧ PFree G.firstPolytope Z
+-  · obtain ⟨Z, hZ⟩ := h
++  · obtain ⟨Z, hZ⟩ := id h
+     refine ⟨Z, hZ.1, hZ.2.1, ?_⟩
+     simpa [MiddleTripleGadget.color, h] using hZ.2.2
+   · rcases G.exists_large_free_subset_exact with hfirst | hsecond
+@@ -433,7 +433,9 @@
+   obtain ⟨Z, hZmid, hZcard, hZfree⟩ :=
+     (alternatingGadget G j r).color_spec_exact
+   refine ⟨Z, hZmid, hZcard, ?_⟩
+-  rw [hmono _ hJH (alternatingTriple_card j r)] at hZfree
++  have hb : (alternatingGadget G j r).color = b :=
++    hmono _ hJH (alternatingTriple_card j r)
++  rw [hb] at hZfree
+   exact hZfree
+ 
+ /-! ## Proposition 2.1 on alternating clusters and cap assembly -/
+@@ -497,7 +499,7 @@
+       · exact (hdirect ⟨i, h⟩).elim
+     choose K hKsubset hKcard hKcap using hcap
+     have hKdisj : ((Finset.univ : Finset (Fin q)) : Set (Fin q)).PairwiseDisjoint K := by
+-      intro i - j - hij
++      intro i _ j _ hij
+       exact (F.free_disjoint (Finset.mem_univ i) (Finset.mem_univ j) hij).mono
+         (hKsubset i) (hKsubset j)
+     have hUcard : (Finset.univ.biUnion K).card = q * a := by
+@@ -506,7 +508,7 @@
+     have hconvU : ContainsConvexSubset 3 n (Finset.univ.biUnion K) := by
+       apply containsConvexSubset_of_biUnion_pCaps F.background K hKcap
+       · intro i j hij
+-        exact (hKsubset j).trans (F.other_free_subset i j hij)
++        exact (Finset.coe_subset.mpr (hKsubset j)).trans (F.other_free_subset i j hij)
+       · rw [hUcard]
+         exact hcount
+     obtain ⟨Y, hYU, hYcard, hYconv⟩ := hconvU
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/ConvexCore.lean	2026-09-16 09:20:16
++++ ./Erdos651/ConvexCore.lean	2026-09-16 13:44:21
+@@ -3,7 +3,7 @@
+ Released under Apache 2.0 license as described in the file LICENSE.
+ Authors: OpenAI Codex
+ -/
+-import ErdosProblems.Erdos651.Definitions
++import JSP527.External.Erdos651.Definitions
+ 
+ /-!
+ # Elementary convex-geometric infrastructure for Erdős Problem 651
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/CupsCaps.lean	2026-09-16 09:20:16
++++ ./Erdos651/CupsCaps.lean	2026-09-16 13:44:21
+@@ -3,7 +3,7 @@
+ Released under Apache 2.0 license as described in the file LICENSE.
+ Authors: OpenAI Codex
+ -/
+-import ErdosProblems.Erdos651.Definitions
++import JSP527.External.Erdos651.Definitions
+ 
+ /-!
+ # The sharp cups-versus-caps theorem
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/Existence.lean	2026-09-16 09:20:16
++++ ./Erdos651/Existence.lean	2026-09-16 13:44:21
+@@ -3,7 +3,7 @@
+ Released under Apache 2.0 license as described in the file LICENSE.
+ Authors: OpenAI Codex
+ -/
+-import ErdosProblems.Erdos651.FiniteRamsey
++import JSP527.External.Erdos651.FiniteRamsey
+ 
+ /-!
+ Finite Ramsey and convex-geometric existence lemmas for Erdős Problem 651.
+@@ -437,7 +437,7 @@
+ lemma affineBasis_coord_pos_of_gp {X V : Finset (Point 3)}
+     (hgp : InGeneralPosition 3 X) (hVX : V ⊆ X) (hVcard : V.card = 4)
+     (b : AffineBasis ↥V ℝ (Point 3))
+-    (hb : (b : ↥V → Point 3) = fun v ↦ (v : Point 3))
++    (hb : (b : ↥V → Point 3) = fun v : ↥V ↦ (v : Point 3))
+     {p : Point 3} (hpX : p ∈ X) (hpV : p ∉ V) (i : ↥V)
+     (hcoord : 0 ≤ b.coord i p) : 0 < b.coord i p := by
+   classical
+@@ -474,7 +474,7 @@
+           intro hji
+           have : x = b i := by simpa [j, hb] using congrArg Subtype.val hji
+           exact (Finset.mem_erase.1 hx).1 this
+-        simpa [j] using b.coord_apply_ne hji.symm
++        simpa [j, hb] using b.coord_apply_ne hji.symm
+     have heq : b.coord i = 0 := AffineMap.ext_on hSspan hagree
+     have := congrArg (fun f : Point 3 →ᵃ[ℝ] ℝ ↦ f (b i)) heq
+     simpa using this
+@@ -485,7 +485,7 @@
+ lemma affineBasis_coord_ratio_injective_of_gp {X V : Finset (Point 3)}
+     (hgp : InGeneralPosition 3 X) (hVX : V ⊆ X) (hVcard : V.card = 4)
+     (b : AffineBasis ↥V ℝ (Point 3))
+-    (hb : (b : ↥V → Point 3) = fun v ↦ (v : Point 3))
++    (hb : (b : ↥V → Point 3) = fun v : ↥V ↦ (v : Point 3))
+     {p q : Point 3} (hpX : p ∈ X) (hqX : q ∈ X) (hpV : p ∉ V) (hqV : q ∉ V)
+     (hpq : p ≠ q) (hpcoord : ∀ i, 0 < b.coord i p)
+     (hqcoord : ∀ i, 0 < b.coord i q) :
+@@ -493,7 +493,7 @@
+   classical
+   intro i j hratio
+   by_contra hij
+-  have hbij : b i ≠ b j := b.ind.injective hij
++  have hbij : b i ≠ b j := b.ind.injective.ne hij
+   let W : Finset (Point 3) := (V.erase (b i)).erase (b j)
+   let S : Finset (Point 3) := insert p (insert q W)
+   have hbiV : b i ∈ V := by simpa [hb] using i.property
+@@ -530,10 +530,12 @@
+     have hcross : b.coord i p * b.coord j q = b.coord j p * b.coord i q :=
+       (div_eq_div_iff (hqcoord i).ne' (hqcoord j).ne').mp hratio
+     dsimp only [f]
+-    simp only [AffineMap.smul_apply, AffineMap.sub_apply]
++    simp only [AffineMap.coe_sub, AffineMap.coe_smul, Pi.sub_apply, Pi.smul_apply, smul_eq_mul]
+     linarith
+   have hfq : f q = 0 := by
+-    simp [f]
++    simp only [f, AffineMap.coe_sub, AffineMap.coe_smul, Pi.sub_apply, Pi.smul_apply,
++      smul_eq_mul]
++    ring
+   have hagree : (↑S : Set (Point 3)).EqOn f 0 := by
+     intro x hx
+     rw [Finset.mem_coe, Finset.mem_insert] at hx
+@@ -558,7 +560,7 @@
+   have heq : f = 0 := AffineMap.ext_on hSspan hagree
+   have heval := congrArg (fun g : Point 3 →ᵃ[ℝ] ℝ ↦ g (b i)) heq
+   have hpositive : 0 < f (b i) := by
+-    simp [f, b.coord_apply_ne hij]
++    simp [f, b.coord_apply_ne (Ne.symm hij)]
+     exact hqcoord j
+   have : f (b i) = 0 := by simpa using heval
+   linarith
+@@ -571,13 +573,13 @@
+   let R : Finset ℝ := Finset.univ.image r
+   have hRcard : R.card = 4 := by
+     simp only [R, Finset.card_image_iff.mpr hr.injOn, Finset.card_univ, hcard]
+-  have hRne : R.Nonempty := by simpa [Finset.card_pos, hRcard]
++  have hRne : R.Nonempty := Finset.card_pos.mp (by omega)
+   let lo : ℝ := R.min' hRne
+   let hi : ℝ := R.max' hRne
+   have hnot : ¬R ⊆ {lo, hi} := by
+     intro hsub
+     have := Finset.card_le_card hsub
+-    have hp : ({lo, hi} : Finset ℝ).card ≤ 2 := Finset.card_pair_le _ _
++    have hp : ({lo, hi} : Finset ℝ).card ≤ 2 := (Finset.card_insert_le _ _).trans (by simp)
+     omega
+   obtain ⟨x, hxR, hxpair⟩ := Finset.not_subset.mp hnot
+   obtain ⟨i, -, rfl⟩ := Finset.mem_image.mp hxR
+@@ -585,11 +587,12 @@
+   have hhiMem : hi ∈ R := by exact R.max'_mem hRne
+   obtain ⟨j, -, hj⟩ := Finset.mem_image.mp hloMem
+   obtain ⟨k, -, hk⟩ := Finset.mem_image.mp hhiMem
++  have hxpair' : r i ≠ lo ∧ r i ≠ hi := by simpa using hxpair
+   refine ⟨i, j, k, ?_, ?_⟩
+   · rw [hj]
+-    exact lt_of_le_of_ne (R.min'_le _ _ hxR) (by simpa using hxpair)
++    exact lt_of_le_of_ne (R.min'_le _ hxR) hxpair'.1.symm
+   · rw [hk]
+-    exact lt_of_le_of_ne (R.le_max' _ _ hxR) (by simpa [eq_comm] using hxpair)
++    exact lt_of_le_of_ne (R.le_max' _ hxR) hxpair'.2
+ 
+ /-- If every barycentric coordinate is positive and there is another basis vertex, then each
+ individual coordinate is strictly less than one. -/
+@@ -610,7 +613,7 @@
+ interior points produces five points in convex position. -/
+ lemma inConvexPosition_face_insert_two {V : Finset (Point 3)}
+     (b : AffineBasis ↥V ℝ (Point 3))
+-    (hb : (b : ↥V → Point 3) = fun v ↦ (v : Point 3))
++    (hb : (b : ↥V → Point 3) = fun v : ↥V ↦ (v : Point 3))
+     {p q : Point 3} (hpV : p ∉ V) (hqV : q ∉ V) (hpq : p ≠ q)
+     (hpcoord : ∀ i, 0 < b.coord i p) (hqcoord : ∀ i, 0 < b.coord i q)
+     {i j k : ↥V}
+@@ -626,13 +629,15 @@
+   let Y : Finset (Point 3) := insert p (insert q (V.erase (b i)))
+   intro x hxY
+   simp only [Y, Finset.mem_insert] at hxY
+-  rcases hxY with rfl | rfl | hxFace
+-  · let f : Point 3 →ᵃ[ℝ] ℝ :=
++  rcases hxY with hxp | hxq | hxFace
++  · subst x
++    let f : Point 3 →ᵃ[ℝ] ℝ :=
+       (b.coord i q) • b.coord j - (b.coord j q) • b.coord i
+     have hcross : b.coord j p * b.coord i q < b.coord i p * b.coord j q :=
+       (div_lt_div_iff₀ (hqcoord j) (hqcoord i)).mp hji
+     have hfp : f p < 0 := by
+-      simp only [f, AffineMap.smul_apply, AffineMap.sub_apply]
++      simp only [f, AffineMap.coe_sub, AffineMap.coe_smul, Pi.sub_apply, Pi.smul_apply,
++        smul_eq_mul]
+       linarith
+     apply not_mem_convexHull_of_affine_lt_zero f hfp
+     intro y hy
+@@ -641,7 +646,7 @@
+     simp only [Y, Finset.mem_insert] at hyY
+     rcases hyY with rfl | rfl | hyFace
+     · exact False.elim (hyp rfl)
+-    · simp [f]
++    · simp [f, mul_comm]
+     · have hyV : y ∈ V := Finset.mem_of_mem_erase hyFace
+       let l : ↥V := ⟨y, hyV⟩
+       have hil : i ≠ l := by
+@@ -651,16 +656,18 @@
+       have hyl : b l = y := by simp [l, hb]
+       rw [← hyl]
+       by_cases hlj : l = j
+-      · subst l
++      · rw [hlj]
+         simp [f, b.coord_apply_ne hji_ne.symm]
+         exact (hqcoord i).le
+-      · simp [f, b.coord_apply_ne hil, b.coord_apply_ne hlj.symm]
+-  · let f : Point 3 →ᵃ[ℝ] ℝ :=
++      · simp [f, b.coord_apply_ne hil, b.coord_apply_ne (Ne.symm hlj)]
++  · subst x
++    let f : Point 3 →ᵃ[ℝ] ℝ :=
+       (b.coord i p) • b.coord k - (b.coord k p) • b.coord i
+     have hcross : b.coord i p * b.coord k q < b.coord k p * b.coord i q :=
+       (div_lt_div_iff₀ (hqcoord i) (hqcoord k)).mp hik
+     have hfq : f q < 0 := by
+-      simp only [f, AffineMap.smul_apply, AffineMap.sub_apply]
++      simp only [f, AffineMap.coe_sub, AffineMap.coe_smul, Pi.sub_apply, Pi.smul_apply,
++        smul_eq_mul]
+       linarith
+     apply not_mem_convexHull_of_affine_lt_zero f hfq
+     intro y hy
+@@ -668,7 +675,7 @@
+     have hyq : y ≠ q := (Finset.mem_erase.1 hy).1
+     simp only [Y, Finset.mem_insert] at hyY
+     rcases hyY with rfl | rfl | hyFace
+-    · simp [f]
++    · simp [f, mul_comm]
+     · exact False.elim (hyq rfl)
+     · have hyV : y ∈ V := Finset.mem_of_mem_erase hyFace
+       let l : ↥V := ⟨y, hyV⟩
+@@ -679,14 +686,14 @@
+       have hyl : b l = y := by simp [l, hb]
+       rw [← hyl]
+       by_cases hlk : l = k
+-      · subst l
++      · rw [hlk]
+         have hki : k ≠ i := by
+           intro h
+-          subst k
++          subst h
+           exact lt_irrefl _ hik
+         simp [f, b.coord_apply_ne hki.symm]
+         exact (hpcoord i).le
+-      · simp [f, b.coord_apply_ne hil, b.coord_apply_ne hlk.symm]
++      · simp [f, b.coord_apply_ne hil, b.coord_apply_ne (Ne.symm hlk)]
+   · have hxV : x ∈ V := Finset.mem_of_mem_erase hxFace
+     let l : ↥V := ⟨x, hxV⟩
+     have hxl : b l = x := by simp [l, hb]
+@@ -698,8 +705,8 @@
+       have hyx : y ≠ x := (Finset.mem_erase.1 hy).1
+       simp only [Y, Finset.mem_insert] at hyY
+       rcases hyY with rfl | rfl | hyFace'
+-      · exact b.coord_lt_one_of_pos hpcoord l
+-      · exact b.coord_lt_one_of_pos hqcoord l
++      · exact AffineBasis.coord_lt_one_of_pos b hpcoord l
++      · exact AffineBasis.coord_lt_one_of_pos b hqcoord l
+       · have hyV : y ∈ V := Finset.mem_of_mem_erase hyFace'
+         let m : ↥V := ⟨y, hyV⟩
+         have hym : b m = y := by simp [m, hb]
+@@ -729,9 +736,9 @@
+     hAIV.affineSpan_eq_top_iff_card_eq_finrank_add_one.2 (by
+       simpa [Point] using hVcard)
+   let b : AffineBasis ↥V ℝ (Point 3) := ⟨fun v ↦ (v : Point 3), hAIV, hVspan⟩
+-  have hb : (b : ↥V → Point 3) = fun v ↦ (v : Point 3) := rfl
++  have hb : (b : ↥V → Point 3) = fun v : ↥V ↦ (v : Point 3) := rfl
+   have hDiffCard : (X \ V).card = 2 := by
+-    rw [Finset.card_sdiff hVX, hXcard, hVcard]
++    rw [Finset.card_sdiff_of_subset hVX, hXcard, hVcard]
+   obtain ⟨p, q, hpq, hDiff⟩ := Finset.card_eq_two.mp hDiffCard
+   have hpDiff : p ∈ X \ V := by rw [hDiff]; simp
+   have hqDiff : q ∈ X \ V := by rw [hDiff]; simp
+@@ -746,11 +753,11 @@
+     rw [hHull]
+     exact subset_convexHull ℝ _ hqX
+   have hpcoordNonneg : ∀ i, 0 ≤ b.coord i p := by
+-    have hpRange : p ∈ convexHull ℝ (Set.range b) := by simpa [b] using hpHullV
++    have hpRange : p ∈ convexHull ℝ (Set.range b) := by simpa [hb] using hpHullV
+     rw [b.convexHull_eq_nonneg_coord] at hpRange
+     exact hpRange
+   have hqcoordNonneg : ∀ i, 0 ≤ b.coord i q := by
+-    have hqRange : q ∈ convexHull ℝ (Set.range b) := by simpa [b] using hqHullV
++    have hqRange : q ∈ convexHull ℝ (Set.range b) := by simpa [hb] using hqHullV
+     rw [b.convexHull_eq_nonneg_coord] at hqRange
+     exact hqRange
+   have hpcoord : ∀ i, 0 < b.coord i p := fun i ↦
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/FinalEstimates.lean	2026-09-16 09:20:16
++++ ./Erdos651/FinalEstimates.lean	2026-09-16 13:44:21
+@@ -3,7 +3,7 @@
+ Released under Apache 2.0 license as described in the file LICENSE.
+ Authors: OpenAI Codex
+ -/
+-import ErdosProblems.Erdos651.Definitions
++import JSP527.External.Erdos651.Definitions
+ 
+ /-!
+ # Numerical endgame for Erdős Problem 651
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/FiniteRamsey.lean	2026-09-16 09:20:16
++++ ./Erdos651/FiniteRamsey.lean	2026-09-16 13:44:21
+@@ -3,7 +3,7 @@
+ Released under Apache 2.0 license as described in the file LICENSE.
+ Authors: OpenAI Codex
+ -/
+-import ErdosProblems.Erdos651.Definitions
++import JSP527.External.Erdos651.Definitions
+ 
+ /-!
+ # Finite uniform hypergraph Ramsey selection
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/HamSandwich.lean	2026-09-16 09:20:16
++++ ./Erdos651/HamSandwich.lean	2026-09-16 13:44:21
+@@ -3,7 +3,7 @@
+ Released under Apache 2.0 license as described in the file LICENSE.
+ Authors: OpenAI Codex
+ -/
+-import ErdosProblems.Erdos651.Definitions
++import JSP527.External.Erdos651.Definitions
+ 
+ /-!
+ # The finite oriented ham-sandwich step in dimension three
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/Kirchberger.lean	2026-09-16 09:20:16
++++ ./Erdos651/Kirchberger.lean	2026-09-16 13:44:21
+@@ -3,7 +3,7 @@
+ Released under Apache 2.0 license as described in the file LICENSE.
+ Authors: OpenAI Codex
+ -/
+-import ErdosProblems.Erdos651.Definitions
++import JSP527.External.Erdos651.Definitions
+ 
+ /-!
+ # Kirchberger witnesses and strict separation in three dimensions
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/PohoataZakharovBridge.lean	2026-09-16 09:20:16
++++ ./Erdos651/PohoataZakharovBridge.lean	2026-09-16 13:44:21
+@@ -3,7 +3,7 @@
+ Released under Apache 2.0 license as described in the file LICENSE.
+ Authors: OpenAI Codex
+ -/
+-import ErdosProblems.Erdos651.Asymptotic
++import JSP527.External.Erdos651.Asymptotic
+ 
+ /-! The exact point-set statement of Pohoata--Zakharov's Theorem 1.1 and its
+ formal implication for Erdős Problem 651. -/
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/PolytopeCap.lean	2026-09-16 09:20:16
++++ ./Erdos651/PolytopeCap.lean	2026-09-16 13:44:21
+@@ -3,8 +3,8 @@
+ Released under Apache 2.0 license as described in the file LICENSE.
+ Authors: OpenAI Codex
+ -/
+-import ErdosProblems.Erdos651.Definitions
+-import ErdosProblems.Erdos651.CupsCaps
++import JSP527.External.Erdos651.Definitions
++import JSP527.External.Erdos651.CupsCaps
+ import Mathlib.Combinatorics.Hall.Basic
+ import Mathlib.Order.Antisymmetrization
+ import Mathlib.Analysis.Convex.Radon
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/PositiveFraction.lean	2026-09-16 09:20:16
++++ ./Erdos651/PositiveFraction.lean	2026-09-16 13:44:21
+@@ -3,8 +3,8 @@
+ Released under Apache 2.0 license as described in the file LICENSE.
+ Authors: OpenAI Codex
+ -/
+-import ErdosProblems.Erdos651.CupsCaps
+-import ErdosProblems.Erdos651.AboveBelow
++import JSP527.External.Erdos651.CupsCaps
++import JSP527.External.Erdos651.AboveBelow
+ 
+ /-!
+ # The planar positive-fraction configuration
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/TrihedralGadget.lean	2026-09-16 09:20:16
++++ ./Erdos651/TrihedralGadget.lean	2026-09-16 13:44:21
+@@ -3,10 +3,10 @@
+ Released under Apache 2.0 license as described in the file LICENSE.
+ Authors: OpenAI Codex
+ -/
+-import ErdosProblems.Erdos651.AboveBelow
+-import ErdosProblems.Erdos651.TwoSeparation
+-import ErdosProblems.Erdos651.PolytopeCap
+-import ErdosProblems.Erdos651.CapRamsey
++import JSP527.External.Erdos651.AboveBelow
++import JSP527.External.Erdos651.TwoSeparation
++import JSP527.External.Erdos651.PolytopeCap
++import JSP527.External.Erdos651.CapRamsey
+ import Mathlib.Analysis.Normed.Module.FiniteDimension
+ import Mathlib.LinearAlgebra.Dual.Basis
+ 
+@@ -43,6 +43,7 @@
+ namespace Erdos651
+ 
+ open Set
++open scoped InnerProductSpace
+ 
+ noncomputable section
+ 
+@@ -106,7 +107,8 @@
+ lies strictly above `high`. -/
+ structure StrictPlaneSplit (A B : Finset (Point 3)) where
+   normal : PlaneNormal
+-  low high : ℝ
++  low : ℝ
++  high : ℝ
+   low_lt_high : low < high
+   left_lt_low : ∀ x ∈ A, normal x < low
+   high_lt_right : ∀ x ∈ B, high < normal x
+@@ -191,8 +193,9 @@
+     (v : Fin m → PlaneNormal) :
+     Submodule.span ℝ (Set.range v) ≠ ⊤ := by
+   intro htop
+-  have hdim := finrank_range_le_card (R := ℝ) v
+-  rw [htop, Submodule.finrank_top, finrank_planeNormal] at hdim
++  have hdim : Module.finrank ℝ (Submodule.span ℝ (Set.range v)) ≤ Fintype.card (Fin m) :=
++    finrank_range_le_card (R := ℝ) v
++  rw [htop, finrank_top, finrank_planeNormal] at hdim
+   exact (not_le_of_gt hm) (by simpa using hdim)
+ 
+ private theorem dense_compl_ker_planeConstraint {L : PlaneConstraint} (hL : L ≠ 0) :
+@@ -234,7 +237,7 @@
+       intro K hK
+       rw [Finset.mem_insert] at hK
+       rcases hK with rfl | hK
+-      · simpa only [LinearMap.mem_ker, Set.mem_compl_iff] using hnO'.2
++      · simpa only [Set.mem_compl_iff, SetLike.mem_coe, LinearMap.mem_ker] using hnO'.2
+       · exact hnC K hK
+ 
+ /-- Strict finite sign patterns can avoid any proper linear subspace of the
+@@ -289,7 +292,8 @@
+   have hoffset_m : offset < m := by
+     obtain ⟨x, hxB, hxm⟩ := Finset.mem_image.mp
+       (Finset.min'_mem (B.image normal) himage)
+-    subst m
++    show offset < (B.image normal).min' himage
++    rw [← hxm]
+     exact hpositive x hxB
+   refine ⟨(offset + m) / 2, by linarith, ?_⟩
+   intro x hxB
+@@ -326,13 +330,16 @@
+   constructor
+   · intro h x hx y hy hxy hEq
+     have hmem : pointDifferenceConstraint x y ∈ pointDifferenceConstraints U := by
+-      simp [pointDifferenceConstraints, hx, hy, hxy]
++      simp only [pointDifferenceConstraints, Finset.mem_image, Finset.mem_filter,
++        Finset.mem_product]
++      exact ⟨(x, y), ⟨Finset.mem_product.mpr ⟨hx, hy⟩, hxy⟩, rfl⟩
+     exact h _ hmem (by simp [pointDifferenceConstraint, hEq])
+   · intro h L hL
+     simp only [pointDifferenceConstraints, Finset.mem_image] at hL
+     obtain ⟨p, hp, rfl⟩ := hL
+     have hp' := Finset.mem_filter.mp hp
+-    simpa [pointDifferenceConstraint] using h p.1 hp'.1.1 p.2 hp'.1.2 hp'.2
++    have hpU := Finset.mem_product.mp hp'.1
++    exact sub_ne_zero_of_ne (h p.1 hpU.1 p.2 hpU.2 hp'.2)
+ 
+ private theorem planarOrientationConstraint_ne_zero
+     {U : Finset (Point 3)} (htriple : NoThreeCollinear U)
+@@ -351,7 +358,7 @@
+   have hb : b ≠ 0 := sub_ne_zero.mpr (hfirst z hz x hx hxz.symm)
+   have hqinner := LinearMap.congr_fun hzero (innerSL ℝ q)
+   have hqzero : q = 0 := by
+-    apply (inner_self_eq_zero.mp ?_)
++    apply ((inner_self_eq_zero (𝕜 := ℝ)).mp ?_)
+     calc
+       ⟪q, q⟫_ℝ =
+           a * (innerSL ℝ q z - innerSL ℝ q x) -
+@@ -360,8 +367,8 @@
+           inner_sub_left, real_inner_smul_right]
+         ring
+       _ = 0 := by
+-        simpa only [planarOrientationConstraint, a, b,
+-          LinearMap.zero_apply] using hqinner
++        simpa only [planarOrientationConstraint, a, b, LinearMap.coe_mk,
++          AddHom.coe_mk, LinearMap.zero_apply] using hqinner
+   have hrel : a • w = b • v := sub_eq_zero.mp hqzero
+   have hvw : (a / b) • w = v := by
+     calc
+@@ -386,8 +393,7 @@
+   have hp' := Finset.mem_filter.mp hp
+   have hpU := Finset.mem_product.mp hp'.1
+   exact planarOrientationConstraint_ne_zero htriple hfirst
+-    p.1 hpU.1 p.2.1 (Finset.mem_product.mp hpU.2).1
+-      p.2.2 (Finset.mem_product.mp hpU.2).2
++    hpU.1 (Finset.mem_product.mp hpU.2).1 (Finset.mem_product.mp hpU.2).2
+     hp'.2.1 hp'.2.2.1 hp'.2.2.2
+ 
+ theorem realizes_planarOrientationConstraints_iff
+@@ -401,7 +407,10 @@
+   constructor
+   · intro h x hx y hy z hz hxy hyz hxz
+     apply h (planarOrientationConstraint first x y z)
+-    simp [planarOrientationConstraints, hx, hy, hz, hxy, hyz, hxz]
++    simp only [planarOrientationConstraints, Finset.mem_image, Finset.mem_filter,
++      Finset.mem_product]
++    exact ⟨(x, y, z), ⟨Finset.mem_product.mpr ⟨hx, Finset.mem_product.mpr ⟨hy, hz⟩⟩,
++      hxy, hyz, hxz⟩, rfl⟩
+   · intro h L hL
+     simp only [planarOrientationConstraints, Finset.mem_image] at hL
+     obtain ⟨p, hp, rfl⟩ := hL
+@@ -453,7 +462,7 @@
+   let e : (Module.Dual ℝ (Point 3)) ≃ₗ[ℝ] PlaneNormal :=
+     LinearMap.toContinuousLinearMap
+   have hmapped := h.map' e.symm.toLinearMap (by simp)
+-  simpa only [Function.comp_apply, e, algebraicNormal] using hmapped
++  exact hmapped
+ 
+ private def planeCoordinateLinearEquiv (normal : Fin 3 → PlaneNormal)
+     (h : LinearIndependent ℝ normal) : Point 3 ≃ₗ[ℝ] Point 3 := by
+@@ -462,9 +471,9 @@
+   have han : LinearIndependent ℝ an := algebraicNormals_linearIndependent h
+   have hcard : Fintype.card (Fin 3) =
+       Module.finrank ℝ (Module.Dual ℝ (Point 3)) := by
+-    rw [Module.dual_finrank_eq, finrank_euclideanSpace_fin]
++    rw [Subspace.dual_finrank_eq, finrank_euclideanSpace_fin]
+     simp
+-  let b : Basis (Fin 3) ℝ (Module.Dual ℝ (Point 3)) :=
++  let b : Module.Basis (Fin 3) ℝ (Module.Dual ℝ (Point 3)) :=
+     basisOfLinearIndependentOfCardEqFinrank' an han hcard
+   let eFun : Point 3 ≃ₗ[ℝ] (Fin 3 → ℝ) :=
+     (Module.evalEquiv ℝ (Point 3)).trans b.dualBasis.equivFun
+@@ -475,9 +484,8 @@
+     (x : Point 3) (i : Fin 3) :
+     planeCoordinateLinearEquiv normal h x i = normal i x := by
+   simp only [planeCoordinateLinearEquiv, LinearEquiv.trans_apply,
+-    WithLp.linearEquiv_symm_apply, WithLp.toLp_apply,
+-    Basis.dualBasis_equivFun, Module.evalEquiv_apply, Module.Dual.eval_apply,
+-    algebraicNormal]
++    WithLp.coe_symm_linearEquiv, WithLp.ofLp_toLp,
++    Module.Basis.dualBasis_equivFun, Module.evalEquiv_apply, Module.Dual.eval_apply]
+   rw [coe_basisOfLinearIndependentOfCardEqFinrank']
+   rfl
+ 
+@@ -497,12 +505,13 @@
+       normal i x - offset i := by
+   simp [orientedTrihedralOfIndependentPlanes, OrientedTrihedral.functional,
+     planeCoordinateLinearEquiv_apply]
++  ring
+ 
+ private theorem secantSlope_ne_of_orientation
+-    {ax ay az bx by bz : ℝ}
++    {ax ay az bx «by» bz : ℝ}
+     (haxy : ax ≠ ay) (hayz : ay ≠ az)
+-    (horient : (ay - ax) * (bz - bx) - (az - ax) * (by - bx) ≠ 0) :
+-    (by - bx) / (ay - ax) ≠ (bz - by) / (az - ay) := by
++    (horient : (ay - ax) * (bz - bx) - (az - ax) * («by» - bx) ≠ 0) :
++    («by» - bx) / (ay - ax) ≠ (bz - «by») / (az - ay) := by
+   intro hslope
+   have hcross := (div_eq_div_iff
+     (sub_ne_zero.mpr haxy.symm) (sub_ne_zero.mpr hayz.symm)).mp hslope
+@@ -534,6 +543,8 @@
+           (normal 1 z - normal 1 x) * (normal 2 y - normal 2 x) ≠ 0) :
+     (orientedTrihedralOfIndependentPlanes normal offset h).GenericProjectionFamily X := by
+   let T := orientedTrihedralOfIndependentPlanes normal offset h
++  have hcoord : ∀ (i : Fin 3) (w : Point 3), T.normalization w i = normal i w - offset i :=
++    orientedTrihedralOfIndependentPlanes_functional normal offset h
+   refine {
+     projection := T.edgeProjection
+     image_carrier := T.edgeProjection_image_carrier
+@@ -544,36 +555,36 @@
+   · intro i x y hx hy hxy
+     fin_cases i
+     · simpa [T, OrientedTrihedral.edgeProjection, dropCoordinate3,
+-        dropCoordinate0, planeX] using hinjective 1 hx hy hxy
++        dropCoordinate0, planeX, hcoord] using hinjective 1 hx hy hxy
+     · simpa [T, OrientedTrihedral.edgeProjection, dropCoordinate3,
+-        dropCoordinate1, planeX] using hinjective 0 hx hy hxy
++        dropCoordinate1, planeX, hcoord] using hinjective 0 hx hy hxy
+     · simpa [T, OrientedTrihedral.edgeProjection, dropCoordinate3,
+-        dropCoordinate2, planeX] using hinjective 0 hx hy hxy
++        dropCoordinate2, planeX, hcoord] using hinjective 0 hx hy hxy
+   · intro i x y hx hy hxy
+     fin_cases i
+     · simpa [T, OrientedTrihedral.edgeProjection, dropCoordinate3,
+-        dropCoordinate0, planeY] using hinjective 2 hx hy hxy
++        dropCoordinate0, planeY, hcoord] using hinjective 2 hx hy hxy
+     · simpa [T, OrientedTrihedral.edgeProjection, dropCoordinate3,
+-        dropCoordinate1, planeY] using hinjective 2 hx hy hxy
++        dropCoordinate1, planeY, hcoord] using hinjective 2 hx hy hxy
+     · simpa [T, OrientedTrihedral.edgeProjection, dropCoordinate3,
+-        dropCoordinate2, planeY] using hinjective 1 hx hy hxy
++        dropCoordinate2, planeY, hcoord] using hinjective 1 hx hy hxy
+   · intro i x y z hx hy hz hxy hyz hxz
+     fin_cases i
+     · have ho := horient12 hx hy hz hxy hyz hxz
+       have hs := secantSlope_ne_of_orientation
+         (hinjective 1 hx hy hxy) (hinjective 1 hy hz hyz) ho
+       simpa [T, OrientedTrihedral.edgeProjection, dropCoordinate3,
+-        dropCoordinate0, secantSlope, planeX, planeY] using hs
++        dropCoordinate0, secantSlope, planeX, planeY, hcoord] using hs
+     · have ho := horient02 hx hy hz hxy hyz hxz
+       have hs := secantSlope_ne_of_orientation
+         (hinjective 0 hx hy hxy) (hinjective 0 hy hz hyz) ho
+       simpa [T, OrientedTrihedral.edgeProjection, dropCoordinate3,
+-        dropCoordinate1, secantSlope, planeX, planeY] using hs
++        dropCoordinate1, secantSlope, planeX, planeY, hcoord] using hs
+     · have ho := horient01 hx hy hz hxy hyz hxz
+       have hs := secantSlope_ne_of_orientation
+         (hinjective 0 hx hy hxy) (hinjective 0 hy hz hyz) ho
+       simpa [T, OrientedTrihedral.edgeProjection, dropCoordinate3,
+-        dropCoordinate2, secantSlope, planeX, planeY] using hs
++        dropCoordinate2, secantSlope, planeX, planeY, hcoord] using hs
+ 
+ /-! ## The geometric output -/
+ 
+@@ -606,8 +617,8 @@
+     (sourcePolytopeLE first.carrier x y ∨
+       sourcePolytopeLE first.carrier y x) →
+         Disjoint (lineThrough x y) second.carrier
+-  first_generic : first.GenericProjectionFamily (X j₂)
+-  second_generic : second.GenericProjectionFamily (X j₂)
++  first_generic : ∀ Y : Finset (Point 3), Y ⊆ X j₂ → first.GenericProjectionFamily Y
++  second_generic : ∀ Y : Finset (Point 3), Y ⊆ X j₂ → second.GenericProjectionFamily Y
+ 
+ namespace TrihedralClusterGadget
+ 
+@@ -615,17 +626,15 @@
+     {j₁ j₂ j₃ : Fin k} (G : TrihedralClusterGadget X j₁ j₂ j₃) :
+     Disjoint (↑(X j₂) : Set (Point 3)) G.first.carrier := by
+   apply Disjoint.symm
+-  apply (G.convex_position.1.mono_right convexHull_mono ?_).mono_right
+-    (subset_convexHull ℝ _)
+-  exact Set.subset_union_right
++  exact G.convex_position.1.mono_right
++    ((subset_convexHull ℝ _).trans (Set.subset_union_right.trans (subset_convexHull ℝ _)))
+ 
+ theorem middle_disjoint_second {k : ℕ} {X : Fin k → Finset (Point 3)}
+     {j₁ j₂ j₃ : Fin k} (G : TrihedralClusterGadget X j₁ j₂ j₃) :
+     Disjoint (↑(X j₂) : Set (Point 3)) G.second.carrier := by
+   apply Disjoint.symm
+-  apply (G.convex_position.2.1.mono_right convexHull_mono ?_).mono_right
+-    (subset_convexHull ℝ _)
+-  exact Set.subset_union_right
++  exact G.convex_position.2.1.mono_right
++    ((subset_convexHull ℝ _).trans (Set.subset_union_right.trans (subset_convexHull ℝ _)))
+ 
+ /-- The exact input consumed by the second Dilworth--Ramsey step.  All free-
+ set conclusions are derived by `ofLineSeparation`; none is a field of the
+@@ -635,7 +644,8 @@
+     MiddleTripleGadget :=
+   MiddleTripleGadget.ofLineSeparation (X j₂) G.first.carrier G.second.carrier
+     G.middle_disjoint_first G.middle_disjoint_second
+-    G.first_line_comparable G.comparable_line_second
++    (fun ⦃_⦄ hx ⦃_⦄ hy hxy hline => G.first_line_comparable hx hy hxy hline)
++    (fun ⦃_⦄ hx ⦃_⦄ hy hxy hrel => G.comparable_line_second hx hy hxy hrel)
+ 
+ end TrihedralClusterGadget
+ 
+@@ -677,7 +687,7 @@
+     (hmeet : ¬ Disjoint (lineThrough x y) P) :
+     sourcePolytopeLE P x y ∨ sourcePolytopeLE P y x := by
+   obtain ⟨p, hpline, hpP⟩ := Set.not_disjoint_iff.mp hmeet
+-  rw [lineThrough, mem_affineSpan_pair_iff_exists_lineMap_eq] at hpline
++  rw [lineThrough, SetLike.mem_coe, mem_affineSpan_pair_iff_exists_lineMap_eq] at hpline
+   obtain ⟨t, ht⟩ := hpline
+   have htout : t ∉ Set.Icc (0 : ℝ) 1 := by
+     intro htI
+@@ -697,7 +707,8 @@
+     have heq : AffineMap.lineMap p y s = x := by
+       rw [← ht]
+       ext i
+-      simp only [AffineMap.lineMap_apply_module', s]
++      simp only [AffineMap.lineMap_apply_module', s, WithLp.ofLp_add, WithLp.ofLp_sub,
++        WithLp.ofLp_smul, Pi.add_apply, Pi.sub_apply, Pi.smul_apply, smul_eq_mul]
+       field_simp
+       ring
+     rw [sourcePolytopeLE, ← heq]
+@@ -715,7 +726,8 @@
+     have heq : AffineMap.lineMap x p s = y := by
+       rw [← ht]
+       ext i
+-      simp only [AffineMap.lineMap_apply_module', s]
++      simp only [AffineMap.lineMap_apply_module', s, WithLp.ofLp_add, WithLp.ofLp_sub,
++        WithLp.ofLp_smul, Pi.add_apply, Pi.sub_apply, Pi.smul_apply, smul_eq_mul]
+       field_simp
+       ring
+     rw [sourcePolytopeLE, ← heq]
+@@ -736,7 +748,7 @@
+   rw [Set.mem_singleton_iff] at hq
+   subst q
+   have hpLine : p ∈ lineThrough x y := by
+-    rw [lineThrough]
++    rw [lineThrough, Set.pair_comm x y]
+     exact ((mem_segment_iff_wbtw.mp hxseg).symm).left_mem_affineSpan_of_right_ne
+       hxy.symm
+   exact Set.not_disjoint_iff.mpr ⟨p, hpLine, hpP⟩
+@@ -759,7 +771,7 @@
+   by_contra hlineQ
+   obtain ⟨p, hpline, hpP⟩ := Set.not_disjoint_iff.mp hlineP
+   obtain ⟨q, hqline, hqQ⟩ := Set.not_disjoint_iff.mp hlineQ
+-  rw [lineThrough, mem_affineSpan_pair_iff_exists_lineMap_eq] at hpline hqline
++  rw [lineThrough, SetLike.mem_coe, mem_affineSpan_pair_iff_exists_lineMap_eq] at hpline hqline
+   obtain ⟨t, ht⟩ := hpline
+   obtain ⟨u, hu⟩ := hqline
+   have htout : t < 0 ∨ 1 < t := by
+@@ -767,7 +779,8 @@
+       intro htI
+       have hpHigh : high ≤ normal p := by
+         rw [← ht]
+-        simp only [AffineMap.lineMap_apply_module', map_add, map_smul]
++        simp only [AffineMap.lineMap_apply_module', map_add, map_smul, map_sub,
++          smul_eq_mul]
+         rcases htI with ⟨ht0, ht1⟩
+         nlinarith [hC x hx, hC y hy]
+       exact (not_le_of_gt hlh) (hpHigh.trans (hP p hpP))
+@@ -777,7 +790,8 @@
+       intro huI
+       have hqHigh : high ≤ normal q := by
+         rw [← hu]
+-        simp only [AffineMap.lineMap_apply_module', map_add, map_smul]
++        simp only [AffineMap.lineMap_apply_module', map_add, map_smul, map_sub,
++          smul_eq_mul]
+         rcases huI with ⟨hu0, hu1⟩
+         nlinarith [hC x hx, hC y hy]
+       exact (not_le_of_gt hlh) (hqHigh.trans (hQ q hqQ))
+@@ -785,9 +799,11 @@
+   have hpformula : normal p = (1 - t) * normal x + t * normal y := by
+     rw [← ht]
+     simp [AffineMap.lineMap_apply_module']
++    ring
+   have hqformula : normal q = (1 - u) * normal x + u * normal y := by
+     rw [← hu]
+     simp [AffineMap.lineMap_apply_module']
++    ring
+   have hsame : (t < 0 ∧ u < 0) ∨ (1 < t ∧ 1 < u) := by
+     rcases htout with htneg | htpos <;> rcases huout with huneg | hupos
+     · exact Or.inl ⟨htneg, huneg⟩
+@@ -811,7 +827,8 @@
+       have heq : AffineMap.lineMap p x s = q := by
+         rw [← ht, ← hu]
+         ext i
+-        simp only [AffineMap.lineMap_apply_module', s]
++        simp only [AffineMap.lineMap_apply_module', s, WithLp.ofLp_add, WithLp.ofLp_sub,
++          WithLp.ofLp_smul, Pi.add_apply, Pi.sub_apply, Pi.smul_apply, smul_eq_mul]
+         field_simp
+         ring
+       apply Set.disjoint_left.mp hQexposed hqQ
+@@ -831,7 +848,8 @@
+       have heq : AffineMap.lineMap q x s = p := by
+         rw [← hu, ← ht]
+         ext i
+-        simp only [AffineMap.lineMap_apply_module', s]
++        simp only [AffineMap.lineMap_apply_module', s, WithLp.ofLp_add, WithLp.ofLp_sub,
++          WithLp.ofLp_smul, Pi.add_apply, Pi.sub_apply, Pi.smul_apply, smul_eq_mul]
+         field_simp
+         ring
+       apply Set.disjoint_left.mp hPexposed hpP
+@@ -850,7 +868,8 @@
+       have heq : AffineMap.lineMap y q s = p := by
+         rw [← hu, ← ht]
+         ext i
+-        simp only [AffineMap.lineMap_apply_module', s]
++        simp only [AffineMap.lineMap_apply_module', s, WithLp.ofLp_add, WithLp.ofLp_sub,
++          WithLp.ofLp_smul, Pi.add_apply, Pi.sub_apply, Pi.smul_apply, smul_eq_mul]
+         field_simp
+         ring
+       apply Set.disjoint_left.mp hPexposed hpP
+@@ -868,7 +887,8 @@
+       have heq : AffineMap.lineMap y p s = q := by
+         rw [← ht, ← hu]
+         ext i
+-        simp only [AffineMap.lineMap_apply_module', s]
++        simp only [AffineMap.lineMap_apply_module', s, WithLp.ofLp_add, WithLp.ofLp_sub,
++          WithLp.ofLp_smul, Pi.add_apply, Pi.sub_apply, Pi.smul_apply, smul_eq_mul]
+         field_simp
+         ring
+       apply Set.disjoint_left.mp hQexposed hqQ
+@@ -884,6 +904,7 @@
+ poset, free-set, or cap conclusion is assumed.
+ -/
+ 
++set_option maxHeartbeats 400000 in
+ /-- Pohoata--Zakharov Proposition 3.1: two alternating-block separations and
+ strong convex position of the support clusters produce the two trihedral
+ polyhedra with the containments (4.8) and the required three-object convex
+@@ -1035,9 +1056,12 @@
+   let P₂ : OrientedTrihedral :=
+     orientedTrihedralOfIndependentPlanes normals secondOffsets hnormals
+ 
+-  have hnormals0 : normals 0 = S₀.normal := by simp [normals, normals₂, normals₁]
+-  have hnormals1 : normals 1 = S₁.normal := by simp [normals, normals₂, normals₁]
+-  have hnormals2 : normals 2 = S₂.normal := by simp [normals, normals₂, normals₁]
++  have hnormals0 : normals 0 = S₀.normal := by
++    simp [normals, normals₂, normals₁, Fin.snoc]
++  have hnormals1 : normals 1 = S₁.normal := by
++    simp [normals, normals₂, normals₁, Fin.snoc]
++  have hnormals2 : normals 2 = S₂.normal := by
++    simp [normals, normals₂, normals₁, Fin.snoc]
+   have hnormalsinj : ∀ i {x y : Point 3}, x ∈ B₀ → y ∈ B₀ → x ≠ y →
+       normals i x ≠ normals i y := by
+     intro i x y hx hy hxy
+@@ -1050,19 +1074,22 @@
+       x ≠ y → y ≠ z → x ≠ z →
+         (normals 0 y - normals 0 x) * (normals 1 z - normals 1 x) -
+           (normals 0 z - normals 0 x) * (normals 1 y - normals 1 x) ≠ 0 := by
+-    simpa [hnormals0, hnormals1] using hS₀S₁orient
++    intro x y z hx hy hz hxy hyz hxz
++    simpa [hnormals0, hnormals1] using hS₀S₁orient x hx y hy z hz hxy hyz hxz
+   have hnormals02 : ∀ {x y z : Point 3},
+       x ∈ B₀ → y ∈ B₀ → z ∈ B₀ →
+       x ≠ y → y ≠ z → x ≠ z →
+         (normals 0 y - normals 0 x) * (normals 2 z - normals 2 x) -
+           (normals 0 z - normals 0 x) * (normals 2 y - normals 2 x) ≠ 0 := by
+-    simpa [hnormals0, hnormals2] using hS₀S₂orient
++    intro x y z hx hy hz hxy hyz hxz
++    simpa [hnormals0, hnormals2] using hS₀S₂orient x hx y hy z hz hxy hyz hxz
+   have hnormals12 : ∀ {x y z : Point 3},
+       x ∈ B₀ → y ∈ B₀ → z ∈ B₀ →
+       x ≠ y → y ≠ z → x ≠ z →
+         (normals 1 y - normals 1 x) * (normals 2 z - normals 2 x) -
+           (normals 1 z - normals 1 x) * (normals 2 y - normals 2 x) ≠ 0 := by
+-    simpa [hnormals1, hnormals2] using hS₁S₂orient
++    intro x y z hx hy hz hxy hyz hxz
++    simpa [hnormals1, hnormals2] using hS₁S₂orient x hx y hy z hz hxy hyz hxz
+   have hfirstNormalsinj : ∀ i {x y : Point 3}, x ∈ B₀ → y ∈ B₀ → x ≠ y →
+       firstNormals i x ≠ firstNormals i y := by
+     intro i x y hx hy hxy
+@@ -1103,12 +1130,20 @@
+     apply hnormals12 hx hy hz hxy hyz hxz
+     simp [firstNormals, signs] at hzero
+     nlinarith
+-  let P₁generic := genericProjectionFamilyOfIndependentPlanes
+-    firstNormals firstOffsets hfirstNormals B₀ hfirstNormalsinj
+-      hfirstNormals01 hfirstNormals02 hfirstNormals12
+-  let P₂generic := genericProjectionFamilyOfIndependentPlanes
+-    normals secondOffsets hnormals B₀ hnormalsinj
+-      hnormals01 hnormals02 hnormals12
++  let P₁generic : ∀ Y : Finset (Point 3), Y ⊆ B₀ →
++      P₁.GenericProjectionFamily Y := fun Y hY =>
++    genericProjectionFamilyOfIndependentPlanes firstNormals firstOffsets hfirstNormals Y
++      (fun i {_ _} hx hy hxy => hfirstNormalsinj i (hY hx) (hY hy) hxy)
++      (fun {_ _ _} hx hy hz => hfirstNormals01 (hY hx) (hY hy) (hY hz))
++      (fun {_ _ _} hx hy hz => hfirstNormals02 (hY hx) (hY hy) (hY hz))
++      (fun {_ _ _} hx hy hz => hfirstNormals12 (hY hx) (hY hy) (hY hz))
++  let P₂generic : ∀ Y : Finset (Point 3), Y ⊆ B₀ →
++      P₂.GenericProjectionFamily Y := fun Y hY =>
++    genericProjectionFamilyOfIndependentPlanes normals secondOffsets hnormals Y
++      (fun i {_ _} hx hy hxy => hnormalsinj i (hY hx) (hY hy) hxy)
++      (fun {_ _ _} hx hy hz => hnormals01 (hY hx) (hY hy) (hY hz))
++      (fun {_ _ _} hx hy hz => hnormals02 (hY hx) (hY hy) (hY hz))
++      (fun {_ _ _} hx hy hz => hnormals12 (hY hx) (hY hy) (hY hz))
+   have hP₁mem (x : Point 3)
+       (h₀ : S₀.normal x ≤ S₀.low)
+       (h₁ : S₁.high ≤ S₁.normal x)
+@@ -1125,8 +1160,10 @@
+       (h₂ : S₂.normal x ≤ S₂.low) : x ∈ P₂.carrier := by
+     rw [OrientedTrihedral.mem_carrier_iff]
+     intro i
+-    fin_cases i <;>
+-      simp [P₂, secondOffsets, hnormals0, hnormals1, hnormals2, *]
++    fin_cases i
++    · simpa [P₂, secondOffsets, hnormals0] using h₀
++    · simpa [P₂, secondOffsets, hnormals1] using h₁
++    · simpa [P₂, secondOffsets, hnormals2] using h₂
+ 
+   have hfirst_subset : (↑(clusterUnion X I₁) : Set (Point 3)) ⊆ P₁.carrier := by
+     intro x hx
+@@ -1142,6 +1179,7 @@
+         intro h
+         subst i
+         simp [I₁, h₁₂, h₂₃] at hi
++        exact absurd h₁₂ (asymm hi)
+       exact ⟨i, by simp [hij], hxi⟩
+     exact hP₁mem x (S₀.left_lt_low x hxA₀).le
+       (S₁.high_lt_right x hxB₁).le
+@@ -1160,6 +1198,7 @@
+         intro h
+         subst i
+         simp [I₂, h₁₂, h₂₃] at hi
++        exact absurd h₂₃ (asymm hi)
+       exact ⟨i, by simp [hij], hxi⟩
+     exact hP₂mem x (S₀.left_lt_low x hxA₀).le
+       (S₁.left_lt_low x hxA₁).le
+@@ -1173,7 +1212,7 @@
+     have h0 := hx 0
+     have h1 := hx 1
+     have h2 := hx 2
+-    simp only [P₁, orientedTrihedralOfIndependentPlanes_functional,
++    simp [P₁, orientedTrihedralOfIndependentPlanes_functional,
+       firstNormals, firstOffsets, signs, Pi.smul_apply, Units.smul_def,
+       hnormals0, hnormals1, hnormals2] at h0 h1 h2
+     constructor
+@@ -1187,7 +1226,7 @@
+     have h0 := hx 0
+     have h1 := hx 1
+     have h2 := hx 2
+-    simp only [P₂, orientedTrihedralOfIndependentPlanes_functional,
++    simp [P₂, orientedTrihedralOfIndependentPlanes_functional,
+       secondOffsets, hnormals0, hnormals1, hnormals2] at h0 h1 h2
+     exact ⟨h0, h1, h2⟩
+   have hM₀ (x : Point 3) (hx : x ∈ X j₂) :
+@@ -1221,7 +1260,8 @@
+       · exact (hP₂bounds x hx).2.1
+       · exact hM₁hull x hx
+   have hconv₂ : Disjoint P₂.carrier (convexHull ℝ (P₁.carrier ∪ M)) := by
+-    apply (disjoint_of_plane_gap S₂.low_lt_high).symm
++    apply Disjoint.symm
++    apply disjoint_of_plane_gap S₂.low_lt_high
+     · apply convexHull_subset_plane_ge
+       intro x hx
+       rcases hx with hx | hx
+@@ -1274,8 +1314,7 @@
+ 
+   exact ⟨⟨P₁, P₂, by simpa [I₁], by simpa [I₂],
+     ⟨hconv₁, hconv₂, hconvM⟩, hfirstLine, hsecondLine,
+-      by simpa [P₁generic, P₁, B₀],
+-      by simpa [P₂generic, P₂, B₀]⟩⟩
++      P₁generic, P₂generic⟩⟩
+ 
+ end
+ 
+--- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/TwoSeparation.lean	2026-09-16 09:20:16
++++ ./Erdos651/TwoSeparation.lean	2026-09-16 13:44:21
+@@ -3,9 +3,9 @@
+ Released under Apache 2.0 license as described in the file LICENSE.
+ Authors: OpenAI Codex
+ -/
+-import ErdosProblems.Erdos651.Definitions
+-import ErdosProblems.Erdos651.HamSandwich
+-import ErdosProblems.Erdos651.Kirchberger
++import JSP527.External.Erdos651.Definitions
++import JSP527.External.Erdos651.HamSandwich
++import JSP527.External.Erdos651.Kirchberger
+ 
+ /-!
+ # Two-separated families of point clusters

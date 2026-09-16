@@ -1,0 +1,100 @@
+Local exported-package verification; upstream dependency caches used (arm64 macOS).
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+info: JSP527/External/Erdos651.lean:65:0: 'Erdos651.not_erdos_651' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP527/External/Erdos651/HamSandwich.lean:1181:0: 'Erdos651.threeSetDiscreteHamSandwich' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP527/External/Erdos651/HamSandwich.lean:1182:0: 'Erdos651.exists_orientedHalfSelection' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: JSP527/External/Erdos651/HamSandwich.lean:1183:0: 'Erdos651.exists_orientedHalfSelection_with_disjoint_convexHulls' depends on axioms: [propext,
+Build completed successfully (8770 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'PohoataZakharov.erdos_651_subexponential_inv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PohoataZakharov.erdos_651_subexponential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PohoataZakharov.theorem_one_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PohoataZakharov.hasErdosSzekeresNumber_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PohoataZakharov.erdos_651_disproved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos651.pohoataZakharov_forces_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos651.exists_tripleGadgetFamily' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos651.exists_uniformSeparatedClusters' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos651.exists_generic_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos651.PohoataZakharovEnvelopeCertificate.theoremOneOne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos651.AlternatingFreeFamily.containsConvexSubset_of_sourceEnvelope' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Erdos651.pohoata_zakharov_prop_three_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos651.pohoata_zakharov_prop_two_one_three_edges' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos651.exists_orderedStrongPositiveFractionConfiguration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos651.exists_twoSeparated_subclusters' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos651.alternatingBlock_hulls_disjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos651.exists_alternating_free_subsets_of_monochromatic_clique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Erdos651.hasErdosSzekeresNumber_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos651.pohoataZakharovTheoremOneOne_imp_subexponential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos651.erdos_651_of_pohoata_zakharov' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos651.not_erdos_651' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0
+
+$ lake build Challenge   # comparator challenge module; the only warnings are its intended sorry declarations
+sorry-warnings=5
+Build completed successfully (8746 jobs).
+exit=0
+
+$ challenge-vs-solution identity (whitespace-normalized text of each definition and theorem statement)
+theorem erdos_651_subexponential_inv identical
+theorem theorem_one_one identical
+theorem hasErdosSzekeresNumber_three identical
+theorem erdos_651_subexponential identical
+theorem erdos_651_disproved identical
+abbrev Point identical
+def InGeneralPosition identical
+def InConvexPosition identical
+def ContainsConvexSubset identical
+def ForcesConvexSubset identical
+def HasErdosSzekeresNumber identical
+noncomputable def erdosSzekeresNumber identical
+def HasSubexponentialUpperBound identical
+def HasExponentialLowerBound identical
+def Erdos651Claim identical
+def PohoataZakharovConclusion identical
+def PohoataZakharovTheoremOneOne identical
+noncomputable section present in both
+open Filter Set present in both
+open scoped Topology present in both
+exit=0
+
+$ grep -rnE "sorry|admit|^\s*axiom|native_decide|maxHeartbeats|maxRecDepth|unsafe" JSP527/PZ Audit.lean JSP527.lean
+JSP527/PZ/Assembly.lean:1036:/-- Every fixed clique size is eventually admitted by the inverse Ramsey
+exit=0
+
+$ grep -rnE "^\s*axiom|native_decide|sorry|admit" JSP527/External   # third-party tree (see external-changes.txt)
+JSP527/External/Erdos651/PositiveFraction.lean:954:/-- Every finite planar set admits a linear coordinate taking distinct
+JSP527/External/Erdos651/ConvexCore.lean:585:points admits a generic affine projection to the plane which is injective
+exit=0
+
+$ shasum -a 256 -c plby-source-hashes.txt   # against the plby originals at commit 8822f7dd
+Erdos651.lean: OK
+Erdos651/AboveBelow.lean: OK
+Erdos651/Asymptotic.lean: OK
+Erdos651/BinomialEnvelope.lean: OK
+Erdos651/CapAssembly.lean: OK
+Erdos651/CapRamsey.lean: OK
+Erdos651/ConvexCore.lean: OK
+Erdos651/CupsCaps.lean: OK
+Erdos651/Definitions.lean: OK
+Erdos651/Existence.lean: OK
+Erdos651/FinalEstimates.lean: OK
+Erdos651/FiniteRamsey.lean: OK
+Erdos651/HamSandwich.lean: OK
+Erdos651/Kirchberger.lean: OK
+Erdos651/PohoataZakharovBridge.lean: OK
+Erdos651/PohoataZakharovProof.lean: OK
+Erdos651/PolytopeCap.lean: OK
+Erdos651/PositiveFraction.lean: OK
+Erdos651/TrihedralGadget.lean: OK
+Erdos651/TwoSeparation.lean: OK
+exit=0
