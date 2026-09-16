@@ -1,0 +1,33 @@
+Local exported-package verification; upstream dependency caches used (shared read-only Mathlib install, symlinked .lake/packages, not committed). The nine pinned upstream files are fetched by fetch_vendor.py and are not part of the committed package.
+$ python3 fetch_vendor.py
+ok  Erdos439Power/Vendor/ErdosProblems/Erdos439/PowerSums.lean  source sha256 7bff421df3352f0011b20eae27718e7bd4abed64038e37e7f773b558f5b55989
+ok  Erdos439Power/Vendor/ErdosProblems/Erdos444/Moment.lean  source sha256 0794ddb8dbcfc1d920c059c8dd2935347d2bf23748db0048f1d650da0630111d
+ok  Erdos439Power/Vendor/ErdosProblems/Erdos444/Basic.lean  source sha256 9c657003e30a022b7b20811694889c4f52ff822c4374c66ddf874f6eb4690603
+ok  Erdos439Power/Vendor/ErdosProblems/Erdos443.lean  source sha256 f931ce4fe079203fccacc1321c535d69c2c99dcf4aeff0c1884e1db5bc45bbc5
+ok  Erdos439Power/Vendor/ErdosProblems/Erdos387/FiniteWeylInequality.lean  source sha256 a2f010cdb5c9832e3c5de1e58882ce1640be3f55d4436147bfb28fd40e1e0395
+ok  Erdos439Power/Vendor/ErdosProblems/Erdos387/InverseWeylDifferencing.lean  source sha256 4359a05d543fe2822455271b9fe4430f92d91786b91f01fe5caa47348c4c6426
+ok  Erdos439Power/Vendor/ErdosProblems/Erdos387/KloostermanOrthogonality.lean  source sha256 9f780d2fba0309899c347ee48a7bd7c151934fe06716844e8e8648fa52bae409
+ok  Erdos439Power/Vendor/ErdosProblems/Erdos387/AdditiveCharacterOrthogonality.lean  source sha256 085577fce2785bf2bac7cc2ef36535e4fa3b92c9ee921a7ed5e623a95c8ec858
+ok  Erdos439Power/Vendor/ErdosProblems/Erdos438/Fourier.lean  source sha256 55d6425e50d52fe0e712ddb7396abb68d38237bbdc9ace89d5f9a6903162e6dd
+all pinned sources fetched and verified
+exit=0
+
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build   (fresh build of this directory performed earlier today: "Build completed successfully (8781 jobs)"; this run rebuilds the changed goal module and replays the rest)
+Build completed successfully (8781 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos439Power.full_resolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos439Power.integer_resolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos439Power.full_resolution_explicit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos439Power.integer_resolution_explicit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos439Power.hasNormalizedPowerFourierDecay' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos439Power.exists_dilation_complete_sums' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos439Power.exists_minorArc_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos439Power.norm_transform_le_major_parameter' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos439.powerResolution_of_normalizedPowerFourierDecay' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0

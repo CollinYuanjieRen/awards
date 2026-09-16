@@ -1,0 +1,3 @@
+.lake/
+# pinned upstream sources are fetched by fetch_vendor.py and not committed
+Erdos439Power/Vendor/
