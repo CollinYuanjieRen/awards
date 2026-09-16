@@ -1,0 +1,30 @@
+Local exported-package verification; upstream dependency caches used.
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+✔ [8748/8750] Built Proof.Main (4.4s)
+✔ [8749/8750] Built Proof (5.0s)
+Build completed successfully (8750 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos436.lambda22_eq_nine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos436.runStart_le_nine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos436.exists_prime_gt_runStart_eq_nine' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Erdos436.IsQR : ℕ → ℕ → Prop :=
+fun p r => ↑r ≠ 0 ∧ IsSquare ↑r
+def Erdos436.IsRunStart : ℕ → ℕ → Prop :=
+fun p r => 0 < r ∧ IsQR p r ∧ IsQR p (r + 1)
+def Erdos436.runStart : ℕ → ℕ :=
+fun p => sInf {r | IsRunStart p r}
+def Erdos436.Lambda22 : ℕ :=
+limsup runStart (atTop ⊓ 𝓟 {p | Nat.Prime p})
+exit=0
+
+$ lake env lean Challenge.lean
+Challenge.lean:28:8: warning: declaration uses `sorry`
+Challenge.lean:31:8: warning: declaration uses `sorry`
+Challenge.lean:34:8: warning: declaration uses `sorry`
+exit=0
