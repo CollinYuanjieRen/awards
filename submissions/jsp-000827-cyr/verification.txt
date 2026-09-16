@@ -1,0 +1,33 @@
+Local exported-package verification (fresh package directory; dependencies fetched from the official Mathlib cache server); arm64 macOS; 2026-09-16T18:51:19Z.
+
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake exe cache get
+Decompressed 8537 already-cached file(s)
+Completed successfully in 12078 ms!
+exit=0
+
+$ lake build
+Build completed successfully (8757 jobs).
+exit=0 (no errors; no sorry warnings)
+
+$ lake env lean Audit.lean
+'Erdos994.not_khintchineFixedSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos994.exists_counterexample_ae' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RokhlinTower.NatAction.exists_tower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RokhlinTower.exists_separated_subset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos994.smoothAction_free' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos994.half_visits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos994.measure_badSet_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos994.measure_goodSet_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0
+
+$ grep -rn "sorry\|admit\|native_decide\|implemented_by\|opaque\|unsafe\|^axiom" Jsp827 Audit.lean
+(no matches)
+
+SHA-256 of the recorded source statement:
+fe176f0532a718ebb050012ae2456f28f37ee6f86587c45a2e69235fe0397d7c  sources/erdos994-statement.txt
+
+Lean toolchain: leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d (lake-manifest.json).
