@@ -2,7 +2,7 @@ Differences between JSP527/External/ and plby/lean-proofs commit 8822f7ddef30fad
 (unified diff: the import-prefix rewrite ErdosProblems.Erdos651 -> JSP527.External.Erdos651; minimal Lean 4.34 / Mathlib drift ports in CapRamsey.lean, TrihedralGadget.lean, Existence.lean; the strengthening of the two GenericProjectionFamily fields of TrihedralClusterGadget to all subsets of the middle cluster; and the omission of the never-built draft Erdos651/PohoataZakharovProof.lean, replaced by the derived JSP527/PZ/Assembly.lean)
 
 --- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651.lean	2026-09-16 09:20:16
-+++ ./Erdos651.lean	2026-09-16 13:44:21
++++ ./Erdos651.lean	2026-09-16 14:26:32
 @@ -20,7 +20,7 @@
  Released under Apache 2.0 license as described in the file LICENSE.
  Authors: OpenAI Codex
@@ -13,7 +13,7 @@ Differences between JSP527/External/ and plby/lean-proofs commit 8822f7ddef30fad
  /-!
  # Erdős Problem 651
 --- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/AboveBelow.lean	2026-09-16 09:20:16
-+++ ./Erdos651/AboveBelow.lean	2026-09-16 13:44:21
++++ ./Erdos651/AboveBelow.lean	2026-09-16 14:26:32
 @@ -3,9 +3,9 @@
  Released under Apache 2.0 license as described in the file LICENSE.
  Authors: OpenAI Codex
@@ -28,7 +28,7 @@ Differences between JSP527/External/ and plby/lean-proofs commit 8822f7ddef30fad
  /-!
  # The above--below relation
 --- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/Asymptotic.lean	2026-09-16 09:20:16
-+++ ./Erdos651/Asymptotic.lean	2026-09-16 13:44:21
++++ ./Erdos651/Asymptotic.lean	2026-09-16 14:26:32
 @@ -3,7 +3,7 @@
  Released under Apache 2.0 license as described in the file LICENSE.
  Authors: OpenAI Codex
@@ -39,7 +39,7 @@ Differences between JSP527/External/ and plby/lean-proofs commit 8822f7ddef30fad
  /-! The asymptotic incompatibility at the end of the resolution of Problem 651. -/
  
 --- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/BinomialEnvelope.lean	2026-09-16 09:20:16
-+++ ./Erdos651/BinomialEnvelope.lean	2026-09-16 13:44:21
++++ ./Erdos651/BinomialEnvelope.lean	2026-09-16 14:26:32
 @@ -3,7 +3,7 @@
  Released under Apache 2.0 license as described in the file LICENSE.
  Authors: OpenAI Codex
@@ -50,7 +50,7 @@ Differences between JSP527/External/ and plby/lean-proofs commit 8822f7ddef30fad
  import Mathlib.Analysis.SpecialFunctions.Stirling
  
 --- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/CapAssembly.lean	2026-09-16 09:20:16
-+++ ./Erdos651/CapAssembly.lean	2026-09-16 13:44:21
++++ ./Erdos651/CapAssembly.lean	2026-09-16 14:26:32
 @@ -3,7 +3,7 @@
  Released under Apache 2.0 license as described in the file LICENSE.
  Authors: OpenAI Codex
@@ -61,7 +61,7 @@ Differences between JSP527/External/ and plby/lean-proofs commit 8822f7ddef30fad
  /-!
  # Assembling polytope caps
 --- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/CapRamsey.lean	2026-09-16 09:20:16
-+++ ./Erdos651/CapRamsey.lean	2026-09-16 13:44:21
++++ ./Erdos651/CapRamsey.lean	2026-09-16 14:26:32
 @@ -3,8 +3,8 @@
  Released under Apache 2.0 license as described in the file LICENSE.
  Authors: OpenAI Codex
@@ -144,7 +144,7 @@ Differences between JSP527/External/ and plby/lean-proofs commit 8822f7ddef30fad
          exact hcount
      obtain ⟨Y, hYU, hYcard, hYconv⟩ := hconvU
 --- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/ConvexCore.lean	2026-09-16 09:20:16
-+++ ./Erdos651/ConvexCore.lean	2026-09-16 13:44:21
++++ ./Erdos651/ConvexCore.lean	2026-09-16 14:26:32
 @@ -3,7 +3,7 @@
  Released under Apache 2.0 license as described in the file LICENSE.
  Authors: OpenAI Codex
@@ -155,7 +155,7 @@ Differences between JSP527/External/ and plby/lean-proofs commit 8822f7ddef30fad
  /-!
  # Elementary convex-geometric infrastructure for Erdős Problem 651
 --- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/CupsCaps.lean	2026-09-16 09:20:16
-+++ ./Erdos651/CupsCaps.lean	2026-09-16 13:44:21
++++ ./Erdos651/CupsCaps.lean	2026-09-16 14:26:32
 @@ -3,7 +3,7 @@
  Released under Apache 2.0 license as described in the file LICENSE.
  Authors: OpenAI Codex
@@ -166,7 +166,7 @@ Differences between JSP527/External/ and plby/lean-proofs commit 8822f7ddef30fad
  /-!
  # The sharp cups-versus-caps theorem
 --- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/Existence.lean	2026-09-16 09:20:16
-+++ ./Erdos651/Existence.lean	2026-09-16 13:44:21
++++ ./Erdos651/Existence.lean	2026-09-16 14:26:32
 @@ -3,7 +3,7 @@
  Released under Apache 2.0 license as described in the file LICENSE.
  Authors: OpenAI Codex
@@ -392,7 +392,7 @@ Differences between JSP527/External/ and plby/lean-proofs commit 8822f7ddef30fad
      exact hqRange
    have hpcoord : ∀ i, 0 < b.coord i p := fun i ↦
 --- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/FinalEstimates.lean	2026-09-16 09:20:16
-+++ ./Erdos651/FinalEstimates.lean	2026-09-16 13:44:21
++++ ./Erdos651/FinalEstimates.lean	2026-09-16 14:26:32
 @@ -3,7 +3,7 @@
  Released under Apache 2.0 license as described in the file LICENSE.
  Authors: OpenAI Codex
@@ -403,7 +403,7 @@ Differences between JSP527/External/ and plby/lean-proofs commit 8822f7ddef30fad
  /-!
  # Numerical endgame for Erdős Problem 651
 --- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/FiniteRamsey.lean	2026-09-16 09:20:16
-+++ ./Erdos651/FiniteRamsey.lean	2026-09-16 13:44:21
++++ ./Erdos651/FiniteRamsey.lean	2026-09-16 14:26:32
 @@ -3,7 +3,7 @@
  Released under Apache 2.0 license as described in the file LICENSE.
  Authors: OpenAI Codex
@@ -414,7 +414,7 @@ Differences between JSP527/External/ and plby/lean-proofs commit 8822f7ddef30fad
  /-!
  # Finite uniform hypergraph Ramsey selection
 --- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/HamSandwich.lean	2026-09-16 09:20:16
-+++ ./Erdos651/HamSandwich.lean	2026-09-16 13:44:21
++++ ./Erdos651/HamSandwich.lean	2026-09-16 14:26:32
 @@ -3,7 +3,7 @@
  Released under Apache 2.0 license as described in the file LICENSE.
  Authors: OpenAI Codex
@@ -425,7 +425,7 @@ Differences between JSP527/External/ and plby/lean-proofs commit 8822f7ddef30fad
  /-!
  # The finite oriented ham-sandwich step in dimension three
 --- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/Kirchberger.lean	2026-09-16 09:20:16
-+++ ./Erdos651/Kirchberger.lean	2026-09-16 13:44:21
++++ ./Erdos651/Kirchberger.lean	2026-09-16 14:26:32
 @@ -3,7 +3,7 @@
  Released under Apache 2.0 license as described in the file LICENSE.
  Authors: OpenAI Codex
@@ -436,7 +436,7 @@ Differences between JSP527/External/ and plby/lean-proofs commit 8822f7ddef30fad
  /-!
  # Kirchberger witnesses and strict separation in three dimensions
 --- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/PohoataZakharovBridge.lean	2026-09-16 09:20:16
-+++ ./Erdos651/PohoataZakharovBridge.lean	2026-09-16 13:44:21
++++ ./Erdos651/PohoataZakharovBridge.lean	2026-09-16 14:26:32
 @@ -3,7 +3,7 @@
  Released under Apache 2.0 license as described in the file LICENSE.
  Authors: OpenAI Codex
@@ -447,7 +447,7 @@ Differences between JSP527/External/ and plby/lean-proofs commit 8822f7ddef30fad
  /-! The exact point-set statement of Pohoata--Zakharov's Theorem 1.1 and its
  formal implication for Erdős Problem 651. -/
 --- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/PolytopeCap.lean	2026-09-16 09:20:16
-+++ ./Erdos651/PolytopeCap.lean	2026-09-16 13:44:21
++++ ./Erdos651/PolytopeCap.lean	2026-09-16 14:26:32
 @@ -3,8 +3,8 @@
  Released under Apache 2.0 license as described in the file LICENSE.
  Authors: OpenAI Codex
@@ -460,7 +460,7 @@ Differences between JSP527/External/ and plby/lean-proofs commit 8822f7ddef30fad
  import Mathlib.Order.Antisymmetrization
  import Mathlib.Analysis.Convex.Radon
 --- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/PositiveFraction.lean	2026-09-16 09:20:16
-+++ ./Erdos651/PositiveFraction.lean	2026-09-16 13:44:21
++++ ./Erdos651/PositiveFraction.lean	2026-09-16 14:26:32
 @@ -3,8 +3,8 @@
  Released under Apache 2.0 license as described in the file LICENSE.
  Authors: OpenAI Codex
@@ -473,7 +473,7 @@ Differences between JSP527/External/ and plby/lean-proofs commit 8822f7ddef30fad
  /-!
  # The planar positive-fraction configuration
 --- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/TrihedralGadget.lean	2026-09-16 09:20:16
-+++ ./Erdos651/TrihedralGadget.lean	2026-09-16 13:44:21
++++ ./Erdos651/TrihedralGadget.lean	2026-09-16 14:26:32
 @@ -3,10 +3,10 @@
  Released under Apache 2.0 license as described in the file LICENSE.
  Authors: OpenAI Codex
@@ -1011,7 +1011,7 @@ Differences between JSP527/External/ and plby/lean-proofs commit 8822f7ddef30fad
  end
  
 --- /private/tmp/claude-501/-Users-collin/7163ee39-318e-4c6f-85e2-ecfcac4c211d/scratchpad/plby/src/latest/ErdosProblems/Erdos651/TwoSeparation.lean	2026-09-16 09:20:16
-+++ ./Erdos651/TwoSeparation.lean	2026-09-16 13:44:21
++++ ./Erdos651/TwoSeparation.lean	2026-09-16 14:26:32
 @@ -3,9 +3,9 @@
  Released under Apache 2.0 license as described in the file LICENSE.
  Authors: OpenAI Codex

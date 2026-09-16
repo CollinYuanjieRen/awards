@@ -8,7 +8,7 @@ info: JSP527/External/Erdos651.lean:65:0: 'Erdos651.not_erdos_651' depends on ax
 info: JSP527/External/Erdos651/HamSandwich.lean:1181:0: 'Erdos651.threeSetDiscreteHamSandwich' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: JSP527/External/Erdos651/HamSandwich.lean:1182:0: 'Erdos651.exists_orientedHalfSelection' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: JSP527/External/Erdos651/HamSandwich.lean:1183:0: 'Erdos651.exists_orientedHalfSelection_with_disjoint_convexHulls' depends on axioms: [propext,
-Build completed successfully (8770 jobs).
+Build completed successfully (8771 jobs).
 exit=0
 
 $ lake env lean Audit.lean
@@ -17,6 +17,11 @@ $ lake env lean Audit.lean
 'PohoataZakharov.theorem_one_one' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PohoataZakharov.hasErdosSzekeresNumber_three' depends on axioms: [propext, Classical.choice, Quot.sound]
 'PohoataZakharov.erdos_651_disproved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PohoataZakharov.erdos_651_subexponential_all_dimensions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PohoataZakharov.erdos_651_subexponential_inv_all_dimensions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PohoataZakharov.erdos_651_disproved_all_dimensions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PohoataZakharov.exists_generic_projection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PohoataZakharov.erdosSzekeresNumber_add_three_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Erdos651.pohoataZakharov_forces_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Erdos651.exists_tripleGadgetFamily' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Erdos651.exists_uniformSeparatedClusters' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -40,7 +45,7 @@ $ lake env lean Audit.lean
 exit=0
 
 $ lake build Challenge   # comparator challenge module; the only warnings are its intended sorry declarations
-sorry-warnings=5
+sorry-warnings=8
 Build completed successfully (8746 jobs).
 exit=0
 
@@ -50,6 +55,9 @@ theorem theorem_one_one identical
 theorem hasErdosSzekeresNumber_three identical
 theorem erdos_651_subexponential identical
 theorem erdos_651_disproved identical
+theorem erdos_651_subexponential_all_dimensions identical
+theorem erdos_651_subexponential_inv_all_dimensions identical
+theorem erdos_651_disproved_all_dimensions identical
 abbrev Point identical
 def InGeneralPosition identical
 def InConvexPosition identical
@@ -68,6 +76,7 @@ open scoped Topology present in both
 exit=0
 
 $ grep -rnE "sorry|admit|^\s*axiom|native_decide|maxHeartbeats|maxRecDepth|unsafe" JSP527/PZ Audit.lean JSP527.lean
+JSP527/PZ/Dimensions.lean:60:/-- A finite general-position set of at least `d + 3` points in `Point (d + 2)` admits a
 JSP527/PZ/Assembly.lean:1036:/-- Every fixed clique size is eventually admitted by the inverse Ramsey
 exit=0
 

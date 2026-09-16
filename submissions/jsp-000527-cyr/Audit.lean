@@ -5,6 +5,11 @@ import JSP527
 #print axioms PohoataZakharov.theorem_one_one
 #print axioms PohoataZakharov.hasErdosSzekeresNumber_three
 #print axioms PohoataZakharov.erdos_651_disproved
+#print axioms PohoataZakharov.erdos_651_subexponential_all_dimensions
+#print axioms PohoataZakharov.erdos_651_subexponential_inv_all_dimensions
+#print axioms PohoataZakharov.erdos_651_disproved_all_dimensions
+#print axioms PohoataZakharov.exists_generic_projection
+#print axioms PohoataZakharov.erdosSzekeresNumber_add_three_le
 #print axioms Erdos651.pohoataZakharov_forces_eventually
 #print axioms Erdos651.exists_tripleGadgetFamily
 #print axioms Erdos651.exists_uniformSeparatedClusters
@@ -45,3 +50,14 @@ example : ∀ ε : ℝ, 0 < ε → ∀ᶠ n : ℕ in Filter.atTop,
 example : ¬ ∃ c : ℝ, 0 < c ∧ ∀ᶠ n : ℕ in Filter.atTop,
     (1 + c) ^ n < (Erdos651.erdosSzekeresNumber 3 n : ℝ) :=
   PohoataZakharov.erdos_651_disproved
+
+example (d : ℕ) : Erdos651.HasSubexponentialUpperBound (Erdos651.erdosSzekeresNumber (d + 3)) :=
+  PohoataZakharov.erdos_651_subexponential_all_dimensions d
+
+example (d : ℕ) : ¬ Erdos651.HasExponentialLowerBound (Erdos651.erdosSzekeresNumber (d + 3)) :=
+  PohoataZakharov.erdos_651_disproved_all_dimensions d
+
+/-- Every dimension `k ≥ 3`, stated with the dimension as the explicit bound `3 ≤ k`. -/
+example (k : ℕ) (hk : 3 ≤ k) : Erdos651.HasSubexponentialUpperBound (Erdos651.erdosSzekeresNumber k) := by
+  obtain ⟨d, rfl⟩ : ∃ d, k = d + 3 := ⟨k - 3, by omega⟩
+  exact PohoataZakharov.erdos_651_subexponential_all_dimensions d

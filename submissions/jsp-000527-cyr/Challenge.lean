@@ -7,7 +7,7 @@ challenge modules.  Every definition below is copied verbatim (including the sur
 `noncomputable section` and `open` lines) from plby/lean-proofs
 `src/latest/ErdosProblems/Erdos651/Definitions.lean` (commit
 8822f7ddef30fadbd92e1c6ab4ed897af356af5e) and `Erdos651/PohoataZakharovBridge.lean`.
-The solution module is `JSP527.PZ.Main`.
+The solution modules are `JSP527.PZ.Main` (dimension three) and `JSP527.PZ.Dimensions` (all dimensions `d ≥ 3`).
 -/
 
 import Mathlib
@@ -111,6 +111,21 @@ theorem erdos_651_subexponential :
 
 /-- Erdős's conjectured exponential lower bound `f₃(n) > (1 + c)^n` fails. -/
 theorem erdos_651_disproved : ¬ Erdos651.Erdos651Claim := by
+  sorry
+
+/-- Pohoata–Zakharov in every dimension `d ≥ 3`: `f_d(n) ≤ 2 ^ (o(n))`. -/
+theorem erdos_651_subexponential_all_dimensions (d : ℕ) :
+    Erdos651.HasSubexponentialUpperBound (Erdos651.erdosSzekeresNumber (d + 3)) := by
+  sorry
+
+/-- Premise-free `k`-indexed form in every dimension `d ≥ 3`. -/
+theorem erdos_651_subexponential_inv_all_dimensions (d k : ℕ) : ∀ᶠ n : ℕ in Filter.atTop,
+    (Erdos651.erdosSzekeresNumber (d + 3) n : ℝ) ≤ (2 : ℝ) ^ ((n : ℝ) / ((k : ℝ) + 1)) := by
+  sorry
+
+/-- Erdős's conjectured exponential lower bound fails in every dimension `d ≥ 3`. -/
+theorem erdos_651_disproved_all_dimensions (d : ℕ) :
+    ¬ Erdos651.HasExponentialLowerBound (Erdos651.erdosSzekeresNumber (d + 3)) := by
   sorry
 
 end PohoataZakharov

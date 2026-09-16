@@ -1,12 +1,15 @@
 {
   "challenge_module": "Challenge",
-  "solution_module": "JSP527.PZ.Main",
+  "solution_module": "JSP527.PZ.Dimensions",
   "theorem_names": [
     "PohoataZakharov.erdos_651_subexponential_inv",
     "PohoataZakharov.theorem_one_one",
     "PohoataZakharov.hasErdosSzekeresNumber_three",
     "PohoataZakharov.erdos_651_subexponential",
-    "PohoataZakharov.erdos_651_disproved"
+    "PohoataZakharov.erdos_651_disproved",
+    "PohoataZakharov.erdos_651_subexponential_all_dimensions",
+    "PohoataZakharov.erdos_651_subexponential_inv_all_dimensions",
+    "PohoataZakharov.erdos_651_disproved_all_dimensions"
   ],
   "permitted_axioms": [
     "propext",

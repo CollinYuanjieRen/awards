@@ -23,6 +23,18 @@ theorem erdos_651_subexponential :
 theorem erdos_651_disproved : ¬ Erdos651.Erdos651Claim
 ```
 
+and [JSP527/PZ/Dimensions.lean](JSP527/PZ/Dimensions.lean) extends all of this to every dimension `d ≥ 3` (the catalog's "higher-dimensional" phrasing; Erdős asked about each `k`):
+
+```lean
+theorem erdos_651_subexponential_all_dimensions (d : ℕ) :
+    Erdos651.HasSubexponentialUpperBound (Erdos651.erdosSzekeresNumber (d + 3))
+
+theorem erdos_651_disproved_all_dimensions (d : ℕ) :
+    ¬ Erdos651.HasExponentialLowerBound (Erdos651.erdosSzekeresNumber (d + 3))
+```
+
+together with the premise-free `k`-indexed forms `erdos_651_subexponential_inv` and `erdos_651_subexponential_inv_all_dimensions` (for every `k`, eventually `f_d(n) ≤ 2^{n/(k+1)}`), which are the forms bound by the local verification contract.
+
 with plby's verbatim definitions: `PohoataZakharovTheoremOneOne` says that for every `ε > 0` and all large `n`, every general-position set in `ℝ³` of size at least `2^{εn}` contains `n` points in convex position; `HasSubexponentialUpperBound f` says that for every `ε > 0`, eventually `f n ≤ 2^{εn}`; `erdosSzekeresNumber 3 n` is the infimum of the forcing thresholds, which the second theorem shows to be attained; and `Erdos651Claim` is the existence of `c > 0` with `(1 + c)^n < f_3(n)` for all large `n`.
 
 The new modules under `JSP527/PZ/` are:
@@ -32,6 +44,7 @@ The new modules under `JSP527/PZ/` are:
 * [Gadgets.lean](JSP527/PZ/Gadgets.lean): Proposition 3.1 applied to every ordered triple of clusters gives the triple gadget family with the containments (4.8) and Proposition 2.1 certificates on every subset of the middle cluster.
 * [Extraction.lean](JSP527/PZ/Extraction.lean): the monochromatic triple clique at scale `pzSourceScale n`, the alternating free-set family for either color (the "blue" color uses the reversed clique, which the paper leaves to symmetry), and the eventual forcing statement that discharges the envelope certificate.
 * [Main.lean](JSP527/PZ/Main.lean): the headline theorems through plby's bridge lemmas.
+* [Dimensions.lean](JSP527/PZ/Dimensions.lean): the passage to higher dimensions. A generic linear projection `ℝ^{d+2} → ℝ^{d+1}` (a direction avoiding the finitely many spans of small subsets) is injective on a finite general-position set and keeps its image in general position, and convex position lifts along any affine map injective on the set; hence `f_{d+2}(n) ≤ max(f_{d+1}(n), d + 3)` (the additive constant is forced: a set of `d + 2` collinear points in `ℝ^{d+2}` is vacuously in general position), and by induction `f_d(n) ≤ max(f_3(n), d + 1)` for `d ≥ 3`, which is subexponential.
 
 The third-party tree is included verbatim under `JSP527/External/` (Apache License 2.0, headers retained) up to the changes listed in [external-changes.txt](external-changes.txt): the module prefix in `import` lines; minimal ports to the pinned Lean 4.34 / Mathlib in `CapRamsey.lean`, `TrihedralGadget.lean` and `Existence.lean` (renamed lemmas, changed argument explicitness, binder ascriptions, one `maxHeartbeats` increase; no statement is weakened); the strengthening of the two projection-family fields of `TrihedralClusterGadget` to all subsets of the middle cluster, filled at the only construction site; and the omission of the draft `PohoataZakharovProof.lean`, replaced by `JSP527/PZ/Assembly.lean`. SHA-256 values of every original file at plby/lean-proofs commit `8822f7ddef30fadbd92e1c6ab4ed897af356af5e` are in [plby-source-hashes.txt](plby-source-hashes.txt). The formalization credit for the definitions and all the geometric and combinatorial ingredients belongs to those authors; this submission claims only the files under `JSP527/PZ/` (with the derived `Assembly.lean` claimed for its repairs and completion only), the interface change, and the challenge module.
 
@@ -49,22 +62,23 @@ lake env lean Audit.lean
 
 The exact Lean toolchain is pinned in [lean-toolchain](lean-toolchain): `leanprover/lean4:v4.34.0-rc1`. Mathlib is pinned to `1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d`, with transitive revisions in [lake-manifest.json](lake-manifest.json). The cache command is optional for correctness; it avoids rebuilding dependencies.
 
-[Audit.lean](Audit.lean) restates the four headline theorems as explicit `example`s (including the unfolded `∀ ε > 0, ∀ᶠ n, f_3(n) ≤ 2^{εn}` form) and prints the axioms of the headline theorems, the main new lemmas and the imported third-party theorems.
+[Audit.lean](Audit.lean) restates the headline theorems as explicit `example`s (including the unfolded `∀ ε > 0, ∀ᶠ n, f_3(n) ≤ 2^{εn}` form) and prints the axioms of the headline theorems, the main new lemmas and the imported third-party theorems.
 
 **Axioms.** Every audited theorem depends on exactly the three standard axioms of Lean's core logic used throughout Mathlib, and on nothing else:
 
 | Theorem | Axioms |
 | --- | --- |
-| `PohoataZakharov.erdos_651_subexponential` | `propext`, `Classical.choice`, `Quot.sound` |
+| `PohoataZakharov.erdos_651_subexponential_inv`, `erdos_651_subexponential` | `propext`, `Classical.choice`, `Quot.sound` |
 | `PohoataZakharov.theorem_one_one` | `propext`, `Classical.choice`, `Quot.sound` |
 | `PohoataZakharov.hasErdosSzekeresNumber_three` | `propext`, `Classical.choice`, `Quot.sound` |
 | `PohoataZakharov.erdos_651_disproved` | `propext`, `Classical.choice`, `Quot.sound` |
+| `PohoataZakharov.erdos_651_subexponential_all_dimensions`, `erdos_651_subexponential_inv_all_dimensions`, `erdos_651_disproved_all_dimensions`, `exists_generic_projection`, `erdosSzekeresNumber_add_three_le` | `propext`, `Classical.choice`, `Quot.sound` |
 | `Erdos651.pohoataZakharov_forces_eventually`, `exists_tripleGadgetFamily`, `exists_uniformSeparatedClusters`, `exists_generic_image`, `PohoataZakharovEnvelopeCertificate.theoremOneOne`, `AlternatingFreeFamily.containsConvexSubset_of_sourceEnvelope` | `propext`, `Classical.choice`, `Quot.sound` |
 | `Erdos651.pohoata_zakharov_prop_three_one`, `pohoata_zakharov_prop_two_one_three_edges`, `exists_orderedStrongPositiveFractionConfiguration`, `exists_twoSeparated_subclusters`, `alternatingBlock_hulls_disjoint`, `exists_alternating_free_subsets_of_monochromatic_clique`, `hasErdosSzekeresNumber_three`, `pohoataZakharovTheoremOneOne_imp_subexponential`, `erdos_651_of_pohoata_zakharov`, `not_erdos_651` (third-party) | `propext`, `Classical.choice`, `Quot.sound` |
 
 No project axiom is declared, no `sorry` or `admit` occurs outside the intentionally `sorry`-ed comparator challenge, `native_decide` is not used, and the headline theorems are premise-free. The published selection rules describe Lean verification as a pass/fail entry threshold without naming an axiom policy; this repository's verification-record schema records an explicit axiom list per theorem, which is why the lists are declared here in full.
 
-**Comparator challenge.** [Challenge.lean](Challenge.lean) is a self-contained challenge module (imports only Mathlib; statements proved by `sorry`) restating plby's definitions verbatim together with the four headline theorems, with [Comparator/PohoataZakharov.json](Comparator/PohoataZakharov.json) naming `JSP527.PZ.Main` as the solution module and the three standard axioms as the only permitted ones. A textual identity check of every challenge definition and statement against the solution is recorded in [verification.txt](verification.txt). Running Comparator itself requires its Linux sandbox tooling and was not performed locally.
+**Comparator challenge.** [Challenge.lean](Challenge.lean) is a self-contained challenge module (imports only Mathlib; statements proved by `sorry`) restating plby's definitions verbatim together with the eight headline theorems, with [Comparator/PohoataZakharov.json](Comparator/PohoataZakharov.json) naming `JSP527.PZ.Dimensions` (which imports `JSP527.PZ.Main`) as the solution module and the three standard axioms as the only permitted ones. A textual identity check of every challenge definition and statement against the solution is recorded in [verification.txt](verification.txt). Running Comparator itself requires its Linux sandbox tooling and was not performed locally.
 
 Local verification used cached upstream dependencies on arm64 macOS. It is not a clean, network-disabled rebuild or verification by two independent checker implementations. Authorized statement review, any required independent verification and permanent archival remain for the official review process; no curator signatures or attestations are fabricated.
 
