@@ -1,0 +1,16 @@
+PORTABLE EQUIVALENT: lake env lean verification/IndependentAudit.lean
+EXIT: 0
+Erdos1018Topological.erdos_1018_ordinary_nonplanarity (ε : ℝ) (hε : 0 < ε) :
+  ∃ C N,
+    ∀ (n : ℕ),
+      N ≤ n →
+        ∀ (G : SimpleGraph (Fin n)),
+          ↑n ^ (1 + ε) ≤ ↑G.edgeSet.ncard → ∃ S, S.verts.ncard ≤ C ∧ ¬Nonempty (PlanarListColoring.PlaneDrawing S.coe)
+'Erdos1018Topological.erdos_1018_ordinary_nonplanarity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1018.kostochka_pyber_compact_k5' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1018Topological.planeDrawing_top_of_cliqueSubdivision' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1018Topological.completeFive_no_drawing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Graph.IsDrawing.exists_euler_faceSystem' depends on axioms: [propext, Classical.choice, Quot.sound]
+Uncached actual declaration closure count: 26825
+Uncached actual axioms: [propext, Classical.choice, Quot.sound]
+Certificate-only IsNonplanar, ProblemStatement, and original erdos_1018 are absent from root closure.

@@ -1,0 +1,41 @@
+{
+  "repository": "plby/lean-proofs",
+  "commit": "8822f7ddef30fadbd92e1c6ab4ed897af356af5e",
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/plby/lean-proofs/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos1018.lean",
+      "path": "MerLeanExperiment/Vendor/Erdos1018.lean",
+      "source_sha256": "2957d9c70f4999e9df41a3427b1e52c10b01ae5f7317fa6e3eaa16277465425c",
+      "adapted_sha256": "1edf066b54a42fa6acbf5a782280067cad49920dbcb6dc28c49778cd2622fcee",
+      "rewrite_import_prefix": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/plby/lean-proofs/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos1018/Density.lean",
+      "path": "MerLeanExperiment/Vendor/Erdos1018/Density.lean",
+      "source_sha256": "8ece7143c76d04bca9694a7e5b2c758d061ec59a89dfd2cf4e6d6531cedd70b9",
+      "adapted_sha256": "8ece7143c76d04bca9694a7e5b2c758d061ec59a89dfd2cf4e6d6531cedd70b9",
+      "rewrite_import_prefix": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/plby/lean-proofs/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos1018/Geometry.lean",
+      "path": "MerLeanExperiment/Vendor/Erdos1018/Geometry.lean",
+      "source_sha256": "eec663cc9c122de849a2fb938e110410bcb6e1ef6c461d40c8483cc3cad10c34",
+      "adapted_sha256": "eec663cc9c122de849a2fb938e110410bcb6e1ef6c461d40c8483cc3cad10c34",
+      "rewrite_import_prefix": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/plby/lean-proofs/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos1018/Layers.lean",
+      "path": "MerLeanExperiment/Vendor/Erdos1018/Layers.lean",
+      "source_sha256": "c7b63dd2baef5787b110cc12fad72a60074883dfc331b025e199aa5a3c269e76",
+      "adapted_sha256": "c7b63dd2baef5787b110cc12fad72a60074883dfc331b025e199aa5a3c269e76",
+      "rewrite_import_prefix": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/plby/lean-proofs/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos1018/Paths.lean",
+      "path": "MerLeanExperiment/Vendor/Erdos1018/Paths.lean",
+      "source_sha256": "85db5ba61db0a3cb8afd74054e387a499a25be1adf3ae51283311e31e427208e",
+      "adapted_sha256": "85db5ba61db0a3cb8afd74054e387a499a25be1adf3ae51283311e31e427208e",
+      "rewrite_import_prefix": false
+    }
+  ]
+}

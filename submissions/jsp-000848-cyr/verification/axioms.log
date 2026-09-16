@@ -1,0 +1,14 @@
+Erdos1018Topological.planeDrawing_top_of_cliqueSubdivision.{u} {V : Type u} {G : SimpleGraph V} {r : ℕ}
+  (D : PlanarListColoring.PlaneDrawing G) (s : Erdos1018.CliqueSubdivision G r) :
+  Nonempty (PlanarListColoring.PlaneDrawing ⊤)
+'Erdos1018Topological.planeDrawing_top_of_cliqueSubdivision' depends on axioms: [propext, Classical.choice, Quot.sound]
+Erdos1018Topological.no_drawing_of_cliqueSubdivision_five.{u} {V : Type u} {G : SimpleGraph V}
+  (s : Erdos1018.CliqueSubdivision G 5) : ¬Nonempty (PlanarListColoring.PlaneDrawing G)
+'Erdos1018Topological.no_drawing_of_cliqueSubdivision_five' depends on axioms: [propext, Classical.choice, Quot.sound]
+Erdos1018Topological.erdos_1018_ordinary_nonplanarity (ε : ℝ) (hε : 0 < ε) :
+  ∃ C N,
+    ∀ (n : ℕ),
+      N ≤ n →
+        ∀ (G : SimpleGraph (Fin n)),
+          ↑n ^ (1 + ε) ≤ ↑G.edgeSet.ncard → ∃ S, S.verts.ncard ≤ C ∧ ¬Nonempty (PlanarListColoring.PlaneDrawing S.coe)
+'Erdos1018Topological.erdos_1018_ordinary_nonplanarity' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,69 @@
+{
+  "date": "2026-09-16",
+  "scope": "Full eventual-in-n Erd\u0151s1018 finite graph statement, with ordinary topological nonplanarity.",
+  "root": "Erdos1018Topological.erdos_1018_ordinary_nonplanarity",
+  "lean": "4.34.0-rc1",
+  "mathlib_commit": "1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d",
+  "plby_commit": "8822f7ddef30fadbd92e1c6ab4ed897af356af5e",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "build_jobs": 8837,
+  "build_exit": 0,
+  "typed_and_axiom_audit_exit": 0,
+  "independent_actual_kernel_declarations_visited": 26825,
+  "certificate_only_predicates_absent_from_root_closure": true,
+  "independent_source_alignment": "pass",
+  "independent_proof_audit": "pass",
+  "native_comparator_exit": 0,
+  "negative_tests_exit": 0,
+  "comparator_commit": "011e9d35a10a054ed4b66d8379115ad870f2b0ce",
+  "exporter_commit": "b18d673bd29b476466a51a3be1012df2ed322b10",
+  "reference_source_sha256": "e3ec3557eeed5ddfccbc6d8490640671d340e5ab053106c7bcba76f0a4fcc3a6",
+  "reference_export_sha256": "20a1785c235a7f45027caa44f449748e26fbb0ca9b604a9a4ea2ccbcc55c669b",
+  "candidate_export_sha256": "d04d7705385abb1bd8b62e5ac83b3a0e64533399306c02f1b15c78f4f19cd76a",
+  "candidate_export_bytes": 148208791,
+  "driver_binary_sha256": "e5ef430aeab695278c457a2755115daf6c3e8e6b9895349f45ecaf3d86db01e4",
+  "driver_core_sha256": "807b64492110503f74b8c42d41b0539fc5e7cff3f80527a660c155cd545412bc",
+  "driver_main_sha256": "4ad84c3942132c49ff8f976b8ca377ea94bf9c5c43a6e613f6a7aceaef7a15a7",
+  "frozen_signature_sha256": "9abec15cd8ebf7a1e5b5e28c228aa811348144ada4361c0fc5d12665efb99863",
+  "proof_source_files": 92,
+  "local_root_cone_modules": 91,
+  "external_source_fetch_exit": 0,
+  "external_source_files_verified": 5,
+  "repository_checks": {
+    "validate": "pass",
+    "links": "pass",
+    "generated_data_build_check": "pass",
+    "unit_tests_passed": 22
+  },
+  "sandboxed": false,
+  "external_kernel_checked": false,
+  "official_erdos1018_target_available": false,
+  "formal_conjectures_snapshot": "40e7c98697de6f66b8cbdbf641749ab39ed9c152",
+  "award_approval_claimed": false,
+  "prize_axiom_whitelist": "No explicit whitelist approving these three foundations found in audited public rules.",
+  "platform": {
+    "system": "Darwin",
+    "machine": "arm64"
+  },
+  "published_log_normalization": "Trailing whitespace removed; the independent-kernel log replaces its private managed-wrapper command prefix with the equivalent portable invocation. Proof-check output is preserved.",
+  "checksums": {
+    "build.log": "173aebfffd796315721649e2f2c9dcce93936481925d42fcd71a2ebbeeb403c9",
+    "axioms.log": "5b42a4d8a1470462bcf902360d10e033e64e868180838f835d01dbe472b632d2",
+    "comparator.log": "4ec655fe5073ddd284d537a2e6403e9573c0b30681a1c41e710a2d86bc3e1c14",
+    "negative-tests.log": "6dc8d6a72118e286806e4931a5538613fb55fd2dafcbd6ad74e20a2bfc1fce97",
+    "independent-kernel.log": "fffe353ede9bc80b783d092e1ee72605c25c65fcc02b55260783cf37d0dc1e27",
+    "proof-sources.json": "b06223275c95180cf2c8e6d892c192b09278c8e0a1b3ff88bdde3bcd75d93fa2",
+    "IndependentAudit.lean": "dce27e66434d6c18c726954d6c8df4f19209fd85160dd8ae40cbf92714caa9d2"
+  },
+  "raw_log_sha256": {
+    "build.log": "453017d0f8a73a200126eea54f95f024dd99025957f274fa8f2b069c58ec4ee6",
+    "axioms.log": "5b42a4d8a1470462bcf902360d10e033e64e868180838f835d01dbe472b632d2",
+    "comparator.log": "4ec655fe5073ddd284d537a2e6403e9573c0b30681a1c41e710a2d86bc3e1c14",
+    "negative-tests.log": "6dc8d6a72118e286806e4931a5538613fb55fd2dafcbd6ad74e20a2bfc1fce97",
+    "independent-kernel.log": "8ec7c28cd2b361142cadaa14980b273835f00afbb53790bacc2ac0b970fcfb24"
+  }
+}

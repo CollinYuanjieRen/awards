@@ -1,0 +1,6 @@
+.lake/
+.merlean-workspace.json
+.env
+.venv/
+MerLeanExperiment/Vendor/Erdos1018.lean
+MerLeanExperiment/Vendor/Erdos1018/
