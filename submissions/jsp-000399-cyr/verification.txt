@@ -1,0 +1,21 @@
+Local exported-package verification; upstream dependency caches used.
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+✔ [8750/8752] Built Proof.Main (20s)
+✔ [8751/8752] Built Proof (3.4s)
+Build completed successfully (8752 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos494.card_divisible_by_prime_gt_k' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos494.k_eq_2_card_not_pow_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos494.card_divisible_by_prime_gt_k_explicit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos494.k_eq_2_card_not_pow_two_explicit' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Erdos494.sumMultiset : Finset ℂ → ℕ → Multiset ℂ :=
+fun A k => Multiset.map (fun s => s.sum id) (Finset.powersetCard k A).val
+def Erdos494.Erdos494Unique : ℕ → ℕ → Prop :=
+fun k card => ∀ (A B : Finset ℂ), A.card = card → B.card = card → sumMultiset A k = sumMultiset B k → A = B
+exit=0
