@@ -1,0 +1,18 @@
+name = "Jsp511ComparatorDriver"
+version = "0.1.0"
+defaultTargets = ["jsp511-comparator-driver"]
+
+[[lean_lib]]
+name = "Driver"
+
+[[lean_lib]]
+name = "TestFixtures"
+
+[[lean_exe]]
+name = "jsp511-comparator-driver"
+root = "Main"
+
+[[require]]
+name = "Comparator"
+git = "https://github.com/leanprover/comparator"
+rev = "011e9d35a10a054ed4b66d8379115ad870f2b0ce"

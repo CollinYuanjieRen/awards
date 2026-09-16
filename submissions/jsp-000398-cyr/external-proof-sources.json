@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/plby/lean-proofs",
+  "commit": "8822f7ddef30fadbd92e1c6ab4ed897af356af5e",
+  "licensing": "No explicit redistribution grant was located. External proof bytes are fetched from their pinned public source, not distributed here.",
+  "files": [
+    {
+      "path": "MerLeanExperiment/Vendor/Dirichlet.lean",
+      "url": "https://raw.githubusercontent.com/plby/lean-proofs/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos485/Dirichlet.lean",
+      "source_sha256": "37af4f9ed1260810dda0017ba40ac82de703697aab730248b8bff46d867aa1ca",
+      "adapted_sha256": "5a47c933504aeab9b924a19014f0343033d0d0576e5f1dfb8d55ebc0994a8458",
+      "adaptation": "Insert provenance-only comment after the introductory heading; no proof or import changes."
+    }
+  ]
+}

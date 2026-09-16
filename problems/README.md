@@ -486,7 +486,7 @@ The **No.** column runs consecutively from **JSP-000001** to **JSP-001022** in d
 | JSP-000395 | [How do the densities of multiples of a given finite integer set compare across different intervals?](catalog-0301-0400.md#JSP-000395) | Open | No | No | Unavailable |
 | JSP-000396 | [After excluding all multiples of a sparse integer set, what is the mean squared gap between consecutive remaining integers?](catalog-0301-0400.md#JSP-000396) | Progress | No | No | Unavailable |
 | JSP-000397 | [If an additive arithmetic function has uniformly bounded differences at consecutive integers, must it be close to a logarithmic function?](catalog-0301-0400.md#JSP-000397) | Solved | No | No | Unavailable |
-| JSP-000398 | [If consecutive ratios of an increasing integer sequence tend to one, are the relative positions of scaled integers within its gaps uniformly distributed for almost every real scale factor?](catalog-0301-0400.md#JSP-000398) | Solved | No | No | Unavailable |
+| JSP-000398 | [If consecutive ratios of an unbounded increasing real subdivision tend to one, are scaled positive integers uniformly distributed relative to it for almost every positive scale factor?](catalog-0301-0400.md#JSP-000398) | Solved | No | No | Unavailable |
 | JSP-000399 | [Can a finite set be uniquely recovered from the multiset of all sums of a prescribed number of distinct elements?](catalog-0301-0400.md#JSP-000399) | Solved | No | No | Unavailable |
 | JSP-000400 | [Can a sum of two integer squares approximate an irrational multiple of an integer square sufficiently closely?](catalog-0301-0400.md#JSP-000400) | Solved | No | No | Unavailable |
 

@@ -1,0 +1,7 @@
+EXIT STATUS 0
+✔ [8762/8767] Built MerLeanExperiment.ExponentialExceptionalMeasure (20s)
+✔ [8763/8767] Built MerLeanExperiment.ExponentialExceptionalSafety (7.2s)
+✔ [8764/8767] Built MerLeanExperiment.DilationLemma (5.4s)
+✔ [8765/8767] Built MerLeanExperiment.Goal (5.6s)
+✔ [8766/8767] Built MerLeanExperiment (4.7s)
+Build completed successfully (8767 jobs).

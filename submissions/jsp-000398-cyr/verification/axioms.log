@@ -1,0 +1,10 @@
+Exit status: 0
+Erdos492Real.schmidt_counterexample : Erdos492Real.SchmidtStatement
+'Erdos492Real.schmidt_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos492Real.finite_subdivision_lemma' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos492Real.exponentialExceptionalSet_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos492Real.volume_exponentialExceptionalSet_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos492Real.ae_not_uniformlyDistributed_from_family' depends on axioms: [propext, Classical.choice, Quot.sound]
+Uncached actual declaration closure count: 33276
+Uncached actual axioms: [propext, Classical.choice, Quot.sound]
+Actual finite construction, actual sign bridge, and global almost-everywhere argument occur in the root closure.

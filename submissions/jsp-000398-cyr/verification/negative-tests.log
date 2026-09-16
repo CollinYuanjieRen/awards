@@ -1,0 +1,5 @@
+PASS accept honest proof
+PASS negative-test harness control
+PASS reject changed theorem type: Candidate theorem type does not exactly equal the frozen expected statement: 'ComparatorFixture.root'
+PASS reject changed supporting-definition body: Const does not match between challenge and target 'ComparatorFixture.P'
+PASS reject custom axiom dependency: Illegal axiom detected: 'Jsp511ComparatorTest.customAxiom'
