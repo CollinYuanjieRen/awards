@@ -1,0 +1,33 @@
+Local exported-package verification (self-contained 29-module subset in a clean git worktree; dependencies from the official Mathlib cache server); arm64 macOS; 2026-09-16T23:16:12Z.
+
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+Build completed successfully (3260 jobs).
+exit=0 (no errors; no sorry warnings)
+
+$ lake env lean Audit.lean
+'PlanarMinimax.sendov_partial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PlanarMinimax.small_cardinalities' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PlanarMinimax.minimaxAngle_five' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PlanarMinimax.minimaxAngle_six_to_eight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PlanarMinimax.minimaxAngle_dyadic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PlanarMinimax.sendov_upper_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0
+
+$ lake env lean Challenge.lean   # statement-only comparator; the one expected sorry warning is its target
+Challenge.lean:34:8: warning: declaration uses `sorry`
+exit=0
+
+$ grep -rn "sorry\|admit\|native_decide\|implemented_by\|opaque\|unsafe\|^axiom\|ofReduceBool" MerLeanExperiment MerLeanExperiment.lean Audit.lean
+(no matches)
+
+SHA-256 of the frozen problem-definition file:
+99fa9144efccdda92b031914ab444a85564b6595b509dd8c3aec933012c73d3d  MerLeanExperiment/Problem.lean
+
+SHA-256 of the recorded source statement:
+f01db7860846a8ea7e66935810c9ad67cdb14a5148bb1f258fed4ef4d43724a6  sources/erdos504-statement.txt
+
+Lean toolchain: leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d (lake-manifest.json).
