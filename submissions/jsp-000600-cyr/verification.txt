@@ -1,0 +1,32 @@
+Local exported-package verification; upstream dependency caches used.
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+✔ [8749/8751] Built Proof.Witness (3.2s)
+✔ [8750/8751] Built Proof (3.7s)
+Build completed successfully (8751 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos732Upper.erdos_732_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos732Upper.blockCompatible_replicate_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+structure Erdos732Upper.PairwiseBalancedDesign.{u} (P : Type u) [Fintype P] : Type (u + 1)
+number of parameters: 2
+fields:
+  Erdos732Upper.PairwiseBalancedDesign.Block : Type u
+  Erdos732Upper.PairwiseBalancedDesign.blockFintype : Fintype self.Block
+  Erdos732Upper.PairwiseBalancedDesign.block : self.Block → Finset P
+  Erdos732Upper.PairwiseBalancedDesign.two_le_card : ∀ (i : self.Block), 2 ≤ (self.block i).card
+  Erdos732Upper.PairwiseBalancedDesign.pair_unique : ∀ ⦃x y : P⦄, x ≠ y → ∃! i, x ∈ self.block i ∧ y ∈ self.block i
+constructor:
+  Erdos732Upper.PairwiseBalancedDesign.mk.{u} {P : Type u} [Fintype P] (Block : Type u) (blockFintype : Fintype Block)
+    (block : Block → Finset P) (two_le_card : ∀ (i : Block), 2 ≤ (block i).card)
+    (pair_unique : ∀ ⦃x y : P⦄, x ≠ y → ∃! i, x ∈ block i ∧ y ∈ block i) : PairwiseBalancedDesign P
+def Erdos732Upper.PairwiseBalancedDesign.blockSizes.{u} : {P : Type u} →
+  [inst : Fintype P] → PairwiseBalancedDesign P → Multiset ℕ :=
+fun {P} [Fintype P] D => Multiset.map (fun i => (D.block i).card) Finset.univ.val
+def Erdos732Upper.BlockCompatible : ℕ → Multiset ℕ → Prop :=
+fun n sizes => ∃ D, D.blockSizes = sizes
+exit=0
