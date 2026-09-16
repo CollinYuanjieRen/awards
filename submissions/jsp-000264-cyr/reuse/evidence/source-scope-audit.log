@@ -1,0 +1,7 @@
+AUDIT=exact 12-file plby source closure
+PLBY_COMMIT=8822f7ddef30fadbd92e1c6ab4ed897af356af5e
+SOURCE_FILES=12
+SOURCES_MANIFEST_SHA256=dec2b76c99c8bf8940fd4916fe24354699ae0e797c01d1603fff3ec802aa83a9
+FORBIDDEN_MATCHES=0
+FORBIDDEN_PATTERN=word(sorry|admit|native_decide) or declaration(axiom|opaque|unsafe)
+RESULT=PASS

@@ -1,0 +1,14 @@
+{
+  "challenge_module": "ErdosProblems.ReferenceChallenge",
+  "solution_module": "ErdosProblems.Erdos318Canonical",
+  "theorem_names": [
+    "Erdos318.erdos_318.parts.i",
+    "Erdos318.erdos_318.variants.infinite_AP"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

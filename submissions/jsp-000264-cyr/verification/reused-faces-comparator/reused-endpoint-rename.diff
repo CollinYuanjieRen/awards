@@ -1,0 +1,14 @@
+--- pinned/ErdosProblems/Erdos318.lean
++++ adapted/ErdosProblems/Erdos318Reused.lean
+@@ -599 +599 @@
+-theorem erdos_318.variants.infinite_AP {A : Set ℕ}
++theorem erdos_318.variants.infinite_AP_reused {A : Set ℕ}
+@@ -762 +762 @@
+-  apply erdos_318.variants.infinite_AP
++  apply erdos_318.variants.infinite_AP_reused
+@@ -783 +783 @@
+-  apply erdos_318.variants.infinite_AP
++  apply erdos_318.variants.infinite_AP_reused
+@@ -856 +856 @@
+-#print axioms erdos_318.variants.infinite_AP
++#print axioms erdos_318.variants.infinite_AP_reused

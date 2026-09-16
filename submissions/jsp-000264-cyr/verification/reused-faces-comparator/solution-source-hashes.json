@@ -1,0 +1,16 @@
+{
+  "ErdosProblems/Erdos253.lean": "fea4c2ca95891825eea35ea05619acff759057f01d58471f3d7149abc751f845",
+  "ErdosProblems/Erdos318Canonical.lean": "33ffbec22e75fcd9611672efde691769365465db68773d78a9e03eb2ff5db4ee",
+  "ErdosProblems/Erdos318Reused.lean": "0a63fcc4a5a0e90c587f6007b3db1245ce75c2782a426c8f353038829b271137",
+  "ErdosProblems/FormalConjecturesAP.lean": "d0739cb81e5ea663b77bd68eba97bd802eca9c9f47981c7fa0aef36618924ee1",
+  "UnitFractions/AuxiliaryLemmas.lean": "7022420db51b9bbce5a5d242937d825edefb206ad87c90e1762e155114d5519e",
+  "UnitFractions/Definitions.lean": "ad13485bbed982f2a250248ccedc58232007670c75b214911a09ab9c0419a4b9",
+  "UnitFractions/ErdosProblems.lean": "2aadcacf85182547fa2f4d24fba0931fcfb36ee4ce47c33eeedb178d02e0179f",
+  "UnitFractions/FinalResults.lean": "6e6877d457445af9bd9e58f1acf6942ca5b4b60ed04c2890561f01d87c0ef6cb",
+  "UnitFractions/ForMathlib/BasicEstimates.lean": "1475f84517f02f43f91563e7852b147d677d661d57e7cac6b4b3120570613775",
+  "UnitFractions/ForMathlib/IntegralRPow.lean": "884ed8b4343eb10c4e5fa123069c9ac584d74123aea3173974bf3afdb6c48134",
+  "UnitFractions/ForMathlib/Misc.lean": "99e31b4fcb5ff24d26b0c9261ca280f4d96aea91e9f1cde7b8ae59a43361f3dd",
+  "UnitFractions/Fourier.lean": "2f2a636eed7f1c7a6db2262edcb3f63d042668193f3d692dbbbb2ec769a59e92",
+  "UnitFractions/MainResults.lean": "2a53e72f9df89a9afa877936d5b576e92b52955ddfc37e63724a27f9e6174864",
+  "Util/Density.lean": "42bab8e8913462b6c0ef71cb7d4694d64c7c74a5ec4365827610f55947c57b0a"
+}

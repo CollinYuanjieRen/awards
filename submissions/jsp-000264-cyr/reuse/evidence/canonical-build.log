@@ -1,0 +1,37 @@
+$ elan run leanprover/lean4:v4.33.0 lake --no-cache build ErdosProblems.Erdos318Canonical
+ℹ [8717/8719] Replayed ErdosProblems.Erdos318Reused
+info: ErdosProblems/Erdos318Reused.lean:851:0: 'Erdos318.singleton_two_has_P₁' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ErdosProblems/Erdos318Reused.lean:852:0: 'Erdos318.not_contain_single_even_as_stated' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ErdosProblems/Erdos318Reused.lean:853:0: 'Erdos318.contain_single_even_of_positive_and_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ErdosProblems/Erdos318Reused.lean:854:0: 'Erdos318.densityCounterexample_hasDensity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ErdosProblems/Erdos318Reused.lean:855:0: 'Erdos318.not_erdos_318' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ErdosProblems/Erdos318Reused.lean:856:0: 'Erdos318.erdos_318.variants.infinite_AP_reused' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ErdosProblems/Erdos318Reused.lean:857:0: 'Erdos318.erdos_318.variants.univ' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ErdosProblems/Erdos318Reused.lean:858:0: 'Erdos318.erdos_318.variants.odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ErdosProblems/Erdos318Reused.lean:859:0: 'Erdos318.erdos_318.variants.squares' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8719/8719] Built ErdosProblems.Erdos318Canonical (22s)
+info: ErdosProblems/Erdos318Canonical.lean:16:0: theorem Erdos318.erdos_318.variants.infinite_AP : ∀ {A : Set ℕ}, A.IsAPOfLength ⊤ → Erdos318.P₁ A :=
+fun {A} hA => Erdos318.erdos_318.variants.infinite_AP_reused (id hA)
+info: ErdosProblems/Erdos318Canonical.lean:17:0: 'Erdos318.erdos_318.variants.infinite_AP' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ErdosProblems/Erdos318Canonical.lean:18:0: theorem Erdos318.erdos_318.parts.i : ∃ A, A.HasPosDensity ∧ ¬Erdos318.P₁ A :=
+Erdos318.not_erdos_318
+info: ErdosProblems/Erdos318Canonical.lean:19:0: 'Erdos318.erdos_318.parts.i' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ErdosProblems/Erdos318Canonical.lean:20:0: def Erdos318.P₁ : Set ℕ → Prop :=
+fun A =>
+  ∀ (f : ℕ → ℝ),
+    (f ∘ Subtype.val ≠ fun x => 1) →
+      (f ∘ Subtype.val ≠ fun x => -1) → Set.range f ⊆ {1, -1} → ∃ S, S.Nonempty ∧ ↑S ⊆ A \ {0} ∧ ∑ n ∈ S, f n / ↑n = 0
+info: ErdosProblems/Erdos318Canonical.lean:21:0: def Set.HasDensity.{u_1} : {β : Type u_1} →
+  [inst : Preorder β] → [LocallyFiniteOrderBot β] → Set β → ℝ → optParam (Set β) Set.univ → Prop :=
+fun {β} [Preorder β] [LocallyFiniteOrderBot β] S α A =>
+  Filter.Tendsto (fun b => S.partialDensity A b) Filter.atTop (nhds α)
+info: ErdosProblems/Erdos318Canonical.lean:22:0: def Set.HasPosDensity.{u_1} : {β : Type u_1} →
+  [inst : Preorder β] → [LocallyFiniteOrderBot β] → Set β → optParam (Set β) Set.univ → Prop :=
+fun {β} [Preorder β] [LocallyFiniteOrderBot β] S A => ∃ α > 0, S.HasDensity α A
+info: ErdosProblems/Erdos318Canonical.lean:23:0: def Set.IsAPOfLengthWith.{u_1} : {α : Type u_1} → [AddCommMonoid α] → Set α → ℕ∞ → α → α → Prop :=
+fun {α} [AddCommMonoid α] s l a d => ENat.card ↑s = l ∧ s = {x | ∃ n, ∃ (_ : ↑n < l), a + n • d = x}
+info: ErdosProblems/Erdos318Canonical.lean:24:0: def Set.IsAPOfLength.{u_1} : {α : Type u_1} → [AddCommMonoid α] → Set α → ℕ∞ → Prop :=
+fun {α} [AddCommMonoid α] s l => ∃ a d, s.IsAPOfLengthWith l a d
+Build completed successfully (8719 jobs).
+
+EXIT=0

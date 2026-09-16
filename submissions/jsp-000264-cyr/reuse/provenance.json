@@ -1,0 +1,19 @@
+{
+  "formal_conjectures": {
+    "commit": "40e7c98697de6f66b8cbdbf641749ab39ed9c152",
+    "files": {
+      "FormalConjectures/ErdosProblems/318.lean": "5efe531ce65aa22f9295dc5cd739ac6659d6347c9d5c0a9385d77b18d7fdc7be",
+      "FormalConjecturesForMathlib/Combinatorics/AP/Basic.lean": "62f0a0987d49c5dbfd7b4f82a4f3dd4faba7ad545c676df06d0cda009567b5c3",
+      "FormalConjecturesForMathlib/Data/Set/Density.lean": "c44ef3838254124089f55fe4652339bae76c6bb415c6a5a54ea051696dad5af4",
+      "FormalConjecturesUtil.lean": "975c5bd011e99eda23887285c334f8a66a91bcd30b2127314b4b5ed059c90ec3"
+    }
+  },
+  "plby": {
+    "commit": "8822f7ddef30fadbd92e1c6ab4ed897af356af5e",
+    "repository": "https://github.com/plby/lean-proofs"
+  },
+  "toolchain": {
+    "lean": "leanprover/lean4:v4.33.0",
+    "mathlib": "db584cd6d46c92f209a44c0f1c829460d327499d"
+  }
+}

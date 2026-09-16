@@ -1,0 +1,10 @@
+Canonical AP definition port: Copyright2025 The Formal Conjectures Authors.
+The two definitions in ErdosProblems/FormalConjecturesAP.lean are extracted
+from FormalConjecturesForMathlib/Combinatorics/AP/Basic.lean at commit
+40e7c98697de6f66b8cbdbf641749ab39ed9c152 and are licensed under Apache2.0.
+The complete license is ../LICENSE. Original licensed source is preserved
+in ../verification/reused-faces-comparator/original-source/.
+
+The fetched prior proof sources retain their own authorship and notices.
+Their formal authors are credited by plby/lean-proofs as Codex and GPT-5.6 Sol.
+They are not newly authored proofs in this submission.

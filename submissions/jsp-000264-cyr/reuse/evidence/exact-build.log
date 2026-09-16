@@ -1,0 +1,14 @@
+$ elan run leanprover/lean4:v4.33.0 lake --no-cache build ErdosProblems.Erdos318
+ℹ [8717/8717] Built ErdosProblems.Erdos318 (27s)
+info: ErdosProblems/Erdos318.lean:851:0: 'Erdos318.singleton_two_has_P₁' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ErdosProblems/Erdos318.lean:852:0: 'Erdos318.not_contain_single_even_as_stated' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ErdosProblems/Erdos318.lean:853:0: 'Erdos318.contain_single_even_of_positive_and_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ErdosProblems/Erdos318.lean:854:0: 'Erdos318.densityCounterexample_hasDensity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ErdosProblems/Erdos318.lean:855:0: 'Erdos318.not_erdos_318' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ErdosProblems/Erdos318.lean:856:0: 'Erdos318.erdos_318.variants.infinite_AP' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ErdosProblems/Erdos318.lean:857:0: 'Erdos318.erdos_318.variants.univ' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ErdosProblems/Erdos318.lean:858:0: 'Erdos318.erdos_318.variants.odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ErdosProblems/Erdos318.lean:859:0: 'Erdos318.erdos_318.variants.squares' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (8717 jobs).
+
+EXIT=0

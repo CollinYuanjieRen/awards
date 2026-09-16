@@ -1,0 +1,19 @@
+{
+  "README.md": "7ad40fef6b570eeb1830592c5faa6e385aedd8c8c700bb07dd45cb709869acb3",
+  "comparator-config.json": "9e7e77c8d8f88f99d039fecccb30206e5761d454f7e90d5b69548a96b18f6b84",
+  "comparator-development.log": "0a8b334e82336b879930b5dcae68796b56f7edb58f2784ee9b65d9d672529b95",
+  "native-build.log": "fed6a2600837f1fdaaaaab5eba90c47b1961e13d5eb9f0b48618850acf913c16",
+  "original-source/FormalConjecturesForMathlib__Combinatorics__AP__Basic.lean": "62f0a0987d49c5dbfd7b4f82a4f3dd4faba7ad545c676df06d0cda009567b5c3",
+  "original-source/FormalConjecturesForMathlib__Data__Set__Density.lean": "c44ef3838254124089f55fe4652339bae76c6bb415c6a5a54ea051696dad5af4",
+  "original-source/FormalConjectures__ErdosProblems__318.lean": "5efe531ce65aa22f9295dc5cd739ac6659d6347c9d5c0a9385d77b18d7fdc7be",
+  "original-source/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+  "reference/ReferenceAP.lean": "2884df627163ad3ad6a07fcfb8a2bdcf8f634dbab7ab8ce7d1aa9243dab26549",
+  "reference/ReferenceChallenge.lean": "7b34e6e688f8edccb189a2d89fdc0583d69edf7cb6ef71356369bebcab2f97de",
+  "reference/ReferenceDensity.lean": "569a1e66f2294c179cbdf373d94d62952e56f0781be4b901bc3cbe509c32754e",
+  "reference/comparator-config.json": "9e7e77c8d8f88f99d039fecccb30206e5761d454f7e90d5b69548a96b18f6b84",
+  "reference/extraction-manifest.json": "2dc0728bae12cb14ce2229461a5f052531f25e9bbda9341dc2e350d92010f8ac",
+  "result.json": "52ce24b8fb6f94fe08a5bc43fd667704e02de122675e7d9d6b60cb54c75369b0",
+  "reused-endpoint-rename.diff": "792d54cf460b2b7d42405221c9b39338f6f8fa9c865d975adf5cd652193e7148",
+  "solution-source-hashes.json": "046bfdff06b7d6eb6d90a6233412308cb6b1b5ab20eea50ceee02654f7335a07",
+  "tool-manifest.json": "9efef41c7f4641e228bd4aa8c512c5b1b97e76105c77145382acd99742514cf5"
+}

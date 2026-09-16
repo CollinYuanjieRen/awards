@@ -1,0 +1,58 @@
+[
+  {
+    "declaration": "Set.partialDensity",
+    "source": "FormalConjecturesForMathlib__Data__Set__Density.lean",
+    "start_line": 41,
+    "end_line": 44,
+    "sha256": "ff102cc52f5970e37c9ffc17a4bc9175a135b9214cfbdc58b21984fd636be370"
+  },
+  {
+    "declaration": "Set.HasDensity",
+    "source": "FormalConjecturesForMathlib__Data__Set__Density.lean",
+    "start_line": 91,
+    "end_line": 93,
+    "sha256": "975a6237b7cc8e4175b8c6a275601bc541809e94ef040b466f9a8ae82411a6af"
+  },
+  {
+    "declaration": "Set.HasPosDensity",
+    "source": "FormalConjecturesForMathlib__Data__Set__Density.lean",
+    "start_line": 100,
+    "end_line": 102,
+    "sha256": "351c7d483fa82d19561d80b2b1354f99d467363e8eb7b33b6ab8fb9abd37b2bf"
+  },
+  {
+    "declaration": "Set.IsAPOfLengthWith",
+    "source": "FormalConjecturesForMathlib__Combinatorics__AP__Basic.lean",
+    "start_line": 44,
+    "end_line": 45,
+    "sha256": "2c42085ff6484bc6f6de2e7584bbc333a439bd36de123e5abf89a4cb314a1531"
+  },
+  {
+    "declaration": "Set.IsAPOfLength",
+    "source": "FormalConjecturesForMathlib__Combinatorics__AP__Basic.lean",
+    "start_line": 122,
+    "end_line": 123,
+    "sha256": "dc07b10177551ddb70c5c5c4866f3086e0edd382b2c0f6a0297b37b812b5a91f"
+  },
+  {
+    "declaration": "Erdos318.P\u2081",
+    "source": "FormalConjectures__ErdosProblems__318.lean",
+    "start_line": 40,
+    "end_line": 44,
+    "sha256": "e3bad8c98583e88a9753caa22af384749d5caefd4259467453e89881df4657f7"
+  },
+  {
+    "declaration": "Erdos318.erdos_318.parts.i",
+    "source": "FormalConjectures__ErdosProblems__318.lean",
+    "start_line": 120,
+    "end_line": 121,
+    "sha256": "1408feaa8b5caac5e20b73746eeb357acc23fca0a33645e503ebd46e817aebe6"
+  },
+  {
+    "declaration": "Erdos318.erdos_318.variants.infinite_AP",
+    "source": "FormalConjectures__ErdosProblems__318.lean",
+    "start_line": 125,
+    "end_line": 126,
+    "sha256": "d2ae2cde23f5241e17230deeacfe9464d09bcab23fa26f02365839e3d84bcf2f"
+  }
+]

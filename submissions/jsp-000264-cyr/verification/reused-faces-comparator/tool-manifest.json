@@ -1,0 +1,19 @@
+{
+  "comparator_commit": "3927ad383f208ae977c340a91c48ac9b497d2097",
+  "comparator_tag": "v4.33.0",
+  "exporter_commit": "15f6055e299ad5b89345e533cc2192f4cc00f659",
+  "toolchain": "leanprover/lean4:v4.33.0",
+  "tool_build_exit_code": 0,
+  "comparator_clean": true,
+  "exporter_clean": true,
+  "files": {
+    "Main.lean": "0dfdb5139d097518619f5ea4bf9e01f063273497409e84c25fc69616bb98a458",
+    "Comparator/Compare.lean": "9bc34cb7de5a069a6fef7f3b13b20fea22f1d52603f74320a93d519b735ad3dd",
+    "Comparator/Axioms.lean": "863c5e1329811be0427880e08c171de733343491c5a3619b5dbf2e12b34c6125",
+    "scripts/fake-landrun.sh": "167507c89d8b3c7667ad78b50df7b19f89883751a01efd1457404fa34a994e8b",
+    "lake-manifest.json": "ea674a67ec934845dd5769ce8744fc27f076fb9b2c3149b0efc005a1feb6d518",
+    "lean-toolchain": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b",
+    ".lake/build/bin/comparator": "a9b7b2844ce21807b072f241c4185dca718f8795c9f85be940ff07b03dbb719c",
+    ".lake/packages/lean4export/.lake/build/bin/lean4export": "03c437323e002b45f91516826ed83e652cbb30e7302eee66b25fb2a392e600e3"
+  }
+}

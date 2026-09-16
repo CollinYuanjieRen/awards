@@ -11,7 +11,7 @@ The solution has no additional hypotheses, custom axioms, admitted proofs or nat
 - Canonical statement: [Formal Conjectures 318](https://github.com/google-deepmind/formal-conjectures/blob/40e7c98697de6f66b8cbdbf641749ab39ed9c152/FormalConjectures/ErdosProblems/318.lean). The `P₁` definition is copied verbatim with its Apache 2.0 copyright notice. `answer(True)` elaborates to `True` with metadata, removed by the pinned comparator exporter.
 - Formalization prepared with OpenAI Codex.
 
-The arithmetic-progression and positive-density-counterexample parts have prior formalizations by [plby/lean-proofs](https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos318.lean). They are credited separately; this package supplies the formerly missing squares-excluding-one result. The negative statement for squares including one is a different proposition.
+The arithmetic-progression and positive-density-counterexample parts have prior formalizations by [plby/lean-proofs](https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos318.lean). They have now also been reproduced, adapted to the canonical predicate names, and accepted by an actual matching-version comparator with Lean kernel replay. See [full catalog coverage](FULL_SCOPE.md) and the separate [reuse reproduction bundle](reuse/README.md). They remain credited prior work; this package supplies the formerly missing squares-excluding-one result. The negative statement for squares including one is a different proposition.
 
 ## Reproduction
 
