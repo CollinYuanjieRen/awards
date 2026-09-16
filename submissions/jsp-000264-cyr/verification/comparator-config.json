@@ -1,0 +1,13 @@
+{
+  "challenge_module": "MerLeanExperiment.ComparatorReference.Challenge",
+  "solution_module": "MerLeanExperiment.Erdos318Solution",
+  "theorem_names": [
+    "Erdos318.erdos_318.parts.ii"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

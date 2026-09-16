@@ -1,0 +1,21 @@
+{
+  "README.md": "7f679455d7fcb1301c8fcca96bea1b25cfc87358da3871a60221ec50b263604f",
+  "aggregate-build.log": "8e9823de80cba2bc261534fa96c572b6411c679351fa5f7d180d60aa50470e37",
+  "axiom-audit.log": "1b08d396648dc474d55f48a1c904e3fc48b25373aeda4d07f06f11f4e42cdffd",
+  "comparator-config.json": "9e21b16c716101d77cf668d29f907108ef8dd0d83ca7540b045bd4c771b84260",
+  "comparator-development.log": "08671df3b6ce40c8f11270bfd765f08f01615e1c4c6de03cc5711a0cc08d2f46",
+  "native-build.log": "cd8a93bf744b705a1c138028ec19f3e93811fb5037e865d4b41ca73d3a929d5c",
+  "original-source/FormalConjecturesUtil.lean": "975c5bd011e99eda23887285c334f8a66a91bcd30b2127314b4b5ed059c90ec3",
+  "original-source/FormalConjecturesUtil__Answer.lean": "c8b3b31e9bb25c511e577b1812159a210e9346720f19ec6c6b30905a0802db7a",
+  "original-source/FormalConjecturesUtil__Answer__Syntax.lean": "4572fc294df840c091b79350951760f742eb26f890b48cd329a19995a1e2344c",
+  "original-source/FormalConjectures__ErdosProblems__318.lean": "5efe531ce65aa22f9295dc5cd739ac6659d6347c9d5c0a9385d77b18d7fdc7be",
+  "original-source/lake-manifest.json": "c8ffc0d59f492007162fe54c68396e4b9f2f305fcf69210a7fbaf0b18fcd8cd9",
+  "original-source/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+  "reference/Answer.lean": "e91d81c92ca989b5982a25eadbc4b2546cb297bbb43564453c239ec7a2c645db",
+  "reference/AnswerSyntax.lean": "4572fc294df840c091b79350951760f742eb26f890b48cd329a19995a1e2344c",
+  "reference/Challenge.lean": "c5e354a071fc46643ee56fac205762013cc8b8ec445b5fc36586542fce9894a0",
+  "reference/answer-import-port.diff": "8086b27bf7bd34ec305d256e8a151e8b704d13699af3f4f9af4eaf8b23cc6ee4",
+  "result.json": "43a679283d967d3a1269d080aca90c725dd5ae3a7eb426e239d9e88af97eb5cb",
+  "solution-source-hashes.json": "ddc791cf4fc8916f0c2813eba33da6b01e0bf156ca02bd3b1e226c4e0de27570",
+  "tool-build-manifest.json": "35d52196f979cdf6da80ac031dc96a0cec6ddcfd63beb091fef066cbbbd9e214"
+}

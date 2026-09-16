@@ -1,0 +1,31 @@
+info: lean4export: cloning https://github.com/leanprover/lean4export
+info: lean4export: checking out revision 'b18d673bd29b476466a51a3be1012df2ed322b10'
+✔ [6/21] Built Main:c.o (287ms)
+✔ [7/21] Built Comparator.Util (329ms)
+✔ [8/21] Built Comparator.Util:c.o (83ms)
+✔ [9/21] Built Export.Parse (1000ms)
+✔ [10/21] Built Export:c.o (1.4s)
+✔ [11/21] Built Comparator.Axioms (390ms)
+✔ [12/21] Built Comparator.Axioms:c.o (183ms)
+✔ [13/21] Built Comparator.Compare (512ms)
+✔ [14/21] Built Comparator.Compare:c.o (266ms)
+✔ [15/21] Built Comparator (425ms)
+✔ [16/21] Built Comparator:c.o (49ms)
+ℹ [17/21] Built lean4export:exe (1.3s)
+info: stderr:
+ld64.lld: warning: directory not found for option -L/usr/local/lib
+✔ [18/21] Built Export.Parse:c.o (1.9s)
+⚠ [19/21] Built Main (2.2s)
+warning: Main.lean:207:19: `Lean.Environment.replay` has been deprecated: Use `Lean.Kernel.Environment.replay` instead
+
+Note: The updated constant has a different type:
+  Std.HashMap Lean.Name Lean.ConstantInfo → Lean.Kernel.Environment → IO Lean.Kernel.Environment
+instead of
+  Std.HashMap Lean.Name Lean.ConstantInfo → Lean.Environment → IO Lean.Environment
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.replay` to `Lean.Kernel.Environment.replay x`).
+✔ [20/21] Built Main:c.o (307ms)
+ℹ [21/21] Built comparator:exe (469ms)
+info: stderr:
+ld64.lld: warning: directory not found for option -L/usr/local/lib
+Build completed successfully (21 jobs).

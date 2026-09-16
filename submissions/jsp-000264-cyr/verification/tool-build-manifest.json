@@ -1,0 +1,20 @@
+{
+  "comparator_git": "011e9d35a10a054ed4b66d8379115ad870f2b0ce",
+  "exporter_git": "b18d673bd29b476466a51a3be1012df2ed322b10",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "build_command": "lake build lean4export comparator",
+  "build_exit": 0,
+  "source_clean": true,
+  "exporter_clean": true,
+  "files": {
+    "source/.lake/build/bin/comparator": "105f33f28e2a49cb98a9240f071e42404c2881ed6c159dea86a531f17899564c",
+    "source/.lake/packages/lean4export/.lake/build/bin/lean4export": "e4bf9a1be2f28028245a342e168861d80337849e0e31bc29cdad9ad575b0ca4f",
+    "source/scripts/fake-landrun.sh": "167507c89d8b3c7667ad78b50df7b19f89883751a01efd1457404fa34a994e8b",
+    "source/lake-manifest.json": "bbfb90d0bf6d86e8d909e48e5e13a178edbfc8f204fcb231b4b08531e48aaf27",
+    "source/lean-toolchain": "cdbc6c372a2b37ad94430a6cec69cedfa4d36f255bfd968773fd91bf7a1746bf",
+    "native-build.log": "cd8a93bf744b705a1c138028ec19f3e93811fb5037e865d4b41ca73d3a929d5c",
+    "wrapper-bin/lake": "04d6c46753aefb9f459e4ec67522ecf2129d8fa4d019f859cd9007e82e9f3fd0",
+    "run-development-comparator.py": "61a9164aed19c4b84262b339067d401fb55a99b8588a17a216cd20d17e2fb6d8"
+  }
+}

@@ -1,0 +1,75 @@
+Building MerLeanExperiment.ComparatorReference.Challenge
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec lake build MerLeanExperiment.ComparatorReference.Challenge
+✔ [8744/8747] Built MerLeanExperiment.ComparatorReference.AnswerSyntax (214ms)
+✔ [8746/8747] Built MerLeanExperiment.ComparatorReference.Answer (405ms)
+⚠ [8747/8747] Built MerLeanExperiment.ComparatorReference.Challenge (9.9s)
+warning: MerLeanExperiment/ComparatorReference/Challenge.lean:33:8: declaration uses `sorry`
+Build completed successfully (8747 jobs).
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec <COMPARATOR_ROOT>/.lake/packages/lean4export/.lake/build/bin/lean4export MerLeanExperiment.ComparatorReference.Challenge -- Erdos318.erdos_318.parts.ii propext Quot.sound Classical.choice Nat.add Nat.sub Nat.mul Nat.pow Nat.gcd Nat.div Nat.mod Nat.beq Nat.ble Nat.land Nat.lor Nat.xor Nat.shiftLeft Nat.shiftRight String.ofList Char.ofNat List eagerReduce
+Exporting #[Erdos318.erdos_318.parts.ii, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce] from MerLeanExperiment.ComparatorReference.Challenge
+Building MerLeanExperiment.Erdos318Solution
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec lake build MerLeanExperiment.Erdos318Solution
+merlean-workspace: Shared dependency provider is busy; retry after its active build
+✔ [8745/8801] Built MerLeanExperiment.LargeScale (5.0s)
+✔ [8746/8801] Built MerLeanExperiment.ChoosePowerBounds (7.3s)
+✔ [8747/8801] Built MerLeanExperiment.SquareConstruction (7.4s)
+✔ [8748/8801] Built MerLeanExperiment.FrequencyCount (7.4s)
+✔ [8749/8801] Built MerLeanExperiment.FiniteCollision (7.4s)
+✔ [8750/8801] Built MerLeanExperiment.IntegerSeparation (7.5s)
+✔ [8751/8801] Built MerLeanExperiment.CenteredFactor (7.8s)
+✔ [8752/8801] Built MerLeanExperiment.FiniteFourier (7.8s)
+✔ [8753/8801] Built MerLeanExperiment.ProductPositivity (7.0s)
+✔ [8754/8801] Built MerLeanExperiment.SquareCoverage (6.1s)
+✔ [8755/8801] Built MerLeanExperiment.PartitionCollision (6.1s)
+✔ [8756/8801] Built MerLeanExperiment.Erdos318Definitions (13s)
+✔ [8757/8801] Built MerLeanExperiment.SquareFactorization (6.2s)
+✔ [8758/8801] Built MerLeanExperiment.FiniteFrequencyBounds (6.2s)
+✔ [8759/8801] Built MerLeanExperiment.CoherentMultiples (6.2s)
+✔ [8760/8801] Built MerLeanExperiment.RationalNumerator (13s)
+✔ [8761/8801] Built MerLeanExperiment.DenseExtensions (13s)
+✔ [8762/8801] Built MerLeanExperiment.FiniteCounting (6.1s)
+✔ [8763/8801] Built MerLeanExperiment.BernoulliParameters (13s)
+✔ [8764/8801] Built MerLeanExperiment.CenteredProduct (6.1s)
+✔ [8765/8801] Built MerLeanExperiment.ReciprocalBounds (13s)
+✔ [8766/8801] Built MerLeanExperiment.FiniteTail (13s)
+✔ [8767/8801] Built MerLeanExperiment.FiniteGreedy (14s)
+✔ [8768/8801] Built MerLeanExperiment.PrimeReserve (15s)
+✔ [8769/8801] Built MerLeanExperiment.SixthPowerBounds (10s)
+✔ [8770/8801] Built MerLeanExperiment.GaussianResidue (4.5s)
+✔ [8771/8801] Built MerLeanExperiment.SignedCollision (8.1s)
+✔ [8772/8801] Built MerLeanExperiment.ResidualCollision (9.1s)
+✔ [8773/8801] Built MerLeanExperiment.LcmSupport (9.2s)
+✔ [8774/8801] Built MerLeanExperiment.ResidueLowerBounds (4.5s)
+✔ [8775/8801] Built MerLeanExperiment.HighFrequencyCoherence (9.3s)
+✔ [8776/8801] Built MerLeanExperiment.FarResidue (4.7s)
+✔ [8777/8801] Built MerLeanExperiment.SortedPrefix (9.1s)
+✔ [8778/8801] Built MerLeanExperiment.FourierBridge (9.4s)
+✔ [8779/8801] Built MerLeanExperiment.ReciprocalMultiples (9.5s)
+✔ [8780/8801] Built MerLeanExperiment.SquareMass (8.5s)
+✔ [8781/8801] Built MerLeanExperiment.SquareSubproducts (8.9s)
+✔ [8782/8801] Built MerLeanExperiment.SquareSupport (7.1s)
+✔ [8783/8801] Built MerLeanExperiment.SquareModulus (7.1s)
+✔ [8784/8801] Built MerLeanExperiment.SmallOmittedMass (7.1s)
+✔ [8785/8801] Built MerLeanExperiment.FrequencySummation (7.3s)
+✔ [8786/8801] Built MerLeanExperiment.FourierCounting (7.5s)
+✔ [8787/8801] Built MerLeanExperiment.ColorMass (7.8s)
+✔ [8788/8801] Built MerLeanExperiment.MiddleDenominators (9.0s)
+✔ [8789/8801] Built MerLeanExperiment.SquareTestProducts (7.7s)
+✔ [8790/8801] Built MerLeanExperiment.FactorDivisibility (7.7s)
+✔ [8791/8801] Built MerLeanExperiment.SmallFrequency (8.8s)
+✔ [8792/8801] Built MerLeanExperiment.BottomFrequency (8.5s)
+✔ [8793/8801] Built MerLeanExperiment.AtomBound (9.2s)
+✔ [8794/8801] Built MerLeanExperiment.IntervalRetained (8.6s)
+✔ [8795/8801] Built MerLeanExperiment.MiddleFrequency (6.4s)
+✔ [8796/8801] Built MerLeanExperiment.HighFrequencyEnergy (4.6s)
+✔ [8797/8801] Built MerLeanExperiment.PrefixReserve (4.4s)
+✔ [8798/8801] Built MerLeanExperiment.SquareFourierEstimate (4.9s)
+✔ [8799/8801] Built MerLeanExperiment.ColorResidual (5.7s)
+✔ [8800/8801] Built MerLeanExperiment.SquarePartition (5.4s)
+✔ [8801/8801] Built MerLeanExperiment.Erdos318Solution (3.6s)
+Build completed successfully (8801 jobs).
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec <COMPARATOR_ROOT>/.lake/packages/lean4export/.lake/build/bin/lean4export MerLeanExperiment.Erdos318Solution -- Erdos318.erdos_318.parts.ii propext Quot.sound Classical.choice Nat.add Nat.sub Nat.mul Nat.pow Nat.gcd Nat.div Nat.mod Nat.beq Nat.ble Nat.land Nat.lor Nat.xor Nat.shiftLeft Nat.shiftRight String.ofList Char.ofNat List eagerReduce
+Exporting #[Erdos318.erdos_318.parts.ii, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce] from MerLeanExperiment.Erdos318Solution
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!

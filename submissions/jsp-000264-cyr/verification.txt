@@ -1,0 +1,34 @@
+Lean4.34.0-rc1; Mathlib1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d
+Canonical endpoint build: exit0,8801 jobs.
+Axiom/type audit: exit0.
+
+'ReciprocalSquares.frequency_tail_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReciprocalSquares.exists_large_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReciprocalSquares.squareModulus_log_le_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReciprocalSquares.squareD_atom_lt_half_modulus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReciprocalSquares.highFrequencyConstant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReciprocalSquares.badPrimeSubsets' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReciprocalSquares.bad_prime_subsets_energy_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReciprocalSquares.missing_factor_energy_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReciprocalSquares.high_frequency_bad_algebra' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReciprocalSquares.high_frequency_good_algebra' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReciprocalSquares.high_frequency_energy_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReciprocalSquares.high_frequency_centeredProduct_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReciprocalSquares.squareModulus_neZero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReciprocalSquares.squareModulus_mul_high_decay_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReciprocalSquares.square_sum_norm_outside_small_lt_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReciprocalSquares.square_centered_fourier_sum_ge_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReciprocalSquares.mem_signed_square_domain_iff' depends on axioms: [propext, Quot.sound]
+'ReciprocalSquares.signed_square_color_witnesses' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReciprocalSquares.signed_zero_sum_of_equal_reciprocals' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReciprocalSquares.square_partition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos318.P₁' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos318.erdos_318.parts.ii' depends on axioms: [propext, Classical.choice, Quot.sound]
+ReciprocalSquares.square_partition (X : Set ℕ) (hX : ∃ n, 1 < n ∧ IsSquare n ∧ n ∈ X)
+  (hY : ∃ n, 1 < n ∧ IsSquare n ∧ n ∉ X) :
+  ∃ A B,
+    A.Nonempty ∧
+      B.Nonempty ∧
+        (∀ n ∈ A, 1 < n ∧ IsSquare n ∧ n ∈ X) ∧
+          (∀ n ∈ B, 1 < n ∧ IsSquare n ∧ n ∉ X) ∧ ∑ n ∈ A, 1 / ↑n = ∑ n ∈ B, 1 / ↑n
+Erdos318.erdos_318.parts.ii : True ↔ Erdos318.P₁ ({n | IsSquare n} \ {1})

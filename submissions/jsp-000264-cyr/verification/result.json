@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "exit_code": 0,
+  "classification": "unsandboxed macOS development verification",
+  "comparator_commit": "011e9d35a10a054ed4b66d8379115ad870f2b0ce",
+  "reference_commit": "40e7c98697de6f66b8cbdbf641749ab39ed9c152",
+  "reference_original_toolchain": "leanprover/lean4:v4.33.1",
+  "comparison_toolchain": "leanprover/lean4:v4.34.0-rc1",
+  "target": "Erdos318.erdos_318.parts.ii",
+  "definition_holes": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "nanoda": false,
+  "real_landrun": false,
+  "kernel_acceptance": "Lean default kernel accepts the solution",
+  "comparator_success": "Your solution is okay!",
+  "raw_private_log_sha256": "ec6cc21f6e2c5d5a098ad91be59bcfaef5f77457509d63b90eb952ae03c30fef",
+  "published_redacted_log_sha256": "08671df3b6ce40c8f11270bfd765f08f01615e1c4c6de03cc5711a0cc08d2f46",
+  "aggregate_build_exit_code": 0,
+  "platform": "macOS 26.6.2 arm64",
+  "production_linux_sandbox": "NOT RUN",
+  "nanoda_check": "NOT RUN",
+  "fresh_snapshot_axiom_audit_exit_code": 0
+}

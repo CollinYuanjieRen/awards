@@ -1,0 +1,5 @@
+--- pinned/FormalConjecturesUtil/Answer.lean
++++ ported/MerLeanExperiment/ComparatorReference/Answer.lean
+@@ -19 +19 @@
+-public import FormalConjecturesUtil.Answer.Syntax
++public import MerLeanExperiment.ComparatorReference.AnswerSyntax
