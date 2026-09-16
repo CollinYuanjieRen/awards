@@ -1,0 +1,8 @@
+Imported constants: 772978; replay eligible: 768544; skipped unsafe: 714; skipped partial: 3720
+Starting checked Kernel.Environment replay from fresh trust0; quotient primitives checked once after Eq
+All eligible constants present after replay: 768544
+Root present after replay: Erdos343.erdos_343_eventual
+Root present after replay: Erdos343.erdos_343_all_N
+Root present after replay: Jsp285.finite_multiset_AP
+Root present after replay: Jsp285.indexedSubsetSums_univ_eq
+PASS: checked replay completed, including all postponed constructor/recursor and quotient comparisons

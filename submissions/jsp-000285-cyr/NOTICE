@@ -1,0 +1,15 @@
+JSP-000285 / Erdős343 eventual-density formalization.
+Mathematical theorem: Endre Szemerédi and Van H. Vu (2006).
+
+External Lean dependencies fetched directly from plby/lean-proofs, commit
+8822f7ddef30fadbd92e1c6ab4ed897af356af5e. These sources are not redistributed
+in this package. Four have explicit Apache-2.0 headers; a redistribution
+license for three further files has not been established.
+Original formal authors include Codex and GPT-5.6 Sol; original source
+headers retain the mathematical and formal attribution for each component.
+The new occurrence-preserving and infinite-density bridges are formalization
+contributions; they do not claim the reused source or mathematical discovery.
+
+Standalone replay harness: Lean Environment replay code, copyright (c) 2023
+Kim Morrison, Apache-2.0, with checked-kernel scheduling, quotient handling,
+command-line root verification and Lean4.33 API adaptations.

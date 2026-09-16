@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "upstream_repository": "https://github.com/plby/lean-proofs",
+  "commit": "8822f7ddef30fadbd92e1c6ab4ed897af356af5e",
+  "source_root": "src/latest",
+  "license": {
+    "status": "file-specific",
+    "fetched_notice": {
+      "source_url": "https://raw.githubusercontent.com/plby/lean-proofs/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/LICENSE",
+      "sha256": "41e26750cf7403beef1b82310454ca79eb1da04b1dab82d4d42f377e15c01ea9",
+      "bytes": 202
+    },
+    "scope": "The upstream src/latest/LICENSE is a notice that some external-source files are Apache-2.0; it is not treated as a blanket license grant for every fetched file."
+  },
+  "files": [
+    {
+      "path": "ErdosProblems/Erdos13/Erdos13Additive.lean",
+      "source_url": "https://raw.githubusercontent.com/plby/lean-proofs/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos13/Erdos13Additive.lean",
+      "commit": "8822f7ddef30fadbd92e1c6ab4ed897af356af5e",
+      "upstream_sha256": "5da02d7a5885813a80e97319510fe69823a59d4603bb69ed5a485135aad3037d",
+      "local_sha256": "5da02d7a5885813a80e97319510fe69823a59d4603bb69ed5a485135aad3037d",
+      "upstream_bytes": 74765,
+      "local_bytes": 74765,
+      "license": "Apache-2.0",
+      "attribution": {
+        "formal": "Copyright 2026 The Formal Conjectures Authors.",
+        "mathematics": "Finitary strict Bardaji–Grynkiewicz alternative used in Bedert’s argument, as stated by the upstream module."
+      },
+      "transformation": {
+        "kind": "none",
+        "description": "Byte-for-byte identical to the pinned upstream source."
+      }
+    },
+    {
+      "path": "ErdosProblems/Erdos13/Erdos13Kneser.lean",
+      "source_url": "https://raw.githubusercontent.com/plby/lean-proofs/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos13/Erdos13Kneser.lean",
+      "commit": "8822f7ddef30fadbd92e1c6ab4ed897af356af5e",
+      "upstream_sha256": "cb0d5c08c5c8db560f5ccfd4dff0160972941ffbfc7fa3117aa5e73558f8e9af",
+      "local_sha256": "cb0d5c08c5c8db560f5ccfd4dff0160972941ffbfc7fa3117aa5e73558f8e9af",
+      "upstream_bytes": 27533,
+      "local_bytes": 27533,
+      "license": "Apache-2.0",
+      "attribution": {
+        "formal": "Mantas Bakšys and Yaël Dillies.",
+        "mathematics": "Kneser’s addition theorem; upstream references Imre Ruzsa, Sumsets and structure, and Matt DeVos, A short proof of Kneser’s addition theorem."
+      },
+      "transformation": {
+        "kind": "none",
+        "description": "Byte-for-byte identical to the pinned upstream source."
+      }
+    },
+    {
+      "path": "ErdosProblems/Erdos13/Erdos13MulStab.lean",
+      "source_url": "https://raw.githubusercontent.com/plby/lean-proofs/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos13/Erdos13MulStab.lean",
+      "commit": "8822f7ddef30fadbd92e1c6ab4ed897af356af5e",
+      "upstream_sha256": "0b5c6339a5e2518ea0086245602b49738f79f83398363d31ac62525d5328394d",
+      "local_sha256": "0b5c6339a5e2518ea0086245602b49738f79f83398363d31ac62525d5328394d",
+      "upstream_bytes": 17916,
+      "local_bytes": 17916,
+      "license": "Apache-2.0",
+      "attribution": {
+        "formal": "Mantas Bakšys and Yaël Dillies.",
+        "mathematics": "Finset stabilizer infrastructure used by the Kneser formalization."
+      },
+      "transformation": {
+        "kind": "none",
+        "description": "Byte-for-byte identical to the pinned upstream source."
+      }
+    },
+    {
+      "path": "ErdosProblems/Erdos344.lean",
+      "source_url": "https://raw.githubusercontent.com/plby/lean-proofs/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos344.lean",
+      "commit": "8822f7ddef30fadbd92e1c6ab4ed897af356af5e",
+      "upstream_sha256": "1dd262671722e317dcf5e449d40d572bb76b42e1012f9d207c21dd25ff74ef43",
+      "local_sha256": "1dd262671722e317dcf5e449d40d572bb76b42e1012f9d207c21dd25ff74ef43",
+      "upstream_bytes": 375166,
+      "local_bytes": 375166,
+      "license": "UNKNOWN",
+      "attribution": {
+        "formal": "Codex and GPT-5.6 Sol.",
+        "mathematics": "Endre Szemerédi and Van H. Vu, listed as informal authors by the upstream module."
+      },
+      "transformation": {
+        "kind": "none",
+        "description": "Byte-for-byte identical to the pinned upstream source."
+      }
+    },
+    {
+      "path": "ErdosProblems/Erdos360/Core.lean",
+      "source_url": "https://raw.githubusercontent.com/plby/lean-proofs/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos360/Core.lean",
+      "commit": "8822f7ddef30fadbd92e1c6ab4ed897af356af5e",
+      "upstream_sha256": "1c289f0daf906cce05cb4b917a82d0e40d965f4951986e60137270fbaff66830",
+      "local_sha256": "78d35472ccf79b5ec7c40df5b06bb5300d1cc7dae39e2ef3e55ad76d5cc8d8f9",
+      "upstream_bytes": 676503,
+      "local_bytes": 20178,
+      "license": "UNKNOWN",
+      "attribution": {
+        "formal": "The upstream file does not list individual formal authors.",
+        "mathematics": "The retained section explicitly formalizes Conlon–Fox–Pham Lemmas 2.3 and 2.6 and associated almost-period/iterated-sumset estimates."
+      },
+      "transformation": {
+        "kind": "contiguous-extraction-with-wrapper",
+        "description": "The fetcher retains upstream lines 2970–3433 byte-for-byte as local lines 24–487. It prepends the current 23-line wrapper: upstream version marker; a provenance notice naming the repository, pin, and source file, stating that upstream lists no individual authors and “License notice: see ../LICENSE.”; the four required imports; namespace Erdos360; open Filter; open scoped BigOperators Pointwise ComplexConjugate; and the local Classical.propDecidable instance. It appends `end Erdos360`. No retained proof-body bytes are modified.",
+        "retained_upstream_line_range": "2970-3433",
+        "retained_local_line_range": "24-487",
+        "retained_body_sha256": "797121a16d409c72f4e0ba27d5f734e7b26c236050239ac06c516852af685098",
+        "dropped_imports": [
+          "ErdosProblems.Erdos851.ConcreteBetaCardinality",
+          "ErdosProblems.Erdos4.ResidualPrimeFiberMertens",
+          "ErdosProblems.Erdos360.DiverseSampling",
+          "ErdosProblems.Erdos360.ResolutionScale",
+          "ErdosProblems.Erdos360.TernaryClosure",
+          "ErdosProblems.Erdos360.StructuredSmallDoubling",
+          "UnitFractions.ForMathlib.BasicEstimates"
+        ],
+        "dropped_open_commands": [
+          "open Erdos851",
+          "open Erdos851.FiniteCombinatorialSieve",
+          "open Erdos851.FiniteSieveApplication",
+          "open Erdos851.BetaSieveFundamental"
+        ],
+        "proof_body_modified": false,
+        "local_provenance_header": "VENDORED AND TRIMMED COPY. Source: plby/lean-proofs, commit 8822f7ddef30fadbd92e1c6ab4ed897af356af5e, file src/latest/ErdosProblems/Erdos360/Core.lean. Upstream lists no individual authors; License notice: see ../LICENSE. Only the contiguous almost-period / iterated-sumset section imported by ErdosProblems.Erdos344 is kept verbatim (original lines 2970-3433); the original module’s other imports (Erdos851, Erdos4, Erdos360.* sub-modules, UnitFractions) are not needed by these declarations and are dropped. Nothing here is claimed as our work.",
+        "attribution_correction": {
+          "before_local_sha256": "865cafa19024d1f6b55eb87ad52b0ffd96cb4962ea2c7ce296e2d2b447888e58",
+          "after_local_sha256": "78d35472ccf79b5ec7c40df5b06bb5300d1cc7dae39e2ef3e55ad76d5cc8d8f9",
+          "change": "Removed unsupported individual-author attribution and replaced the unsupported blanket-license statement with `License notice: see ../LICENSE.`; no code or retained upstream body bytes changed."
+        }
+      }
+    },
+    {
+      "path": "ErdosProblems/Erdos587/Erdos587Core.lean",
+      "source_url": "https://raw.githubusercontent.com/plby/lean-proofs/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos587/Erdos587Core.lean",
+      "commit": "8822f7ddef30fadbd92e1c6ab4ed897af356af5e",
+      "upstream_sha256": "d2c087152af063cb2d0b4653256fd9967159ac6557f6a40cde43e69084b096f2",
+      "local_sha256": "d2c087152af063cb2d0b4653256fd9967159ac6557f6a40cde43e69084b096f2",
+      "upstream_bytes": 18557,
+      "local_bytes": 18557,
+      "license": "UNKNOWN",
+      "attribution": {
+        "formal": "The upstream file does not list individual formal authors.",
+        "mathematics": "Elementary additive-combinatorial finite-group subset-sum core used by the upstream Erdős 344 and 360 developments."
+      },
+      "transformation": {
+        "kind": "none",
+        "description": "Byte-for-byte identical to the pinned upstream source."
+      }
+    },
+    {
+      "path": "ErdosProblems/Erdos697/Erdos697Bernoulli.lean",
+      "source_url": "https://raw.githubusercontent.com/plby/lean-proofs/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos697/Erdos697Bernoulli.lean",
+      "commit": "8822f7ddef30fadbd92e1c6ab4ed897af356af5e",
+      "upstream_sha256": "ce331dc4cc1fefa6efac7208fba2ea9cb97fe2defe1e1d289f24f829ac01b59b",
+      "local_sha256": "ce331dc4cc1fefa6efac7208fba2ea9cb97fe2defe1e1d289f24f829ac01b59b",
+      "upstream_bytes": 16262,
+      "local_bytes": 16262,
+      "license": "Apache-2.0",
+      "attribution": {
+        "formal": "The upstream header states Copyright (c) 2026 and does not list individual authors.",
+        "mathematics": "Sharp finite Bernoulli tail estimates for Erdős Problem 697."
+      },
+      "transformation": {
+        "kind": "none",
+        "description": "Byte-for-byte identical to the pinned upstream source."
+      }
+    }
+  ],
+  "public_distribution": "dependency fetch only; not redistributing upstream sources",
+  "dependency_fetch": {
+    "command": "python3 fetch_sources.py",
+    "optional_directory_command": "python3 fetch_sources.py --directory DESTINATION",
+    "network_source": "fixed raw HTTPS URLs at the manifest commit",
+    "verification": "Every download is SHA-256 checked before any destination write; existing differing files are refused."
+  }
+}

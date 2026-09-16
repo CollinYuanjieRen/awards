@@ -1,0 +1,5 @@
+✔ [8722/8745] Built ErdosProblems.Erdos360.Core (4.4s)
+ℹ [8723/8745] Replayed ErdosProblems.Erdos344
+info: ErdosProblems/Erdos344.lean:8999:0: 'Erdos344.finiteSzemerediVu' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ErdosProblems/Erdos344.lean:9000:0: 'Erdos344.erdos_344' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (8745 jobs).

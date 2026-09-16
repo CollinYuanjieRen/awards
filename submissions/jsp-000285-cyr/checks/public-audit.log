@@ -1,0 +1,4 @@
+'Erdos343.erdos_343_eventual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos343.erdos_343_all_N' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Jsp285.finite_multiset_AP' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Jsp285.indexedSubsetSums_univ_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
