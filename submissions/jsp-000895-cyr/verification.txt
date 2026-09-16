@@ -1,0 +1,53 @@
+Local exported-package verification; upstream dependency caches used (arm64 macOS).
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+info: JSP895/External/Erdos207.lean:412:0: 'Erdos207.erdos_207' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (10027 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos1076Sparse.three_mul_exLe_le_choose' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1076Sparse.choose_le_three_mul_exLe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1076Sparse.erdos_1076_locally_sparse_of_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1076Sparse.erdos_1076_locally_sparse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1076Sparse.exLe_isEquivalent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1076Sparse.statement_locally_sparse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1076Sparse.statement_locally_sparse'' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1076Sparse.statement_isEquivalent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1076Sparse.statement_literal_reading_false' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos207.erdos_207' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1076.not_erdos_1076' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0
+
+$ lake build Challenge   # comparator challenge module; the only warnings are its intended sorry declarations
+sorry-warnings=3
+Build completed successfully (8746 jobs).
+exit=0
+
+$ challenge-vs-solution identity (whitespace-normalized text of each definition and theorem statement)
+theorem erdos_1076_locally_sparse_of_le identical
+theorem erdos_1076_locally_sparse identical
+theorem exLe_isEquivalent identical
+def FkFree identical
+def FamilyFree identical
+def exLe identical
+def Erdos207.TripleOn identical
+def Erdos207.TripleSystemOn identical
+def Erdos207.verticesOn identical
+exit=0
+
+$ grep -rnE "sorry|admit|^\s*axiom|native_decide|maxHeartbeats|maxRecDepth|unsafe" JSP895/Bridge.lean JSP895/Assembly.lean JSP895/Statement.lean Audit.lean
+(no matches)
+exit=0
+
+$ grep -rlE "^\s*axiom|native_decide|sorry|admit" JSP895/External | wc -l   # third-party tree: files containing these tokens (see external-scan note)
+       2
+JSP895/External/Erdos207/PROGRESS.md:462:axiom audits using only `propext`, `Classical.choice`, `Quot.sound`.
+JSP895/External/Erdos207/PROGRESS.md:600:axiom audit pass with zero unexpected axiom lists or Lean errors. New
+JSP895/External/Erdos207/PROGRESS.md:636:axiom audit pass, with only standard logical axioms. New-module scans
+JSP895/External/Erdos207/PROGRESS.md:710:axioms. New-module scans are clean. TeX: 80 pages, compiled without warnings
+JSP895/External/Erdos207/PROGRESS.md:885:axiom targets use only standard logical axioms. The compact audit checker
+exit=0

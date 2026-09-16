@@ -1,0 +1,15 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "JSP895.Statement",
+  "theorem_names": [
+    "Erdos1076Sparse.erdos_1076_locally_sparse_of_le",
+    "Erdos1076Sparse.erdos_1076_locally_sparse",
+    "Erdos1076Sparse.exLe_isEquivalent"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}
