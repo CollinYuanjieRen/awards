@@ -1,0 +1,24 @@
+Local exported-package verification; upstream dependency caches used.
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+✔ [8747/8749] Built Proof.Main (6.8s)
+✔ [8748/8749] Built Proof (6.4s)
+Build completed successfully (8749 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos295.card_ge_of_isUnitRepr' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos295.le_kmin' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Erdos295.IsUnitRepr : ℕ → Finset ℕ → Prop :=
+fun N D => (∀ d ∈ D, N ≤ d) ∧ ∑ d ∈ D, 1 / ↑d = 1
+def Erdos295.kmin : ℕ → ℕ :=
+fun N => sInf {m | ∃ D, IsUnitRepr N D ∧ D.card = m}
+exit=0
+
+$ lake env lean Challenge.lean
+Challenge.lean:21:8: warning: declaration uses `sorry`
+Challenge.lean:25:8: warning: declaration uses `sorry`
+exit=0
