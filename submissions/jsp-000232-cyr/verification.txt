@@ -1,0 +1,44 @@
+Local exported-package verification (fresh package directory under a clean git worktree; dependencies fetched from the official Mathlib cache server); arm64 macOS; 2026-09-16T19:46:54Z.
+
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake exe cache get
+Decompressed 8537 already-cached file(s)
+Completed successfully in 12470 ms!
+exit=0
+
+$ lake build
+Build completed successfully (8749 jobs).
+exit=0 (no errors; no sorry warnings; re-run of the same command after the fresh build)
+
+$ lake env lean Audit.lean
+'Erdos271.stanley_one_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos271.stanley_one_eq_ofDigits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos271.range_stanley_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos271.mem_range_stanley_one_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos271.stanley_one_strictMono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos271.stanley_one_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos271.isLeast_stanley_succ_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos271.stanley_strictMono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos271.isStanleySeq_stanley' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos271.IsStanleySeq.eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos271.isStanleySeq_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos271.IsStanleySeq.one_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos271.IsStanleySeq.range_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0
+
+$ lake env lean Challenge.lean   # statement-only comparator module; the three expected sorry warnings are its targets
+Challenge.lean:19:8: warning: declaration uses `sorry`
+Challenge.lean:22:8: warning: declaration uses `sorry`
+Challenge.lean:26:8: warning: declaration uses `sorry`
+exit=0
+
+$ grep -rn "sorry\|admit\|native_decide\|implemented_by\|opaque\|unsafe\|^axiom\|partial " Jsp232 Jsp232.lean Audit.lean
+(no matches)
+
+SHA-256 of the recorded source statement:
+3d8ca0d96d2b6919d4f0a3767e12e31345eebfe9f9873760b51d8adf2de0d8b2  sources/erdos271-statement.txt
+
+Lean toolchain: leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d (lake-manifest.json).
