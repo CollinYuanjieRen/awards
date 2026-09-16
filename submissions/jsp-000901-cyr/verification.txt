@@ -1,0 +1,28 @@
+Local exported-package verification; upstream dependency caches used.
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+✔ [8746/8748] Built Proof.Main (3.8s)
+✔ [8747/8748] Built Proof (4.5s)
+Build completed successfully (8748 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos1084.contactOne_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1084.unitPairs_le_of_isSeparated' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1084.exists_isSeparated_unitPairs_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Erdos1084.IsSeparated : Finset ℝ → Prop :=
+fun A => ∀ x ∈ A, ∀ y ∈ A, x ≠ y → 1 ≤ |x - y|
+def Erdos1084.unitPairs : Finset ℝ → ℕ :=
+fun A => {p ∈ A ×ˢ A | p.2 - p.1 = 1}.card
+def Erdos1084.contactOne : ℕ → ℕ :=
+fun n => sSup {m | ∃ A, A.card = n ∧ IsSeparated A ∧ unitPairs A = m}
+exit=0
+
+$ lake env lean Challenge.lean
+Challenge.lean:27:8: warning: declaration uses `sorry`
+Challenge.lean:30:8: warning: declaration uses `sorry`
+Challenge.lean:34:8: warning: declaration uses `sorry`
+exit=0
