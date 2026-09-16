@@ -1,0 +1,32 @@
+Local exported-package verification (re-run after strengthening `erdos_family` to `1 ≤ r`; fresh package directory; dependencies fetched from the official Mathlib cache server); arm64 macOS; 2026-09-16T19:17:38Z.
+
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake exe cache get
+Decompressed 5233 already-cached file(s)
+Completed successfully in 10882 ms!
+exit=0
+
+$ lake build
+Build completed successfully (8747 jobs).
+exit=0 (no errors; no sorry warnings)
+
+$ lake env lean Audit.lean
+'Erdos850.erdos_family' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos850.infinite_twoConsecutive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos850.makowski_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos850.makowski_not_in_family' depends on axioms: [propext, Quot.sound]
+exit=0
+
+$ lake env lean Challenge.lean   # statement-only module; the two expected sorry warnings are its targets
+exit=0
+
+$ grep -rn "sorry\|admit\|native_decide\|implemented_by\|opaque\|unsafe\|^axiom" Jsp703 Audit.lean
+(no matches)
+
+SHA-256 of the recorded source statement:
+b7453521d006ecf93e8c47a1d93a4bcb98dff44afcb231e82e33075a0d9141f2  sources/erdos850-statement.txt
+
+Lean toolchain: leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d (lake-manifest.json).
