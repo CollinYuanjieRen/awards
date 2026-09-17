@@ -1,0 +1,3 @@
+Local verification 2026-09-17: lake build ZERO warnings (8747 jobs); Audit.lean -> hasPrimeSumPerm_ten, hasPrimeSumPerm_of_le_ten both [propext, Classical.choice, Quot.sound]; Challenge.lean statement-only (sorry); no forbidden tokens in the built library. (List.Chain is defeq to List.IsChain; the def keeps Chain per the frozen contract.)
+SHA-256 source: 2aca6bffa3b90b4d0089f2d2ba93548f9a52df57104cf616683a904eaaeb101b  sources/erdos473-statement.txt
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.
