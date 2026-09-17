@@ -1,0 +1,5 @@
+.lake/
+# fetched by fetch_pinned.py, not redistributed in this package
+ErdosProblems/
+Util/
+vendor/formalpantheon/

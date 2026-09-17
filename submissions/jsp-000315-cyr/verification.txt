@@ -1,0 +1,13 @@
+'Erdos381Lower.erdos381_two_sided' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos381Lower.erdos381_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos381Lower.erdos381_lower_isBigO' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos381Lower.erdos381_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos381Lower.erdos381_lower_of_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos381Lower.eventually_log_lt_and_lt_log' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos381Lower.eventually_factorization_eq_one_of_half_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos381Lower.eventually_two_le_factorization_of_lt_four_sqrt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Erdos381Lower.exists_highlyComposite_lt_of_fourBlocks' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos381.nicolasPolynomialUpperBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos381.not_erdos_381' depends on axioms: [propext, Classical.choice, Quot.sound]

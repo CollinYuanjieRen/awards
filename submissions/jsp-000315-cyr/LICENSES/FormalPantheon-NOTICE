@@ -1,0 +1,33 @@
+NOTICE for vendor/formalpantheon/ (Apache License 2.0, §4(b) and §4(c))
+=======================================================================
+
+`vendor/formalpantheon/` is not part of this package: it is created by
+`python3 fetch_pinned.py`, which downloads the commit tarball of
+
+    FormalPantheon
+    https://github.com/frenzymath/FormalPantheon
+    commit ffbb65c21afc8a36ace67720f1b0df1c63d26bd1
+    licensed under the Apache License, Version 2.0
+    (the upstream LICENSE is extracted to vendor/formalpantheon/LICENSE)
+
+and extracts the two packages `BoundedGaps` and `Warning` (Lean libraries `BoundedGaps` and
+`Waring`). `BoundedGaps.BombieriVinogradov.Proof.MainTheorem` supplies the Bombieri--Vinogradov
+theorem behind `Erdos387.shiftedSiegelWalfiszLower`; `BoundedGaps.Maynard.*` supplies the
+Wirsing / coprime-harmonic estimates; `Waring.Analytic.*` supplies finite Fourier and
+Stepanov--Weil character-sum bounds.
+
+Statement of changes
+--------------------
+
+`patches/formalpantheon-mathlib-v4.33.0.patch` is applied to the extracted tree with
+`patch -p1`. It changes 91 of the 886 `.lean` files and carries a Mathlib v4.32 -> v4.33
+adaptation only: `letI` -> `let`, `Set.mem_setOf_eq` -> `Set.mem_ofPred_eq`,
+`open AddChar` -> `open _root_.Waring.Analytic.AddChar`, `[DecidableEq F]` -> `classical`,
+and a few consequent proof rewrites. No statement of any upstream theorem is changed.
+
+That patch file is our own text, regenerated with `diff -u` between the pristine upstream
+tarball and the locally adapted tree; an equivalent adaptation exists in
+`plby/lean-proofs:src/latest/patches/`, and the patch was regenerated here rather than
+redistributed from there. Its SHA-256 and the SHA-256 of all 886 resulting `.lean` files are
+pinned in `pinned-sources.json`, so `fetch_pinned.py` reproduces the adapted tree
+byte-for-byte and verifies that it did.
