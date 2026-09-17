@@ -1,0 +1,37 @@
+Local exported-package verification; upstream dependency caches used.
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+✔ [8746/8748] Built Proof.Main (3.2s)
+✔ [8747/8748] Built Proof (3.2s)
+Build completed successfully (8748 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos311.one_div_lcm_le_delta' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos311.one_div_lcm_le_abs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos311.delta_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos311.exists_delta_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos311.delta_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos311.lcmUpTo_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Erdos311.unitSum : Finset ℕ → ℚ :=
+fun A => ∑ n ∈ A, (↑n)⁻¹
+def Erdos311.lcmUpTo : ℕ → ℕ :=
+fun N => (Finset.Icc 1 N).lcm id
+def Erdos311.deviations : ℕ → Finset ℚ :=
+fun N => {d ∈ Finset.image (fun A => |1 - unitSum A|) (Finset.Icc 1 N).powerset | d ≠ 0}
+def Erdos311.delta : ℕ → ℚ :=
+fun N => (deviations N).min' ⋯
+exit=0
+
+$ lake env lean Challenge.lean
+Challenge.lean:23:8: warning: declaration uses `sorry`
+Challenge.lean:29:8: warning: declaration uses `sorry`
+Challenge.lean:32:8: warning: declaration uses `sorry`
+Challenge.lean:36:8: warning: declaration uses `sorry`
+Challenge.lean:40:8: warning: declaration uses `sorry`
+Challenge.lean:44:8: warning: declaration uses `sorry`
+Challenge.lean:47:8: warning: declaration uses `sorry`
+exit=0
