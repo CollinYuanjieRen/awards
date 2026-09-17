@@ -1,0 +1,21 @@
+Local verification 2026-09-17 (package export): lake build success (8753 jobs); no sorry/native_decide/axiom/opaque/unsafe/implemented_by/partial/set_option in Jsp490/*.lean; Target.lean (statement-only, 3 sorry, not imported) has its definition byte-identical to Jsp490/Defs.lean and its three statements discharged verbatim by Erdos603.erdos_603 / not_alwaysColourable / no_least_cardinal.
+Comparator: NOT-AVAILABLE (no organizer Lean target; erdosproblems.com/603 'Formalised statement: No'; formal-conjectures has no ErdosProblems/603.lean as of 2026-09-17). Independent adversarial alignment audit: PASS.
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.
+SHA-256 ref/erdosproblems-603.txt (problem page text, fetched 2026-09-17): 4795954aa22b2c3419577653a21cae1e1fe80b5d06dd9a0ec03fa12302f6c540
+SHA-256 ref/jsp-000490-catalog.md: 7c0be6af805c86da88a14cf2e0b299e2a217ab4eae6a38ddcf9212f8671cc0b2
+
+lake env lean Audit.lean:
+'Erdos603.erdos_603' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos603.not_alwaysColourable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos603.no_least_cardinal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos603.erdos_603_anyUniverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos603.erdos_603_indexed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos603.witness_nontrivial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos603.erdos_rado_countable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos603.code_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos603.seq_injective_of_forall_ne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos603.colour_seq_of_forall_ne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos603.mk_sigma_codes_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos603.exists_infinite_fiber' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos603.cliqueEdges_encard_ne_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos603.cliqueEdges_monochromatic' depends on axioms: [propext, Classical.choice, Quot.sound]

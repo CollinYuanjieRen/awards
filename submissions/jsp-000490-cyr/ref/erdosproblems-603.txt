@@ -1,0 +1,11 @@
+Erdős Problem #603, https://www.erdosproblems.com/603, fetched 2026-09-17 (page last edited 06 July 2026)
+
+SOLVED
+This has been resolved in some other way than a proof or disproof.
+Let $(A_i)$ be a family of countably infinite sets such that $\lvert A_i\cap A_j\rvert \neq 2$ for all $i\neq j$. Find the smallest cardinal $C$ such that $\cup A_i$ can always be coloured with at most $C$ colours so that no $A_i$ is monochromatic.
+ #603 : [Er87] 
+ combinatorics | 
+ set theory 
+A problem of Komjáth. If instead we have $\lvert A_i\cap A_j\rvert \neq 1$ then Komjáth showed that this is possible with at most $\aleph_0$ colours. GPT 5.4 Pro (prompted by Chojecki) proved there is no uniform bound on such $C$: for every cardinal $C$ there is a family of countably infinite sets $(A_i)$ such that $\lvert A_i\cap A_j\rvert \neq 2$ for all $i\neq j$, and in any colouring of $\cup A_i$ with $C$ colours some $A_i$ is monochromatic. Indeed, by the Erdős-Rado theorem , if $\kappa$ is the successor of $2^C$, any $C$-colouring of the edges of the complete graph on $\kappa$ vertices contains a monochromatic countably infinite complete graph, and hence we can take $(A_i)$ to be the collection of all countably infinite complete graphs (since any two such intersect in either countably infinite or $\binom{n}{2}$ many edges for some finite $n$, and in particular never intersect exactly twice). 
+ Additional thanks to : Stijn Cambie, Przemek Chojecki, LouisD, and Desmond Weisenberg
+ 
