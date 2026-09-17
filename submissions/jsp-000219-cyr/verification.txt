@@ -1,0 +1,16 @@
+Local exported-package verification; upstream dependency caches used (shared read-only Mathlib install, symlinked .lake/packages, not committed).
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+✔ [8745/8747] Built Erdos251Telescoping.Main (3.3s)
+✔ [8746/8747] Built Erdos251Telescoping (3.0s)
+Build completed successfully (8747 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'erdos_251_example_hasSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'erdos_251_example_not_irrational' depends on axioms: [propext, Classical.choice, Quot.sound]
+'erdos_251_example_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0
