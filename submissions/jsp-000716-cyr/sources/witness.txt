@@ -1,0 +1,10 @@
+Scoped certificate for JSP-000716 (largest interval-subset with at most one sum having multiple representations).
+A = {1,2,4,6,7} subset {1,...,8}, size 5. Among the pairwise sums, exactly one value has two or more
+representations: 8 = 1+7 = 2+6 (and also 8 = 4+4 when doubles x+x are counted). Every other sum value is
+represented uniquely. So A has at most one "repeated" sum, under both conventions:
+  strict  (x < y, doubles excluded):  multiRepSums A = {8};
+  standard (x <= y, doubles included, the usual Sidon/B_2 convention): multiRepSumsLoose A = {8}.
+Under the standard convention the maximum Sidon set (all sums x <= y distinct) in {1..8} has size 4, and
+A is one of only two size-5 subsets of {1..8} with a single multiply-represented sum; under the strict
+convention a size-5 set with no repeated sum also exists (e.g. {1,2,3,5,8}), so the comparison with Sidon
+sets refers to the standard convention. (Verified by exhaustive search.)
