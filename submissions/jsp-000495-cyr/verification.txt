@@ -1,0 +1,32 @@
+Local exported-package verification; upstream dependency caches used.
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+✔ [8748/8750] Built Proof.Main (3.3s)
+✔ [8749/8750] Built Proof (4.0s)
+Build completed successfully (8750 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos609.exists_colouring_no_oddCycle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos609.exists_mono_oddCycle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos609.oddCycleThreshold_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos609.oddCycleThreshold_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Erdos609.colourClass.{u_1} : {V : Type u_1} → {n : ℕ} → (Sym2 V → Fin n) → Fin n → SimpleGraph V :=
+fun {V} {n} c i => SimpleGraph.fromRel fun u v => c s(u, v) = i
+def Erdos609.HasOddCycle.{u_1} : {V : Type u_1} → SimpleGraph V → Prop :=
+fun {V} G => ∃ v p, p.IsCycle ∧ Odd p.length
+def Erdos609.HasOddCycleLe.{u_1} : {V : Type u_1} → SimpleGraph V → ℕ → Prop :=
+fun {V} G m => ∃ v p, p.IsCycle ∧ Odd p.length ∧ p.length ≤ m
+def Erdos609.oddCycleThreshold : ℕ → ℕ :=
+fun n => sInf {m | ∀ (c : Sym2 (Fin (2 ^ n + 1)) → Fin n), ∃ i, HasOddCycleLe (colourClass c i) m}
+exit=0
+
+$ lake env lean Challenge.lean
+Challenge.lean:30:8: warning: declaration uses `sorry`
+Challenge.lean:34:8: warning: declaration uses `sorry`
+Challenge.lean:38:8: warning: declaration uses `sorry`
+Challenge.lean:41:8: warning: declaration uses `sorry`
+exit=0
