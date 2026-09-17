@@ -1,0 +1,4 @@
+Scoped construction certificate for JSP-000646 (large subset of a finite set with pairwise sums avoiding the set).
+For any nonempty finite A of naturals, let m = max A and A' = {a in A : m < 2a} (the "top half").
+Then for all x,y in A', x + y > m, hence x + y is not in A. So (A' + A') is disjoint from A.
+(Verified: 0 violations over random trials, including equal summands x = y.)
