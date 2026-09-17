@@ -1,0 +1,36 @@
+Local exported-package verification; upstream dependency caches used.
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+✔ [8746/8748] Built Proof.Main (3.5s)
+✔ [8747/8748] Built Proof (3.2s)
+Build completed successfully (8748 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos301.half_le_f' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos301.not_hasUnitSolution_upperHalf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos301.card_upperHalf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos301.exists_dvd_of_half_lt_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos301.card_le_half_of_not_hasRepeatedUnitSolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos301.not_hasRepeatedUnitSolution_upperHalf' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Erdos301.HasUnitSolution : Finset ℕ → Prop :=
+fun A => ∃ a ∈ A, ∃ B ⊆ A, a ∉ B ∧ B.Nonempty ∧ (↑a)⁻¹ = ∑ b ∈ B, (↑b)⁻¹
+def Erdos301.HasRepeatedUnitSolution : Finset ℕ → Prop :=
+fun A => ∃ a ∈ A, ∃ b ∈ A, a ≠ b ∧ ∃ k, 0 < k ∧ (↑a)⁻¹ = ↑k * (↑b)⁻¹
+def Erdos301.upperHalf : ℕ → Finset ℕ :=
+fun N => {n ∈ Finset.Icc 1 N | N < 2 * n}
+def Erdos301.f : ℕ → ℕ :=
+fun N => {A ∈ (Finset.Icc 1 N).powerset | ¬HasUnitSolution A}.sup Finset.card
+exit=0
+
+$ lake env lean Challenge.lean
+Challenge.lean:29:8: warning: declaration uses `sorry`
+Challenge.lean:32:8: warning: declaration uses `sorry`
+Challenge.lean:35:8: warning: declaration uses `sorry`
+Challenge.lean:38:8: warning: declaration uses `sorry`
+Challenge.lean:42:8: warning: declaration uses `sorry`
+Challenge.lean:46:8: warning: declaration uses `sorry`
+exit=0
