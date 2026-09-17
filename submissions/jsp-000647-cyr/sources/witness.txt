@@ -1,0 +1,4 @@
+Scoped construction certificate for JSP-000647 (subset whose pairwise sums avoid a prescribed set B).
+For any finite A and nonempty finite B of naturals, let M = max B and A' = {a in A : M < 2a}.
+Then for all x,y in A', x + y > M, hence x + y is not in B. So (A' + A') is disjoint from B.
+(Verified: 0 violations over random (A,B) trials, including equal summands x = y.)
