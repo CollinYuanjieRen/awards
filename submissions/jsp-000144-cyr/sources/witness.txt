@@ -1,0 +1,4 @@
+Scoped lower-bound certificate for JSP-000144 (largest AP-free subset of a finite interval; r_k(N)).
+r_3(14) >= 8: the 8-element set S = {1,2,4,5,10,11,13,14} subset {1,...,14} contains no nontrivial 3-term
+arithmetic progression (the only solutions to a + c = 2b with a,b,c in S are the trivial a = b = c).
+(Verified: no a<b<c in S with b-a = c-b.) So the maximum size r_3(14) is at least 8.
