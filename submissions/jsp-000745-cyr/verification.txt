@@ -1,0 +1,17 @@
+Local exported-package verification; upstream dependency caches used (shared read-only Mathlib install, symlinked .lake/packages, not committed).
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build   (fresh build of this directory performed earlier: "Build completed successfully (8751 jobs)"; this run rebuilds the changed root module and replays the rest)
+Build completed successfully (8751 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos894.erdos_894' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos894.erdos_894_nat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos894.erdos_894_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos894.exists_rotation_of_four_mul_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos894.exists_split_of_isLacunary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos894.hasAvoidingColouring_of_rotations' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0
