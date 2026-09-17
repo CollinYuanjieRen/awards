@@ -1,0 +1,23 @@
+Local exported-package verification (fresh package directory under a clean git worktree; dependencies from the shared Mathlib cache); arm64 macOS; 2026-09-17.
+
+$ lake build
+Build completed successfully (8747 jobs); ZERO warnings.
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos1109.odd_of_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1109.single_class_mod_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1109.card_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0
+
+$ lake env lean Challenge.lean   # statement-only comparator; the two expected sorry warnings are its targets
+Challenge.lean:12:8: warning: declaration uses `sorry`
+Challenge.lean:17:8: warning: declaration uses `sorry`
+exit=0
+
+$ grep forbidden: no sorry/native_decide/axiom/opaque/unsafe/implemented_by/partial in the built library.
+
+SHA-256 of the recorded source statement:
+d069d3fb3cb713641cb5d7e379c4955cb2575dcddb2ecd7c38e26ab471ed6b03  sources/erdos1109-statement.txt
+
+Lean toolchain: leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d (lake-manifest.json).
