@@ -1,0 +1,5 @@
+Local verification 2026-09-17: lake build success (8747 jobs); Audit.lean -> centralBinom_ten_coprime_105, exists_centralBinom_coprime_105 no axiom dependence (subset of [propext, Classical.choice, Quot.sound]); Challenge.lean two sorry (statement-only comparator); no forbidden tokens in Jsp311/CentralBinom.lean. Witness C(20,10)=184756, gcd(184756,105)=1.
+SHA-256 sources:
+5708711e2693ed4d3abfe51b09365927d0dd69380be57e2d594d3d8dda25c0c9  sources/jsp-000311.md
+8b3091cba5610e5602e06686917794c5c8a6fa9c76f07b3cdb55eb1b3f0afffb  sources/witness.txt
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.
