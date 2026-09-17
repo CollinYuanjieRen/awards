@@ -1,0 +1,32 @@
+Local exported-package verification; upstream dependency caches used.
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+✔ [8746/8748] Built Proof.Main (16s)
+✔ [8747/8748] Built Proof (16s)
+Build completed successfully (8748 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos317.not_exists_small_signedSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos317.one_div_lcm_le_abs_signedSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos317.one_div_lcm_le_abs_fin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos317.exists_signedSum_eq_one_div_lcm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos317.lcmUpTo_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Erdos317.IsSign : (ℕ → ℚ) → Prop :=
+fun δ => ∀ (k : ℕ), δ k = -1 ∨ δ k = 0 ∨ δ k = 1
+def Erdos317.signedSum : ℕ → (ℕ → ℚ) → ℚ :=
+fun n δ => ∑ k ∈ Finset.Icc 1 n, δ k / ↑k
+def Erdos317.lcmUpTo : ℕ → ℕ :=
+fun N => (Finset.Icc 1 N).lcm id
+exit=0
+
+$ lake env lean Challenge.lean
+Challenge.lean:22:8: warning: declaration uses `sorry`
+Challenge.lean:26:8: warning: declaration uses `sorry`
+Challenge.lean:30:8: warning: declaration uses `sorry`
+Challenge.lean:35:8: warning: declaration uses `sorry`
+Challenge.lean:39:8: warning: declaration uses `sorry`
+exit=0
