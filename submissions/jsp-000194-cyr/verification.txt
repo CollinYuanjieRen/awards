@@ -1,0 +1,26 @@
+$ lake build
+✔ [8754/8756] Built Erdos210Ordinary.Main (3.2s)
+✔ [8755/8756] Built Erdos210Ordinary (3.1s)
+Build completed successfully (8756 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos210.erdos_210_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos210.erdos_210' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos210.erdos_210_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos210.le_f' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos210.card_le_of_notCollinear' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos210.ordinary_of_visible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos210.not_mem_W_of_conn_missing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos210.ncard_ordinaryLines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos210.notCollinear_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos210.exists_config' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Erdos210.D : ℝ × ℝ → ℝ × ℝ → ℝ × ℝ → ℝ :=
+fun a b c => (b.1 - a.1) * (c.2 - a.2) - (b.2 - a.2) * (c.1 - a.1)
+def Erdos210.OnLine : ℝ × ℝ → ℝ × ℝ → ℝ × ℝ → Prop :=
+fun a b z => D a b z = 0
+def Erdos210.ordinaryLines : Finset (ℝ × ℝ) → Set (AffineSubspace ℝ (ℝ × ℝ)) :=
+fun P => {L | ∃ a ∈ P, ∃ b ∈ P, a ≠ b ∧ L = line[ℝ, a, b] ∧ {x ∈ P | x ∈ L}.card = 2}
+def Erdos210.f : ℕ → ℕ :=
+fun n => sInf {m | ∃ P, P.card = n ∧ ¬Collinear ℝ ↑P ∧ (ordinaryLines P).ncard = m}
+exit=0
