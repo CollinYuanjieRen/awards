@@ -1,0 +1,5 @@
+Local verification 2026-09-17: lake build success (8747 jobs); Audit.lean -> seventy_abundant, seventy_not_semiperfect, seventy_isWeird all [propext, Classical.choice, Quot.sound]; Challenge.lean one sorry (statement-only comparator); no forbidden tokens in Jsp382/Weird.lean. 70 abundant (proper divisor sum 74) and not semiperfect (128 subsets checked).
+SHA-256 sources:
+a58f8d1ab0a5d023a2c1f84bd86814eac3de6c9f85e486360b19688a7ffb5ee8  sources/jsp-000382.md
+1f912e5895f24363786143802dfd1de6af8e26e3cae102dcbfc60ecc245823fa  sources/witness.txt
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.

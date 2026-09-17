@@ -1,0 +1,5 @@
+Scoped certificate for JSP-000382 (weird numbers). A weird number is abundant (proper divisors sum > n)
+but not semiperfect (no subset of proper divisors sums to n). Witness: 70.
+Proper divisors of 70: 1, 2, 5, 7, 10, 14, 35; sum = 74 > 70 (abundant).
+No subset of {1,2,5,7,10,14,35} sums to exactly 70 (all 2^7 = 128 subsets checked).
+Hence 70 is weird. (Verified independently in Python.)
