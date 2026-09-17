@@ -1,0 +1,5 @@
+Local verification 2026-09-17: lake build success (8747 jobs); Audit.lean -> factorial_sum_perfect_square, exists_factorial_sum_perfect_power both [propext] (subset of allowed); Challenge.lean two sorry (statement-only comparator); no forbidden tokens in Jsp919/FactorialSum.lean. 1!+2!+3!=9=3^2.
+SHA-256 sources:
+e7194d8d824ab8358c7ef353a349bd0d5038709b5d50fb624b26f9386ac352c5  sources/jsp-000919.md
+cc70937e631f75fad03db5a2293360ecec7a0ec298955c1b64a6b763f76b9629  sources/witness.txt
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.

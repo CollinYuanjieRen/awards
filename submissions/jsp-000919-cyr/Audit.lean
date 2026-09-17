@@ -1,0 +1,3 @@
+import Jsp919
+#print axioms FactorialPower.factorial_sum_perfect_square
+#print axioms FactorialPower.exists_factorial_sum_perfect_power

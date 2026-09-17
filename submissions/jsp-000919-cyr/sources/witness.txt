@@ -1,0 +1,3 @@
+Scoped certificate for JSP-000919 (sums of distinct factorials that are perfect powers).
+1! + 2! + 3! = 1 + 2 + 6 = 9 = 3^2, a perfect power. (Verified independently.)
+So there is a sum of distinct factorials equal to a perfect power.
