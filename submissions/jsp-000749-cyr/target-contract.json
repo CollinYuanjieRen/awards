@@ -1,0 +1,13 @@
+{
+  "schema_version": 2,
+  "plan_statement_id": "Thm_Erdos901_LowerBound",
+  "result_scope": "scoped component of an OPEN problem (Erdős's lower bound 2^{n-1} <= m(n) and the value m(2)=3)",
+  "target_signature": "theorem two_pow_le_m (n : ℕ) : 2 ^ (n - 1) ≤ m n; theorem m_two : m 2 = 3",
+  "source_files": [
+    {"path": "sources/erdos901-statement.txt", "sha256": "2f2339ba52d39930a1185d4460ad94198d654a8c9f9ea87f4769c51201f5b124"},
+    {"path": "sources/jsp-000749.md", "sha256": "29472bbe32af24239ce7f6b75862e13e1f476228eac2a7e8de8554c5521558e7"}
+  ],
+  "theorem_face_ids": ["two_pow_le_m", "m_two"],
+  "frozen_before_proof": true,
+  "notes": "Scoped: Erdős's classical lower bound 2^{n-1} <= m(n) (every n-uniform hypergraph with < 2^{n-1} edges is 2-colourable) and the value m(2)=3. Estimating m(n) is OPEN. Distinct from upstream PR #392 (another contributor's upper-bound evidence). Own definitions; no third-party Lean copied."
+}
