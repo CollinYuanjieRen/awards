@@ -1,0 +1,5 @@
+Local verification 2026-09-17: lake build success (8747 jobs); Audit.lean -> A_card, A_no_two_multiples, exists_large_no_div_two all [propext, Classical.choice, Quot.sound]; Challenge.lean three sorry (statement-only comparator); no forbidden tokens in Jsp882/Divides.lean. Construction A=(n/3,n], |A|=n-floor(n/3)=ceil(2n/3), no element divides two others.
+SHA-256 sources:
+ae005e94d11270cd6c56df67dcb1342866322c8689806f797adbbdc3bee91869  sources/jsp-000882.md
+910503cecc76a95f287124b7b3fafce93aee78af34d9e3ce8a3a6d0b085c847b  sources/witness.txt
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.

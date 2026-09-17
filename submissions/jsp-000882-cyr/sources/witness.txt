@@ -1,0 +1,8 @@
+Scoped construction lower bound for JSP-000882 ([Le76] Lebensold, "A divisibility problem").
+Record: how large can a subset of {1,...,n} be if no element divides two other elements? (open constant
+c with 0.6725 <= c <= 0.6736 for the extremal ratio.)
+Construction: A = { m : floor(n/3) < m <= n } = Finset.Icc (n/3 + 1) n.
+- No element divides two distinct other elements: if a in A and b = k*a in A with b <= n, then since a > n/3
+  we have k*a <= n < 3a so k < 3, i.e. k in {1,2}. The only multiple of a in A other than a itself is 2a.
+  So a divides at most one other element of A. Hence no element divides two others.
+- |A| = n - floor(n/3) = ceil(2n/3). (Verified for n=9,10,30,100,1000: sizes 6,7,20,67,667.)
