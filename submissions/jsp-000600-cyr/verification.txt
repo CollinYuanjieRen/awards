@@ -1,0 +1,34 @@
+$ lake build
+✔ [8755/8757] Built Erdos732Designs.Full (3.9s)
+✔ [8756/8757] Built Erdos732Designs (3.5s)
+Build completed successfully (8757 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos732.erdos_732' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos732Lower.erdos_732_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos732Upper.erdos_732_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos732Lower.exists_many_blockCompatible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos732Lower.completionDesign' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos732Lower.count_completionDesign_blockSizes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos732Lower.line_inter_card_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos732Lower.exp_le_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos732Upper.blockCompatible_replicate_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+structure Erdos732Upper.PairwiseBalancedDesign.{u} (P : Type u) [Fintype P] : Type (u + 1)
+number of parameters: 2
+fields:
+  Erdos732Upper.PairwiseBalancedDesign.Block : Type u
+  Erdos732Upper.PairwiseBalancedDesign.blockFintype : Fintype self.Block
+  Erdos732Upper.PairwiseBalancedDesign.block : self.Block → Finset P
+  Erdos732Upper.PairwiseBalancedDesign.two_le_card : ∀ (i : self.Block), 2 ≤ (self.block i).card
+  Erdos732Upper.PairwiseBalancedDesign.pair_unique : ∀ ⦃x y : P⦄, x ≠ y → ∃! i, x ∈ self.block i ∧ y ∈ self.block i
+constructor:
+  Erdos732Upper.PairwiseBalancedDesign.mk.{u} {P : Type u} [Fintype P] (Block : Type u) (blockFintype : Fintype Block)
+    (block : Block → Finset P) (two_le_card : ∀ (i : Block), 2 ≤ (block i).card)
+    (pair_unique : ∀ ⦃x y : P⦄, x ≠ y → ∃! i, x ∈ block i ∧ y ∈ block i) : PairwiseBalancedDesign P
+def Erdos732Upper.PairwiseBalancedDesign.blockSizes.{u} : {P : Type u} →
+  [inst : Fintype P] → PairwiseBalancedDesign P → Multiset ℕ :=
+fun {P} [Fintype P] D => Multiset.map (fun i => (D.block i).card) Finset.univ.val
+def Erdos732Upper.BlockCompatible : ℕ → Multiset ℕ → Prop :=
+fun n sizes => ∃ D, D.blockSizes = sizes
+exit=0
