@@ -1,0 +1,40 @@
+Local exported-package verification; upstream dependency caches used.
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+✔ [8749/8751] Built Proof.Main (3.4s)
+✔ [8750/8751] Built Proof (3.1s)
+Build completed successfully (8751 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos87.not_exists_four_pow_mul_graphRamsey_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos87.lt_graphRamsey_of_chromaticNumber' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos87.R_lt_four_pow_mul_graphRamsey' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos87.two_le_graphRamsey_of_adj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos87.exists_adj_of_two_le_chromaticNumber' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos87.ramsey_diag_le_four_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Erdos87.GraphRamseyProp.{u_1} : {V : Type u_1} → ℕ → SimpleGraph V → Prop :=
+fun {V} N G => ∀ (R : SimpleGraph (Fin N)), G ⊑ R ∨ G ⊑ Rᶜ
+def Erdos87.graphRamsey.{u_1} : {V : Type u_1} → SimpleGraph V → ℕ :=
+fun {V} G => sInf {N | GraphRamseyProp N G}
+def Erdos87.IsGood.{u_1} : {V : Type u_1} → SimpleGraph V → ℕ → ℕ → Prop :=
+fun {V} G m n => G.CliqueFree m ∧ Gᶜ.CliqueFree n
+def Erdos87.RamseyProp : ℕ → ℕ → ℕ → Prop :=
+fun N m n => ∀ (G : SimpleGraph (Fin N)), ¬IsGood G m n
+def Erdos87.ramsey : ℕ → ℕ → ℕ :=
+fun m n => sInf {N | RamseyProp N m n}
+def Erdos87.R : ℕ → ℕ :=
+fun n => ramsey n n
+exit=0
+
+$ lake env lean Challenge.lean
+Challenge.lean:39:8: warning: declaration uses `sorry`
+Challenge.lean:44:8: warning: declaration uses `sorry`
+Challenge.lean:49:8: warning: declaration uses `sorry`
+Challenge.lean:53:8: warning: declaration uses `sorry`
+Challenge.lean:57:8: warning: declaration uses `sorry`
+Challenge.lean:61:8: warning: declaration uses `sorry`
+exit=0
