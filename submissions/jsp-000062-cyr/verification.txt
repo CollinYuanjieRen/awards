@@ -1,0 +1,5 @@
+Local verification 2026-09-17: lake build success (8747 jobs); Audit.lean -> choose_two_le, card_mul_pred_le both [propext, Classical.choice, Quot.sound]; Challenge.lean two sorry (statement-only comparator); no forbidden tokens in Jsp062/Sidon.lean.
+SHA-256 sources:
+2d1e0fb071b4c930d08d704bde68c242d0933db7c0f6cd4756de5635e794ec7c  sources/erdos30-statement.txt
+95f8020b9337bd4a9b6f1dbd384c24158ff867a482d3f4573623c46227bb8ec2  sources/jsp-000062.md
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.
