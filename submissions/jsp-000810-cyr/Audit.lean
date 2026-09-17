@@ -1,0 +1,3 @@
+import Jsp810
+#print axioms Erdos977.two_mul_add_one_le_of_prime_dvd
+#print axioms Erdos977.two_mul_add_one_le_greatestPrimeFactor

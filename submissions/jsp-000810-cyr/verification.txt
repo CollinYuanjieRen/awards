@@ -1,0 +1,3 @@
+Local verification 2026-09-17: lake build ZERO warnings (8747 jobs); Audit.lean -> two_mul_add_one_le_of_prime_dvd, two_mul_add_one_le_greatestPrimeFactor both [propext, Classical.choice, Quot.sound]; Challenge.lean statement-only (sorry); no forbidden tokens.
+SHA-256 source: 1607499bcce9f192a4af38cc6d5f731c030e12f4c1c3962486319c707a52cb30  sources/erdos977-statement.txt
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.
