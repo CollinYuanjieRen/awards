@@ -1,0 +1,19 @@
+Local verification 2026-09-17 (package export): lake build success (8756 jobs); no sorry/native_decide/axiom/opaque/unsafe/implemented_by/partial/set_option in Jsp731/*.lean; Target.lean (statement-only, 2 sorry, not imported) has definitions byte-identical to Jsp731/Defs.lean and its two statements are discharged verbatim by Erdos880.erdos_880 / erdos_880_enumeration.
+Comparator: NOT-AVAILABLE (no organizer Lean target; erdosproblems.com/880 'Formalised statement: No'; formal-conjectures has no ErdosProblems/880.lean as of 2026-09-17). Independent adversarial alignment audit: PASS.
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.
+SHA-256 of the mathematical source (HHP07 author PDF, https://www.cmls.polytechnique.fr/perso/plagne.alain/Erdos-Burr.pdf): 2012568bc0c255ec0c234cc5cbf8eb7081022987a52cef80eccb192a0f954a02
+SHA-256 ref/jsp-000731-catalog.md: 9a04f065d45161c8911f5ce881d0bca21766a94212afbd3374fcf956cf60f375
+
+lake env lean Audit.lean:
+'Erdos880.erdos_880' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos880.erdos_880_enumeration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos880.erdos_880_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos880.counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos880.exact_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos880.order_two_gap_le_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos880.exact_order_two_gap_le_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos880.exactDistinctSums_insert_zero_basis_infinite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos880.order_two_bounded_gaps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos880.basis_isAsymptoticBasis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos880.not_isAsymptoticBasis_of_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos880.basis_not_hasBoundedGaps' depends on axioms: [propext, Classical.choice, Quot.sound]
