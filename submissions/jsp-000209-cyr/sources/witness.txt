@@ -1,0 +1,12 @@
+Scoped lower-bound certificate for JSP-000209 (Er50, integers of form 2^k + p).
+Question (record): how many representations can a single integer have as a prime plus a power of two?
+Certificate: n = 105 has (at least) 6 representations n = 2^k + p_k with p_k prime:
+  105 = 2^1 + 103   (103 prime)
+  105 = 2^2 + 101   (101 prime)
+  105 = 2^3 + 97    (97 prime)
+  105 = 2^4 + 89    (89 prime)
+  105 = 2^5 + 73    (73 prime)
+  105 = 2^6 + 41    (41 prime)
+All six residues 103,101,97,89,73,41 are prime and the six exponents 1..6 are distinct,
+so the count of representations of 105 is at least 6. (Verified independently in Python.)
+Source: [Er50] On integers of the form 2^k+p and some related problems, Summa Brasil. Math. (1950).

@@ -1,0 +1,5 @@
+Local verification 2026-09-17: lake build success (8747 jobs); Audit.lean -> card_repExps_105, exists_six_representations both [propext, Classical.choice, Quot.sound]; Challenge.lean two sorry (statement-only comparator); no forbidden tokens in Jsp209/Reps.lean. Independent adversarial audit PASS (statement faithful; witness 103,101,97,89,73,41 all prime; no added hypotheses).
+SHA-256 sources:
+8f0f8fe54f2734fa668c5b8fcae4cc309b7c156dbf72b06a3cceb744daf944a5  sources/jsp-000209.md
+face2d1d2ed2c4819426d2324805cb881784387fa5cfd9d99d7ee390b3d0c674  sources/witness.txt
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.
