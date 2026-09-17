@@ -1,0 +1,40 @@
+Local exported-package verification; upstream dependency caches used.
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+✔ [8748/8750] Built Proof.Main (3.4s)
+✔ [8749/8750] Built Proof (3.6s)
+Build completed successfully (8750 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos1182.not_exists_connected_triRamsey_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1182.connLowerBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1182.le_triRamsey_of_connected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1182.not_triRamseyProp_of_connected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1182.triRamseyProp_ramsey' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1182.triRamsey_le_ramsey' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Erdos1182.IsGood.{u_1} : {V : Type u_1} → SimpleGraph V → ℕ → ℕ → Prop :=
+fun {V} G m n => G.CliqueFree m ∧ Gᶜ.CliqueFree n
+def Erdos1182.RamseyProp : ℕ → ℕ → ℕ → Prop :=
+fun N m n => ∀ (G : SimpleGraph (Fin N)), ¬IsGood G m n
+def Erdos1182.ramsey : ℕ → ℕ → ℕ :=
+fun m n => sInf {N | RamseyProp N m n}
+def Erdos1182.TriRamseyProp.{u_1} : ℕ → {W : Type u_1} → SimpleGraph W → Prop :=
+fun N {W} G => ∀ (R : SimpleGraph (Fin N)), ¬R.CliqueFree 3 ∨ G ⊑ Rᶜ
+def Erdos1182.triRamsey.{u_1} : {W : Type u_1} → SimpleGraph W → ℕ :=
+fun {W} G => sInf {N | TriRamseyProp N G}
+def Erdos1182.ConnLowerBound : ℕ → Prop :=
+fun n => ∀ (G : SimpleGraph (Fin n)), G.Connected → 2 * n - 1 ≤ triRamsey G
+exit=0
+
+$ lake env lean Challenge.lean
+Challenge.lean:38:8: warning: declaration uses `sorry`
+Challenge.lean:42:8: warning: declaration uses `sorry`
+Challenge.lean:45:8: warning: declaration uses `sorry`
+Challenge.lean:49:8: warning: declaration uses `sorry`
+Challenge.lean:53:8: warning: declaration uses `sorry`
+Challenge.lean:56:8: warning: declaration uses `sorry`
+exit=0
