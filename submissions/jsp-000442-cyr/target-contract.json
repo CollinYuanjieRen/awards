@@ -1,0 +1,13 @@
+{
+  "schema_version": 2,
+  "plan_statement_id": "Thm_Erdos551_LowerBound",
+  "result_scope": "scoped component of an OPEN problem (the unconditional lower half of R(C_k,K_n)=(k-1)(n-1)+1)",
+  "target_signature": "theorem lower_bound (k n : ℕ) : k * n + 1 ≤ graphRamsey (cycleGraph (k + 1)) (⊤ : SimpleGraph (Fin (n + 1))); theorem lower_bound' (k n : ℕ) (hk : 3 ≤ k) (hn : 3 ≤ n) : (k - 1) * (n - 1) + 1 ≤ graphRamsey (cycleGraph k) (⊤ : SimpleGraph (Fin n))",
+  "source_files": [
+    {"path": "sources/erdos551-statement.txt", "sha256": "6ad3901a02a02c6ed1e772d7d216ce3f2c1082ea2232082aa04b36f66f86c447"},
+    {"path": "sources/jsp-000442.md", "sha256": "6dc037c7194ca9c32ff633bfbfb4f972035c40f9c440d1886d26b640fb36a93c"}
+  ],
+  "theorem_face_ids": ["lower_bound", "lower_bound'"],
+  "frozen_before_proof": true,
+  "notes": "Scoped: only the unconditional lower half of the (OPEN) identity R(C_k,K_n)=(k-1)(n-1)+1, via the blow-up colouring. The full identity (matching upper bound for k>=n>=3) is not claimed. Own Ramsey toolbox (RamseyDefs/Ramsey); no third-party Lean source copied."
+}
