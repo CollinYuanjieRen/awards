@@ -1,0 +1,33 @@
+Local exported-package verification; upstream dependency caches used.
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+✔ [8745/8748] Built Proof.Defs (4.2s)
+✔ [8746/8748] Built Proof.Main (3.8s)
+✔ [8747/8748] Built Proof (3.1s)
+Build completed successfully (8748 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos151.not_exists_triangleFree_gt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos151.cliqueTransversalNum_le_of_cliqueFree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos151.cliqueTransversalNum_le_card_sub_indepNum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos151.H_le_indepNum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos151.isCliqueTransversal_compl_of_isIndepSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Erdos151.IsCliqueTransversal.{u_1} : {V : Type u_1} → SimpleGraph V → Finset V → Prop :=
+fun {V} G T => ∀ (s : Finset V), Maximal G.IsClique ↑s → 2 ≤ s.card → ∃ v ∈ T, v ∈ s
+def Erdos151.cliqueTransversalNum.{u_1} : {V : Type u_1} → [Fintype V] → SimpleGraph V → ℕ :=
+fun {V} [Fintype V] G => sInf {k | ∃ T, T.card = k ∧ IsCliqueTransversal G T}
+def Erdos151.H : ℕ → ℕ :=
+fun n => sSup {h | ∀ (G : SimpleGraph (Fin n)), G.CliqueFree 3 → h ≤ G.indepNum}
+exit=0
+
+$ lake env lean Challenge.lean
+Challenge.lean:30:8: warning: declaration uses `sorry`
+Challenge.lean:34:8: warning: declaration uses `sorry`
+Challenge.lean:38:8: warning: declaration uses `sorry`
+Challenge.lean:42:8: warning: declaration uses `sorry`
+Challenge.lean:46:8: warning: declaration uses `sorry`
+exit=0
