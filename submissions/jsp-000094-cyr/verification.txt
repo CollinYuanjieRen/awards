@@ -1,0 +1,32 @@
+Local exported-package verification; upstream dependency caches used.
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+✔ [8751/8753] Built Proof.Limit (3.3s)
+✔ [8752/8753] Built Proof (3.3s)
+Build completed successfully (8753 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos77.sqrt_two_le_liminf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos77.limsup_le_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos77.sqrt_two_le_R_rpow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos77.R_rpow_le_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Erdos77.IsGood.{u_1} : {V : Type u_1} → SimpleGraph V → ℕ → ℕ → Prop :=
+fun {V} G m n => G.CliqueFree m ∧ Gᶜ.CliqueFree n
+def Erdos77.RamseyProp : ℕ → ℕ → ℕ → Prop :=
+fun N m n => ∀ (G : SimpleGraph (Fin N)), ¬IsGood G m n
+def Erdos77.ramsey : ℕ → ℕ → ℕ :=
+fun m n => sInf {N | RamseyProp N m n}
+def Erdos77.R : ℕ → ℕ :=
+fun n => ramsey n n
+exit=0
+
+$ lake env lean Challenge.lean
+Challenge.lean:25:8: warning: declaration uses `sorry`
+Challenge.lean:29:8: warning: declaration uses `sorry`
+Challenge.lean:32:8: warning: declaration uses `sorry`
+Challenge.lean:35:8: warning: declaration uses `sorry`
+exit=0
