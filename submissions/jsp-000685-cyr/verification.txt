@@ -1,0 +1,5 @@
+Local verification 2026-09-17: lake build success (8747 jobs); Audit.lean -> two_le_card_cubeReps_1729, exists_two_cube_representations both within [propext, Classical.choice, Quot.sound]; Challenge.lean two sorry (statement-only comparator); no forbidden tokens in Jsp685/Cubes.lean. Independent adversarial audit PASS (witness 1+1728=729+1000=1729; bound 12 sufficient).
+SHA-256 sources:
+86590f632f0b6187f851d8d190e97133cf7ffe5b8bc9b7e919226430d19138b4  sources/jsp-000685.md
+83163f9800d21a92489a7ec680adea37fec9eb8f9ad959ef99212e46350ed671  sources/witness.txt
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.
