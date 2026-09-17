@@ -1,0 +1,33 @@
+Local exported-package verification; upstream dependency caches used.
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+✔ [8747/8749] Built Proof.Main (4.3s)
+✔ [8748/8749] Built Proof (3.5s)
+Build completed successfully (8749 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos640.spanThreshold_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos640.spansOddCycle_three_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos640.exists_oddCycle_induce_three_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos640.not_spansOddCycle_three_of_le_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos640.three_le_chromaticNumber_induce_of_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Erdos640.SpansOddCycle : ℕ → ℕ → Prop :=
+fun k f =>
+  ∀ (V : Type) (G : SimpleGraph V),
+    ↑f ≤ G.chromaticNumber →
+      ∃ v c, c.IsCycle ∧ Odd c.length ∧ ↑k ≤ (SimpleGraph.induce {x | x ∈ c.support} G).chromaticNumber
+def Erdos640.spanThreshold : ℕ → ℕ :=
+fun k => sInf {f | SpansOddCycle k f}
+exit=0
+
+$ lake env lean Challenge.lean
+Challenge.lean:23:8: warning: declaration uses `sorry`
+Challenge.lean:26:8: warning: declaration uses `sorry`
+Challenge.lean:29:8: warning: declaration uses `sorry`
+Challenge.lean:35:8: warning: declaration uses `sorry`
+Challenge.lean:38:8: warning: declaration uses `sorry`
+exit=0
