@@ -1,0 +1,5 @@
+Local verification 2026-09-17: lake build success (8747 jobs); Audit.lean -> A_card, A_no_subset_sum, exists_large_subset_sum_free all [propext, Classical.choice, Quot.sound]; Challenge.lean three sorry (statement-only comparator); no forbidden tokens in Jsp649/SubsetSum.lean. A=(N/2,N], |A|=N-floor(N/2)=ceil(N/2), no element a sum of distinct others.
+SHA-256 sources:
+25793981bdbcc360a1876114a081ccb421a1fb2859c548a133b590dcbdace632  sources/jsp-000649.md
+835b076f88a721121b93e6271a5fd13285dde81ae9bdf4a1cdbfd311a1705846  sources/witness.txt
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.

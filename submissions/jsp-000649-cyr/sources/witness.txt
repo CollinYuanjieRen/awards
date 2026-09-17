@@ -1,0 +1,6 @@
+Scoped construction lower bound for JSP-000649 (subset with no element a sum of distinct others).
+Record: how large a subset of a finite integer set can have no element equal to a sum of distinct other
+elements? Construction: A = (floor(N/2), N] = Finset.Icc (N/2 + 1) N.
+- No element equals a sum of a nonempty set of distinct OTHER elements: any single other element b != a
+  (distinct); any >= 2 elements each exceed N/2, so their sum exceeds N >= a. So a is never such a sum.
+- |A| = N - floor(N/2) = ceil(N/2). (Verified for N up to 50: no element is a subset-sum of the others.)
