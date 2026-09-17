@@ -1,0 +1,33 @@
+Local exported-package verification (fresh package directory under a clean git worktree; dependencies from the official Mathlib cache server); arm64 macOS; 2026-09-17T03:56:33Z.
+
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+Build completed successfully (8752 jobs).
+exit=0 (no errors; ZERO warnings)
+
+$ lake env lean Audit.lean
+'HopfPannwitz.hopf_pannwitz' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HopfPannwitz.hopf_pannwitz_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HopfPannwitz.exists_n_diameter_pairs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HopfPannwitz.crossing_lemma' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HopfPannwitz.every_two_edges_meet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HopfPannwitz.middle_neighbour' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HopfPannwitz.f2_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HopfPannwitz.f2_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HopfPannwitz.f2_five' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0
+
+$ lake env lean Challenge.lean   # statement-only comparator; the one expected sorry warning is its target
+Challenge.lean:24:8: warning: declaration uses `sorry`
+exit=0
+
+$ grep -rnE "\\bsorry\\b|native_decide|^axiom |opaque|unsafe|implemented_by|partial " Jsp202 Jsp202.lean Audit.lean   # (code only)
+(no matches; the two apparent hits are the words "admitted"/"dependent" inside prose comments)
+
+SHA-256 of the recorded source statement:
+d23214d0488f4a1c57ab26c1d9b33923aadf83c7a7dd08879a99d668c48874e6  sources/erdos223-statement.txt
+
+Lean toolchain: leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d (lake-manifest.json).
