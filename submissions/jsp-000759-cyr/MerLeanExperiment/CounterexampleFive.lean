@@ -8,7 +8,8 @@ contains two vertices joined by `m` internally vertex-disjoint paths.  For `m = 
 Sørensen–Thomassen (1974) exhibit a graph on `17 = 1 + 4·4` vertices with `41 = 1 + 4·C(5,2)`
 edges in which no two vertices are joined by five internally disjoint paths (`k₅(17) = 42`).
 
-Graph data and separator strategy from plby/lean-proofs Erdos915 (Apache-2.0) and PR #739; the
+Graph data (a public mathematical object due to Sørensen–Thomassen) and the separator strategy
+follow plby/lean-proofs `Erdos915` (that file carries no license header) and PR #739; the
 proof below is written against the `Erdos915.HasVertexRails` interface of `MerLeanExperiment.Defs`.
 
 The adjacency data was independently re-verified in Python before formalization: the 41 listed

@@ -20,7 +20,7 @@ two readings have different answers. Everything below is proved in Lean 4 / Math
 | (iv) | edge-disjoint reading, every `m ≥ 2`: **yes** | `Erdos915.edge_rails_of_bollobas_erdos` |
 | (v) | `ℓ_m(N) = ⌊m(N−1)/2⌋ + 1` for `2 ≤ m ≤ N` (`IsLeast` form) | `Erdos915.edgeRailNumber_eq` |
 
-All five are bundled as `Erdos915.erdos_915` in [MerLeanExperiment/Main.lean](MerLeanExperiment/Main.lean).
+All five are bundled, as a five-fold conjunction, in `Erdos915.erdos_915` in [MerLeanExperiment/Main.lean](MerLeanExperiment/Main.lean).
 The definitions ([MerLeanExperiment/Defs.lean](MerLeanExperiment/Defs.lean)) are the literal
 ones: `HasVertexRails G m` is the existence of two distinct vertices and an injective family of
 `m` paths between them, pairwise sharing no vertex other than the endpoints; `HasEdgeRails G m`
@@ -51,7 +51,10 @@ Bollobás–Erdős question, where `N = 1 + n(m−1) ≥ m`.
 * [MaderTheorem.lean](MerLeanExperiment/MaderTheorem.lean): Mader's Satz 1 (Math. Z. 131, 1973).
   The induction on the number of vertices follows Mader (a minimum cut, the two sides, one side
   contracted to an apex, degree bookkeeping); his path surgery for the contraction step is replaced
-  by an uncrossing argument using submodularity of cut sizes. Menger is used once, at the end.
+  by an uncrossing argument using submodularity of cut sizes, and the vertex-deletion side of his
+  induction is taken as the induced subgraph on the cut boundary together with the other side rather
+  than his graph `Ḡ_ν`, so his intermediate bounds on the boundary sizes are not reproduced. Menger is
+  used once, at the end.
 * [MaderCorollary.lean](MerLeanExperiment/MaderCorollary.lean): the Bollobás–Erdős case and the
   exact value `ℓ_m(N)`, with the sharpness graph (a universal hub joined to a circulant-plus-matching
   rim; Leonard's "bi-wheel").
@@ -94,7 +97,9 @@ conjecture for `m ≥ 5`), B. A. Sørensen and C. Thomassen (J. Combin. Theory S
 departs from the published route this is stated above.
 
 Prior Lean work on this entry: the third-party module `Erdos915` in
-[plby/lean-proofs](https://github.com/plby/lean-proofs) (Apache License 2.0), and the upstream
+[plby/lean-proofs](https://github.com/plby/lean-proofs) (that file carries no license header; only
+the graph's adjacency data, a public mathematical object due to Sørensen–Thomassen, and the
+separator strategy were followed, not code), and the upstream
 submissions [PR #739](https://github.com/TheJustinSunPrize/awards/pull/739),
 [PR #753](https://github.com/TheJustinSunPrize/awards/pull/753) and
 [issue #686](https://github.com/TheJustinSunPrize/awards/issues/686), each formalize the `m = 5`
