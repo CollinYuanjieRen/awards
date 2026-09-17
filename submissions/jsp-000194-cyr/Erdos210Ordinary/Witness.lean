@@ -11,7 +11,7 @@ nonempty and its infimum `f n` is attained (`Nat.sInf_mem`).
 namespace Erdos210
 
 /-- The witness configuration: `n - 1` points on the `x`-axis together with `(0, 1)`. -/
-private noncomputable def witness (n : ℕ) : Finset (ℝ × ℝ) :=
+noncomputable def witness (n : ℕ) : Finset (ℝ × ℝ) :=
   ((Finset.range (n - 1)).image fun i : ℕ => ((i : ℝ), (0 : ℝ))) ∪ {((0 : ℝ), (1 : ℝ))}
 
 private lemma injective_witness_map :
@@ -19,7 +19,7 @@ private lemma injective_witness_map :
   intro i j h
   simpa using congrArg Prod.fst h
 
-private lemma card_witness {n : ℕ} (hn : 3 ≤ n) : (witness n).card = n := by
+lemma card_witness {n : ℕ} (hn : 3 ≤ n) : (witness n).card = n := by
   have hdisj : Disjoint ((Finset.range (n - 1)).image fun i : ℕ => ((i : ℝ), (0 : ℝ)))
       ({((0 : ℝ), (1 : ℝ))} : Finset (ℝ × ℝ)) := by
     rw [Finset.disjoint_right]
@@ -34,7 +34,7 @@ private lemma card_witness {n : ℕ} (hn : 3 ≤ n) : (witness n).card = n := by
     Finset.card_singleton]
   omega
 
-private lemma notCollinear_witness {n : ℕ} (hn : 3 ≤ n) : NotCollinear (witness n) := by
+lemma notCollinear_witness {n : ℕ} (hn : 3 ≤ n) : NotCollinear (witness n) := by
   have h0 : 0 ∈ Finset.range (n - 1) := Finset.mem_range.2 (by omega)
   have h1 : 1 ∈ Finset.range (n - 1) := Finset.mem_range.2 (by omega)
   refine ⟨((0 : ℝ), (0 : ℝ)), ?_, ((1 : ℝ), (0 : ℝ)), ?_, ((0 : ℝ), (1 : ℝ)), ?_, ?_⟩

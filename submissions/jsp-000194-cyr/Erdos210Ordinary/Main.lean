@@ -3,6 +3,7 @@ import Erdos210Ordinary.Count2
 import Erdos210Ordinary.Bridge
 import Erdos210Ordinary.Witness
 import Erdos210Ordinary.Charge
+import Erdos210Ordinary.Upper
 
 /-!
 # Erdős Problem 210 — the bound and `f n → ∞`
@@ -70,5 +71,9 @@ theorem le_f_linear (n : ℕ) (hn : 3 ≤ n) : n ≤ 8 * f n := by
   obtain ⟨P, hcard, hP, hf⟩ := f_mem n hn
   have hbound := erdos_210_linear P hP
   rwa [hcard, hf] at hbound
+
+/-- `f(n) = Θ(n)`: two-sided linear order for every `n ≥ 3`. -/
+theorem erdos_210_order (n : ℕ) (hn : 3 ≤ n) : n ≤ 8 * f n ∧ f n ≤ n :=
+  ⟨le_f_linear n hn, f_le n hn⟩
 
 end Erdos210
