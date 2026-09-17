@@ -1,0 +1,5 @@
+Scoped certificate for JSP-000991 (minimum number of monochromatic APs in a 2-colored interval; Graham V(n)).
+V_3(8) = 0: there is a 2-colouring of {1,...,8} with no monochromatic 3-term arithmetic progression.
+Colouring c(i) for i=1..8: 0,1,0,1,1,0,1,0 (equivalently colour "true" exactly on {2,4,5,7}).
+Every 3-term AP (a, a+d, a+2d) with a>=1, d>=1, a+2d<=8 fails to be monochromatic. (Verified: 0 of the 12 APs.)
+This equals the van der Waerden lower bound W(2;3) > 8.

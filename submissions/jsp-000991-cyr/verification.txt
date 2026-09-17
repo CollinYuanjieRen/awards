@@ -1,0 +1,5 @@
+Local verification 2026-09-17: lake build success (8747 jobs); Audit.lean axioms subset of [propext, Classical.choice, Quot.sound]; Challenge.lean sorry only in the statement-only comparator; no forbidden tokens.
+SHA-256 sources:
+eab225324359d724065a4b6b0104f66b3845c3cbd21cf69227dbbdb3449847de  sources/jsp-000991.md
+6ec56e92801fa5cc6e7539983d6ba7049edc507c3745675847979d455d6246c4  sources/witness.txt
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.
