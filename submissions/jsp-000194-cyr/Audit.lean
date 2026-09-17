@@ -8,6 +8,8 @@ open Erdos210
 #print axioms Erdos210.le_f
 #print axioms Erdos210.erdos_210_motzkin
 #print axioms Erdos210.le_f_motzkin
+#print axioms Erdos210.erdos_210_linear
+#print axioms Erdos210.le_f_linear
 #print axioms Erdos210.ncard_realized_le
 #print axioms Erdos210.card_le_of_notCollinear
 #print axioms Erdos210.ordinary_of_visible
@@ -41,6 +43,14 @@ example (P : Finset (ℝ × ℝ)) (hP : ¬ Collinear ℝ (P : Set (ℝ × ℝ)))
   Erdos210.erdos_210_motzkin P hP
 
 example (n : ℕ) (hn : 3 ≤ n) : n ≤ 2 * f n + (1 + f n * (f n + 1) / 2) := Erdos210.le_f_motzkin n hn
+
+/-- The linear bound: a non-collinear finite set with `m` ordinary lines has at most `8m` points, so
+`f(n) ≥ n/8`. -/
+example (P : Finset (ℝ × ℝ)) (hP : ¬ Collinear ℝ (P : Set (ℝ × ℝ))) :
+    P.card ≤ 8 * (ordinaryLines P).ncard :=
+  Erdos210.erdos_210_linear P hP
+
+example (n : ℕ) (hn : 3 ≤ n) : n ≤ 8 * f n := Erdos210.le_f_linear n hn
 
 /-- `f n` is attained: for `n ≥ 3` there are `n` points of the plane not all on a line. -/
 example (n : ℕ) (hn : 3 ≤ n) : ∃ P : Finset (ℝ × ℝ), P.card = n ∧ ¬ Collinear ℝ (P : Set (ℝ × ℝ)) :=

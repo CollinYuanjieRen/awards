@@ -2,6 +2,7 @@ import Erdos210Ordinary.Count
 import Erdos210Ordinary.Count2
 import Erdos210Ordinary.Bridge
 import Erdos210Ordinary.Witness
+import Erdos210Ordinary.Charge
 
 /-!
 # Erdős Problem 210 — the bound and `f n → ∞`
@@ -56,6 +57,18 @@ theorem erdos_210_motzkin (P : Finset (ℝ × ℝ)) (hP : ¬ Collinear ℝ (P : 
 theorem le_f_motzkin (n : ℕ) (hn : 3 ≤ n) : n ≤ 2 * f n + (1 + f n * (f n + 1) / 2) := by
   obtain ⟨P, hcard, hP, hf⟩ := f_mem n hn
   have hbound := erdos_210_motzkin P hP
+  rwa [hcard, hf] at hbound
+
+/-- **The linear bound.** `n` non-collinear points in the plane determine at least `n / 8`
+ordinary lines (`card_le_of_notCollinear_linear`, the charging argument of `Charge.lean`). -/
+theorem erdos_210_linear (P : Finset (ℝ × ℝ)) (hP : ¬ Collinear ℝ (P : Set (ℝ × ℝ))) :
+    P.card ≤ 8 * (ordinaryLines P).ncard := by
+  rw [ncard_ordinaryLines]
+  exact card_le_of_notCollinear_linear ((notCollinear_iff P).2 hP)
+
+theorem le_f_linear (n : ℕ) (hn : 3 ≤ n) : n ≤ 8 * f n := by
+  obtain ⟨P, hcard, hP, hf⟩ := f_mem n hn
+  have hbound := erdos_210_linear P hP
   rwa [hcard, hf] at hbound
 
 end Erdos210
