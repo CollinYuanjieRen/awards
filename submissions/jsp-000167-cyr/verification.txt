@@ -1,0 +1,5 @@
+Local verification 2026-09-17: lake build success (8747 jobs); Audit.lean -> card_choose_two_ge, perfect_ruler_0146 both [propext, Classical.choice, Quot.sound]; Challenge.lean two sorry (statement-only comparator); no forbidden tokens in Jsp167/Ruler.lean. Certificate {0,1,4,6} differences = {1..6} verified.
+SHA-256 sources:
+5942d06e8d07abecf4dbcbdc1cd0ad7890f96aeb2c7eef512fe0106d04af0482  sources/jsp-000167.md
+a43a829f108fc70e36d150b4a974252c2d6378f3f5182b9ec87cdcffaa621d83  sources/witness.txt
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.
