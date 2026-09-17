@@ -1,0 +1,5 @@
+Local verification 2026-09-17: lake build success (8747 jobs); Audit.lean -> choose_three_le [propext, Classical.choice, Quot.sound]; Challenge.lean one sorry (statement-only comparator); no forbidden tokens in Jsp069/TripleSum.lean.
+SHA-256 sources:
+b7b75c77ea3acda0fd7e49a16f14ab14840c721fae23eaca27120d7f08fe90df  sources/erdos41-statement.txt
+4dfd83df181790db4006cac3593fbd828f9feb50079523f3b6ee4e8014e02510  sources/jsp-000069.md
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.

@@ -1,0 +1,13 @@
+Source: https://www.erdosproblems.com/41 (fetched 2026-09-17). Status: OPEN. Bounty: $500.
+
+Erdős Problem #41:
+Let A ⊂ ℕ be an infinite set such that the triple sums a+b+c are all distinct for a,b,c ∈ A
+(aside from trivial coincidences). Is it true that
+    liminf_{N→∞} |A ∩ {1,…,N}| / N^{1/3} = 0 ?
+
+Context: This generalizes Erdős's result for pairwise sums (a Sidon/B2 set has density ≲ N^{1/2}).
+The conjecture claims the analogous pattern for all h ≥ 2; proven for h=4 and all even h, open for h=3.
+
+Scoped component formalized here: the elementary counting upper bound underlying the N^{1/3} scale.
+If A ⊆ {1,…,N} and all 3-element subsets of A have distinct sums, then C(|A|,3) ≤ 3N, hence
+|A| = O(N^{1/3}). The open liminf = 0 question is NOT claimed.
