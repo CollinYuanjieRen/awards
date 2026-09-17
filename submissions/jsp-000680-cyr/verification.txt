@@ -1,0 +1,3 @@
+Local verification 2026-09-17: lake build ZERO warnings (8747 jobs); Audit.lean -> Erdos824.three_le_h_eighteen [propext, Classical.choice, Quot.sound]; Challenge.lean one sorry; no forbidden tokens.
+SHA-256 source: f54e2351a2641fa394fc84843383817287602a0982762dcd03c00815380763ca  sources/erdos824-statement.txt
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.
