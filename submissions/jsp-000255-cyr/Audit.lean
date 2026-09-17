@@ -1,0 +1,3 @@
+import Jsp255
+#print axioms UnitFractions.four_fifths_eq
+#print axioms UnitFractions.exists_three_distinct_unit_fractions

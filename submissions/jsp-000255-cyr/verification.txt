@@ -1,0 +1,5 @@
+Local verification 2026-09-17: lake build success (8747 jobs); Audit.lean -> four_fifths_eq, exists_three_distinct_unit_fractions both [propext, Classical.choice, Quot.sound]; Challenge.lean two sorry (statement-only comparator); no forbidden tokens in Jsp255/UnitFractions.lean. 4/5 = 1/2+1/4+1/20.
+SHA-256 sources:
+aae5e704b5ef47d89f574a467b4dc6013c62724e1f9fdedbcc60726db19c21fd  sources/jsp-000255.md
+a725cdeebc0e2cd8c92d794f247259067ba74c53ec9a30e5669c99a9bb307b04  sources/witness.txt
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.
