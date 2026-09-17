@@ -1,0 +1,5 @@
+Local verification 2026-09-17: lake build success (8747 jobs); Audit.lean -> S_pairwise_sum_squarefree, exists_squarefree_sum_set both [propext, Classical.choice, Quot.sound]; Challenge.lean two sorry (statement-only comparator); no forbidden tokens in Jsp915/SquarefreeSums.lean. S={1,2,4,9,13}, 10 pairwise sums 3,5,6,10,11,13,14,15,17,22 all squarefree.
+SHA-256 sources:
+989224b9c2beb3caa9e05a0a90cd737d8bb8b3d20c684cb06b4f14a7bc262c77  sources/jsp-000915.md
+01492f0cb0a2b08a2bd5743ae0e80876b21704be274959345536710d5fc4d6e8  sources/witness.txt
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.

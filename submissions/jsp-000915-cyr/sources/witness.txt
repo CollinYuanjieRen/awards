@@ -1,0 +1,4 @@
+Scoped certificate for JSP-000915 (sequence with squarefree pairwise sums).
+A finite set whose distinct pairwise sums (a+b, a<b) are all squarefree:
+  S = {1, 2, 4, 9, 13}.
+The 10 pairwise sums are 3,5,6,10,11,13,14,15,17,22, each squarefree. (Verified independently.)
