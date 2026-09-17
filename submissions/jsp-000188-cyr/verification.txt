@@ -1,0 +1,36 @@
+Local exported-package verification; upstream dependency caches used.
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+✔ [8746/8748] Built Proof.Main (8.9s)
+✔ [8747/8748] Built Proof (6.3s)
+Build completed successfully (8748 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos201.G_le_R' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos201.R_three_five' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos201.G_three_five_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos201.apFreeMax_le_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos201.G_le_apFreeMax' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Erdos201.HasAP : ℕ → Finset ℤ → Prop :=
+fun k S => ∃ a d, 0 < d ∧ ∀ i < k, a + ↑i * d ∈ S
+def Erdos201.APFree : ℕ → Finset ℤ → Prop :=
+fun k S => ¬HasAP k S
+def Erdos201.apFreeMax : ℕ → Finset ℤ → ℕ :=
+fun k T => {S ∈ T.powerset | APFree k S}.sup Finset.card
+def Erdos201.R : ℕ → ℕ → ℕ :=
+fun k N => apFreeMax k (Finset.Icc 1 ↑N)
+def Erdos201.G : ℕ → ℕ → ℕ :=
+fun k N => sInf {m | ∃ T, T.card = N ∧ apFreeMax k T = m}
+exit=0
+
+$ lake env lean Challenge.lean
+Challenge.lean:31:8: warning: declaration uses `sorry`
+Challenge.lean:34:8: warning: declaration uses `sorry`
+Challenge.lean:37:8: warning: declaration uses `sorry`
+Challenge.lean:40:8: warning: declaration uses `sorry`
+Challenge.lean:44:8: warning: declaration uses `sorry`
+exit=0
