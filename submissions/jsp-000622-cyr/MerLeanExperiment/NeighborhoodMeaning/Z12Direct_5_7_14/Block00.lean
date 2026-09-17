@@ -1,0 +1,82 @@
+import MerLeanExperiment.NeighborhoodMeaningWitness
+import MerLeanExperiment.Certificates.Z12Direct_5_7_14.Clauses0000_0066
+namespace CochromaticTwenty.NeighborhoodMeaning.Z12Direct_5_7_14
+open Std.Sat Std.Tactic.BVDecide.LRAT Std.Tactic.BVDecide.LRAT.Internal
+open CochromaticTwenty.Certificates.Z12Direct_5_7_14
+set_option maxRecDepth 100000
+set_option maxHeartbeats 10000000
+def witnesses0 : Fin 67 → ColoringClauseWitness 12 4 ⊕ ForbiddenFourClauseWitness 12 :=
+  ![
+    .inr ⟨{3, 4, 6, 7}, false⟩,
+    .inr ⟨{3, 4, 6, 8}, false⟩,
+    .inr ⟨{3, 4, 6, 9}, false⟩,
+    .inr ⟨{3, 4, 7, 10}, false⟩,
+    .inr ⟨{3, 4, 7, 11}, false⟩,
+    .inr ⟨{3, 4, 8, 10}, false⟩,
+    .inr ⟨{3, 4, 8, 11}, false⟩,
+    .inr ⟨{3, 4, 9, 10}, false⟩,
+    .inr ⟨{3, 4, 9, 11}, false⟩,
+    .inr ⟨{3, 6, 10, 11}, true⟩,
+    .inr ⟨{3, 7, 8, 9}, true⟩,
+    .inr ⟨{4, 6, 10, 11}, true⟩,
+    .inr ⟨{4, 7, 8, 9}, true⟩,
+    .inl ⟨![{0, 6, 7}, {1, 2, 5}, {3, 8, 9}, {4, 10, 11}], ![false, false, true, true]⟩,
+    .inl ⟨![{0, 6, 7}, {1, 2, 5}, {3, 8, 10}, {4, 9, 11}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 6, 7}, {1, 2, 5}, {3, 8, 11}, {4, 9, 10}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 6, 7}, {1, 2, 5}, {3, 9, 10}, {4, 8, 11}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 6, 7}, {1, 2, 5}, {3, 9, 11}, {4, 8, 10}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 6, 7}, {1, 2, 5}, {3, 10, 11}, {4, 8, 9}], ![false, false, true, true]⟩,
+    .inl ⟨![{0, 6, 8}, {1, 2, 5}, {3, 7, 9}, {4, 10, 11}], ![false, false, true, true]⟩,
+    .inl ⟨![{0, 6, 8}, {1, 2, 5}, {3, 7, 10}, {4, 9, 11}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 6, 8}, {1, 2, 5}, {3, 7, 11}, {4, 9, 10}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 6, 8}, {1, 2, 5}, {3, 9, 10}, {4, 7, 11}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 6, 8}, {1, 2, 5}, {3, 9, 11}, {4, 7, 10}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 6, 8}, {1, 2, 5}, {3, 10, 11}, {4, 7, 9}], ![false, false, true, true]⟩,
+    .inl ⟨![{0, 6, 9}, {1, 2, 5}, {3, 7, 8}, {4, 10, 11}], ![false, false, true, true]⟩,
+    .inl ⟨![{0, 6, 9}, {1, 2, 5}, {3, 7, 10}, {4, 8, 11}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 6, 9}, {1, 2, 5}, {3, 7, 11}, {4, 8, 10}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 6, 9}, {1, 2, 5}, {3, 8, 10}, {4, 7, 11}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 6, 9}, {1, 2, 5}, {3, 8, 11}, {4, 7, 10}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 6, 9}, {1, 2, 5}, {3, 10, 11}, {4, 7, 8}], ![false, false, true, true]⟩,
+    .inl ⟨![{0, 7, 10}, {1, 2, 5}, {3, 6, 8}, {4, 9, 11}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 7, 10}, {1, 2, 5}, {3, 6, 9}, {4, 8, 11}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 7, 10}, {1, 2, 5}, {3, 6, 11}, {4, 8, 9}], ![false, false, true, true]⟩,
+    .inl ⟨![{0, 7, 10}, {1, 2, 5}, {3, 8, 9}, {4, 6, 11}], ![false, false, true, true]⟩,
+    .inl ⟨![{0, 7, 10}, {1, 2, 5}, {3, 8, 11}, {4, 6, 9}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 7, 10}, {1, 2, 5}, {3, 9, 11}, {4, 6, 8}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 7, 11}, {1, 2, 5}, {3, 6, 8}, {4, 9, 10}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 7, 11}, {1, 2, 5}, {3, 6, 9}, {4, 8, 10}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 7, 11}, {1, 2, 5}, {3, 6, 10}, {4, 8, 9}], ![false, false, true, true]⟩,
+    .inl ⟨![{0, 7, 11}, {1, 2, 5}, {3, 8, 9}, {4, 6, 10}], ![false, false, true, true]⟩,
+    .inl ⟨![{0, 7, 11}, {1, 2, 5}, {3, 8, 10}, {4, 6, 9}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 7, 11}, {1, 2, 5}, {3, 9, 10}, {4, 6, 8}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 8, 10}, {1, 2, 5}, {3, 6, 7}, {4, 9, 11}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 8, 10}, {1, 2, 5}, {3, 6, 9}, {4, 7, 11}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 8, 10}, {1, 2, 5}, {3, 6, 11}, {4, 7, 9}], ![false, false, true, true]⟩,
+    .inl ⟨![{0, 8, 10}, {1, 2, 5}, {3, 7, 9}, {4, 6, 11}], ![false, false, true, true]⟩,
+    .inl ⟨![{0, 8, 10}, {1, 2, 5}, {3, 7, 11}, {4, 6, 9}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 8, 10}, {1, 2, 5}, {3, 9, 11}, {4, 6, 7}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 8, 11}, {1, 2, 5}, {3, 6, 7}, {4, 9, 10}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 8, 11}, {1, 2, 5}, {3, 6, 9}, {4, 7, 10}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 8, 11}, {1, 2, 5}, {3, 6, 10}, {4, 7, 9}], ![false, false, true, true]⟩,
+    .inl ⟨![{0, 8, 11}, {1, 2, 5}, {3, 7, 9}, {4, 6, 10}], ![false, false, true, true]⟩,
+    .inl ⟨![{0, 8, 11}, {1, 2, 5}, {3, 7, 10}, {4, 6, 9}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 8, 11}, {1, 2, 5}, {3, 9, 10}, {4, 6, 7}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 9, 10}, {1, 2, 5}, {3, 6, 7}, {4, 8, 11}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 9, 10}, {1, 2, 5}, {3, 6, 8}, {4, 7, 11}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 9, 10}, {1, 2, 5}, {3, 6, 11}, {4, 7, 8}], ![false, false, true, true]⟩,
+    .inl ⟨![{0, 9, 10}, {1, 2, 5}, {3, 7, 8}, {4, 6, 11}], ![false, false, true, true]⟩,
+    .inl ⟨![{0, 9, 10}, {1, 2, 5}, {3, 7, 11}, {4, 6, 8}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 9, 10}, {1, 2, 5}, {3, 8, 11}, {4, 6, 7}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 9, 11}, {1, 2, 5}, {3, 6, 7}, {4, 8, 10}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 9, 11}, {1, 2, 5}, {3, 6, 8}, {4, 7, 10}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 9, 11}, {1, 2, 5}, {3, 6, 10}, {4, 7, 8}], ![false, false, true, true]⟩,
+    .inl ⟨![{0, 9, 11}, {1, 2, 5}, {3, 7, 8}, {4, 6, 10}], ![false, false, true, true]⟩,
+    .inl ⟨![{0, 9, 11}, {1, 2, 5}, {3, 7, 10}, {4, 6, 8}], ![false, false, false, false]⟩,
+    .inl ⟨![{0, 9, 11}, {1, 2, 5}, {3, 8, 10}, {4, 6, 7}], ![false, false, false, false]⟩]
+theorem witnesses0_valid : ∀ i : Fin 67,
+    ColoringOrForbiddenValid (neighborhoodPattern 12 5 788 15243)
+      ((inputBlock0.getD i.val DefaultClause.empty).clause.map (fun l => (l.1.val - 1, l.2)))
+      (witnesses0 i) := by
+  decide +kernel
+end CochromaticTwenty.NeighborhoodMeaning.Z12Direct_5_7_14

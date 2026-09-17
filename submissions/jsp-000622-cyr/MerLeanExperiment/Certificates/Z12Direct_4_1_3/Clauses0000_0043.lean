@@ -1,0 +1,56 @@
+import MerLeanExperiment.CertificateKernel
+
+/-! Generated from the actual pinned z12direct_4_1_3-trim CNF/LRAT data.
+The generator is untrusted: every computation and inference is kernel checked. -/
+namespace CochromaticTwenty.Certificates.Z12Direct_4_1_3
+open Std.Sat Std.Tactic.BVDecide.LRAT Std.Tactic.BVDecide.LRAT.Internal
+open CochromaticTwenty.CertificateKernel
+set_option maxRecDepth 100000
+set_option maxHeartbeats 10000000
+def c1 : DefaultClause 29 := directClause [(⟨1, by decide⟩, true), (⟨2, by decide⟩, true), (⟨22, by decide⟩, true), (⟨23, by decide⟩, true)] (by decide +kernel) (by decide +kernel)
+def c2 : DefaultClause 29 := directClause [(⟨1, by decide⟩, false), (⟨3, by decide⟩, false), (⟨6, by decide⟩, false)] (by decide +kernel) (by decide +kernel)
+def c3 : DefaultClause 29 := directClause [(⟨1, by decide⟩, false), (⟨5, by decide⟩, false), (⟨7, by decide⟩, false)] (by decide +kernel) (by decide +kernel)
+def c4 : DefaultClause 29 := directClause [(⟨1, by decide⟩, false), (⟨6, by decide⟩, false), (⟨7, by decide⟩, false)] (by decide +kernel) (by decide +kernel)
+def c5 : DefaultClause 29 := directClause [(⟨12, by decide⟩, false), (⟨14, by decide⟩, false), (⟨26, by decide⟩, false), (⟨28, by decide⟩, false)] (by decide +kernel) (by decide +kernel)
+def c6 : DefaultClause 29 := directClause [(⟨13, by decide⟩, false), (⟨14, by decide⟩, false), (⟨27, by decide⟩, false), (⟨28, by decide⟩, false)] (by decide +kernel) (by decide +kernel)
+def c7 : DefaultClause 29 := directClause [(⟨19, by decide⟩, false), (⟨21, by decide⟩, false), (⟨26, by decide⟩, false), (⟨28, by decide⟩, false)] (by decide +kernel) (by decide +kernel)
+def c8 : DefaultClause 29 := directClause [(⟨20, by decide⟩, false), (⟨21, by decide⟩, false), (⟨27, by decide⟩, false), (⟨28, by decide⟩, false)] (by decide +kernel) (by decide +kernel)
+def c9 : DefaultClause 29 := directClause [(⟨15, by decide⟩, false), (⟨17, by decide⟩, false), (⟨20, by decide⟩, false)] (by decide +kernel) (by decide +kernel)
+def c10 : DefaultClause 29 := directClause [(⟨5, by decide⟩, true), (⟨19, by decide⟩, true)] (by decide +kernel) (by decide +kernel)
+def c11 : DefaultClause 29 := directClause [(⟨6, by decide⟩, true), (⟨20, by decide⟩, true)] (by decide +kernel) (by decide +kernel)
+def c12 : DefaultClause 29 := directClause [(⟨7, by decide⟩, true), (⟨21, by decide⟩, true)] (by decide +kernel) (by decide +kernel)
+def c13 : DefaultClause 29 := directClause [(⟨1, by decide⟩, false), (⟨5, by decide⟩, false), (⟨20, by decide⟩, false), (⟨21, by decide⟩, false)] (by decide +kernel) (by decide +kernel)
+def c14 : DefaultClause 29 := directClause [(⟨1, by decide⟩, false), (⟨7, by decide⟩, false), (⟨17, by decide⟩, false), (⟨20, by decide⟩, false)] (by decide +kernel) (by decide +kernel)
+def c15 : DefaultClause 29 := directClause [(⟨2, by decide⟩, false), (⟨5, by decide⟩, false), (⟨20, by decide⟩, false), (⟨21, by decide⟩, false)] (by decide +kernel) (by decide +kernel)
+def c16 : DefaultClause 29 := directClause [(⟨2, by decide⟩, false), (⟨6, by decide⟩, false), (⟨17, by decide⟩, true), (⟨21, by decide⟩, true)] (by decide +kernel) (by decide +kernel)
+def c17 : DefaultClause 29 := directClause [(⟨5, by decide⟩, false), (⟨7, by decide⟩, false), (⟨15, by decide⟩, false), (⟨20, by decide⟩, false)] (by decide +kernel) (by decide +kernel)
+def c18 : DefaultClause 29 := directClause [(⟨4, by decide⟩, true), (⟨11, by decide⟩, true)] (by decide +kernel) (by decide +kernel)
+def c19 : DefaultClause 29 := directClause [(⟨5, by decide⟩, true), (⟨12, by decide⟩, true)] (by decide +kernel) (by decide +kernel)
+def c20 : DefaultClause 29 := directClause [(⟨6, by decide⟩, true), (⟨13, by decide⟩, true)] (by decide +kernel) (by decide +kernel)
+def c21 : DefaultClause 29 := directClause [(⟨7, by decide⟩, true), (⟨14, by decide⟩, true)] (by decide +kernel) (by decide +kernel)
+def c22 : DefaultClause 29 := directClause [(⟨7, by decide⟩, true), (⟨14, by decide⟩, true)] (by decide +kernel) (by decide +kernel)
+def c23 : DefaultClause 29 := directClause [(⟨1, by decide⟩, false), (⟨5, by decide⟩, false), (⟨13, by decide⟩, false), (⟨14, by decide⟩, false)] (by decide +kernel) (by decide +kernel)
+def c24 : DefaultClause 29 := directClause [(⟨1, by decide⟩, false), (⟨7, by decide⟩, false), (⟨10, by decide⟩, false), (⟨13, by decide⟩, false)] (by decide +kernel) (by decide +kernel)
+def c25 : DefaultClause 29 := directClause [(⟨2, by decide⟩, false), (⟨5, by decide⟩, false), (⟨13, by decide⟩, false), (⟨14, by decide⟩, false)] (by decide +kernel) (by decide +kernel)
+def c26 : DefaultClause 29 := directClause [(⟨2, by decide⟩, false), (⟨6, by decide⟩, false), (⟨10, by decide⟩, true), (⟨14, by decide⟩, true)] (by decide +kernel) (by decide +kernel)
+def c27 : DefaultClause 29 := directClause [(⟨6, by decide⟩, false), (⟨7, by decide⟩, false), (⟨8, by decide⟩, false), (⟨10, by decide⟩, false)] (by decide +kernel) (by decide +kernel)
+def c28 : DefaultClause 29 := directClause [(⟨24, by decide⟩, false), (⟨27, by decide⟩, false)] (by decide +kernel) (by decide +kernel)
+def c29 : DefaultClause 29 := directClause [(⟨26, by decide⟩, true), (⟨27, by decide⟩, true)] (by decide +kernel) (by decide +kernel)
+def c30 : DefaultClause 29 := directClause [(⟨3, by decide⟩, true), (⟨24, by decide⟩, true), (⟨13, by decide⟩, true), (⟨20, by decide⟩, true)] (by decide +kernel) (by decide +kernel)
+def c31 : DefaultClause 29 := directClause [(⟨6, by decide⟩, true), (⟨27, by decide⟩, true), (⟨10, by decide⟩, true), (⟨17, by decide⟩, true)] (by decide +kernel) (by decide +kernel)
+def c32 : DefaultClause 29 := directClause [(⟨2, by decide⟩, false), (⟨4, by decide⟩, false), (⟨8, by decide⟩, false), (⟨13, by decide⟩, false), (⟨21, by decide⟩, false), (⟨28, by decide⟩, false)] (by decide +kernel) (by decide +kernel)
+def c33 : DefaultClause 29 := directClause [(⟨2, by decide⟩, false), (⟨6, by decide⟩, false), (⟨8, by decide⟩, false), (⟨11, by decide⟩, false), (⟨21, by decide⟩, false), (⟨28, by decide⟩, false)] (by decide +kernel) (by decide +kernel)
+def c34 : DefaultClause 29 := directClause [(⟨4, by decide⟩, true), (⟨7, by decide⟩, true), (⟨13, by decide⟩, true), (⟨20, by decide⟩, true), (⟨22, by decide⟩, true), (⟨23, by decide⟩, true)] (by decide +kernel) (by decide +kernel)
+def c35 : DefaultClause 29 := directClause [(⟨23, by decide⟩, false), (⟨27, by decide⟩, false)] (by decide +kernel) (by decide +kernel)
+def c36 : DefaultClause 29 := directClause [(⟨1, by decide⟩, true), (⟨22, by decide⟩, true), (⟨13, by decide⟩, true), (⟨20, by decide⟩, true)] (by decide +kernel) (by decide +kernel)
+def c37 : DefaultClause 29 := directClause [(⟨4, by decide⟩, false), (⟨5, by decide⟩, false), (⟨13, by decide⟩, true), (⟨20, by decide⟩, true), (⟨22, by decide⟩, true), (⟨23, by decide⟩, true)] (by decide +kernel) (by decide +kernel)
+def c38 : DefaultClause 29 := directClause [(⟨23, by decide⟩, false), (⟨26, by decide⟩, false)] (by decide +kernel) (by decide +kernel)
+def c39 : DefaultClause 29 := directClause [(⟨5, by decide⟩, true), (⟨6, by decide⟩, true), (⟨10, by decide⟩, true), (⟨17, by decide⟩, true), (⟨22, by decide⟩, true), (⟨23, by decide⟩, true)] (by decide +kernel) (by decide +kernel)
+def c40 : DefaultClause 29 := directClause [(⟨22, by decide⟩, false), (⟨28, by decide⟩, false)] (by decide +kernel) (by decide +kernel)
+def c41 : DefaultClause 29 := directClause [(⟨23, by decide⟩, true), (⟨28, by decide⟩, true)] (by decide +kernel) (by decide +kernel)
+def c42 : DefaultClause 29 := directClause [(⟨1, by decide⟩, true), (⟨8, by decide⟩, true), (⟨21, by decide⟩, false), (⟨28, by decide⟩, false)] (by decide +kernel) (by decide +kernel)
+def c43 : DefaultClause 29 := directClause [(⟨1, by decide⟩, true), (⟨15, by decide⟩, true), (⟨14, by decide⟩, false), (⟨28, by decide⟩, false)] (by decide +kernel) (by decide +kernel)
+def c44 : DefaultClause 29 := directClause [(⟨1, by decide⟩, true), (⟨22, by decide⟩, true), (⟨14, by decide⟩, true), (⟨21, by decide⟩, true)] (by decide +kernel) (by decide +kernel)
+def inputBlock0 : Array (DefaultClause 29) := #[c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20, c21, c22, c23, c24, c25, c26, c27, c28, c29, c30, c31, c32, c33, c34, c35, c36, c37, c38, c39, c40, c41, c42, c43, c44]
+
+end CochromaticTwenty.Certificates.Z12Direct_4_1_3
