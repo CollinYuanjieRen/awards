@@ -1,0 +1,38 @@
+Local exported-package verification; upstream dependency caches used.
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+✔ [8746/8748] Built Proof.Main (3.2s)
+✔ [8747/8748] Built Proof (3.1s)
+Build completed successfully (8748 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos572.le_extremalNumber_oddCycle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos572.le_extremalNumber_oddCycle'' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos572.le_extremalNumber_of_not_colorable_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos572.extremalNumber_cycleGraph_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos572.turanGraph_two_colorable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos572.cycleGraph_odd_free_turanGraph_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+def SimpleGraph.extremalNumber.{u_1} : ℕ → {W : Type u_1} → SimpleGraph W → ℕ :=
+fun n {W} H => {G | H.Free G}.sup fun x => x.edgeFinset.card
+def SimpleGraph.turanGraph : (n : ℕ) → ℕ → SimpleGraph (Fin n) :=
+fun n r => { Adj := fun v w => ↑v % r ≠ ↑w % r, symm := ⋯, loopless := ⋯ }
+def SimpleGraph.cycleGraph : (n : ℕ) → SimpleGraph (Fin n) :=
+fun x =>
+  match x with
+  | 0 => ⊥
+  | 1 => ⊥
+  | n.succ.succ => { Adj := fun a b => a - b = 1 ∨ b - a = 1, symm := ⋯, loopless := ⋯ }
+exit=0
+
+$ lake env lean Challenge.lean
+Challenge.lean:15:8: warning: declaration uses `sorry`
+Challenge.lean:19:8: warning: declaration uses `sorry`
+Challenge.lean:23:8: warning: declaration uses `sorry`
+Challenge.lean:27:8: warning: declaration uses `sorry`
+Challenge.lean:30:8: warning: declaration uses `sorry`
+Challenge.lean:33:8: warning: declaration uses `sorry`
+exit=0
