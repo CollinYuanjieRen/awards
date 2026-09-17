@@ -1,6 +1,8 @@
-# JSP-000622: the cochromatic number of twenty-vertex graphs is six
+# JSP-000622: the cochromatic numbers z(12) = 4 and z(20) = 6
 
-This package submits a Lean formalization for intake and eligibility review. It addresses [JSP-000622](https://github.com/TheJustinSunPrize/awards/blob/f4e7173d89dfe91022a185427d63452c8ffbf6ae/problems/catalog-0601-0700.md#JSP-000622) ([Erdős Problem #758](https://www.erdosproblems.com/758)), in the exact twenty-vertex form the problem page asks separately: is `z(20) = 6` or `7`? Here `z(G)` is the cochromatic number, the least number of classes in a partition of the vertices into cliques and independent sets, and `z(n)` its maximum over `n`-vertex graphs.
+This package submits a Lean formalization for intake and eligibility review. It addresses [JSP-000622](https://github.com/TheJustinSunPrize/awards/blob/f4e7173d89dfe91022a185427d63452c8ffbf6ae/problems/catalog-0601-0700.md#JSP-000622) ([Erdős Problem #758](https://www.erdosproblems.com/758)). Here `z(G)` is the cochromatic number, the least number of classes in a partition of the vertices into cliques and independent sets, and `z(n)` its maximum over `n`-vertex graphs. The problem page asks to determine `z(n)` for small `n` and, in particular, whether `z(12) = 4`; it records the values `z(1), …, z(19)` as known (with `z(12) = 4` established computationally by Bhavik Mehta), remarks that the only significant difficulty is proving `z(12) = 4`, and states that it is unknown whether `z(20) = 6` or `7`. This package proves both `z(12) = 4` (`cochromatic_twelve`, the value asked for in particular) and `z(20) = 6` (`cochromatic_twenty`, a value the problem page records as unknown; the mathematical route is the cited `ipitchford/z20-cochromatic` document, re-derived and fully checked here).
+
+Scope, stated plainly (revised 2026-09-17 after an independent hard-gate re-audit): the catalog entry asks, for a prescribed small graph order, for the worst-case number of parts; the problem page's resolved content is the table `z(1), …, z(19)` with `z(12) = 4` as the named question. This package formalizes `z(12) = 4` and `z(20) = 6` and does not state the other table values as theorems; under the reading that the entry requires the whole small-`n` table, this is not a complete formalization of the entry. `z(20) = 6` is not contained in the cited publication [Gi86] (which proves `z(n) ≍ n / log n`) and no solver credit for it is attached to the cited publications.
 
 ## Statement
 
@@ -11,6 +13,14 @@ theorem cochromatic_twenty : CochromaticTwenty.Target
 ```
 
 with no premises. [MerLeanExperiment/Audit.lean](MerLeanExperiment/Audit.lean) additionally derives `cochromatic_twenty_on_finite_type`, the same two statements on every twenty-element vertex type, so the labelled statement is the ordinary one.
+
+[MerLeanExperiment/Twelve.lean](MerLeanExperiment/Twelve.lean) states and proves the twelve-vertex value in the same vocabulary: `UpperBoundTwelve := ∀ G : SimpleGraph (Fin 12), HasCocoloring G 4`, `LowerBoundTwelve := ∃ G : SimpleGraph (Fin 12), ¬ HasCocoloring G 3`, `TargetTwelve := UpperBoundTwelve ∧ LowerBoundTwelve`, and
+
+```lean
+theorem cochromatic_twelve : CochromaticTwenty.TargetTwelve
+```
+
+with no premises, together with `cochromatic_twelve_on_finite_type` on every twelve-element vertex type; `Main.lean` re-exports it as `cochromatic_twelve'`.
 
 ## Proof structure
 
@@ -23,8 +33,9 @@ The argument follows the candidate computer-assisted proof published in the `ipi
 5. **Sixteen vertices.** A sixteen-vertex graph without a homogeneous four-set reduces to 27 neighbourhood patterns; 25 are excluded by certificates and the two survivors have explicitly listed models mapped by checked isomorphisms to two fixed cores ([SixteenClassification.lean](MerLeanExperiment/SixteenClassification.lean), `B16Meaning/`).
 6. **Twenty vertices.** Ramsey supplies a homogeneous four-set; either its complement contains another, disjoint, one, or the sixteen-vertex classification fixes one of the two cores, and two cross certificates (7550 and 5880 inputs, 3932 and 3553 derived clauses, each clause with a proved graph explanation) give two disjoint homogeneous four-sets ([TwentyTwoFours.lean](MerLeanExperiment/TwentyTwoFours.lean), [FixedCoreTwoFours.lean](MerLeanExperiment/FixedCoreTwoFours.lean), `FixedCore0Meaning/`, `FixedCore1Meaning/`). Removing them, the twelve-vertex theorem colors the rest with four classes ([UpperBound.lean](MerLeanExperiment/UpperBound.lean), [CocoloringAssembly.lean](MerLeanExperiment/CocoloringAssembly.lean)).
 7. **Lower bound.** The Paley graph on seventeen vertices with three isolated vertices added has no five-cocoloring: it has no homogeneous four-set (kernel computation), so five classes cover at most fifteen of its seventeen vertices ([LowerBound.lean](MerLeanExperiment/LowerBound.lean)).
+8. **Twelve vertices, both bounds.** The upper bound `z(12) ≤ 4` is step 4 (`fin12_hasCocoloring_four`). For the lower bound, the Paley graph of order seventeen induced on its first twelve vertices inherits the absence of homogeneous four-sets, so three classes cover at most nine of its twelve vertices ([Twelve.lean](MerLeanExperiment/Twelve.lean)).
 
-The certificate modules replay LRAT-style refutations through transparent clause records and Lean's proved checker soundness theorem; no `native_decide`, `Lean.ofReduceBool`, opaque hashing verifier, project axiom, `sorry` or `admit` occurs anywhere in the 2050-module cone. Each certificate is bridged to the actual graph statement by a proved semantic lemma, so no encoding correspondence, catalog completeness, SAT result or coloring theorem is an assumption of the root.
+The certificate modules replay LRAT-style refutations through transparent clause records and Lean's proved checker soundness theorem; no `native_decide`, `Lean.ofReduceBool`, opaque hashing verifier, project axiom, `sorry` or `admit` occurs anywhere in the 2051-module cone. Each certificate is bridged to the actual graph statement by a proved semantic lemma, so no encoding correspondence, catalog completeness, SAT result or coloring theorem is an assumption of the root.
 
 ## Reproduce
 
@@ -36,13 +47,14 @@ lake build
 lake env lean MerLeanExperiment/Audit.lean
 ```
 
-The exact toolchain is pinned in [lean-toolchain](lean-toolchain): `leanprover/lean4:v4.34.0-rc1`; Mathlib is pinned to `1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d` with transitive revisions in [lake-manifest.json](lake-manifest.json). The cone is large (2050 modules, about 117 MB of Lean source, most of it generated certificate data); a full build takes several hours. SHA-256 values of every module are listed in [source-hashes.txt](source-hashes.txt).
+The exact toolchain is pinned in [lean-toolchain](lean-toolchain): `leanprover/lean4:v4.34.0-rc1`; Mathlib is pinned to `1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d` with transitive revisions in [lake-manifest.json](lake-manifest.json). The cone is large (2051 modules, about 117 MB of Lean source, most of it generated certificate data); a full build takes several hours. SHA-256 values of every module are listed in [source-hashes.txt](source-hashes.txt).
 
 **Axioms.** Every audited theorem depends on exactly the three standard axioms of Lean's core logic used throughout Mathlib, and on nothing else:
 
 | Theorem | Axioms |
 | --- | --- |
 | `cochromatic_twenty` | `propext`, `Classical.choice`, `Quot.sound` |
+| `cochromatic_twelve`, `cochromatic_twelve_on_finite_type`, `CochromaticTwenty.paley17OnTwelve_lowerBound` | `propext`, `Classical.choice`, `Quot.sound` |
 | `CochromaticTwenty.universal_six_upperBound`, `paley17_lowerBound` | `propext`, `Classical.choice`, `Quot.sound` |
 | `CochromaticTwenty.fin8_hasCocoloring_three`, `fin12_hasCocoloring_four`, `sixteen_classification`, `twenty_twoFours`, `fixedCore0_twoFours`, `fixedCore1_twoFours`, `target_iff_on_card_twenty` | `propext`, `Classical.choice`, `Quot.sound` |
 | `cochromatic_twenty_on_finite_type` | `propext`, `Classical.choice`, `Quot.sound` |
@@ -53,7 +65,7 @@ Local verification used cached upstream dependencies on arm64 macOS; the results
 
 ## Attribution and submission status
 
-The mathematical route follows the candidate computer-assisted proof "The cochromatic number of graphs on twenty vertices: z(20) = 6" published in the GitHub repository `ipitchford/z20-cochromatic` (author identified there only by that account; the document states no license, so it is cited, not reproduced) ([revision 8dc4b8cd](https://github.com/ipitchford/z20-cochromatic/blob/8dc4b8cd31f4323d6a032752f4cfd69c06d5ca90/z20_proof_paper.md)); that document was used as the source of the reduction strategy only, and none of its computations or certificates is an input to the Lean proof, which recomputes and proves every step. The two sixteen-vertex Ramsey (4,4) cores used as fixed targets of the classification are the two known such graphs; the proof re-derives everything it needs about them from their adjacency data and does not assume their uniqueness. The small Ramsey graph representatives are adapted from Brendan McKay's [Ramsey graph data](https://users.cecs.anu.edu.au/~bdm/data/ramsey.html), released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); the data were converted into Lean literals, and their completeness as catalogs is proved in Lean rather than taken from the data. The problem is Erdős's (#758); the known values `z(1), …, z(19)` and the bounds `6 ≤ z(20) ≤ 7` are due to earlier authors as documented on the problem page. The open draft [PR #41](https://github.com/TheJustinSunPrize/awards/pull/41) registers an English plan for the same target without Lean code; its history is preserved and no priority is claimed over it.
+The mathematical route follows the candidate computer-assisted proof "The cochromatic number of graphs on twenty vertices: z(20) = 6" published in the GitHub repository `ipitchford/z20-cochromatic` (author identified there only by that account; the document states no license, so it is cited, not reproduced) ([revision 8dc4b8cd](https://github.com/ipitchford/z20-cochromatic/blob/8dc4b8cd31f4323d6a032752f4cfd69c06d5ca90/z20_proof_paper.md)); that document was used as the source of the reduction strategy only, and none of its computations or certificates is an input to the Lean proof, which recomputes and proves every step. The two sixteen-vertex Ramsey (4,4) cores used as fixed targets of the classification are the two known such graphs; the proof re-derives everything it needs about them from their adjacency data and does not assume their uniqueness. The small Ramsey graph representatives are adapted from Brendan McKay's [Ramsey graph data](https://users.cecs.anu.edu.au/~bdm/data/ramsey.html), released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); the data were converted into Lean literals, and their completeness as catalogs is proved in Lean rather than taken from the data. The problem is Erdős's (#758); the known values `z(1), …, z(19)` (in particular `z(12) = 4`, established computationally by Bhavik Mehta) and the bounds `6 ≤ z(20) ≤ 7` are due to earlier authors as documented on the problem page; the problem page records the exact value of `z(20)` as unknown, and the cited publication [Gi86] does not contain it. The open draft [PR #41](https://github.com/TheJustinSunPrize/awards/pull/41) registers an English plan for the same target without Lean code; its history is preserved and no priority is claimed over it.
 
 All Lean proofs in this package were written for this formalization, with OpenAI Codex (GPT-5.6 Astra/Sol) assistance for the original development and Claude Code (Claude Fable 5.1 and Claude Opus) assistance for its completion and verification; the contribution sought is the formalization, not a new mathematical discovery. No first-formalization priority or entitlement to an award is claimed. This is a self-submission with a direct interest in the review outcome.
 

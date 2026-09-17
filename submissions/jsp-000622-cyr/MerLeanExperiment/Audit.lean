@@ -2,6 +2,9 @@ import MerLeanExperiment.Main
 import MerLeanExperiment.ModelAdapters
 
 #print axioms cochromatic_twenty
+#print axioms cochromatic_twelve
+#print axioms cochromatic_twelve_on_finite_type
+#print axioms CochromaticTwenty.paley17OnTwelve_lowerBound
 #print axioms CochromaticTwenty.universal_six_upperBound
 #print axioms CochromaticTwenty.paley17_lowerBound
 #print axioms CochromaticTwenty.fin8_hasCocoloring_three
