@@ -1,0 +1,30 @@
+Local exported-package verification; upstream dependency caches used.
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+✔ [8745/8747] Built Proof.Main (3.1s)
+✔ [8746/8747] Built Proof (2.9s)
+Build completed successfully (8747 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos364.exists_consecutive_powerful_gt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos364.infinite_consecutive_powerful' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos364.exists_pell_gt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos364.powerful_eight_mul_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos364.powerful_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos364.not_four_consecutive_powerful' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Erdos364.Powerful : ℕ → Prop :=
+fun n => ∀ (p : ℕ), Nat.Prime p → p ∣ n → p ^ 2 ∣ n
+exit=0
+
+$ lake env lean Challenge.lean
+Challenge.lean:16:8: warning: declaration uses `sorry`
+Challenge.lean:19:8: warning: declaration uses `sorry`
+Challenge.lean:22:8: warning: declaration uses `sorry`
+Challenge.lean:25:8: warning: declaration uses `sorry`
+Challenge.lean:28:8: warning: declaration uses `sorry`
+Challenge.lean:31:8: warning: declaration uses `sorry`
+exit=0
