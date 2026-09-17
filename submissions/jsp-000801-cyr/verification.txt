@@ -1,0 +1,30 @@
+Local exported-package verification; upstream dependency caches used.
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+✔ [8746/8748] Built Proof.Main (3.5s)
+✔ [8747/8748] Built Proof (3.2s)
+Build completed successfully (8748 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos963.log_three_le_f' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos963.exists_dissociated_subset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos963.exists_dissociated_subset_log' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos963.f_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos963.exists_dissociated_subset_f' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Erdos963.Dissociated : Finset ℝ → Prop :=
+fun B => ∀ S ⊆ B, ∀ T ⊆ B, ∑ x ∈ S, x = ∑ x ∈ T, x → S = T
+def Erdos963.f : ℕ → ℕ :=
+fun n => sSup {k | ∀ (A : Finset ℝ), A.card = n → ∃ B ⊆ A, Dissociated B ∧ k ≤ B.card}
+exit=0
+
+$ lake env lean Challenge.lean
+Challenge.lean:21:8: warning: declaration uses `sorry`
+Challenge.lean:24:8: warning: declaration uses `sorry`
+Challenge.lean:27:8: warning: declaration uses `sorry`
+Challenge.lean:31:8: warning: declaration uses `sorry`
+Challenge.lean:34:8: warning: declaration uses `sorry`
+exit=0
