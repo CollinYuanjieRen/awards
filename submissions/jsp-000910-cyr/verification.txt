@@ -1,0 +1,5 @@
+Local verification 2026-09-17: lake build success (8747 jobs); Audit.lean -> choose_23_5_no_small_prime [propext], choose_23_5_coprime_six no axioms (subset of allowed); Challenge.lean two sorry (statement-only comparator); no forbidden tokens in Jsp910/Binomial.lean. C(23,5)=33649=7*11*19*23, no prime factor < 5.
+SHA-256 sources:
+d112056a03252c6fd3d65696517b758755b0729d7e77a1250e4c7ef92d85c867  sources/jsp-000910.md
+39b843168e5858af3f5d5befd1521c528858c74bf82fd8c6138d264794ebc5ba  sources/witness.txt
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.

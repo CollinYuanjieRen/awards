@@ -1,0 +1,3 @@
+import Jsp910
+#print axioms BinomNoSmallPrime.choose_23_5_no_small_prime
+#print axioms BinomNoSmallPrime.choose_23_5_coprime_six

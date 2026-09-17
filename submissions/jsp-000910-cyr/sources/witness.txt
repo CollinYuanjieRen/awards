@@ -1,0 +1,3 @@
+Scoped certificate for JSP-000910 (binomial coefficient with no small prime factor).
+C(23,5) = 33649 = 7 * 11 * 19 * 23. Its prime factors are 7,11,19,23, all >= 5. In particular no prime
+< 5 divides C(23,5) (equivalently gcd(C(23,5), 6) = 1, so neither 2 nor 3 divides it). (Verified.)
