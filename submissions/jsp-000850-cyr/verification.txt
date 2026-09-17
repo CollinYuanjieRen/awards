@@ -1,0 +1,32 @@
+Local exported-package verification; upstream dependency caches used.
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+✔ [8746/8748] Built Proof.Main (3.2s)
+✔ [8747/8748] Built Proof (3.1s)
+Build completed successfully (8748 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos1020.not_exists_lt_and_ne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1020.f_eq_choose_of_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1020.not_hasMatching_of_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1020.f_le_choose' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1020.card_le_f' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Erdos1020.IsUniform : {n : ℕ} → ℕ → Finset (Finset (Fin n)) → Prop :=
+fun {n} r H => ∀ e ∈ H, e.card = r
+def Erdos1020.HasMatching : {n : ℕ} → ℕ → Finset (Finset (Fin n)) → Prop :=
+fun {n} k H => ∃ M ⊆ H, M.card = k ∧ (↑M).PairwiseDisjoint id
+def Erdos1020.f : ℕ → ℕ → ℕ → ℕ :=
+fun n r k => {H | IsUniform r H ∧ ¬HasMatching k H}.sup Finset.card
+exit=0
+
+$ lake env lean Challenge.lean
+Challenge.lean:27:8: warning: declaration uses `sorry`
+Challenge.lean:30:8: warning: declaration uses `sorry`
+Challenge.lean:33:8: warning: declaration uses `sorry`
+Challenge.lean:37:8: warning: declaration uses `sorry`
+Challenge.lean:40:8: warning: declaration uses `sorry`
+exit=0
