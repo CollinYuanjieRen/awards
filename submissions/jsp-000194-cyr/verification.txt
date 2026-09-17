@@ -1,7 +1,7 @@
 $ lake build
-✔ [8754/8756] Built Erdos210Ordinary.Main (3.2s)
-✔ [8755/8756] Built Erdos210Ordinary (3.1s)
-Build completed successfully (8756 jobs).
+✔ [8756/8758] Built Erdos210Ordinary.Main (3.2s)
+✔ [8757/8758] Built Erdos210Ordinary (2.9s)
+Build completed successfully (8758 jobs).
 exit=0
 
 $ lake env lean Audit.lean
@@ -9,6 +9,9 @@ $ lake env lean Audit.lean
 'Erdos210.erdos_210' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Erdos210.erdos_210_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Erdos210.le_f' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos210.erdos_210_motzkin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos210.le_f_motzkin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos210.ncard_realized_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Erdos210.card_le_of_notCollinear' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Erdos210.ordinary_of_visible' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Erdos210.not_mem_W_of_conn_missing' depends on axioms: [propext, Classical.choice, Quot.sound]

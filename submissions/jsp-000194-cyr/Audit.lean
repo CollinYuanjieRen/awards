@@ -6,6 +6,9 @@ open Erdos210
 #print axioms Erdos210.erdos_210
 #print axioms Erdos210.erdos_210_bound
 #print axioms Erdos210.le_f
+#print axioms Erdos210.erdos_210_motzkin
+#print axioms Erdos210.le_f_motzkin
+#print axioms Erdos210.ncard_realized_le
 #print axioms Erdos210.card_le_of_notCollinear
 #print axioms Erdos210.ordinary_of_visible
 #print axioms Erdos210.not_mem_W_of_conn_missing
@@ -29,6 +32,15 @@ example (P : Finset (ℝ × ℝ)) (hP : ¬ Collinear ℝ (P : Set (ℝ × ℝ)))
 
 /-- Hence `n ≤ 2 f(n) + 2^{f(n)}` for `n ≥ 3`. -/
 example (n : ℕ) (hn : 3 ≤ n) : n ≤ 2 * f n + 2 ^ f n := Erdos210.le_f n hn
+
+/-- Motzkin's bound: a non-collinear finite set with `m` ordinary lines has at most
+`2m + 1 + m(m+1)/2` points, so `f(n) ≥ √(2n) − O(1)`. -/
+example (P : Finset (ℝ × ℝ)) (hP : ¬ Collinear ℝ (P : Set (ℝ × ℝ))) :
+    P.card ≤ 2 * (ordinaryLines P).ncard +
+      (1 + (ordinaryLines P).ncard * ((ordinaryLines P).ncard + 1) / 2) :=
+  Erdos210.erdos_210_motzkin P hP
+
+example (n : ℕ) (hn : 3 ≤ n) : n ≤ 2 * f n + (1 + f n * (f n + 1) / 2) := Erdos210.le_f_motzkin n hn
 
 /-- `f n` is attained: for `n ≥ 3` there are `n` points of the plane not all on a line. -/
 example (n : ℕ) (hn : 3 ≤ n) : ∃ P : Finset (ℝ × ℝ), P.card = n ∧ ¬ Collinear ℝ (P : Set (ℝ × ℝ)) :=

@@ -1,4 +1,5 @@
 import Erdos210Ordinary.Count
+import Erdos210Ordinary.Count2
 import Erdos210Ordinary.Bridge
 import Erdos210Ordinary.Witness
 
@@ -43,5 +44,18 @@ rate `n ≤ 2 f(n) + 2^{f(n)}` for every `n ≥ 3`, and `f(n) → ∞`. -/
 theorem erdos_210_closed :
     (∀ n : ℕ, 3 ≤ n → n ≤ 2 * f n + 2 ^ f n) ∧ Filter.Tendsto f Filter.atTop Filter.atTop :=
   ⟨fun n hn => le_f n hn, erdos_210⟩
+
+/-- **Motzkin's bound.** The `2 ^ m` of `erdos_210_bound` replaced by the number of cells of an
+arrangement of `m` lines, `1 + m (m + 1) / 2`. -/
+theorem erdos_210_motzkin (P : Finset (ℝ × ℝ)) (hP : ¬ Collinear ℝ (P : Set (ℝ × ℝ))) :
+    P.card ≤ 2 * (ordinaryLines P).ncard +
+      (1 + (ordinaryLines P).ncard * ((ordinaryLines P).ncard + 1) / 2) := by
+  rw [ncard_ordinaryLines]
+  exact card_le_of_notCollinear_motzkin ((notCollinear_iff P).2 hP)
+
+theorem le_f_motzkin (n : ℕ) (hn : 3 ≤ n) : n ≤ 2 * f n + (1 + f n * (f n + 1) / 2) := by
+  obtain ⟨P, hcard, hP, hf⟩ := f_mem n hn
+  have hbound := erdos_210_motzkin P hP
+  rwa [hcard, hf] at hbound
 
 end Erdos210

@@ -23,11 +23,11 @@ namespace Erdos210
 
 open scoped Classical in
 /-- A choice of orientation for a two-element set of points. -/
-private noncomputable def rep (e : Finset (ℝ × ℝ)) : (ℝ × ℝ) × (ℝ × ℝ) :=
+noncomputable def rep (e : Finset (ℝ × ℝ)) : (ℝ × ℝ) × (ℝ × ℝ) :=
   if h : ∃ a b : ℝ × ℝ, a ≠ b ∧ e = {a, b} then (h.choose, h.choose_spec.choose) else (0, 0)
 
 /-- Defining property of `rep` on two-element sets. -/
-private theorem rep_spec {e : Finset (ℝ × ℝ)} (he : e.card = 2) :
+theorem rep_spec {e : Finset (ℝ × ℝ)} (he : e.card = 2) :
     (rep e).1 ≠ (rep e).2 ∧ e = {(rep e).1, (rep e).2} := by
   have h : ∃ a b : ℝ × ℝ, a ≠ b ∧ e = {a, b} := by
     obtain ⟨a, b, hab, rfl⟩ := Finset.card_eq_two.1 he
@@ -83,7 +83,7 @@ private theorem sameSide_of_sgn_eq {P : Finset (ℝ × ℝ)} {p q : ℝ × ℝ} 
   · exact absurd rfl hab
 
 /-- Lemma C: the sign vector is injective on the points of order zero. -/
-private theorem injOn_sgn {P : Finset (ℝ × ℝ)} (hP : NotCollinear P) :
+theorem injOn_sgn {P : Finset (ℝ × ℝ)} (hP : NotCollinear P) :
     Set.InjOn (sgn P) ↑(orderZero P) := by
   intro p hp q hq h
   have hp' : p ∈ orderZero P := Finset.mem_coe.1 hp
