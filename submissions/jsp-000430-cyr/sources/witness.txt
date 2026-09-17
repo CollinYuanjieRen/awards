@@ -1,0 +1,6 @@
+Scoped certificates for JSP-000430 (largest integer set with no three elements having equal pairwise LCMs).
+(1) Construction: the divisibility chain C = {1,2,4,8,16,32} has no three elements with equal pairwise LCMs:
+    for a<b<c in a chain a|b|c, lcm(a,b)=b, lcm(a,c)=c, lcm(b,c)=c, so equal pairwise LCMs would force b=c.
+    (Verified: none of the 20 triples of C has all three pairwise LCMs equal.)
+(2) Realizability of the forbidden configuration: {6,10,15} has lcm(6,10)=lcm(6,15)=lcm(10,15)=30.
+(Both verified independently.)

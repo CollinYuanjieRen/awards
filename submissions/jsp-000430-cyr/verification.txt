@@ -1,0 +1,5 @@
+Local verification 2026-09-17: lake build success (8747 jobs); Audit.lean -> C_no_equal_lcm_triple [propext,Classical.choice,Quot.sound], bad_triple no axioms (subset of allowed); Challenge.lean two sorry (statement-only comparator); no forbidden tokens in Jsp430/EqualLcm.lean. Chain {1,2,4,8,16,32} no equal-lcm triple; {6,10,15} all lcm 30.
+SHA-256 sources:
+55f82db0b225c70da567d1da58f51b2c56402ab568f75f702cfcf13b2bcd1a29  sources/jsp-000430.md
+f64f9c0adb58ad4bf4c7c60c833c56dfb107861b56a3df7006ab458993860e32  sources/witness.txt
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.
