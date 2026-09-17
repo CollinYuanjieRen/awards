@@ -1,0 +1,19 @@
+Local exported-package verification; upstream dependency caches used (shared read-only Mathlib install, symlinked .lake/packages, not committed).
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build   (fresh build of this directory performed earlier: "Build completed successfully (8752 jobs)"; this run replays it)
+Build completed successfully (8752 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos926.erdos_926' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos926.extremalNumber_Hk_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos926.erdos_926_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos926.card_edgeFinset_le_of_free' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos926.richGraph_cliqueFree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos926.isContained_of_rich' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos926.turan_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos926.poorOrd_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0
