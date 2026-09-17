@@ -1,0 +1,30 @@
+Local exported-package verification; upstream dependency caches used.
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+✔ [8746/8748] Built Proof.Main (3.4s)
+✔ [8747/8748] Built Proof (3.2s)
+Build completed successfully (8748 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos104.not_exists_unitCircleCount_gt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos104.three_mul_unitCircleCount_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos104.richCenters_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos104.exists_two_centers' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos104.three_mul_card_le_of_rich' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Erdos104.IsRichCenter : Finset (EuclideanSpace ℝ (Fin 2)) → EuclideanSpace ℝ (Fin 2) → Prop :=
+fun P c => 3 ≤ {p ∈ P | dist p c = 1}.card
+def Erdos104.unitCircleCount : Finset (EuclideanSpace ℝ (Fin 2)) → ℕ :=
+fun P => {c | IsRichCenter P c}.ncard
+exit=0
+
+$ lake env lean Challenge.lean
+Challenge.lean:22:8: warning: declaration uses `sorry`
+Challenge.lean:26:8: warning: declaration uses `sorry`
+Challenge.lean:30:8: warning: declaration uses `sorry`
+Challenge.lean:34:8: warning: declaration uses `sorry`
+Challenge.lean:39:8: warning: declaration uses `sorry`
+exit=0
