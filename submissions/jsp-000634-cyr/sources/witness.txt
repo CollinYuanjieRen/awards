@@ -1,0 +1,6 @@
+Scoped construction certificate for JSP-000634 (largest Sidon set among squares in a range).
+A Sidon set: all pairwise sums are distinct (equal sums force the same unordered pair).
+The six squares S = {1, 4, 9, 16, 25, 36} = {1^2, 2^2, 3^2, 4^2, 5^2, 6^2} form a Sidon set:
+for all a,b,c,d in S, a+b = c+d implies {a,b} = {c,d}. (Verified over all 4-tuples.)
+Each element is a perfect square. (Note: the full set of squares is not Sidon, e.g. 1^2+8^2 = 4^2+7^2 = 65;
+this certificate only exhibits a Sidon subset of squares.)

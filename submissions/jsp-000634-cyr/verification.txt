@@ -1,0 +1,5 @@
+Local verification 2026-09-17: lake build success (8747 jobs); Audit.lean -> S_sidon, S_all_squares both [propext, Classical.choice, Quot.sound]; Challenge.lean two sorry (statement-only comparator); no forbidden tokens in Jsp634/SidonSquares.lean. {1,4,9,16,25,36} Sidon set of squares.
+SHA-256 sources:
+d6efec27e12e2213520040ff26b0d64660167acdee1ffe6293b3ffeeef8ef2b9  sources/jsp-000634.md
+477321895cc40fbc201a3283a24ce32241dbef8aa298552ac10f5e7c2af88445  sources/witness.txt
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.
