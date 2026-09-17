@@ -1,0 +1,5 @@
+Scoped certificate for JSP-000783 (powerful numbers between consecutive squares).
+A powerful number: every prime in its factorization appears to exponent >= 2.
+Two distinct powerful numbers lie strictly between the consecutive squares 25 = 5^2 and 36 = 6^2:
+  27 = 3^3 (powerful), 32 = 2^5 (powerful), and 25 < 27 < 32 < 36.
+(Verified independently in Python.)

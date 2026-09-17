@@ -1,0 +1,5 @@
+Local verification 2026-09-17: lake build success (8747 jobs); Audit.lean -> powerful_27, powerful_32, powerful_pair_between_squares all [propext, Classical.choice, Quot.sound]; Challenge.lean one sorry (statement-only comparator); no forbidden tokens in Jsp783/Powerful.lean. 27=3^3 and 32=2^5 powerful, 25<27<32<36.
+SHA-256 sources:
+d8e2a1ae677e2333a371e790c42f064edb2e6be3b72247879513ed1762253cb3  sources/jsp-000783.md
+25cd9d71b0d94e9a0e78cb2d1532a816e1ffd246700016119f9cc15e4a2eedf8  sources/witness.txt
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.
