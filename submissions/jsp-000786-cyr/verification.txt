@@ -1,0 +1,5 @@
+Local verification 2026-09-17: lake build success (8747 jobs); Audit.lean -> tau_run_76, exists_distinct_tau_run_6 both [propext, Classical.choice, Quot.sound]; Challenge.lean two sorry (statement-only comparator); no forbidden tokens in Jsp786/TauRun.lean. tau(76..81)=[6,4,8,2,10,5] pairwise distinct.
+SHA-256 sources:
+46eea3d6e47fb2f294b295f6acecefcff777b798a327d63a09e968017fa8ad49  sources/jsp-000786.md
+2f3b0408370ed62f3f6339ca5773300424a3a70d8702326608878496c08bf3a3  sources/witness.txt
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.

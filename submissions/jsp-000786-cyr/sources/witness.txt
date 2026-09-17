@@ -1,0 +1,5 @@
+Scoped certificate for JSP-000786 (longest run of consecutive integers with pairwise distinct divisor counts).
+Let tau(n) = number of divisors of n. The six consecutive integers 76,77,78,79,80,81 have
+  tau(76)=6, tau(77)=4, tau(78)=8, tau(79)=2, tau(80)=10, tau(81)=5,
+which are pairwise distinct. Hence there is a run of 6 consecutive integers with distinct divisor counts,
+so the maximal run length is >= 6. (Verified independently in Python.)
