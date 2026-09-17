@@ -1,0 +1,35 @@
+Local exported-package verification; upstream dependency caches used.
+$ lake env lean --version
+Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
+exit=0
+
+$ lake build
+✔ [8745/8748] Built Proof.Defs (3.2s)
+✔ [8746/8748] Built Proof.Main (3.2s)
+✔ [8747/8748] Built Proof (3.0s)
+Build completed successfully (8748 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos287.not_forall_four_le_maxGap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos287.unitFractionRep_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos287.maxGap_example' does not depend on any axioms
+'Erdos287.exists_unitFractionRep_maxGap_eq_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Erdos287.UnitFractionRep : List ℕ → Prop :=
+fun l =>
+  List.IsChain (fun x1 x2 => x1 < x2) l ∧
+    1 < l.headI ∧
+      (List.map (fun n => n⁻¹) do
+            let a ← l
+            pure ↑a).sum =
+        1
+def Erdos287.maxGap : List ℕ → ℕ :=
+fun l => List.foldr max 0 (List.map (fun p => p.2 - p.1) (l.zip l.tail))
+exit=0
+
+$ lake env lean Challenge.lean
+Challenge.lean:22:8: warning: declaration uses `sorry`
+Challenge.lean:26:8: warning: declaration uses `sorry`
+Challenge.lean:29:8: warning: declaration uses `sorry`
+Challenge.lean:32:8: warning: declaration uses `sorry`
+exit=0
