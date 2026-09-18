@@ -4,7 +4,7 @@ import CameronErdos.Fourier.Basic
 # Granularizations, good lengths and the smoothing function `g`
 
 This file formalizes the definitions and elementary lemmas of Green,
-*The Cameron–Erdős conjecture* (2004), §3 (see `ref/green-cameron-erdos-0304058.pdf`, pp. 3–4):
+*The Cameron–Erdős conjecture* (2004), §3 (see arXiv math/0304058, pp. 3–4):
 the partition of `ZMod p` into arithmetic progressions of common difference `d`, the
 granularization `A'` of a set `A`, the notion of a *good length*, and the smoothing function
 `g` together with Green's inequalities (6) and (7).

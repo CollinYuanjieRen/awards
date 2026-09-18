@@ -5,7 +5,7 @@ import CameronErdos.CE.GFunction
 # `Thm_CE_IntervalCount`: `T(n) = O(2^{n/2})`
 
 This file assembles the two halves of the Cameron–Erdős argument as recorded in Green's
-note *An argument of Cameron and Erdős* (`ref/green-ce-notes.pdf`):
+note *An argument of Cameron and Erdős* ([Gr-CE] in the README):
 
 * the exact count `intervalSumFreeCount_eq'` of `CameronErdos/CE/Basic.lean`,
   `T(n) = Σ_{S ⊆ B} 2^{|U ∖ (S+S)|}` with `B = ceBlock n` and `U = ceUpper n`, and

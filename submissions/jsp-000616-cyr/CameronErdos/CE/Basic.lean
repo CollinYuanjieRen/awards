@@ -4,7 +4,7 @@ import CameronErdos.Statement
 # The Cameron–Erdős interval `[⌈(n+1)/3⌉, n]` (JSP-000616)
 
 This file formalises the combinatorial core of the argument of Cameron and Erdős as
-recorded in Green's note *An argument of Cameron and Erdős* (`ref/green-ce-notes.pdf`,
+recorded in Green's note *An argument of Cameron and Erdős* ([Gr-CE] in the README,
 page 1): counting the sum-free subsets of the top third `[⌈(n+1)/3⌉, n]` of `[1, n]`.
 
 Write `m = topThird n = ⌈(n+1)/3⌉` and split the interval as `Icc m n = B ∪ U` with

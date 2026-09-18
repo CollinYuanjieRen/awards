@@ -27,16 +27,17 @@ if the inequality is strict, then we in fact have `|s + H| + |t + H| ≤ |s + t|
 
 ## Porting note
 
-Ported to Mathlib 1fe0a51a for JSP-000616 (Cameron-Erdős campaign); changes: none to the
-mathematical content -- only the module-system preamble was adapted (`module` / `public import`
-/ `public section` of Lean v4.35.0-rc1 replaced by plain `import`, as Lean 4.34.0-rc1's Mathlib
-is not built with the module system) and the import of the stabilizer file was repointed to
-`CameronErdos.Kneser.MulStab`. All declarations, statements and proofs are verbatim from the
-source.
-
-Source: `MiscYD/AddCombi/Kneser/Kneser.lean` of <https://github.com/YaelDillies/misc-yd>
-(Apache-2.0), cross-checked against `src/latest/ErdosProblems/Erdos13/Erdos13Kneser.lean` of
-plby/lean-proofs @ 8822f7ddef30fadbd92e1c6ab4ed897af356af5e.
+Ported to Mathlib 1fe0a51a for JSP-000616 (Cameron-Erdős campaign). Source: `MiscYD/AddCombi/Kneser/Kneser.lean`
+of <https://github.com/YaelDillies/misc-yd> (Apache-2.0), repository HEAD `765cef8bd924f11833a8a2d5f876f0cd630bcc2d`
+at the time of the port (the file was last changed there in commit `8bf8e09b1d7f5175b4e7ac17d5db59176752eb7b`,
+2026-08-16). Changes made here, all syntactic, none to the mathematical content:
+the module-system preamble (`module` / `public import` / `public section` of Lean v4.35.0-rc1) was replaced by plain
+`import`s, as Lean 4.34.0-rc1's Mathlib is not built with the module system; the import of the stabilizer file was
+repointed to `CameronErdos.Kneser.MulStab`; and a `#print axioms` audit block was appended at the end of the file.
+All declarations, statements and proofs are otherwise verbatim from the source (including the
+`set_option linter.dupNamespace false in` of the original). The port was cross-checked against the copy of the same
+misc-yd file kept as `src/latest/ErdosProblems/Erdos13/Erdos13Kneser.lean` in plby/lean-proofs @
+8822f7ddef30fadbd92e1c6ab4ed897af356af5e; no code from that repository is used.
 -/
 
 open Function MulAction

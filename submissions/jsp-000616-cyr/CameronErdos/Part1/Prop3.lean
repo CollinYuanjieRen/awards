@@ -4,7 +4,7 @@ import CameronErdos.Part1.Granularization
 # Green's Proposition 3
 
 This file formalizes Proposition 3 of Green, *The Cameron–Erdős conjecture* (2004)
-(see `ref/green-cameron-erdos-0304058.pdf`, pp. 4–5):
+(see arXiv math/0304058, pp. 4–5):
 
 > Suppose that `d` is a good length for `A`.  Then the granularization `A'` has the property
 > that `A + A` contains all `x` for which `(A' ∗ A')(x) ≥ ε₂ p`, with at most `ε₃ p` exceptions.

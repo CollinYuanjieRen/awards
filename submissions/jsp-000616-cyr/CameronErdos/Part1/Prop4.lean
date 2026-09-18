@@ -5,7 +5,7 @@ import CameronErdos.Counting.Basic
 # Green's Proposition 4
 
 This file formalizes Proposition 4 of Green, *The Cameron–Erdős conjecture* (2004)
-(see `ref/green-cameron-erdos-0304058.pdf`, pp. 5–6):
+(see arXiv math/0304058, pp. 5–6):
 
 > If `A ⊆ ZMod p` is sum-free and `d` is a good length for `A`, then the granularization
 > `A' = ⋃_{i ∈ T} I i` has at most `ε p²` additive triples.

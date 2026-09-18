@@ -4,7 +4,7 @@ import CameronErdos.Counting.Basic
 # Lev–Łuczak–Schoen: popular differences (Proposition 1)
 
 This file formalises Proposition 1 of Lev–Łuczak–Schoen, *Sum-free sets in abelian groups*,
-Israel J. Math. **125** (2001) 347–367, §4 (`ref/lls-sfab.pdf`, pp. 5–6), together with the
+Israel J. Math. **125** (2001) 347–367, §4 (Israel J. Math. 125 (2001), pp. 5–6), together with the
 set-theoretic form of the graph-theoretic Lemma 6 that it relies on.  It is Green's Lemma 10
 in the Cameron–Erdős campaign (plan node `Lem10_LevLuczakSchoen`).
 

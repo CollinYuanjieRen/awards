@@ -4,7 +4,7 @@ import CameronErdos.Part1.Params
 /-!
 # `Lem_SmallBinomial` — small binomial sums are subexponential
 
-Green, *The Cameron–Erdős conjecture* (`ref/green-cameron-erdos-0304058.pdf`) needs, at several
+Green, *The Cameron–Erdős conjecture* (arXiv math/0304058) needs, at several
 places, that the number of subsets of `[N]` of size at most `γ N` is `2^{o(N)}` once `γ = γ(N)`
 tends to `0`.  Quantitatively this is the classical entropy bound in the crude Chernoff form
 

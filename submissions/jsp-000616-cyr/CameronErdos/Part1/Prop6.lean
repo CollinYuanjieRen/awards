@@ -8,7 +8,7 @@ import CameronErdos.Part1.ParamsMore
 # Proposition 6 (ii): every sum-free set is covered by the container family
 
 This file formalizes part (ii) of `Prop6_Family` from Green, *The Cameron–Erdős conjecture*
-(2004), §3 (see `ref/green-cameron-erdos-0304058.pdf`, pp. 6–7), and assembles parts (i),
+(2004), §3 (see arXiv math/0304058, pp. 6–7), and assembles parts (i),
 (ii), (iii) into the eventual container statement used by the counting argument.
 
 The covering step `CameronErdos.coverage_core` is Green's argument: given a sum-free

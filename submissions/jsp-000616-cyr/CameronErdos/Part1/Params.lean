@@ -4,7 +4,7 @@ import CameronErdos.Statement
 /-!
 # `Lem_ParamChoice` — the parameter choice of Green (2004), §3
 
-Green, *The Cameron–Erdős conjecture* (`ref/green-cameron-erdos-0304058.pdf`, p. 7):
+Green, *The Cameron–Erdős conjecture* (arXiv math/0304058, p. 7):
 
 > It is an easy but slightly tedious task to check that if we put `ε = (log N)^{-1/11}` and
 > `M = ⌊N exp(−(log N)^{1/12})⌋` then, at least for `N` sufficiently large, `A` has at least

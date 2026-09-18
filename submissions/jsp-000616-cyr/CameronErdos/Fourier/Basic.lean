@@ -5,7 +5,7 @@ import Mathlib
 
 This file sets up the small Fourier API used throughout the Cameron–Erdős formalization,
 following Green, *The Cameron–Erdős conjecture* (2004), §3 (see
-`ref/green-cameron-erdos-0304058.pdf`, pp. 2–3).
+arXiv math/0304058, pp. 2–3).
 
 ## Normalization
 

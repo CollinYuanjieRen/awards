@@ -7,7 +7,7 @@ import CameronErdos.Assembly
 # Proposition 12: `f(N) ≤ 2^{(1/2 + θ)N}` for every `θ > 0`
 
 This file formalises Proposition 12 of Green, *The Cameron–Erdős conjecture* (2004)
-(`ref/green-cameron-erdos-0304058.pdf`), originally due to Alon and to
+(arXiv math/0304058), originally due to Alon and to
 Calkin–Erdős–Granville: for every `θ > 0` the number of sum-free subsets of `[1, N]`
 is eventually at most `2^{(1/2 + θ)N}`.
 

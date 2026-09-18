@@ -4,7 +4,7 @@ import CameronErdos.Part1.SmallBinomial
 /-!
 # `Lem_Cor13_Numerics` — the real-exponent bookkeeping for Corollary 13
 
-Green, *The Cameron–Erdős conjecture* (`ref/green-cameron-erdos-0304058.pdf`), Corollary 13.
+Green, *The Cameron–Erdős conjecture* (arXiv math/0304058), Corollary 13.
 The proof of Corollary 13 splits the exceptional sum-free sets into four classes, each of which
 is counted by a product of the shape `2^{θN} · (polynomial) · 3^{N/8} · 2^{…}`.  This file does
 the arithmetic once and for all: every class is eventually bounded by `2^{0.498 N}`, and four

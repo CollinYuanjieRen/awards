@@ -6,7 +6,7 @@ import CameronErdos.Part2.Cor13Even
 # The container family `F` (Green 2004, §3)
 
 This file formalizes `Def_Family` and parts (i) and (iii) of `Prop6_Family` from Green,
-*The Cameron–Erdős conjecture* (2004), §3 (see `ref/green-cameron-erdos-0304058.pdf`,
+*The Cameron–Erdős conjecture* (2004), §3 (see arXiv math/0304058,
 pp. 6–7).
 
 Fix `N` and a prime `p ∈ [2N, 4N]`.  Green's family `F` consists of the sets

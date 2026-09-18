@@ -6,7 +6,7 @@ import CameronErdos.CE.IntervalCount
 # `Thm_Assembly`: from the exceptional-set bound to the Cameron–Erdős conjecture
 
 This file performs the final assembly of Green's proof of the Cameron–Erdős conjecture
-(`ref/green-cameron-erdos-0304058.pdf`).  Every sum-free set `A ⊆ [1, N]` falls into one
+(arXiv math/0304058).  Every sum-free set `A ⊆ [1, N]` falls into one
 of three classes:
 
 * `A` consists entirely of odd numbers — there are `2 ^ ⌈N/2⌉` such sets

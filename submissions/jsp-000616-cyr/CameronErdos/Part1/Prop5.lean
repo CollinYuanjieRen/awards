@@ -5,7 +5,7 @@ import CameronErdos.Part1.Params
 # Green's Proposition 5: existence of a good length
 
 This file formalizes Proposition 5 of Green, *The Cameron–Erdős conjecture* (2004)
-(`ref/green-cameron-erdos-0304058.pdf`, p. 6): if `p` is large compared with `4L` raised to
+(arXiv math/0304058, p. 6): if `p` is large compared with `4L` raised to
 the power `256 α² ε₁^{-4} ε₂^{-2} ε₃^{-1}`, then `A ⊆ ZMod p` admits a nonzero *good length*
 `d` in the sense of `CameronErdos.IsGoodLength`.
 
