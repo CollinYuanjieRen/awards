@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "path": "JSP620/External/Erdos754.lean",
+      "repository": "https://github.com/plby/lean-proofs",
+      "commit": "8822f7ddef30fadbd92e1c6ab4ed897af356af5e",
+      "source_path": "src/latest/ErdosProblems/Erdos754.lean",
+      "url": "https://raw.githubusercontent.com/plby/lean-proofs/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos754.lean",
+      "source_sha256": "283f05a45942be33aa589020a8e26fc0f253409d909b3bac77c81ae3bfbca7bf",
+      "source_import": "import ErdosProblems.Erdos755",
+      "adapted_import": "import JSP620.External.Erdos755",
+      "adapted_sha256": "23572f87785dd8cf4b5abd07bfc34f97932c2626ae5a849fdefb90f5ee316bcb",
+      "informal_author": "Konrad J. Swanepoel",
+      "formal_authors": [
+        "Codex",
+        "GPT-5.6 Sol"
+      ],
+      "license": "No explicit license grant for this file was found at the pinned source; it is fetched from its original public location and is not redistributed by this package."
+    }
+  ]
+}

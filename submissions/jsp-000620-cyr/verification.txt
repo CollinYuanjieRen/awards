@@ -35,3 +35,9 @@ exit=0
 $ grep -rnE "sorry|admit|^\s*axiom|native_decide|maxHeartbeats|maxRecDepth|unsafe" JSP620 Audit.lean
 (no matches)
 exit=0
+
+Packaging repair verification (2026-09-18):
+- `JSP620/External/Erdos754.lean` is generated and gitignored rather than redistributed.
+- `python3 fetch_sources.py` verified the pinned original and adapted SHA-256 values.
+- The historical self-authored challenge transcript above is retained only as history and is not used as proof or comparator evidence at this pin.
+- The stale comparator configuration `Comparator/Erdos754Lower.json` and the `Challenge` library entry in `lakefile.toml` (both referring to the removed self-authored challenge module) were dropped; the proof library `JSP620` and every Lean source are unchanged.
