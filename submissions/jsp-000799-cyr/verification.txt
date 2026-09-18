@@ -1,0 +1,19 @@
+Local verification 2026-09-18 (package export): lake build success (8753 jobs); no sorry/native_decide/axiom/opaque/unsafe/implemented_by/partial/set_option in Jsp799/*.lean; Target.lean (statement-only, 1 sorry, not imported) has definitions byte-identical to Jsp799/Defs.lean and its statement discharged verbatim by Erdos960.erdos_960.
+Comparator: NOT-AVAILABLE (no organizer Lean target; erdosproblems.com/960 'Formalised statement: No'; formal-conjectures has no ErdosProblems/960.lean as of 2026-09-18). Independent adversarial alignment audit: PASS (numerical verification of the configuration for m = 12, s = 0..5).
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.
+SHA-256 of the mathematical source (arXiv:2604.06609 PDF): 0f984c2e94ccef15cad8a7145b026de294ea8f771f90a3bdb907ff1a1fbfb3fa
+SHA-256 ref/erdosproblems-960.txt: e6806c3578441b02563d8a8efd9780cbd97a8c1c7d83626a7dd2a9d48671329e
+SHA-256 ref/jsp-000799-catalog.md: 3aedbde030f4a79fd322d1d9cac51e1aacf8d7763b7b6e152e60e2f954b7a2c5
+
+lake env lean Audit.lean:
+'Erdos960.erdos_960' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos960.f_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos960.f_not_isLittleO' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos960.f_not_isBigO_linear' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos960.not_hasOrdinaryClique_config' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos960.noKCollinear_config' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos960.ordCount_config_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos960.card_config' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos960.f_eq_zero_of_k_le_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos960.f_eq_zero_of_k_eq_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos960.f_two_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
