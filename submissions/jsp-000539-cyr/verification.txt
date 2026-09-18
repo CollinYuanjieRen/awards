@@ -1,0 +1,12 @@
+Local verification 2026-09-18 (package export): lake build success from a clean build directory (8752 jobs); no sorry/admit/native_decide/axiom/opaque/unsafe/implemented_by/partial/set_option in Jsp539/*.lean, Jsp539.lean, Audit.lean; Target.lean (statement-only, 2 sorry, not imported) has definitions identical to Jsp539/Defs.lean (and to the public comparator challenge plby/lean-proofs ComparatorChallenges/ErdosProblems/Erdos664.lean) and its statements are discharged verbatim by Erdos664.erdos_664 and Erdos664.not_erdos_664.
+Comparator: no organizer Lean target (erdosproblems.com/664 'Formalised statement: No'; formal-conjectures has no ErdosProblems/664.lean as of 2026-09-18); the third-party plby comparator challenge statement is discharged literally. Independent adversarial alignment audit and independent original-target scope review: see the submission record.
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.
+SHA-256 ref/alon-remark191.pdf: e2c81a970fb57ba2f5f89f0ad68dedba01202656a00474b14e54fd14c055799d
+SHA-256 ref/erdosproblems-664.txt: a7d235bd488f3fe90db22f633799241af42b923d79a4c35603d041e2d40029de
+SHA-256 ref/jsp-000539-catalog.md: 4b04afe61768d7246bee542799a653225887e818dc3b5ab3c52807fd3d5423c4
+SHA-256 ref/plby-Erdos664-challenge.lean: 9b02158e5b8d7fc94b519d7607cf6f82d12b126bf448147c6e5f9951808da56f
+
+lake env lean Audit.lean:
+'Erdos664.erdos_664' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos664.not_erdos_664' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos664.counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,352 @@
+Blocking partial designs and block-compatible sequences
+Noga Alon, Princeton, nalon@math.princeton.edu
+Abstract
+We prove that there is a partial design with n vertices in which each block is of size at
+√
+least Ω( n), so that every set that intersects all blocks contains at least Ω(log n) points of
+one of them. We also show that the number of sequences n ≥ x1 ≥ x2 ≥ xm ≥ 2 so that there
+1/2
+is a block design on n elements with blocks of sizes x1 , x2 , . . . , xm is at least 2Ω(n log n) .
+This settles two problems of Erdős.
+
+1
+
+Results
+
+We consider two related open problems of Erdős on block designs. Recall that a family of subsets
+A1 , A2 . . . , Am of a finite set X is a (pairwise balanced) block design if every pair of distinct
+elements of X is contained in exactly one of the subsets Ai . It is a partial design if every pair of
+distinct elements of X is contained in at most one of the subsets Ai (equivalently, if |Ai ∩ Aj | ≤ 1
+for all 1 ≤ i < j ≤ m.)
+The first problem deals with partial designs and appears in [6], see also [4], problem number
+664.
+Problem 1.1. Is it true that for every fixed positive constant c < 1 there is a finite constant
+C = C(c) so that the following holds. For every m and n and for every family of subsets
+√
+{A1 , A2 , . . . , Am } of [n] = {1, 2, . . . , n} that satisfies |Ai | > c n for all 1 ≤ i ≤ m, and |Ai ∩
+Aj | ≤ 1 for all 1 ≤ i < j ≤ m, there is a subset B ⊂ [n] so that 0 < |B ∩ Ai | ≤ C for all
+1 ≤ i ≤ m?
+The second problem appears in [5], page 35, see also [4], problem number 732.
+Problem 1.2. Call a sequence n ≥ x1 ≥ x2 ≥ . . . ≥ xm ≥ 2 block-compatible for n if there
+is a pairwise balanced block design A1 , A2 , . . . , Am of m subsets of [n] such that |Ai | = xi for
+1/2
+1 ≤ i ≤ m. Is there an absolute constant c > 0 so that for all large n there are at least ecn log n
+sequences that are block-compatible for n ?
+In this note we show that the answer to the first problem is “no” and the answer to the
+second is “yes”. The proofs are short, based on appropriate modifications of the family of lines
+of a projective plane which form a block design with m = n = q 2 + q + 1 subsets of cardinality
+√
+q + 1 = (1 + o(1)) n of a set of size n = q 2 + q + 1. It is well known that such a plane exists
+for any prime power q.
+
+1
+
+2
+
+Proofs
+
+Throughout the proofs we assume, whenever this is needed, that the parameter n is sufficiently
+large. All logarithms are in base 2, unless otherwise specified. To simplify the presentation we
+omit all floor and ceiling signs whenever these are not crucial. We make no serious attempt to
+optimize the absolute constants that appear in the proofs.
+The following result settles Problem 1.1
+Theorem 2.1. Let q be a (large) prime power and put m = n = q 2 + q + 1. Then there is a
+√
+partial design consisting of m subsets A1 , A2 , . . . , Am of an n element set P , so that |Ai | > 0.4 n
+for all 1 ≤ i ≤ m, |Ai ∩ Aj | ≤ 1 for all 1 ≤ i < j ≤ m, and for any subset B of P that has a
+nonempty intersection with all sets Aj , there is some 1 ≤ i ≤ m so that |B ∩ Ai | ≥ 0.1 log n.
+Proof. Let P be the set of n = q 2 + q + 1 points of a projective plane of order q, and let
+L1 , L1 , . . . , Lm ⊂ P be the sets of points of the m lines of this plane. Thus each point lies in
+q + 1 lines and each line is of size q + 1. For each 1 ≤ i ≤ m let Ai be a random subset of Li
+obtained by picking every point of Li , randomly and independently, to lie in Ai with probability
+1/2. Note that the choices of distinct subsets Ai here are independent. By the standard estimates
+for Binomial distributions (c.f., e.g., [1], Appendix A) together with the union bound, with high
+probability (that is, with probability tending to 1 as q (or n) tend to infinity) the following
+conditions hold:
+√
+1. Each set Ai is of cardinality (1/2 + o(1)) n.
+√
+2. Each point lies in (1/2 + o(1)) n of the sets Ai .
+3. |Ai ∩ Aj | ≤ 1 for all 1 ≤ i < j ≤ m.
+√
+Claim 2.2. With high probability there is no subset B ⊂ P of cardinality at most 0.3 n log n
+that intersects all the sets Ai .
+√
+Proof: Let B be a fixed set of cardinality at most 0.3 n log n. Consider the set of pairs
+S = {(b, Li ) : b ∈ B, 1 ≤ i ≤ m, b ∈ Li }. Clearly |S| = |B|(q + 1). If J = J(B) is the set of all
+indices i so that |B ∩ Li | ≥ 0.4 log n then |S| ≥ |J|0.4 log n. Thus
+|J| ≤
+
+|B|(q + 1)
+≤ (3/4 + o(1))n < 0.8n.
+0.4 log n
+
+Therefore there are at least 0.2n lines Li that contain less that 0.4 log n points of B. For each such
+line Li , the probability that Ai contains no point of B is at least 2−0.4 log n ≥ n−0.4 . Therefore,
+the probability that there is no such line (that is, that B intersects all these sets Ai ) is at most
+0.6
+
+(1 − 1/n0.4 )0.2n ≤ e−0.2n .
+2
+
+Since the total number of possible sets B as above is smaller than
+√
+
+√
+
+2
+
+0.6
+
+0.6
+
+n0.3 n log n = 20.3 n(log n) = o(20.2n ) ( = o(e0.2n ) ),
+the union bound implies the assertion of the claim.
+Returning to the proof of the theorem, fix a choice of the sets Ai that satisfy the conditions 1,
+2, 3 above and the assertion of Claim 2.2. If a set B intersects all subsets Ai then it must satisfy
+√
+√
+|B| > 0.3 n log n. Since each point is contained in (1/2 + o(1)) n of the sets Ai this implies, by
+√
+averaging, that the intersection of B with some set Ai is of size at least |B|(1/2 + o(1)) n/n >
+0.1 log n. This completes the proof.
+The next result settles problem 1.2.
+Theorem 2.3. Let q be a large prime power and put n = q 2 + q + 1. Let S = (x1 ≥ x2 ≥ x3 ≥
+. . . ≥ xm ) be any sequence of integers satisfying
+q + 1 ≥ x1 ≥ x2 ≥ x3 . . . ≥ xn ≥ 3,
+  
+n 
+X
+q+1
+xi
+m=n+
+−
+],
+[
+2
+2
+i=1
+
+and xi = 2 for all n < i ≤ m. Then S is block-compatible for n. Therefore, the number of
+sequences that are block-compatible for n is at least
+
+
+n+q−2
+1/2
+= 2(0.5+o(1))n log n .
+q−2
+Proof. Let P and L1 , L2 , . . . , Ln ⊂ P be, as in the proof of Theorem 2.1, the set of points of a
+projective plane of order q + 1 and the sets of points of the n lines of P . For each 1 ≤ i ≤ n let
+Xi be a subset of cardinality xi of Li . Consider the block design consisting of the n blocks Xi
+together with the following additional
+  
+n 
+X
+q+1
+xi
+[
+−
+]
+2
+2
+i=1
+
+blocks of cardinality 2: for each 1 ≤ i ≤ n, every pair of distinct elements of Li which is not
+contained in Xi . This is clearly a block design and the ordered sequence of cardinalities of its
+blocks is the sequence S. This completes the first part of the proof. For the estimate note that
+the number of possibilities for the subsequence x1 ≥ x2 ≥ . . . ≥ xn ≥ 3 in the above construction
+is the number of ordered sequences of q − 1 nonnegative integers whose sum is n, which is
+
+
+n+q−2
+.
+q−2
+
+3
+
+3
+
+Concluding remarks
+• It is easy to see that the estimate in Theorem 2.1 is tight up to constant factors, for every
+√
+partial design in which all blocks are of sizes Θ( n). Indeed the following simple fact
+can be proved by choosing the set B randomly and by applying the union bound and the
+standard estimates for Binomial distribution.
+Proposition 3.1. For any two positive constants c1 < c2 there are two positive constants
+C1 (c) < C2 (c) so that the following holds. For every m and n and for every family of
+√
+√
+subsets {A1 , A2 , . . . , Am } of [n] = {1, 2, . . . , n} that satisfies c1 n ≤ |Ai | ≤ c2 n for all
+1 ≤ i ≤ m, and |Ai ∩ Aj | ≤ 1 for all 1 ≤ i < j ≤ m, there is a subset B ⊂ [n] so that
+C1 log n < |B ∩ Ai | ≤ C2 log n for all 1 ≤ i ≤ m.
+In fact the conclusion holds, of course, even without any assumption on the sizes of the
+intersections of pairs of blocks.
+• Problem 1.1 for block designs (and not for partial designs) was also asked by Erdős in
+[5]. This remains open although we suspect that the answer here is negative as well. We
+suggest the following conjecture which, if true, would establish this negative answer.
+Conjecture 3.2. Let q be a (large) prime power, put n = q 2 + q + 1, let P be the set
+of n points of a projective plane of order q and let L1 , L2 , . . . , Ln be the sets of points of
+its lines. Let R be a random subset of P obtained by picking each point of P randomly
+and independently to lie in R with probability 1/2. Then with high probability the smallest
+cardinality of a subset B of R that intersects all the subsets L1 ∩ R, L2 ∩ R, . . . , Ln ∩ R
+satisfies |B|/q > f (q) for some function f (q) tending to infinity as q tends to infinity. In
+fact, this may even be true with f (q) = Ω(log q).
+This conjecture remains open, although related results have been proved in [2], [3] using
+the container method. The parameters in these papers are very different and it seems that
+a proof here would require additional ideas.
+1/2
+
+• As mentioned by Erdős in [5], the ecn log n lower bound for the number of block-compatible
+sequences for n is tight up to the absolute constant c. For completeness we include a brief
+proof of the upper bound. It is clear that if n ≥ x1 ≥ . . . ≥ xm ≥ 2 is block-compatible
+
+for n, then m ≤ n2 < n2 /2. Therefore, the number of choices of all xi which are, say, at
+√
+most 2 n is smaller than
+ 2
+√ 
+√
+n /2 + 2 n
+√
+< 24 n log n .
+2 n
+Next, observe that for each block-compatible sequence xi for n, the number of indices i
+√
+√
+with xi > 2 n is smaller than n. Indeed, otherwise the size of the union of a set of blocks
+4
+
+√
+√
+Ai , i ∈ I with |Ai | = xi > 2 n and |I| = n in a block design realizing the sequence is at
+least
+√ 
+X
+X
+√
+√
+n
+|Ai | −
+|Ai ∩ Aj | > n · 2 n −
+> n,
+2
+i∈I
+
+i,j∈I,i<j
+
+√
+which is impossible. Thus there are less than n such large xi , and the number of choices
+for those is at most
+
+√ 
+√
+n+ n
+√
+< 2 n log n .
+n
+√
+
+This gives the required 2O( n log n) upper bound for the total number of block-compatible
+sequences for n.
+• Call a sequence n ≥ x1 ≥ x2 ≥ . . . ≥ xm ≥ 2 line-compatible for n if there is a set P
+of n points in the Euclidean plane R2 so that for the family L1 , L2 , . . . , Lm of all lines
+in R2 determined by the points of P , |Li ∩ P | = xi for 1 ≤ i ≤ m. Note that every
+line-compatible sequence for n is also block-compatible for n, but the converse is not true.
+Erdős conjectured in [5] (see also [4], problem 733) that the number of sequences which
+1/2
+are line compatible for n is only 2O(n ) . This upper bound was proved by Szemerédi and
+Trotter in [9]. Note that in view of Theorem 2.3 this is much smaller than the number of
+block-compatible sequences for n.
+Indeed, there are far more block designs on n points than designs that can be described by
+the lines determined by a set of points in the plane. This is demonstrated by the following
+result.
+Proposition 3.3. 1. The number of hypergraphs on n labelled vertices whose edges form
+2
+a block design is 2Θ(n log n) .
+2. The number of hypergraphs whose vertices are n labelled points in R2 and whose edges
+are the sets of points contained in the lines determined by the points is only 2Θ(n log n) .
+Proof. The lower bound in the first part follows from the known lower bound for the
+2
+number of Steiner triple systems on n points, which as proved in [7] is 2(1+o(1)n log n/6 . To
+
+
+P
+prove the upper bound let x1 , x2 , . . . xm be the sizes of the blocks. Then i x2i = n2
+P
+and thus
+xi ≤ n2 . The number of choices of the number of blocks m and their sizes xi
+√
+is at most 2O( n log n) . Given those, the number of ways to choose subsets of cardinalities
+x1 , x2 , . . . , xm in [n] is at most
+  
+ 
+P
+n
+n
+n
+2
+2
+...
+< n i xi ≤ nn = 2n log n .
+x1
+x2
+xm
+The lower bound in the second part is proved by considering all possible labelings of
+the hypergraph consisting of a matching of bn/3c pairwise disjoint edges of size 3 and
+5
+
+
+additional n2 − bn/3c edges of size 2. It is easy to realize this hypergraph by points in
+the plane and the lines they determine by placing 3 points on each of bn/3c parallel lines
+where no other line contains more than two points.
+We prove the upper bound in the second part by using the result of [8] on the number of
+zero patterns of a sequence of polynomials.
+If f = (f1 , . . . , fa ) is a sequence of polynomials in b variables over a field K, then the zero
+pattern of f evaluated at the point u ∈ K b is the set
+Zf (u) = {i ∈ [a] : fi (u) = 0}.
+Let Zf denote the total number of distinct zero patterns that appear as u ranges over K b .
+We need the following result of Rónyai, Babai, and Ganapathy [8].
+Theorem 3.4 ([8]). Let f = (f1 , . . . , fa ) be a sequence of polynomials in b variables over
+a field K, and let di denote the degree of fi . Then
+P
+
+
+b + ai=1 di
+.
+Zf ≤
+b
+In our case the field is R, each point can be described by 2 real variables, so b = 2n, and
+for each set of 3 points there is a degree 3 polynomial that vanishes iff they lie on a line.
+
+The zero pattern of these n3 real polynomials of degree 3 in 2n variables determines all
+the lines, and therefore, by Theorem 3.4, the number of possible hypergraphs here is at
+most
+
+
+2n + (n3 /6)3
+= 2(4+o(1))n log n .
+2n
+This completes the proof.
+
+References
+[1] Noga Alon and Joel H. Spencer, The Probabilistic Method, Fourth Edition, Wiley, 2016,
+xiv+375 pp.
+[2] József Balogh and Wojciech Samotij, An efficient container lemma, Discrete Anal. 2020,
+Paper No. 17, 56 pp.
+[3] József Balogh and József Solymosi, On the number of points in general position in the
+plane, Discrete Anal. (2018), Paper No. 16, 20 pp.
+[4] Thomas Bloom, Erdős’ Open Problems, https://www.erdosproblems.com/all
+
+6
+
+[5] Paul Erdős, On the combinatorial problems which I would most like to see solved, Combinatorica (1981), 25–42.
+[6] Paul Erdős, Some unsolved problems, in: Combinatorics, geometry and probability (Cambridge, 1993) (1997), 1-10.
+[7] Peter Keevash, Counting Steiner triple systems, European Congress of Mathematics, 459–
+481, Eur. Math. Soc., Zürich, 2018.
+[8] Lajos Rónyai, László Babai and Murali K. Ganapathy, On the number of zero-patterns of
+a sequence of polynomials, J. Amer. Math. Soc. 14 (2001), 717–735.
+[9] Endre Szemerédi and William T. Trotter, Extremal problems in discrete geometry, Combinatorica 3 (1983), no. 3-4, 381–392.
+
+7
+
+
