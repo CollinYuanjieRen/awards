@@ -1,0 +1,27 @@
+Erdős problem 973 — complete exterior power-sum formalization
+
+This Lean development was produced for GitHub account CollinYuanjieRen with
+GPT-5.6-Sol implementation assistance. Independent AI scope and dependency
+reviews are recorded separately; they are not claims of human verification.
+
+Mathematical proof: Yanping Luo, Ruiyi Yang and Keheng Zhu,
+Exterior power sums, arXiv:2607.22017v1 (2026), Theorem 1.1.
+https://arxiv.org/abs/2607.22017v1
+
+The frozen original statement is derived from Formal Conjectures:
+Copyright 2026 The Formal Conjectures Authors. Licensed under Apache-2.0.
+Repository: https://github.com/google-deepmind/formal-conjectures
+Commit: d5ba143cc2fafd48cc6d5b6320a3aab287c38df7
+File: FormalConjectures/ErdosProblems/973.lean
+The explicit answer(False) term is expanded to False using the elaborator
+at that same commit. The quantified mathematical statement is unchanged.
+
+The development imports Mathlib, licensed under Apache-2.0, at
+1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.
+
+Prior partial formalization: miracleqihe/Erdos-973_solution_check-by-Lean
+at f0f27f85cb9865c706a77692cdae260e77d7aa14. Its README disclaims a complete
+proof. No code from that repository was copied into this development.
+
+This package's Lean source is distributed under Apache-2.0; see LICENSE.
+Third-party work retains its attribution and license.

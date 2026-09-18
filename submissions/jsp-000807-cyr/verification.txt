@@ -1,0 +1,48 @@
+Release verification — JSP-000807 / Erdős problem 973
+
+Toolchain: leanprover/lean4:v4.34.0-rc1
+Mathlib: 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d
+
+Reproduce from this directory:
+  lake exe cache get
+  lake build
+  lake env lean Verification.lean
+
+The exported proof and build files are byte-identical to the independently
+reviewed source snapshot. The isolated export used a validated shared installation
+of exactly the pinned dependencies and fresh project build outputs. Machine-local
+paths, dependency caches and shared-workspace markers are not distributed.
+
+Export build: exit 0; Build completed successfully (8768 jobs).
+Verification.lean: exit 0. Actual output:
+
+Erdos973.erdos973 : Erdos973.Target
+Erdos973.formalConjectures973Expanded : Erdos973.External.FormalConjectures973Expanded
+Erdos973.formalConjectures973Expanded_iff_target : Erdos973.External.FormalConjectures973Expanded ↔ Erdos973.Target
+'Erdos973.exterior_overconvergence_sequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos973.not_counterexampleSequenceAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos973.finiteUniformExteriorLowerBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos973.uniformExteriorLowerBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos973.erdos973' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos973.formalConjectures973Expanded' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+Additional source-bound review and runtime checks:
+- Two separately dispatched GPT-5.6-Sol reviewers, neither an implementer,
+  passed the original-scope/source and proof/dependency reviews.
+- A clean Git archive of the reviewed sources also rebuilt successfully.
+- The external statement was frozen without importing candidate proof modules.
+  Its tokens match the pinned Formal Conjectures statement after only the
+  explicit answer(False) expansion. The complete proof compiles against it.
+- The live generated Lean audit checked the exact root type, zero-binder census
+  and axioms. Its runtime verifier returned no errors.
+- No sorry, admit, custom unproved axiom or native_decide occurs in the completed
+  project proof sources. No temporary interface stub supplies release evidence.
+
+No native build of the reference Formal Conjectures 4.33.1 package or
+organizer-supplied comparator program is claimed. This release records a
+source-exact external-statement bridge on the pinned toolchain above.
+
+MerLean Gold: not awarded or recorded. The complete unmodified metadata audit
+reported only its hardcoded requirement for an Astra original-scope reviewer;
+the project instruction required Sol. All other schema, source, semantic and
+live kernel checks passed. No reviewer identity or tool source was altered.
