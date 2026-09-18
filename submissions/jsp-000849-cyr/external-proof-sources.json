@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "path": "Erdos1019Planar/Simonovits.lean",
+      "repository": "https://github.com/plby/lean-proofs",
+      "commit": "8822f7ddef30fadbd92e1c6ab4ed897af356af5e",
+      "source_path": "src/latest/ErdosProblems/Erdos1019.lean",
+      "url": "https://raw.githubusercontent.com/plby/lean-proofs/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos1019.lean",
+      "source_sha256": "476e39206d4d3ce381d576839a084d3ca974181b1cf85f4087271e4b3648d6eb",
+      "edits": [
+        {"kind": "replace_once", "from": "    simp only [C, Finset.filter_insert, if_neg hloop]\n", "to": "    -- PORT: `if_neg` is deprecated on Lean 4.34.0-rc1; discharge the `ite` with the hypothesis.\n    simp only [C, Finset.filter_insert, hloop, ↓reduceIte]\n", "reason": "deprecation fix for Lean 4.34.0-rc1 / Mathlib 1fe0a51a"},
+        {"kind": "delete_once", "from": "#print axioms Erdos1019.erdos_1019\n", "reason": "the audit is run from Audit.lean"}
+      ],
+      "adapted_sha256": "fce156034b37bd8af15803ed4e22f25ec56d7b56d2857ca2a07bc7e934b4dfbe",
+      "informal_author": "Miklós Simonovits",
+      "formal_authors": ["Codex", "GPT-5.6 Sol"],
+      "license": "The file header says 'Original license: Apache 2.0 ... as described in the file LICENSE'; the package root src/latest/LICENSE at the pinned commit is a short pointer stating that some files come from external sources and carries no Apache text and no grant by a named copyright holder, so no explicit licence grant for this file is traceable. It is therefore fetched from its original public location and not redistributed by this package."
+    }
+  ]
+}
