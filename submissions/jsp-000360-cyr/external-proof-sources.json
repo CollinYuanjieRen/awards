@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/plby/lean-proofs",
+  "commit": "8822f7ddef30fadbd92e1c6ab4ed897af356af5e",
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/plby/lean-proofs/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos441.lean",
+      "path": "MerLeanExperiment/External/Erdos441.lean",
+      "source_sha256": "54e41a155fcac23de29bacf70425428fce33bdbb8a898da3c4ae9d44b19e4d7c",
+      "adapted_sha256": "cc597b6cb3cd455aac46bd276524741fcb1eccca6db8a8e2252a9a6effccaaeb",
+      "source_import": "import Mathlib\n",
+      "adapted_import": "import Mathlib.Data.Finset.Lattice.Fold\nimport Mathlib.Data.Finset.Powerset\nimport Mathlib.Order.Interval.Finset.Nat\nimport Mathlib.Tactic.Linarith\nimport Mathlib.Tactic.NormNum\nimport Mathlib.Tactic.Positivity\nimport Mathlib.Tactic.Ring\n"
+    }
+  ]
+}

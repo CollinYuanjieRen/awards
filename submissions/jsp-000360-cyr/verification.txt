@@ -176,3 +176,16 @@ Exit code: 0
 'Erdos441.erdos_441_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Erdos441.erdosConstruction_not_eventually_extremal' depends on axioms: [propext, Classical.choice, Quot.sound]
 
+Publication-source retrieval repair, 2026-09-18:
+- `python3 fetch_sources.py` in a fresh directory downloaded the pinned source,
+  matched original SHA-256 `54e41a155fcac23de29bacf70425428fce33bdbb8a898da3c4ae9d44b19e4d7c`,
+  and reproduced adapted SHA-256
+  `cc597b6cb3cd455aac46bd276524741fcb1eccca6db8a8e2252a9a6effccaaeb`.
+- A second run verified the existing correct file. A changed destination caused
+  a nonzero exit and remained byte-for-byte unchanged.
+- The fetched 97-file Lean source set is byte-identical to the previously
+  reviewed package. A fresh managed build completed 3,123 jobs with exit 0;
+  `Audit.lean` again exited 0 and printed exactly `propext`,
+  `Classical.choice`, and `Quot.sound` for every listed root.
+- The tracked archive excludes the fetched `External/Erdos441.lean` and the
+  earlier ambiguous license copies, and includes the fetcher and hash manifest.

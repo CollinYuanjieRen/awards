@@ -5,7 +5,7 @@
 - Original path: `src/latest/ErdosProblems/Erdos441.lean`
 - Original SHA-256: `54e41a155fcac23de29bacf70425428fce33bdbb8a898da3c4ae9d44b19e4d7c`
 - Exported SHA-256: `cc597b6cb3cd455aac46bd276524741fcb1eccca6db8a8e2252a9a6effccaaeb`
-- License: Apache-2.0. The upstream notice is preserved verbatim in [plby-LICENSE](plby-LICENSE); the full license text is included in [Apache-2.0.txt](Apache-2.0.txt).
+- Publication boundary: the pinned file and repository do not provide an explicit license grant identifying this file. It is therefore excluded from the tracked package. The root-level `fetch_sources.py` downloads it from the pinned public URL and verifies both the original and adapted byte hashes. This package makes no license claim for the fetched file.
 
 The upstream file credits Yong-Gao Chen and Li-Xia Dai for the informal proof, and Codex and GPT-5.6 Sol for formalization. The definitions and proved nonoptimality result are reused with that attribution. This earlier source does not prove the sharp asymptotic supplied by the new files in this package.
 

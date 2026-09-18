@@ -13,7 +13,7 @@ theorem erdos_441_complete :
     ∀ M : ℕ, ∃ N : ℕ, M ≤ N ∧ (erdosConstruction N).card < g N
 ```
 
-The definitions in [External/Erdos441.lean](MerLeanExperiment/External/Erdos441.lean) use ordinary natural numbers and finite sets. `LcmBounded N A` says that `A ⊆ Finset.Icc 1 N` and `Nat.lcm a b ≤ N` for every pair of members. `g N` is the maximum cardinality over all such admissible sets, defined by the supremum of a finite family. `erdosConstruction N` is the proposed union of the positive integers up to √(N/2) and the even positive integers up to √(2N), expressed using exact square inequalities.
+The definitions in the generated `External/Erdos441.lean` ([pinned original](https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos441.lean)) use ordinary natural numbers and finite sets. `LcmBounded N A` says that `A ⊆ Finset.Icc 1 N` and `Nat.lcm a b ≤ N` for every pair of members. `g N` is the maximum cardinality over all such admissible sets, defined by the supremum of a finite family. `erdosConstruction N` is the proposed union of the positive integers up to √(N/2) and the even positive integers up to √(2N), expressed using exact square inequalities.
 
 The first conjunct proves the sharp asymptotic `g(N) ∼ √(9N/8)`. The second says that at arbitrarily large natural N the proposed construction has strictly smaller size than the optimum. The theorem has no public hypotheses. Its asymptotic statement does not require a value for the normalized ratio at N=0. The result does not claim the stronger quantitative error term or growing nonoptimality gap from later papers.
 
@@ -23,7 +23,7 @@ The new asymptotic formalization follows Yong-Gao Chen, “Sequences with bounde
 
 The implementation proves the finite sieve and coprimality estimates, parity-sensitive interval packing, order-preserving weighted allocation, all geometric-grid prefix cases and exact weight sum. The resulting uniform upper bound combines with a proved lower bound to obtain the limit in [Asymptotic.lean](MerLeanExperiment/Asymptotic.lean). All mathematical support used here is proved in Lean or supplied by pinned Mathlib; the paper is not introduced as an axiom or theorem assumption.
 
-The ordinary extremal definitions, proposed construction and nonoptimality theorem are reused from [plby/lean-proofs](https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos441.lean). That source credits Yong-Gao Chen and Li-Xia Dai for the informal proof, and Codex and GPT-5.6 Sol for formalization. Its Apache-2.0 license and exact provenance are preserved in [External/PROVENANCE.md](MerLeanExperiment/External/PROVENANCE.md) and [External/plby-LICENSE](MerLeanExperiment/External/plby-LICENSE). Only import compatibility changes were made to the reused Lean source. We do not claim authorship of that earlier contribution.
+The ordinary extremal definitions, proposed construction and nonoptimality theorem are reused from [plby/lean-proofs](https://github.com/plby/lean-proofs/blob/8822f7ddef30fadbd92e1c6ab4ed897af356af5e/src/latest/ErdosProblems/Erdos441.lean). That source credits Yong-Gao Chen and Li-Xia Dai for the informal proof, and Codex and GPT-5.6 Sol for formalization. The pinned file and repository do not supply an explicit license grant identifying this file, so it is not redistributed or labeled Apache-2.0 here. `fetch_sources.py` downloads the pinned public source, checks its original hash, performs only the documented import compatibility replacement, and checks the resulting hash. Exact provenance is recorded in [External/PROVENANCE.md](MerLeanExperiment/External/PROVENANCE.md) and [external-proof-sources.json](external-proof-sources.json). We do not claim authorship of that earlier contribution.
 
 The contribution sought is the new formalization of Chen's sharp asymptotic and its integration with the credited construction result, prepared with OpenAI Codex assistance. No new mathematical discovery is claimed.
 
@@ -32,12 +32,13 @@ The contribution sought is the new formalization of Chen's sharp asymptotic and 
 Install the pinned Lean toolchain through elan, then run from this directory:
 
 ```sh
+python3 fetch_sources.py
 lake exe cache get
 lake build
 lake env lean Audit.lean
 ```
 
-The cache command is optional. [lean-toolchain](lean-toolchain) pins Lean `v4.34.0-rc1`; [lakefile.toml](lakefile.toml) pins Mathlib `1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d`; [lake-manifest.json](lake-manifest.json) pins transitive dependencies. The package contains source files, not compiled caches or machine-specific dependency paths.
+The fetch step is required in a fresh checkout. It refuses to overwrite a changed destination and writes only the byte-identical adapted source recorded in the manifest. The cache command is optional. [lean-toolchain](lean-toolchain) pins Lean `v4.34.0-rc1`; [lakefile.toml](lakefile.toml) pins Mathlib `1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d`; [lake-manifest.json](lake-manifest.json) pins transitive dependencies. The package contains the new proof sources, not compiled caches or machine-specific dependency paths; reproducing the excluded third-party file requires network access to its pinned public URL.
 
 [Audit.lean](Audit.lean) type-checks the exact two-conjunct statement and prints the root and final supporting theorem axiom sets. The complete root depends exactly on `propext`, `Classical.choice`, and `Quot.sound`. The proof has no `sorry`, custom axioms, assumed target, added original conditions or native-evaluation proof shortcuts. [verification.txt](verification.txt) records the exported package's build and audit; [SHA256SUMS](SHA256SUMS) binds its source and configuration files.
 
@@ -51,4 +52,4 @@ The catalog currently marks JSP-000360 “Eligible to claim: No”. Please asses
 
 This is a self-submission with a direct interest in the review outcome. Formalizer identity confirmation is pending; recipient placeholder: `RECIPIENT-jsp-000360-cyr-A`. No solver nomination, payment status or award tier is asserted. The `submissions/` path is proposed intake packaging and does not introduce an official record schema.
 
-New Lean source is offered under the [MIT license](LICENSE). This README and new provenance documentation are offered under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Third-party source retains its original license and attribution.
+New Lean source is offered under the [MIT license](LICENSE). This README and new provenance documentation are offered under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The excluded third-party source is fetched from its original pinned location with its original attribution; this package makes no license claim for it.
