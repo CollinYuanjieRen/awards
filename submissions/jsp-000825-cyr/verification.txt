@@ -1,0 +1,19 @@
+JSP-000825 / Erdős #992 — verification record (2026-09-18)
+
+Toolchain: leanprover/lean4:v4.34.0-rc1
+Mathlib: 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d (lake-manifest.json)
+
+Clean build (rm -rf .lake/build; lake build): Build completed successfully (8752 jobs), no warnings.
+
+lake env lean Audit.lean:
+'Erdos992.berkes_philipp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos992.not_erdos_992' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos992.not_erdos_992_loglog' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+Forbidden-token census over Jsp825/*.lean, Jsp825.lean, Audit.lean
+(sorry|admit|native_decide|^\s*axiom|opaque|unsafe|implemented_by|partial|set_option|extern|ofReduceBool|decide): no matches
+(the only occurrences of the word "axiom" are the three `#print axioms` commands in Audit.lean; there is no axiom declaration).
+Target.lean (frozen statement with sorry, not imported): the four definitions, the two statement Props and the three root
+statements are textually identical to Jsp825/Defs.lean and Jsp825/Main.lean up to the namespace.
+
+Module line counts: 1318 lines (Defs 54, Params 69, Blocks 244, Growth 302, Digits 490, Main 159).
