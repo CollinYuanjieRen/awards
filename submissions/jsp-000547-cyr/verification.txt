@@ -1,0 +1,21 @@
+$ lake build
+✔ [8750/8752] Built Erdos673Divisors.Main (4.2s)
+✔ [8751/8752] Built Erdos673Divisors (3.2s)
+Build completed successfully (8752 jobs).
+exit=0
+
+$ lake env lean Audit.lean
+'Erdos673.erdos_673_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos673.erdos_673' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos673.erdos_673_average' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos673.card_divisors_div_le_mul_G' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos673.G_le_card_divisors' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos673.densityZero_card_divisors_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos673.card_no_prime_factor_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Erdos673.nextDiv : ℕ → ℕ → ℕ :=
+fun n d => sInf {e | e ∣ n ∧ d < e}
+def Erdos673.G : ℕ → ℝ :=
+fun n => ∑ d ∈ n.divisors.erase n, ↑d / ↑(nextDiv n d)
+def Erdos673.DensityZero : Set ℕ → Prop :=
+fun S => Filter.Tendsto (fun X => ↑{x ∈ Finset.Icc 1 X | x ∈ S}.card / ↑X) Filter.atTop (nhds 0)
+exit=0
