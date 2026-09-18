@@ -1,0 +1,12 @@
+Local verification 2026-09-18 (package export): lake build success from a clean build directory (8752 jobs); no sorry/admit/native_decide/axiom/opaque/unsafe/implemented_by/partial/set_option in Jsp751/*.lean, Jsp751.lean, Audit.lean; Target.lean (statement-only, 2 sorry, not imported) has the definition IsLinearSpace identical to Jsp751/Defs.lean and its statements are discharged verbatim by Erdos903.erdos_903_general and Erdos903.erdos_903.
+Comparator: no organizer Lean target (erdosproblems.com/903 'Formalised statement: No'; formal-conjectures has no ErdosProblems/903.lean as of 2026-09-18); the third-party plby comparator-challenge statement (ref/plby-Erdos903-challenge.lean) has the same content as erdos_903 (its predicate PairwiseBalanced is IsLinearSpace under another name). Independent adversarial alignment audit and independent original-target scope review: see the submission record.
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.
+SHA-256 ref/efsw85.pdf: 0ed866be1c0506be768d1e1a9eb63f56298c44c482782e65722cce2e1201cc0a
+SHA-256 ref/erdosproblems-903.txt: 0fee46b5870157db171a03db070db0e294c74c0580a8ecb9c0230e571de59a27
+SHA-256 ref/jsp-000751-catalog.md: 946aab76692eb05a56db5a0c7db4b5f8f4af98a7717b776eb486cc53c79b1751
+SHA-256 ref/plby-Erdos903-challenge.lean: 74aefa3d37923d95a4f68170a0d1795daeeca0a41892c97988792be0e6f56774
+
+lake env lean Audit.lean:
+'Erdos903.erdos_903_general' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos903.erdos_903' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos903.no_design_in_gap' depends on axioms: [propext, Classical.choice, Quot.sound]

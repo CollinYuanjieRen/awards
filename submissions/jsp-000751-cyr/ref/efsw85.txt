@@ -1,0 +1,595 @@
+Reprinted from JUUKNAL OF C0MRINATOKIAt. THWRY . Series A                           Vol . 38, No. 2, March 1985
+All Rights Reserved by Academic Press, New York and London                                    Printed in Belgium
+
+
+
+
+                                         On 2-Designs
+                                                  P . ERDŐs
+
+                                      Hungarian Academy of Sciences
+
+
+                                            JOEL C . FOWLER *
+
+                    California Institute of Technology, Pasadena, California 91125
+
+
+                                               VERA T . SOS'
+
+                           Bell Laboratories, Murray Mill, New Jersey 07974
+
+
+                                                      AND
+
+
+                                        RICHARD ÍVI . WILSON *
+
+                   California Institute o/ Technology, Pasadena, California 91125
+
+                                 Communicated ht the Managing Editors
+
+                                        Received December 9, 1982
+
+
+
+         Denote by M,, the set of integers h for which there exists a 2-design (linear space)
+      with r points and h lines . M,, is determined as accurately as possible . On one hand,
+      it is shown for r > r„ that M, contains the interval [r+r° s , (_) -4 ] . On the other
+      hand for r of the form p'-- +p+ I it is shown that the interval [u+ 1, r+p- I] is
+      disjoint from M, ; and if r > r„ and p is of the form q'-- +y, then an additional inter-
+      val [r + p + 1, r + p + q - I ] is disjoint from M,. .  ( 1985 Academic Press, Inc .
+
+
+
+   Let S be a finite set, I S1 = u, and let A = If A 1 , . . ., A,, } be a family of sub-
+sets of S. A is a 2-design ( or pairwise balanced design) or linear .space) if
+every pair of elements of S occurs in exactly one A i and l A i l > 1 for
+1 < i < b . The elements of S are called the points, the subsets A i are called
+the lines or blocks of the 2-design . Doyen asked what are the possible
+values of b for a given u? Let M,, be defined as the set of integers b for
+which there exists a 2-design with u points and b lines . So the problem is
+the determination of M,, .
+
+  * The work of these authors was supported in part by National Science Foundation Grant
+MCS-8217596 .
+  ' Permanent address : Eötvös University of Budapest, Hungary .
+                                                       131
+                                                                                       0097-3165/85 $3 .00
+                                                                    Copyright r' 1985 by Academic Press, Inc.
+                                                                All rights of reproduction in any form reserved .
+1 32                               ERDOS ET AL .
+
+
+   Clearly
+
+                                    and       ( v ) - 1, ( v ) -30M
+                                                2          2
+
+Also a well-known theorem of de Bruijn and Erdös [ 1 ] states that if b > 1,
+then b >, v . Thus min M, . = v .
+  Answering a question of Grünbaum, Erdös [2] proved the following :
+Let there be given n points in the plane . Join any two of them by a line .
+Denote by b the number of lines obtained . There is an absolute constant e
+so that every b with cv 3 1z < b < ( z), b # (z) - 1, b (z)-3 can occur as the
+number of lines . (This result is best possible apart from the value of c .) This
+obviously gives that with the same c every b 54 (z)- 1, (z)-3, eV 3/2 < b < (z)
+occurs in M,. . For an arbitrary 2-design the situation is different . Let_f(v)
+denote the largest integer b < (z) - 3 for which there is no 2-design on v
+elements and b lines . We shall prove
+
+  THEOREM 1 .       There is an absolute constant c so that for v > v o
+
+                                 f(v) < v+ U I/2+e
+
+where c can be any value > ó •
+
+  Remark . If we make plausible assumptions about the distribution of
+primes we can prove .J'(v) < v+v'' 2 (log v)' for some fixed a . Further we
+conjecture that
+                                              -v
+                               lim sup' (v)        = 00 .
+
+
+  Theorem 1 shows that all values in the upper portion of the range b E [v,
+(z)-4] are possible . For b close to v our results are quite different . To get
+interesting results it will be convenient to assume v is of the form p 2 +p + I
+(here p is not necessarily a prime or prime power) .
+  We shall prove
+
+   THEOREM     2.Let v = p 2 + p + 1 . Then for p 2+p+ 1 < b < p 2 + 2p + 1
+there is no 2-design with v points and b lines .
+
+   Remarks .    This result fails for v not of this form : projective planes from
+which points have been deleted provide many examples where b - v < v .
+   Theorem 2 is best possible in that it is easy to construct a 2-design with
+b = p 2 + 2p + I lines . To see this it suffices to consider the lines A, , .. ., A„ of
+a projective plane of order p and replace A, = .,          lx,,x p+ , } by A ; _
+ -vvx3, . . .,x1,+,i, A',-{x,,x; }, 2<i<p+1 .
+                                     ON 2-DESIGNS                                      133
+
+  In general we may take any projective plane and obtain a new 2-design
+by "breaking up" any line, i .e ., by replacing it with the lines of some
+2-design on the same set of points . In the above example A, has been
+broken up into a near pencil on p + 1 points .
+  We further prove
+
+
+   THEOREM 3 .    If v= p 2 + p + 1 and b = p 2 + 2p + 1, then the design is
+obtained, from a projective plane of order p by "breaking up" one of its lines
+into a near pencil or projective plane .
+
+   Theorem 3 is in some sense sharp, nevertheless we prove a stronger
+result .
+
+  THEOREM 4 . Let v = p' + p + I and A = JA , , . . ., A,, 'j a 2-design which is
+neither a projective plane nor a near pencil nor is obtained from a projective
+plane by "breaking up" one of its lines. Then b > p 2 + (2 + c) p where c can
+he taken as 0 .147899 .
+
+    A special case of interest is for v =P 2 +p+ 1, where p = q 2 + q . By
+Theorem 2 applied to the p + 1 = q 2 + q + I points on a line of a projective
+plane of order p, the breaking up of that line results in a 2-design on v=
+p 2 + p + 1 points with either
+
+            b=(p`+p+ l )+p               or       b, (p 2 +p+ 1)+p+q .
+
+This latter inequality must, by Theorem 4, also be valid (when b > v) for
+2-designs on v = p` + p + 1 points which cannot be obtained by breaking up
+a line of a projective plane (when v > v o ) . In other words the interval
+[v+p+ l, v+p+q- 1 ] is disjoint from M,, .
+
+   Remarks . In the theory of designs or extremal set theory there are two
+essentially different methods, the combinatorial and the linear-algebraic
+one . There are just a few theorems where both methods work . This is the
+case with Theorems 2 and 3 . We give two proofs . Theorems 2 and 3 are
+actually consequences of Totten's classification [7, 8] of all 2-designs
+satisfying (b-v)' < r, but the proof in [7, 8] is substantially longer than
+those we give here . One of the present authors (J .C .F .) has used the
+algebraic approach to give a shorter proof of Totten's complete result [4] .
+Our combinatorial proof of Theorems 2 and 3 gives with some additional
+reasoning the proof of Theorem 4 .
+   Proof of Theorem 1 . First of all we restrict ourselves to the case when
+v = p' + p + 1, where p is a power of a prime . It is well known that in this
+case there is a projective plane ; A = { A, , . . ., A,, } with l A ; l = p + 1, 1 _< i <_ v
+1 34                                            ERDŐS ET AL .
+
+
+and JA,n A ;I = 1 for i j . On the other hand, if there is such a projective
+plane, then v must be of the form t 2 + t + 1 .
+  To prove Theorem l, first we prove
+
+  THEOREM 1 * .           Let u = pk + Pk + l, Pk he kth prime power (in natural
+order) . Then
+                                                                 + p k/2+                        (1)
+                                f(P2 +pk + 1) < P2 + 2pk
+
+where c can he any value              > 4M, .
+
+
+   Proof . Let A,       A,, be the lines of a finite geometry with v points .
+Observe that it is necessary to construct a 2-design only for h < pk+, +
+pk , , + l . For if h pk + , +Pk. , , + 1 it is easy to see that we can use for our
+
+consideration the finite geometries of size p ; + p, + l, where p, is the least
+prime for which p 2 + p,. +
+   Using a well-known theorem of Heath-Brown and lwaniec [5] we have
+                                                          .ii2oi + :
+                                       Pk+i - Pk<ph                                              (2)
+
+Hence
+                                                            +pk3i/2° + :
+                                pk + i+Pk+i+ 1 <p
+Thus it suffices to consider the b's satisfying
+
+                         pk+2p k +P O1/ao)+r: <h< pk+ph;1 / 2 oi+ :
+
+From the result of Erdös [2], it immediately follows that the values of h
+satisfying
+
+                                                p2+t . 3 2 <b
+
+can be taken care of by the block designs formed by breaking up the
+elements of L,'s into pairwise balanced designs . Thus it suffices to deal with
+the h satisfying
+                                                      + :<h<Pk+( .Pkz .                          (3)
+                               Pá+2Pk+pk"lao
+
+Let L, _ { x, , . . ., xk, A         Let q be the smallest prime power satisfying
+                                                                p 31/aoi+,:,,2 .                 (4)
+                               Pk + 1 < q 2 + q + 1 < p k }
+
+Consider now a projective plane with the lines B, , . . ., Bye+ v + , . Omit y =
+q 2 + q - Pk < p ; 2 ' 40            of the points of this projective plane (without
+destroying any of the lines). Let the remaining points be identified by
+i x, , . . ., x c, k + , i . Thus we obtain a 2-design on our set { x, , . . ., 1 and
+                                                                                   xPk   4   1
+                                    ON 2-DESIGNS                                 135
+
+therefore on our set S of pk + pk + 1 elements . Now the number of lines of
+this design is pk + Pk. + q 2 +q+ 1 ; pk + Pkk of the lines have size Pk + 1, the
+other q, + q, + 1 sets have size q, + 1 or less . ("Less" because we had to
+omit x elements which are at our disposal .)
+   Let B*, . . ., By , y+ , be the blocks which remain after the omission of the
+x elements and let t,= I B*~ . By breaking up the lines B,* we get h ; new lines
+for every b, satisfying ct < h ; < ( z) - 3 . Choosing the values of t ; (1 < i <
+q2 + q + 1 ) properly we can get every value in the interval ( pk 4°, pk3' izo, +  z: )
+
+
+
+in the form J:'_, h,-, with appropriate
+
+                              h ;,. E ct,' 2 ,
+                                     1
+This completes the proof of Theorem 1 * .
+   The proof of Theorem 1 now can be completed by the same method .
+   We now proceed to the proofs of Theorems 2-4 . Henceforth we assume
+that we have a 2-design with u = p - + p + 1 and h < p' + ( 2 + c) p for some
+c < ; . We use the following notation : A,, A 2 , . . ., A,, are the blocks (lines) ;
+x, , x,    x, are the points ; l A i l = l; = length of A, ; r, _ I i is x; E A„
+ 1< i< r i I = degree of x ; .
+
+  LEmMA 1. No line of length > p + 1 exists unless the design is a near
+pencil.
+   Proof: From [6] we have h > 1 + ( h(r - I)/(u - 1)) if a line of length I
+exists . Let I be the maximum length of a block A . Suppose l > p + 2 .
+  Case 1 .   /-< 3u . Note that 12(V - l ) is increasing for 0 < 1 < 3r. Thus
+
+             b>(p+2)'(p2+p+1-(p+2))                  pz
+                                                          +3p+1-4/p,
+                         p~+p+I-1
+
+a contradiction for p > 2 .
+   Case 2 . 1 > 3r . If there are two points off A then the line through them
+and A both meet at least (I - 1) 2 other lines . Thus h > (I - I ) 2 + 2 > 4u =
+4p' + 4p + 4, a contradiction for p > 1 . Hence no more than one point lies
+off of A . So the design is either degenerate (only one line) or a near pencil .
+   In view of Lemma 1 we may assume that the maximum length of a block
+is p + 1 . Given this and u = p 2 + p + 1 we have the useful fact that a point
+has degree p + 1 if and only if it lies only on lines of length p + 1 .
+   We will refer to blocks of length p + I as long and < p + 1 as short.
+Clearly if all blocks are long the design is a projective plane . Thus we
+assume that some short blocks exist .
+1 36                                            ERD6S ET AL .
+
+
+  LEMMA 2 . If v = p2 + p + 1, b < p 2 + 2p + l, and there exists a block A
+all of whose points have degree p + 1, then b = v .
+
+   Proof. All blocks on a point of degree p + 1 have size p + 1 . Thus A and
+the (p + 1) p blocks which meet A provide a set of p 2 + p + 1 blocks of size
+                              1)(p+ ') _ O pairs, so there can be no other
+p + 1 . These cover (p' + p +
+blocks .
+
+   LEMMA     3.        r i > p + I for all i.
+
+  Proof: Since v = p' + p + 1, a point of degree p or less would lie on
+some line of length p + 2 or more .
+
+   LEMMA     4.    Some point of degree p+ 1 exists.
+
+   Proof : Suppose that r i > p + 2 for all i . Note first that a block, A, , of
+length p + 1 exists since otherwise
+                  hp        h            r
+
+                       >         li =          ri>(p+2)v=(p+2)(p2+p+1)
+                           i=1          i= 1
+
+
+
+implying b > p' + 3p + 2, a contradiction .
+   Since min r i > p + 2, the number of lines intersecting A, of length p + 1 is
+at least (p + 1)(p + I ) . But any point not contained in A, , is contained in a
+line not intersecting A, . So we get at least p'/(p + 1) = p - 1 + (1/(p + 1 ) )
+lines which do not intersect A, . By this, b>, (p 2 + 2p+ 1) + p .
+
+   LEMMA 5 .           Every two lines of length p+ 1 meet.
+
+   Proof. Let ~A,J _ IA 2 1 = p+ 1, A, nA 2 =0 . Then together A, and A 2
+both meet ( P+ 1)2=p2 + 2p + 1 blocks . Now any point contained in A, or
+A, is of degree > p + 2 . Therefore for x c- A, there is a line B(x) containing
+x and I B(x) I < p + 1, any point contained in B(x) has degree > p + 2 .
+Hence we have at least IB(x)l - 1 lines intersecting B(x) but not inter-
+secting A, .
+  If IB(x)I > p/2 for some xcA, then b> p 2 +2p. If IB(x)l < p/2 for every
+x e A, , then x is of degree > p + 3 if x c A , . In this case we have, by
+counting the lines meeting A, , b > (p + 1)(p + 2) > p 2 + 3p .
+   Algebraic Proof of Theorem 2 . To prove Theorem 2, let N be the v x b
+incidence matrix of the design and U its row space . It is well known that
+NT (NNT ) ' N is the matrix of the orthogonal projection from R' (with the
+standard inner product) onto U, provided that N has rank v, or equivalen-
+tly, (NN'') -' exists .
+   In our case, NN' = A + J, where A = diag(r, - 1 : x c- S) and r, denotes
+                                    ON 2-DESIGNS                                   137
+
+the degree of the point x ; and it is easily checked that (A + J) - ' _
+A '+QA-'JA-', where a=1/(l+a_s) and a s =~ _ES(1/(r,-1)) . The
+b x b matrix
+
+          Q=I-NT (NNT )            ' N=I-N T A - 'N+aNT A               'JA - 'N
+
+is evidently the matrix of the orthogonal projection from R h onto U'- , a
+subspace of dimension h - v . In particular, Q has rank b - v .
+  For a subset T of the set S of points, let
+
+                                   a T = Y-      1
+                                          1 r ,. - 1
+
+The rows and columns of Q are indexed by the blocks A, 8, . . ., of the
+design, and with the above notation,
+
+                         Q = I - (( a .ar,R » + 65 WCA7B)) ,
+
+  Let F be the set of r,,, blocks on a fixed point x o and consider the r,, by
+r,, principal submatrix Q, of Q whose rows and columns are indexed by
+the members of F . For distinct A, B e F, 1,,B = (1/(r .,, - 1)) .Writing /3, q for
+1 -a,, + (1 /(r - 1)), we have
+
+                                              1
+              Q,=diag(fl, :AcF)- r                1 J+GOA7B))n .Ber-
+
+So far, this holds for any design .
+  With our hypothesis, Lemmas 1 and 3 show that all blocks have size
+< p + 1 and all points have degree > p + 1 . Then
+
+
+                     /3, =1- ~ r, 1 1 >I-                        1 >0
+                             ~cA                         ea p
+                                   # rp                .r # ,p
+
+
+
+and /i,, = 0 if and only if A = p + 1 and all points of A - { x o } have degree
+                           I   I
+
+
+
+
+p + 1.   Suppose, for contradiction, that [3A > 0 for all A c F . Then
+diag(p,,) + a((a,AaB)), being the sum of a positive definite and positive
+semidefinite matrix, is positive definite and hence has rank r, Subtracting
+the rank 1 matrix (1/(r, á - 1)) J can reduce the rank by at most one, so
+
+                  r,,,- 1 < rank Q o < rank Q = b - v < p - 1,
+
+which gives a contradiction r,o <, p to Lemma 3 .
+  To summarize, there exists a block A on x o such that all points of
+A - { x„ } have degree p + 1 . We now take x o to be any point of degree
+p + 1 and Lemma 2 completes the proof.
+1 38                             ERDŐS ET AL .
+
+
+  Algebraic Proof of Theorem 3 . Let Y= {x c S : r x = p + 1 1, Z= {x c S :
+r > p + 1 } . By Lemma 2, there are no blocks A - Y. But let us call A good
+when A is long and all but one of its points is in Y. Because of Lemma 2 we
+may assume that each block on a point y, e Y contains at least one point of
+Z, so IZI>p+1 .
+  The argument involving Q„ in the previous theorem shows in this case,
+that each point of Z is contained in at least one good block . Any two long
+blocks intersect . Let G be a set of blocks consisting of one good block con-
+taining z for each z c Z and consider the principal submatrix Q, of Q
+whose rows and columns are indexed by the members of G . For distinct
+A, B e G, cc, , B = 1 /p (since A, B intersect in a point of Y) . Also, for A E G
+containing zeZ, aA=(1/(r_-1))+(p/p)<(1/p)+1 . Then
+
+
+              Q, =diag    1+ 1- a' / - pJ+UW)CI •a B))A .BeG,
+
+
+being the sum of a positive definite, a positive semidefinite, and a rank 1
+matrix, is seen to have rank > IGI - 1 = IZI - 1 . So
+
+                    ZI - 1 < rank Q, < rank Q = b - v = p .
+
+We have now proved that I ZI = p + 1 .
+  Recall that all blocks containing a point of Y are long . Consider two
+good blocks A, A' containing z, z' e Z. There are p Z blocks other than A
+containing points of A- iz}, all of which are long . There are p blocks
+(including A) on z containing a point of A'- {z-'} and these too must be
+long . Thus there are at least p` + p long blocks . These cover (p' + p)(° z ' )
+pairs, leaving only ( ' +') pairs uncovered . The remaining p + 1 blocks are
+short and cover these (~' ; ') pairs . But all short blocks are contained in Z,
+and IZI =p+ 1 . Evidently, the short blocks form a (possibly degenerate)
+projective plane on Z .
+  Finally, the long blocks together with ZZ form a projective plane of order
+p on x, which proves Theorem 3 .
+  Now we present combinatorial proofs of Theorems 2-4 . Note that it suf-
+fices to prove Theorem 4 only since (using the de Bruijn-Erdős Theorem)
+the breaking up of a line in a projective plane immediately results in
+b > p' + 2p + 1 . Equality holds only if the line is broken into a projective
+plane or near pencil .
+  We show first that the number of lines of length p + 1 is at least p2+ 1
+and then show that this implies that exactly one line was broken up .
+   Let g = (number of lines length p + 1) and let the longest line not of
+length p + 1 be Á, of length ap, 0 < a < 1 . Thus every line has length p + 1
+                                  ON 2-DESIGNS                                    139
+
+or <ap . By counting triples (x ;, x,, A h ) with x ; e A,, xj c A h , x ;    x,- ; we
+have
+
+                   (h- q)ap(ap-1)+qp(p+I)>v(v-1) .
+
+Using u = p` + p + 1 and h < p 2 + ( 2 + c) p we have
+
+                              1 -2a'-ca'\         (1 +ac) p+ 1
+                9~~
+                       +p        1-a2 / +p(1-a2)+I+a
+
+  So q > p' + I for a < 1/(2 + c) . We now take care of larger a .
+   Let x be a point of degree p + 1 . Then x A . Since A is short there exists
+a line of length p + 1 through x missing A . Denote this line by A and the
+lines through x meeting Á by A,, A z        A x ,, .
+  Consider now A, and A . Together both meet (p + I - 1)( p + l - 1) +
+degree( .r) =P2 + p + 1 lines .
+  Through each point y c Á\A, there is at least one line meeting A and
+missing A, (i .e ., at least one of the p+ 1 lines from y to A must miss A,,
+since Á through y meets A, and misses A) . Thus there are at least ap- 1
+lines meeting A and missing A, . Similarly if A* is a line meeting A and
+missing A, there are at least IA*1 - 1 lines meeting A, and missing A .
+   Adding these up, we have
+
+                    h>(p'-+p+1)+(ap-1)+(1A*1-1) .
+
+Hence ~A*j <(I +c-a) p+ i .
+  Thus any line meeting A but missing A, has length < (1 + e - a) p + l .
+This same argument holds for any A,, i < i < ap . Now suppose A' is any
+block meeting A . If A' misses some A„ i < i < ap then I A'j <
+(1 + e - a) p + 1 by above. If A' meets every A, , A z , .. ., A nn in addition to A
+then I A' j > ap + i . So I A' I = p + 1 by maximality of Á .
+   We have shown that every block meeting A has length p + 1 or
+   (1 + c - )t) p + 1 . Let u be any point on A and
+
+          N„ = No . of lines of length p + 1 through u other than A .
+
+Then
+
+       / No . of lines through u of           p' - pN„         -    p - N,
+       ~length <(I +c-a) p+ 1           (1 +c-a) p+ i - 1          (1 +c-a)
+
+So
+
+                        degree(u) -1 >N +p-N,,
+                                         (1 +C -0()*
+1 40                                    ERDOS ET AL .
+
+
+Summing over u e A then gives
+                                                                  1          P(P+1)
+       b-1            (degree (u)-1)>(q-1)CI-
+                 -A                                          1 +c-a /+ 1 +c-a'
+
+since q - I = J„, ,, N,, . Solving for q gives
+
+                                    1 -(2+c)(1 +e-a)                   1
+                     q > p2 + p                                  +
+                                              a-c                     a-c
+
+Thus q> p`+ I for l +c-a< 1/(2+c), i .e ., a> (c'+3c+ I)/( (- +2) .
+Previously q > p 2 + 1 for a < J1/(2 + c) . We choose c so that these ranges
+overlap, i .e .,
+                                c 2 +3c+1
+                                          <~/1/(2+c) .
+                                    c+ 2
+
+Equivalently 0 > c 4 + 6c á + 11 ,,2 + Sc - 1 . To within six decimal places we
+can take c = 0 .147899 .
+   We now complete the proof by showing that q > p' + 1 implies one line
+was broken up . Let A , , . . ., A 1,2 , ,- be the lines of length p + 1, t > 1 . Here we
+use the following theorem of Vanstone [9] : Let ~S1 =P' +P + 1, B =
+{ 8,, . . ., B,,, ) , m > p2 be a family of subsets of S, J B i = p + 1 for i = 1, 2, . . ., m .
+If I B ; n B,l = 1, 1 < i < j < m then B is embeddable into a finite projective
+plane of order p .
+   We apply this theorem to the system iA,                  A pe + ,} . Let B,   B P2+p+,
+be the finite projective plane into which we embed our system, and B„
+1 < i < p - t + 1 the lines not belonging to our system . Then the pair
+covered by the lines B„ i < p - t + I must be covered by our lines A i ,
+j>P 2 +t.
+    Observe that to every line B i , i < p - t + 1 there is an x,, x, E B, and
+x ~ B i , .j < p - t + 1, i 1 . This is obvious because p - t < p + I and
+I B, n B i d = 1 for i j. Now for every A i , j > p 2 + t which contains x, we
+have A, c B ; since for y ~ B;(x,-, y) is covered by a line A _ v < p 2 + t . Since
+all the pairs (x i , y), y E B, must be covered by such a line A i , and
+I A,I < p + 1, we have at least two lines which are contained in B,- . The short
+lines meeting some B ; induce a sub 2-design on the p + 1 points of B i . So
+by the de Bruijn-Erdős theorem the number of short lines which meet a B ;
+is at least p + 1 . Fixing B, we have at least p + 1 short lines meeting B, .
+The remaining p - t lines Bi each contain at least two short lines. Thus
+
+                    b> p~+t+(p+ l)+2(p-t)> p 2 +2p+ 1
+
+and equality holds iff p = t, i .e ., exactly one line of a projective plane of
+order p was broken up .
+                                   ON 2-DESIGNS                              141
+
+   If t = 1, we have b . p2 +3p- 1 . Now we suppose 2,<p+ 1 - t < p - 1 .
+In this case every B„ 1 < i < p + 1 - t contains at least t + 1 points not con-
+tained in any other B ;, i j, 1 < j < p + 1 - t . Thus the short lines contain-
+ing these points lie entirely within the given B, .
+   Let B,= C; v D„ 1 < i < p + 1 - t where
+
+                    C ;={x, :x,c B,, x ;           U
+                          l                        1   -11
+
+                                               I,, .<n+t -t
+                    D, = B,AC, .
+
+   Case a . For an i, 1 < i < p + 1 - t, the pairs of C; are covered by one
+short line A,, . Then for any x; c C; we need at least one line to cover each
+of the pairs (x,, y ), y c B,AA    (#   0) .For different x,'s we have different
+lines . This gives at least C;l ~> t + 1 different short lines within B, .
+                          I
+
+
+
+
+  Case b . The pairs of C, are covered by more than one line . In this case
+the de Bruijn-Erdős theorem gives at least IC,l >~ t+ 1 different short lines
+within B, .
+   The lines we considered are different for different i's . This gives, that the
+number of short lines is at least (p + 1 - t)(t + 1) . Hence b > p' + t +
+(p + 1 - t)(t + I ) ~> p' + 3p - 1 for 2 < t S p - 1 . This completes the proof .
+  Before closing with several open problems we remark that a forthcoming
+paper by Erdős, Mullin, Sós, and Stinson [3] contains related results .
+
+  PROBLEM 1 .  Theorem 4 is not best possible . We conjecture that
+Theorem 4 holds with
+                              h~> p 2 +3p+0(1) .
+
+   Remark . Let SJ =v, A= {A,         A,} a 2-design . Assume 1 < lA,l
+v - 2 . We can prove that the number of A,'s not containing x for every x c- S
+is greater than u- v . We have equality for finite geometries . This might
+be connected with the following conjecture of Dowling-Wilson .
+
+  PROBLEM 2 .  Let x e S, and x ~ A ; . Assume that there are t lines through
+x not meeting A, . Then b .> v + t .
+  This is equivalent to the assertion that the number of lines not contain-
+ing x is never less than the number of points not on A, .
+
+   PROBLEM 3 .    Assume again A= {A,, . . ., A zi } is a 2-design, 1 IA,l <
+                                                                        <
+
+
+
+v - 2 and that the 2-design is not a finite geometry, further that b is minimal
+satisfying this condition . Furthermore assume there is no finite geometry of
+142                                        ERDŐS ET AL .
+
+
+order u and u, > u is the least integer > v for which there is a finite
+geometry . Is it true, that we obtain our 2-design by omitting elements from
+the finite geometry of size v, (perhaps we can completely omit some lines if
+v,-r> ", u)?
+
+  PROBLEM 4 .    Let h be the minimal number of blocks of a design on u
+elements satisfying A i l <v-2 . Is it true that
+
+                                        - h-u
+                                        lim   = 00?
+                                       A   -Y
+
+
+
+
+  PROBLEM 5 . Let { A, } be a design on u = p 2 + p + 1 elements for which
+IA, I=~A,J=p+1, A,r)A 2 =0. We proved in Lemma 6 that h> p' +z p .
+Determine the smallest possible value of h or give a better estimation .
+
+
+                                           REFERENCES
+
+ I . N . G . De BRUHN AND P . ERDüs, On a combinatorial problem, N ederl. Akad. Wetensch .
+     Proc. Sect . Sci . 5 1 (1948), 1277--1279 .
+2 . P . ERD6S, On a problem of Grünbaum, Canad. Math . Bull. 15 (1972), 23-25 .
+3. P . ERDŐS, R . C . MULLIN, V . T. Sós, AND D . STINSON, Finite linear spaces and projective
+     planes, to appear .
+4. J . C . FowLER, A short proof of Totten's classification of restricted linear spaces, to appear .
+5. D . R . HEATH BRowN AND H . IWAN16C, On the difference between consecutive primes,
+     Invent . Math . 55 (1979), 49-69 .
+6. R . G . STANTON AND J . G . KAI .nn .eiscn, The i-p problem, i.=1, µ=3, in "Proc ., Second
+     Chapel Hill Conf. on Combinatorics," pp . 451-462, Chapel Hill, 1972 .
+7. J . ToTTLN, Basic properties of restricted linear spaces, Discrete Math . 13 (1975), 67-74 .
+8. J . TOTTEN, Classification of restricted linear spaces, Canad. J . Math . 28 (1976), 321-333 .
+9. S . VANSTONE, The extendability of (r, 1 )-designs, in °Proc., Third Manitoba Conf. on
+     Numerical Math .," pp . 409 418, 1973 .
+
