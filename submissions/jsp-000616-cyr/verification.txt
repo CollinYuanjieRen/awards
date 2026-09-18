@@ -1,28 +1,40 @@
-Local exported-package verification (fresh package directory under a clean git worktree; dependencies from the official Mathlib cache server); arm64 macOS; 2026-09-17T00:25:42Z.
+Local exported-package verification (fresh package directory under a clean git worktree of branch source/jsp-000616; Mathlib oleans from the official cache server via `lake exe cache get`); arm64 macOS; 2026-09-18T06:49:34Z.
 
 $ lake env lean --version
 Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
 exit=0
 
 $ lake build
-Build completed successfully (8747 jobs).
-exit=0 (no errors; no sorry warnings)
+Build completed successfully (8779 jobs).
+exit=0
 
 $ lake env lean Audit.lean
-'Erdos748.sumFree_of_subset_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Erdos748.f_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+CameronErdos.cameronErdos : CameronErdos.CameronErdosStatement
+def CameronErdos.CameronErdosStatement : Prop :=
+∃ C, 0 < C ∧ ∀ (n : ℕ), CameronErdos.sumFreeCount n ^ 2 ≤ C * 2 ^ n
+def CameronErdos.sumFreeCount : ℕ → ℕ :=
+fun n => (Finset.filter CameronErdos.IsSumFree (Finset.Icc 1 n).powerset).card
+def CameronErdos.IsSumFree : Finset ℕ → Prop :=
+fun A => ∀ a ∈ A, ∀ b ∈ A, a + b ∉ A
+'CameronErdos.cameronErdos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CameronErdos.eventually_exceptional_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CameronErdos.cameronErdos_of_exceptional_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CameronErdos.intervalSumFreeCount_sq_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CameronErdos.prop7' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CameronErdos.eventually_container_family' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Finset.add_kneser' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Erdos748.f_ge_two_pow_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CameronErdos.tendsto_logb_sumFreeCount_div' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CameronErdos.sumFreeCount_isBigO' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CameronErdos.two_pow_half_isBigO_sumFreeCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CameronErdos.sumFreeCount_eq_two_pow_half_add_littleO' depends on axioms: [propext, Classical.choice, Quot.sound]
 exit=0
 
-$ lake env lean Challenge.lean   # statement-only comparator; the two expected sorry warnings are its targets
-Challenge.lean:14:8: warning: declaration uses `sorry`
-Challenge.lean:17:8: warning: declaration uses `sorry`
-exit=0
-
-$ grep -rn "sorry\|admit\|native_decide\|implemented_by\|opaque\|unsafe\|^axiom\|ofReduceBool" Jsp616 Jsp616.lean Audit.lean
+$ grep -rnE "sorry|admit|native_decide|ofReduceBool|implemented_by|unsafe|^axiom " --include="*.lean" .
 (no matches)
 
-SHA-256 of the recorded source statement:
+SHA-256 of the frozen statement file and of the recorded source statement:
+1249327b4719cd9a513227d5f9893be59fe50a57c6e6742d64fcec93fac21897  CameronErdos/Statement.lean
 371b37af97a76494a6ebc401aef0607b45a04e47fe7fb473222d1a4c143ebdd1  sources/erdos748-statement.txt
 
 Lean toolchain: leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d (lake-manifest.json).
