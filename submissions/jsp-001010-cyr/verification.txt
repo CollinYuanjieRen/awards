@@ -1,0 +1,15 @@
+Local verification 2026-09-17 (package export): lake build success (8752 jobs); no sorry/native_decide/axiom/opaque/unsafe/implemented_by/partial/set_option in Jsp1010/*.lean; Target.lean (statement-only, 1 sorry, not imported) has definitions byte-identical to Jsp1010/Defs.lean and its statement discharged verbatim by Erdos1205.erdos_1205.
+Comparator: NOT-AVAILABLE (no organizer Lean target; erdosproblems.com/1205 'Formalised statement: No'; formal-conjectures has no ErdosProblems/1205.lean as of 2026-09-17). Independent adversarial alignment audit: PASS.
+Toolchain leanprover/lean4:v4.34.0-rc1; Mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d.
+SHA-256 ref/erdosproblems-1205.txt (problem page text, fetched 2026-09-17): 63599ef638c183b62c68f403f367e515b23ab26ce90c4aa6dead6fc9235ea412
+SHA-256 ref/jsp-001010-catalog.md: 30bcf37faeda88167cdb0cfab299ca8337c9dc7fca4d9aa6294f602cf826a836
+
+lake env lean Audit.lean:
+'Erdos1205.erdos_1205' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1205.F_le_log_add_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1205.F_ge_log_sub_sqrt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1205.F_div_log_tendsto_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1205.F_sub_log_isBigO' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1205.exists_choice_few_bad' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1205.exists_repair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1205.eventually_facts' depends on axioms: [propext, Classical.choice, Quot.sound]

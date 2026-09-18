@@ -1,0 +1,9 @@
+Erdős Problem #1205, https://www.erdosproblems.com/1205, fetched 2026-09-17 (page last edited 08 April 2026)
+
+SOLVED
+This has been resolved in some other way than a proof or disproof.
+Let $F(x)$ be maximal such that there exists, for all $n\leq x$, a congruence class $a_n\pmod{n}$ such that every $m\leq x$ satisfies at least $F(x)$ of these congruences. Estimate $F(x)$.
+ #1205 : [Er80,p.108] 
+ number theory 
+Erdős [Er80] describes it as a 'simple exercise' to prove that $F(x)\to \infty$ as $x\to \infty$. The analogous problem with $n$ restricted to primes is [689] . The following simple argument (inspired by the comments for [689] ) shows $F(x)\sim \log x$. The pigeonhole principle implies $F(x)\leq \sum_{n\leq x}\frac{1}{n}= \log x+O(1)$. For a lower bound, it suffices to choose the residue classes for $n\leq x$ uniformly at random. The expected number of congruences satisfied by any fixed $m\leq x/2$ is $\sum_{n\leq x/2}\frac{1}{n}=\log x+O(1)$. By concentration of measure (e.g. a suitable form of the Chernoff bound ) the probability that $m$ is only covered $<\log x-O(\sqrt{\log x\log\log x})$ many times is at most $1/(\log x)^2$, say, and hence there exists a choice of congruence classes for $n\leq x/2$ such that all but $O(x/(\log x)^2)$ many $m\leq x$ are covered at least $\log x-O(\sqrt{\log x\log\log x})$ many times. The remaining $m\leq x$ can be covered $\gg (\log x)^2$ many times by greedily choosing suitable congruence classes for the remaining $x/2<n\leq x$. This proves\[\log x-O(\sqrt{\log x\log\log x})\leq F(x)\leq \log x+O(1).\]
+ 
