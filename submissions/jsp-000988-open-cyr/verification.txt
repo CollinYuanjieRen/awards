@@ -1,0 +1,22 @@
+# Local verification of submissions/jsp-000988-open-cyr — 2026-09-18T03:55:16Z
+# toolchain: leanprover/lean4:v4.34.0-rc1; mathlib 1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d (cached packages)
+$ lake build Erdos1183Lattices
+✔ [8750/8752] Built Erdos1183Lattices.Main (7.7s)
+✔ [8751/8752] Built Erdos1183Lattices (8.4s)
+Build completed successfully (8752 jobs).
+$ lake env lean Audit.lean
+'Erdos1183.erdos_1183_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1183.le_f' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1183.f_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1183.good_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1183.not_good_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1183.good_iff_le_f' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos1183.card_closed_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Erdos1183.Closed : {n : ℕ} → Finset (Finset (Fin n)) → Prop :=
+fun {n} F => ∀ A ∈ F, ∀ B ∈ F, A ∪ B ∈ F ∧ A ∩ B ∈ F
+def Erdos1183.Mono : {n : ℕ} → (Finset (Fin n) → Bool) → Finset (Finset (Fin n)) → Prop :=
+fun {n} c F => ∃ b, ∀ A ∈ F, c A = b
+def Erdos1183.Good : ℕ → ℕ → Prop :=
+fun n m => ∀ (c : Finset (Fin n) → Bool), ∃ F, F.Nonempty ∧ Closed F ∧ Mono c F ∧ m ≤ F.card
+def Erdos1183.f : ℕ → ℕ :=
+fun n => sSup {m | Good n m}
