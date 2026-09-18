@@ -1,0 +1,52 @@
+Let $\delta>0$ and $k\geq 3$. Is it true that there exists $m\geq 1$ (depending only on $\delta$ and $k$) such that, for all large $N$, if $A,B\subseteq \{1,\ldots,N\}$ with $\lvert A\rvert \geq \delta N$ and $\lvert B\rvert \geq m$ then there is a non-trivial $k$-term arithmetic progression in $A$ whose common difference is in $B-B$?
+#1185
+: 
+[Er80,p.92]
+additive combinatorics
+ | 
+arithmetic progressions
+In 
+[Er80]
+ Erdős attributes this problem to him and Mauldin, motivated by 'a problem in measure theory'. 
+This is false already at $k=3$. A set $S\subseteq \mathbb{N}$ is called $k$-intersective if every subset of $\mathbb{N}$ with positive density contains an arithmetic progression of length $k+1$ whose difference is in $S$. To disprove this it suffices to give an infinite set $B$ such that $B-B$ is not $2$-intersective, which was provided by Furstenberg 
+[Fu81]
+.
+Proof expositions (0)
+If you would like to contribute an exposition of a proof related to this problem, please message a moderator or leave your exposition as a comment.
+ No proof expositions yet.
+Comments (0)
+Proof claims (0)
+More information and links
+This page was last edited 05 April 2026.
+ (
+View history
+) (
+View the LaTeX source
+)
+When referring to this problem, please use the original sources of Erdős. If you wish to acknowledge this website, the recommended citation format is:
+T. F. Bloom, Erdős Problem #1185, https://www.erdosproblems.com/1185, accessed 2026-09-18
+From the 
+external database
+. (You can
+ help update
+ this.)
+Formalised statement?
+ No
+ (
+create one
+)
+Reactions
+ Likes
+None
+ Open to collaboration
+None
+ Currently working on
+None
+ Looks difficult
+None
+ Looks tractable
+None
+ Could be formalisable
+None
+ Working on formalising
+None
