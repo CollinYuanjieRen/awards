@@ -1,2 +1,4 @@
+import MerLeanExperiment.Target
 import MerLeanExperiment.Main
+import MerLeanExperiment.Table
 import MerLeanExperiment.Audit

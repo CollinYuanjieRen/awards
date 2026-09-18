@@ -1,10 +1,10 @@
-Local exported-package verification, revision 3 (2026-09-17, after adding MerLeanExperiment/Twelve.lean and the z(12) = 4 roots). The package is the exact import cone of MerLeanExperiment/Main.lean and MerLeanExperiment/Audit.lean (2051 modules; SHA-256 of every module in source-hashes.txt). Lean commands below were executed in the development workspace whose MerLeanExperiment/ directory is byte-identical to this package (checked with `diff -rq` and with the shasum line below; the workspace holds cached upstream dependencies and the build artifacts of the 2050 unchanged modules from the previous full build, arm64 macOS); the grep, find and shasum commands were executed in this package directory.
+Local exported-package verification, revision 4 (2026-09-18, after adding the full-table modules TableMonotone, TableUpper, TableLower, NineLowerBound, CochromaticNumber, Table and making the library root MerLeanExperiment.lean import Main, Table and Audit). The package is the import cone of MerLeanExperiment.lean (2057 modules under MerLeanExperiment/; SHA-256 of every module in source-hashes.txt). Lean commands below were executed in the development workspace whose MerLeanExperiment/ directory and MerLeanExperiment.lean are byte-identical to this package (checked with `diff -rq` and with the shasum line below; the workspace holds cached upstream dependencies and build artifacts of the previously built modules, arm64 macOS); the grep, find and shasum commands were executed in this package directory.
 
 $ lake env lean --version
 Lean (version 4.34.0-rc1, arm64-apple-darwin24.6.0, commit 3447a668783dbce1a8fdb97101dd067687b2b418, Release)
 exit=0
 
-$ lake build MerLeanExperiment.Audit MerLeanExperiment.Main   # rebuild of Twelve, Main and Audit after adding Twelve.lean; lake replays the recorded messages of all 5097 jobs (1373 `#print axioms` info lines in total, saved in full in the development workspace as evidence/twelve-build-r3.log); excerpt below: the root-module axiom lines and completion
+$ lake build   # default target = the library root MerLeanExperiment.lean, which now imports Main, Table and Audit; lake replays the recorded messages of all jobs (1406 `#print axioms` info lines in total, saved in full in the development workspace as evidence/table-build-full.log); excerpt below: the root-module axiom lines and completion
 info: MerLeanExperiment/ModelAdapters.lean:159:0: 'CochromaticTwenty.homogeneous_image_iff' depends on axioms: [propext, Quot.sound]
 info: MerLeanExperiment/ModelAdapters.lean:160:0: 'CochromaticTwenty.hasCocoloring_iso_iff' depends on axioms: [propext, Quot.sound]
 info: MerLeanExperiment/ModelAdapters.lean:161:0: 'CochromaticTwenty.HasCocoloring.mono' depends on axioms: [propext, Quot.sound]
@@ -23,21 +23,54 @@ info: MerLeanExperiment/Twelve.lean:91:0: 'cochromatic_twelve' depends on axioms
 info: MerLeanExperiment/Twelve.lean:92:0: 'cochromatic_twelve_on_finite_type' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: MerLeanExperiment/Main.lean:9:0: 'cochromatic_twenty' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: MerLeanExperiment/Main.lean:16:0: 'cochromatic_twelve'' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: MerLeanExperiment/Audit.lean:4:0: 'cochromatic_twenty' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: MerLeanExperiment/Audit.lean:5:0: 'cochromatic_twelve' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: MerLeanExperiment/Audit.lean:6:0: 'cochromatic_twelve_on_finite_type' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: MerLeanExperiment/Audit.lean:7:0: 'CochromaticTwenty.paley17OnTwelve_lowerBound' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: MerLeanExperiment/Audit.lean:8:0: 'CochromaticTwenty.universal_six_upperBound' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: MerLeanExperiment/Audit.lean:9:0: 'CochromaticTwenty.paley17_lowerBound' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: MerLeanExperiment/Audit.lean:10:0: 'CochromaticTwenty.fin8_hasCocoloring_three' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: MerLeanExperiment/Audit.lean:11:0: 'CochromaticTwenty.fin12_hasCocoloring_four' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: MerLeanExperiment/Audit.lean:12:0: 'CochromaticTwenty.sixteen_classification' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: MerLeanExperiment/Audit.lean:13:0: 'CochromaticTwenty.twenty_twoFours' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: MerLeanExperiment/Audit.lean:14:0: 'CochromaticTwenty.fixedCore0_twoFours' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: MerLeanExperiment/Audit.lean:15:0: 'CochromaticTwenty.fixedCore1_twoFours' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: MerLeanExperiment/Audit.lean:16:0: 'CochromaticTwenty.target_iff_on_card_twenty' depends on axioms: [propext, Classical.choice, Quot.sound]
-info: MerLeanExperiment/Audit.lean:26:0: 'cochromatic_twenty_on_finite_type' depends on axioms: [propext, Classical.choice, Quot.sound]
-Build completed successfully (5097 jobs).
+info: MerLeanExperiment/TableMonotone.lean:57:0: 'CochromaticTwenty.HasCocoloring.induce' depends on axioms: [propext, Quot.sound]
+info: MerLeanExperiment/TableMonotone.lean:58:0: 'CochromaticTwenty.hasCocoloring_of_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/TableMonotone.lean:59:0: 'CochromaticTwenty.exists_not_hasCocoloring_of_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/TableUpper.lean:91:0: 'CochromaticTwenty.homogeneous_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/TableUpper.lean:92:0: 'CochromaticTwenty.fin2_hasCocoloring_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/TableUpper.lean:93:0: 'CochromaticTwenty.fin4_hasCocoloring_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/TableUpper.lean:94:0: 'CochromaticTwenty.hasCocoloring_five_of_card_fifteen' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/TableUpper.lean:95:0: 'CochromaticTwenty.fin15_hasCocoloring_five' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/TableLower.lean:166:0: 'CochromaticTwenty.fin1_not_hasCocoloring_zero' depends on axioms: [propext]
+info: MerLeanExperiment/TableLower.lean:167:0: 'CochromaticTwenty.fin3_not_hasCocoloring_one' depends on axioms: [propext, Quot.sound]
+info: MerLeanExperiment/TableLower.lean:168:0: 'CochromaticTwenty.fin5_not_hasCocoloring_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/TableLower.lean:169:0: 'CochromaticTwenty.paley17_prefix_not_hasCocoloring' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/TableLower.lean:170:0: 'CochromaticTwenty.fin13_not_hasCocoloring_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/TableLower.lean:171:0: 'CochromaticTwenty.fin16_not_hasCocoloring_five' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/TableLower.lean:172:0: 'CochromaticTwenty.paley17OnTwelve_not_hasCocoloring_three_of_prefix' depends on axioms: [propext,
+info: MerLeanExperiment/CochromaticNumber.lean:100:0: 'CochromaticTwenty.exists_hasCocoloring' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/CochromaticNumber.lean:101:0: 'CochromaticTwenty.cochromaticNumber_le_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/CochromaticNumber.lean:102:0: 'CochromaticTwenty.zmax_le_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/CochromaticNumber.lean:103:0: 'CochromaticTwenty.zmax_eq_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/CochromaticNumber.lean:104:0: 'CochromaticTwenty.zmax_eq_iff_cochromaticValue' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/NineLowerBound.lean:101:0: 'CochromaticTwenty.nine_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/NineLowerBound.lean:102:0: 'CochromaticTwenty.fin9_not_hasCocoloring_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/Table.lean:111:0: 'cochromatic_table' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/Table.lean:121:0: 'cochromatic_zmax_table' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/Table.lean:128:0: 'cochromatic_zmax_twenty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/Table.lean:135:0: 'cochromatic_zmax_twelve' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/Audit.lean:5:0: 'cochromatic_twenty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/Audit.lean:6:0: 'cochromatic_twelve' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/Audit.lean:7:0: 'cochromatic_twelve_on_finite_type' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/Audit.lean:8:0: 'CochromaticTwenty.paley17OnTwelve_lowerBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/Audit.lean:9:0: 'CochromaticTwenty.universal_six_upperBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/Audit.lean:10:0: 'CochromaticTwenty.paley17_lowerBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/Audit.lean:11:0: 'CochromaticTwenty.fin8_hasCocoloring_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/Audit.lean:12:0: 'CochromaticTwenty.fin12_hasCocoloring_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/Audit.lean:13:0: 'CochromaticTwenty.sixteen_classification' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/Audit.lean:14:0: 'CochromaticTwenty.twenty_twoFours' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/Audit.lean:15:0: 'CochromaticTwenty.fixedCore0_twoFours' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/Audit.lean:16:0: 'CochromaticTwenty.fixedCore1_twoFours' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/Audit.lean:17:0: 'CochromaticTwenty.target_iff_on_card_twenty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/Audit.lean:27:0: 'cochromatic_twenty_on_finite_type' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/Audit.lean:33:0: 'cochromatic_table' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/Audit.lean:34:0: 'cochromatic_zmax_table' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/Audit.lean:35:0: 'cochromatic_zmax_twenty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/Audit.lean:36:0: 'cochromatic_zmax_twelve' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/Audit.lean:37:0: 'CochromaticTwenty.fin15_hasCocoloring_five' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/Audit.lean:38:0: 'CochromaticTwenty.fin9_not_hasCocoloring_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MerLeanExperiment/Audit.lean:39:0: 'CochromaticTwenty.zmax_eq_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (5105 jobs).
 exit=0
 
 $ lake env lean MerLeanExperiment/Audit.lean
@@ -55,9 +88,16 @@ $ lake env lean MerLeanExperiment/Audit.lean
 'CochromaticTwenty.fixedCore1_twoFours' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CochromaticTwenty.target_iff_on_card_twenty' depends on axioms: [propext, Classical.choice, Quot.sound]
 'cochromatic_twenty_on_finite_type' depends on axioms: [propext, Classical.choice, Quot.sound]
+'cochromatic_table' depends on axioms: [propext, Classical.choice, Quot.sound]
+'cochromatic_zmax_table' depends on axioms: [propext, Classical.choice, Quot.sound]
+'cochromatic_zmax_twenty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'cochromatic_zmax_twelve' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CochromaticTwenty.fin15_hasCocoloring_five' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CochromaticTwenty.fin9_not_hasCocoloring_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CochromaticTwenty.zmax_eq_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
 exit=0
 
-$ grep -rnE "sorry|admit|^\s*axiom|native_decide|ofReduceBool|unsafe|implemented_by|opaque" MerLeanExperiment --include='*.lean' | grep -v "admits\|admitted" | wc -l   # forbidden constructs (0 expected)
+$ grep -rnwE "sorry|admit|axiom|native_decide|ofReduceBool|unsafe|implemented_by|opaque" MerLeanExperiment MerLeanExperiment.lean --include='*.lean' | wc -l   # forbidden constructs, word-bounded (0 expected)
 0
 exit=0
 
@@ -65,18 +105,26 @@ $ grep -rhoE "set_option [a-zA-Z.]+ [a-z0-9]+" MerLeanExperiment --include='*.le
    2 set_option linter.style.haveILetI false
 1764 set_option maxHeartbeats 10000000
    1 set_option maxHeartbeats 2000000
+   1 set_option maxHeartbeats 4000000
 1993 set_option maxRecDepth 100000
+   1 set_option maxRecDepth 4000000
+exit=0
+
+$ grep -rlw "decide +kernel" MerLeanExperiment --include='*.lean' | grep -vc Certificates; grep -rlw "decide +kernel" MerLeanExperiment --include='*.lean' | grep -v Certificates | grep -E 'Table|Nine|Cochromatic|Twelve'    # files using kernel decision outside the certificate tree (count), and which of the new table modules do so (NineLowerBound only expected)
+349
+MerLeanExperiment/NineLowerBound.lean
 exit=0
 
 $ find MerLeanExperiment -name '*.lean' | wc -l
-2051
+2057
 exit=0
 
-$ shasum -a 256 -c source-hashes.txt | grep -vc ': OK$'; shasum -a 256 -c source-hashes.txt | grep -c ': OK$'   # lines not OK (0 expected), lines OK (2051 expected)
+$ shasum -a 256 -c source-hashes.txt | grep -vc ': OK$'; shasum -a 256 -c source-hashes.txt | grep -c ': OK$'   # lines not OK (0 expected), lines OK (2057 expected)
 0
-2051
+2057
 exit=0
 
-$ (development workspace) shasum -a 256 -c <package>/source-hashes.txt | grep -c ': OK$'   # 2051 expected: the built tree is byte-identical to the package
-2051
+$ (development workspace) shasum -a 256 -c <package>/source-hashes.txt | grep -c ': OK$'; cmp MerLeanExperiment.lean   # 2057 expected: the built tree is byte-identical to the package
+2057
+root-identical
 exit=0

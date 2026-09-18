@@ -1,5 +1,6 @@
 import MerLeanExperiment.Main
 import MerLeanExperiment.ModelAdapters
+import MerLeanExperiment.Table
 
 #print axioms cochromatic_twenty
 #print axioms cochromatic_twelve
@@ -24,3 +25,15 @@ theorem cochromatic_twenty_on_finite_type {V : Type*} [Fintype V]
   CochromaticTwenty.target_on_card_twenty cochromatic_twenty hcard
 
 #print axioms cochromatic_twenty_on_finite_type
+
+/-!
+The published table `z(1..19)` of maximum cochromatic numbers, its two new
+anchors, and the `zmax` characterisation it is stated with.
+-/
+#print axioms cochromatic_table
+#print axioms cochromatic_zmax_table
+#print axioms cochromatic_zmax_twenty
+#print axioms cochromatic_zmax_twelve
+#print axioms CochromaticTwenty.fin15_hasCocoloring_five
+#print axioms CochromaticTwenty.fin9_not_hasCocoloring_three
+#print axioms CochromaticTwenty.zmax_eq_iff

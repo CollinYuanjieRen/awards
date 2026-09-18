@@ -1,8 +1,8 @@
-# JSP-000622: the cochromatic numbers z(12) = 4 and z(20) = 6
+# JSP-000622: the maximum cochromatic numbers z(1), …, z(19) and z(20) = 6
 
-This package submits a Lean formalization for intake and eligibility review. It addresses [JSP-000622](https://github.com/TheJustinSunPrize/awards/blob/f4e7173d89dfe91022a185427d63452c8ffbf6ae/problems/catalog-0601-0700.md#JSP-000622) ([Erdős Problem #758](https://www.erdosproblems.com/758)). Here `z(G)` is the cochromatic number, the least number of classes in a partition of the vertices into cliques and independent sets, and `z(n)` its maximum over `n`-vertex graphs. The problem page asks to determine `z(n)` for small `n` and, in particular, whether `z(12) = 4`; it records the values `z(1), …, z(19)` as known (with `z(12) = 4` established computationally by Bhavik Mehta), remarks that the only significant difficulty is proving `z(12) = 4`, and states that it is unknown whether `z(20) = 6` or `7`. This package proves both `z(12) = 4` (`cochromatic_twelve`, the value asked for in particular) and `z(20) = 6` (`cochromatic_twenty`, a value the problem page records as unknown; the mathematical route is the cited `ipitchford/z20-cochromatic` document, re-derived and fully checked here).
+This package submits a Lean formalization for intake and eligibility review. It addresses [JSP-000622](https://github.com/TheJustinSunPrize/awards/blob/f4e7173d89dfe91022a185427d63452c8ffbf6ae/problems/catalog-0601-0700.md#JSP-000622) ([Erdős Problem #758](https://www.erdosproblems.com/758)). Here `z(G)` is the cochromatic number, the least number of classes in a partition of the vertices into cliques and independent sets, and `z(n)` its maximum over `n`-vertex graphs. The problem page asks to determine `z(n)` for small `n` and, in particular, whether `z(12) = 4`; it records the values `z(1), …, z(19)` as known (with `z(12) = 4` established computationally by Bhavik Mehta), remarks that the only significant difficulty is proving `z(12) = 4`, and states that it is unknown whether `z(20) = 6` or `7`. This package proves the entire published table `z(1), …, z(19)` (`cochromatic_table`, and `cochromatic_zmax_table` for `z(n)` defined literally as the maximum of the cochromatic number over all graphs on `n` vertices), in particular `z(12) = 4` (`cochromatic_twelve`), together with `z(20) = 6` (`cochromatic_twenty`, `cochromatic_zmax_twenty`; a value the problem page records as unknown; the mathematical route is the cited `ipitchford/z20-cochromatic` document, re-derived and fully checked here).
 
-Scope, stated plainly (revised 2026-09-17 after an independent hard-gate re-audit): the catalog entry asks, for a prescribed small graph order, for the worst-case number of parts; the problem page's resolved content is the table `z(1), …, z(19)` with `z(12) = 4` as the named question. This package formalizes `z(12) = 4` and `z(20) = 6` and does not state the other table values as theorems; under the reading that the entry requires the whole small-`n` table, this is not a complete formalization of the entry. `z(20) = 6` is not contained in the cited publication [Gi86] (which proves `z(n) ≍ n / log n`) and no solver credit for it is attached to the cited publications.
+Scope, stated plainly (revised 2026-09-17 after an independent hard-gate re-audit): the catalog entry asks, for a prescribed small graph order, for the worst-case number of parts; the problem page's resolved content is the table `z(1), …, z(19)` with `z(12) = 4` as the named question. This package formalizes the whole table `z(1), …, z(19)` (revision of 2026-09-18) and `z(20) = 6`, so both readings are covered: the named question `z(12) = 4`, the full small-`n` table recorded as known on the page, and the next order `n = 20`. The table values `z(n)` for `n ≠ 12, 20` are, mathematically, short consequences of the anchors already in the tree (see step 9 below); no new deep computation was needed for them. `z(20) = 6` is not contained in the cited publication [Gi86] (which proves `z(n) ≍ n / log n`) and no solver credit for it is attached to the cited publications.
 
 ## Statement
 
@@ -22,6 +22,20 @@ theorem cochromatic_twelve : CochromaticTwenty.TargetTwelve
 
 with no premises, together with `cochromatic_twelve_on_finite_type` on every twelve-element vertex type; `Main.lean` re-exports it as `cochromatic_twelve'`.
 
+[MerLeanExperiment/CochromaticNumber.lean](MerLeanExperiment/CochromaticNumber.lean) defines the quantities the problem speaks of: `cochromaticNumber G := Nat.find (∃ k, HasCocoloring G k)`, the least number of homogeneous classes of a finite graph, and `zmax n := Finset.univ.sup (fun G : SimpleGraph (Fin n) => cochromaticNumber G)`, the maximum over all graphs on `n` labelled vertices; `zmax_eq_iff` shows that for `k ≥ 1`, `zmax n = k` is exactly `CochromaticValue n k := (∀ G : SimpleGraph (Fin n), HasCocoloring G k) ∧ (∃ G : SimpleGraph (Fin n), ¬ HasCocoloring G (k - 1))`. [MerLeanExperiment/Table.lean](MerLeanExperiment/Table.lean) defines `zTable : ℕ → ℕ` as the published values (1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 6, 6, 6, 6 for `n = 1, …, 19`) and proves
+
+```lean
+theorem cochromatic_table (n : ℕ) (hn1 : 1 ≤ n) (hn : n ≤ 19) :
+    CochromaticTwenty.CochromaticValue n (CochromaticTwenty.zTable n)
+
+theorem cochromatic_zmax_table (n : ℕ) (hn1 : 1 ≤ n) (hn : n ≤ 19) :
+    CochromaticTwenty.zmax n = CochromaticTwenty.zTable n
+
+theorem cochromatic_zmax_twenty : CochromaticTwenty.zmax 20 = 6
+```
+
+with no hypotheses beyond the range of `n`.
+
 ## Proof structure
 
 The argument follows the candidate computer-assisted proof published in the `ipitchford/z20-cochromatic` repository (see attribution below), re-derived and fully checked in Lean. Every finite claim is proved inside Lean; solvers and generators were used only to discover certificates and are not trusted.
@@ -34,8 +48,9 @@ The argument follows the candidate computer-assisted proof published in the `ipi
 6. **Twenty vertices.** Ramsey supplies a homogeneous four-set; either its complement contains another, disjoint, one, or the sixteen-vertex classification fixes one of the two cores, and two cross certificates (7550 and 5880 inputs, 3932 and 3553 derived clauses, each clause with a proved graph explanation) give two disjoint homogeneous four-sets ([TwentyTwoFours.lean](MerLeanExperiment/TwentyTwoFours.lean), [FixedCoreTwoFours.lean](MerLeanExperiment/FixedCoreTwoFours.lean), `FixedCore0Meaning/`, `FixedCore1Meaning/`). Removing them, the twelve-vertex theorem colors the rest with four classes ([UpperBound.lean](MerLeanExperiment/UpperBound.lean), [CocoloringAssembly.lean](MerLeanExperiment/CocoloringAssembly.lean)).
 7. **Lower bound.** The Paley graph on seventeen vertices with three isolated vertices added has no five-cocoloring: it has no homogeneous four-set (kernel computation), so five classes cover at most fifteen of its seventeen vertices ([LowerBound.lean](MerLeanExperiment/LowerBound.lean)).
 8. **Twelve vertices, both bounds.** The upper bound `z(12) ≤ 4` is step 4 (`fin12_hasCocoloring_four`). For the lower bound, the Paley graph of order seventeen induced on its first twelve vertices inherits the absence of homogeneous four-sets, so three classes cover at most nine of its twelve vertices ([Twelve.lean](MerLeanExperiment/Twelve.lean)).
+9. **The whole table `z(1), …, z(19)`.** Since `z` is monotone in `n` (restrict a cocoloring to an induced subgraph, [TableMonotone.lean](MerLeanExperiment/TableMonotone.lean)), the table reduces to six upper anchors and six lower anchors. Upper: `z(2) ≤ 1`, `z(4) ≤ 2` (any two vertices form a homogeneous set), `z(8) ≤ 3` (step 3), `z(12) ≤ 4` (step 4), `z(15) ≤ 5` (`R(3,3) ≤ 6` gives a homogeneous triple on fifteen vertices; the remaining twelve use step 4; [TableUpper.lean](MerLeanExperiment/TableUpper.lean)), `z(20) ≤ 6` (step 6). Lower: `z(1) ≥ 1`, `z(3) ≥ 2` (one edge plus an isolated vertex), `z(5) ≥ 3` (the five-cycle), `z(13) ≥ 5` and `z(16) ≥ 6` (the Paley graph of order seventeen induced on 13 resp. 16 vertices has no homogeneous four-set, so `k` classes cover at most `3k` vertices; [TableLower.lean](MerLeanExperiment/TableLower.lean)), and `z(9) ≥ 4` from an explicit four-regular nine-vertex graph `G9` (edges 01 02 03 04 12 15 16 25 26 34 37 38 47 48 57 58 67 68, found by our own search among the (4,4)-Ramsey graphs on nine vertices), whose lack of a three-cocoloring is checked by the kernel over all `3^9` colourings with `decide +kernel` (about 100 s; [NineLowerBound.lean](MerLeanExperiment/NineLowerBound.lean)). The assembly is [Table.lean](MerLeanExperiment/Table.lean). The deep content of the package remains steps 4–6 (the twelve-vertex theorem, the sixteen-vertex classification and `z(20) ≤ 6`); the table itself adds about 570 lines.
 
-The certificate modules replay LRAT-style refutations through transparent clause records and Lean's proved checker soundness theorem; no `native_decide`, `Lean.ofReduceBool`, opaque hashing verifier, project axiom, `sorry` or `admit` occurs anywhere in the 2051-module cone. Each certificate is bridged to the actual graph statement by a proved semantic lemma, so no encoding correspondence, catalog completeness, SAT result or coloring theorem is an assumption of the root.
+The certificate modules replay LRAT-style refutations through transparent clause records and Lean's proved checker soundness theorem; no `native_decide`, `Lean.ofReduceBool`, opaque hashing verifier, project axiom, `sorry` or `admit` occurs anywhere in the 2057-module cone. Each certificate is bridged to the actual graph statement by a proved semantic lemma, so no encoding correspondence, catalog completeness, SAT result or coloring theorem is an assumption of the root.
 
 ## Reproduce
 
@@ -47,13 +62,14 @@ lake build
 lake env lean MerLeanExperiment/Audit.lean
 ```
 
-The exact toolchain is pinned in [lean-toolchain](lean-toolchain): `leanprover/lean4:v4.34.0-rc1`; Mathlib is pinned to `1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d` with transitive revisions in [lake-manifest.json](lake-manifest.json). The cone is large (2051 modules, about 117 MB of Lean source, most of it generated certificate data); a full build takes several hours. SHA-256 values of every module are listed in [source-hashes.txt](source-hashes.txt).
+The exact toolchain is pinned in [lean-toolchain](lean-toolchain): `leanprover/lean4:v4.34.0-rc1`; Mathlib is pinned to `1fe0a51a5ecdee23c424b6e29ecb1d40eb35316d` with transitive revisions in [lake-manifest.json](lake-manifest.json). The cone is large (2057 modules, about 117 MB of Lean source, most of it generated certificate data); a full build takes several hours. SHA-256 values of every module are listed in [source-hashes.txt](source-hashes.txt).
 
 **Axioms.** Every audited theorem depends on exactly the three standard axioms of Lean's core logic used throughout Mathlib, and on nothing else:
 
 | Theorem | Axioms |
 | --- | --- |
 | `cochromatic_twenty` | `propext`, `Classical.choice`, `Quot.sound` |
+| `cochromatic_table`, `cochromatic_zmax_table`, `cochromatic_zmax_twenty`, `cochromatic_zmax_twelve`, `CochromaticTwenty.zmax_eq_iff`, `fin15_hasCocoloring_five`, `fin9_not_hasCocoloring_three` | `propext`, `Classical.choice`, `Quot.sound` |
 | `cochromatic_twelve`, `cochromatic_twelve_on_finite_type`, `CochromaticTwenty.paley17OnTwelve_lowerBound` | `propext`, `Classical.choice`, `Quot.sound` |
 | `CochromaticTwenty.universal_six_upperBound`, `paley17_lowerBound` | `propext`, `Classical.choice`, `Quot.sound` |
 | `CochromaticTwenty.fin8_hasCocoloring_three`, `fin12_hasCocoloring_four`, `sixteen_classification`, `twenty_twoFours`, `fixedCore0_twoFours`, `fixedCore1_twoFours`, `target_iff_on_card_twenty` | `propext`, `Classical.choice`, `Quot.sound` |
